@@ -1,0 +1,1 @@
+Write docs on how to debug any apps, by using the `WAYLAND_DEBUG=1` flag and anything else
