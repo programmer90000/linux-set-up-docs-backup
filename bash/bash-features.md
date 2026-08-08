@@ -1,0 +1,1 @@
+- App to view log files with the ability to highlight and filter logs
