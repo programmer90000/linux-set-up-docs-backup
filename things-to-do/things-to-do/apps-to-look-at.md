@@ -1,5 +1,6 @@
 | Feature | Supported |
 |---------|-----------|
+| Look at LocalSend | ❌ |
 | Look at Open PDF Studio | ❌ |
 | Look at qalculate-gtk | ❌ |
 | Look at font-manager (sudo apt install font-manager) | ❌ |
