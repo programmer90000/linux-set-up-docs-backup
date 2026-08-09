@@ -1,1 +1,3 @@
-1. Auto scroll behaviour
+| Feature | Supported |
+|---------|-----------|
+| Auto scroll behaviour | ❌ |
