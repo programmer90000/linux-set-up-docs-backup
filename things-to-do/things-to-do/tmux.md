@@ -20,3 +20,4 @@
 | Show a warning before closing a pane with a running process | ❌ |
 | List all pane processes (what's running inside each pane) | ❌ |
 | Write docs for how to use Tmux | ❌ |
+| Look at tmux-logging | ❌ |
