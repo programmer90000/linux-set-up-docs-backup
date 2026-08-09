@@ -1,1 +1,3 @@
-1. Look at making the window switcher using Rust GTK4
+| Feature | Done |
+|---------|-----------|
+| Look at making the window switcher using Rust GTK4 | ❌ |
