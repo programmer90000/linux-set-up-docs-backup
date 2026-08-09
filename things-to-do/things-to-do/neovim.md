@@ -25,5 +25,6 @@
 | I may want to add a startup screen | ❌ |
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
+| Look at Neovim ALE | ❌ |
 
 Update the Nvim-Treesitter plugin. Add syntax highlighting for Dart and JavaScript and C (I have already added it to the main repo. I still need to test it and configure it)
