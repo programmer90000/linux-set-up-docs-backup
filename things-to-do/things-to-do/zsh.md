@@ -1,1 +1,3 @@
-1. Setup Zsh
+| Feature | Done      |
+|---------|-----------|
+| Setup Zsh | ❌ |
