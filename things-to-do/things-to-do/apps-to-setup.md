@@ -1,7 +1,7 @@
 | Feature | Supported |
 |---------|-----------|
-| KeePassXc | ❌ |
-| Alacritty | ❌ |
+| KeePassXc | ✅ |
+| Alacritty | ✅ |
 | Brave Browser | ❌ |
 | CopyQ | ❌ |
 | Thunderbird | ❌ |
