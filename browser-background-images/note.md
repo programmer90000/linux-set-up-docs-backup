@@ -1,0 +1,1 @@
+Note: All of these images were uploaded before 2023, tbe year ChatGPT was made
