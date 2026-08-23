@@ -18,5 +18,6 @@
 | Look at Draw.io | ❌ |
 | Look at ExifTool | ❌ |
 | Look at GPick | ❌ |
+| Look at rmlint | ❌ |
 | Look at isd [https://github.com/kainctl/isd](https://github.com/kainctl/isd) | ❌ |
 | Look at revdiff [https://github.com/umputun/revdiff](https://github.com/umputun/revdiff) | ❌ |
