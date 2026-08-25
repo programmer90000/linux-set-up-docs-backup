@@ -17,6 +17,7 @@
 16. [apps-to-find.md](things-to-do/apps-to-find.md)
 17. [features-to-add.md](things-to-do/features-to-add.md)
 18. [refactor.md](things-to-do/refactor.md)
+19. [systemd.md](things-to-do/systemd.md)
 
 After this, go through the Rust book
 
