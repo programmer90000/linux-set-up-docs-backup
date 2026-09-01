@@ -21,4 +21,4 @@
 | Look at rmlint | ❌ |
 | Look at isd [https://github.com/kainctl/isd](https://github.com/kainctl/isd) | ❌ |
 | Look at revdiff [https://github.com/umputun/revdiff](https://github.com/umputun/revdiff) | ❌ |
-| Look at shload [https://github.com/kndndrj/shload](https://github.com/kndndrj/shload)
+| Look at shload [https://github.com/kndndrj/shload](https://github.com/kndndrj/shload) | ❌ |
