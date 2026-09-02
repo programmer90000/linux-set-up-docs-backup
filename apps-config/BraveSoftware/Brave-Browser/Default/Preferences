@@ -4,23 +4,6 @@
       "headless_caption_enabled": false
     }
   },
-  "announcement_notification_service_first_run_time": "13431105629456003",
-  "apps": {
-    "shortcuts_arch": "",
-    "shortcuts_version": 0
-  },
-  "autocomplete": {
-    "retention_policy_last_version": 151
-  },
-  "autofill": {
-    "autofill_ai": {
-      "opt_in_status": {}
-    },
-    "last_version_deduped": 151
-  },
-  "bookmark": {
-    "storage_computation_last_update": "13431444875810897"
-  },
   "brave": {
     "accelerators": {
       "33000": [
@@ -308,7 +291,6 @@
       ]
     },
     "brave_ads": {
-      "grace_period": "259200000000",
       "should_allow_ads_subdivision_targeting": false,
       "state": {
         "has_migrated": {
