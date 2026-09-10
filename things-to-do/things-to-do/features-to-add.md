@@ -1,3 +1,3 @@
 | Feature | Supported |
 |---------|-----------|
-| Auto scroll behaviour | ❌ |
+| Auto scroll behaviour Look at (Wayland-Wheeltani)[https://github.com/docloulou/Wayland-Wheeltani] | ❌ |
