@@ -9,3 +9,5 @@
 | Add an item to the dash for the volume | ❌ |
 | Add an item to the dash for the WiFi | ❌ |
 | Add an item to the dash for power options | ❌ |
+| Make the app icons scrollable if there are too many | ❌ |
+| Make the dash scrollable if there are too many icons | ❌ |
