@@ -1,4 +1,4 @@
-| Term Meaning
+| Term | Meaning |
 | Image | A read-only template (like a snapshot) containing the app + dependencies. Built from a Dockerfile. |
 | Container | A running (or stopped) instance of an image. You can run many containers from one image. |
 | Dockerfile | A text file with instructions to build an image. |
