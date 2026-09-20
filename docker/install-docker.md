@@ -1,4 +1,4 @@
-Test this on a VM. If the command runs, add it to the main repo:
+Test this on a VM. If the command runs, add it to the main repo. Note: Docker should be able to run on a VM:
 
 ```
 sudo apt update
