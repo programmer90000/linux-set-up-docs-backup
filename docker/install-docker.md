@@ -5,15 +5,10 @@ sudo apt update
 sudo apt install docker.io docker-cli ca-certificates apparmor
 ```
 
-To run Docker without sudo, run:
-```
-sudo usermod -aG docker $USER
-```
-
-Logout and back in
-
 To check if it is installed correctly, run:
 ```
 docker --version
 sudo docker run hello-world
 ```
+
+> Important: Docker requires sudo to run. I can stop this by adding users to the group docker. Do not add any users to the group docker as this is a security risk.
