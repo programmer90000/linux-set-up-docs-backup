@@ -44,3 +44,26 @@
 | --restart | restart policy |
 
 
+# Managing Containers
+| Command | Description |
+|---------|-------------|
+| docker stop <container> | graceful stop |
+| docker start <container> | start a stopped container |
+| docker restart <container> | stop + start |
+| docker kill <container> | force kill |
+| docker rm <container> | delete a stopped container |
+| docker rm -f <container> | force delete (even running) |
+| docker rename old new | rename |
+| docker stop $(docker ps -q) | Stop ALL containers |
+| docker rm $(docker ps -aq) | Remove ALL containers |
+
+# Interacting with running containers
+| Command | Description |
+|---------|-------------|
+| docker exec -it <container> bash | shell in |
+| docker exec -it <container> sh | if bash isn't installed |
+| docker exec <container> ls /app | run a one-off command |
+| docker exec -u root -it <c> bash | as a specific user |
+| docker cp file.txt <container>:/app/ | copy host → container |
+| docker cp <container>:/app/log.txt . | copy container → host |
+| docker attach <container> | attach to main process (Ctrl-P Ctrl-Q to detach) |
