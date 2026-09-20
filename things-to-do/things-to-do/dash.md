@@ -9,5 +9,9 @@
 | Add an item to the dash for the volume | ❌ |
 | Add an item to the dash for the WiFi | ❌ |
 | Add an item to the dash for power options | ❌ |
+| Add an item to the dash for Bluetooth | ❌ |
+| Add an item to the dash for MPD | ❌ |
+| Add an item to the dash for pipewire | ❌ |
+| Add an item to the dash displaying the current keyboard layout | ❌ |
 | Make the app icons scrollable if there are too many | ❌ |
 | Make the dash scrollable if there are too many icons | ❌ |
