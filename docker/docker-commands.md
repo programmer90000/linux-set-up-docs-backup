@@ -67,3 +67,124 @@
 | docker cp file.txt <container>:/app/ | copy host → container |
 | docker cp <container>:/app/log.txt . | copy container → host |
 | docker attach <container> | attach to main process (Ctrl-P Ctrl-Q to detach) |
+
+# Images
+
+| Command | Description |
+|---------|-------------|
+| docker pull nginx:1.27 | download specific tag |
+| docker pull nginx | latest |
+| docker push myrepo/myapp:1.0 | upload to registry |
+| docker build -t myapp:1.0 . | build from Dockerfile in cwd |
+| docker build -t myapp:1.0 -f other.Dockerfile . | build with alternate Dockerfile |
+| docker tag myapp:1.0 myrepo/myapp:1.0 | tag an image |
+| docker rmi <image> | delete image |
+| docker rmi -f <image> | force delete |
+| docker history <image> | layer breakdown |
+| docker save -o myapp.tar myapp:1.0 | export image to file |
+| docker load -i myapp.tar | import image from file |
+
+# Volumes (Presistent data)
+| Command | Description |
+|---------|-------------|
+| docker volume create mydata | create a volume |
+| docker volume ls | list volumes |
+| docker volume inspect mydata | inspect a volume |
+| docker volume rm mydata | remove a volume |
+| docker volume prune | remove unused volumes |
+
+# Networks
+| Command | Description |
+|---------|-------------|
+| docker network create mynet | create a network |
+| docker network ls | list networks |
+| docker network inspect mynet | inspect a network |
+| docker network connect mynet <container> | connect container to network |
+| docker network disconnect mynet <container> | disconnect container |
+| docker network rm mynet | remove a network |
+| docker network prune | remove unused networks |
+
+# Docker Compose (Multi-Container Apps)
+| Command | Description |
+|---------|-------------|
+| docker compose up -d | start all services in background |
+| docker compose up --build | rebuild images first |
+| docker compose down | stop + remove containers/networks |
+| docker compose down -v | also remove volumes |
+| docker compose ps | status |
+| docker compose logs -f | follow logs |
+| docker compose logs -f web | one service |
+| docker compose exec web bash | shell into a service |
+| docker compose restart web | restart a service |
+| docker compose pull | update images |
+| docker compose config | validate/print config |
+
+# Cleanup
+| Command | Description |
+|---------|-------------|
+| docker system df | disk usage summary |
+| docker system prune | remove stopped containers, dangling images, unused networks |
+| docker system prune -a | also remove ALL unused images (aggressive) |
+| docker system prune -a --volumes | ALSO remove volumes ⚠️ data loss |
+| docker container prune | stopped containers only |
+| docker image prune | dangling images |
+| docker image prune -a | all unused images |
+| docker volume prune | unused volumes |
+| docker builder prune | build cache |
+
+# Daemon / Service Management (systemd)
+| Command | Description |
+|---------|-------------|
+| sudo systemctl start docker | start the daemon |
+| sudo systemctl stop docker | stop the daemon |
+| sudo systemctl restart docker | restart the daemon |
+| sudo systemctl status docker | check status |
+| sudo systemctl enable docker | start on boot |
+| sudo journalctl -u docker -f | daemon logs |
+
+# Handy One-Liners
+```
+# Kill all running containers
+docker kill $(docker ps -q)
+
+# Remove all stopped containers
+docker rm $(docker ps -aq)
+
+# Remove all images
+docker rmi $(docker images -q)
+
+# Get a container's IP
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <c>
+
+# Follow logs for all compose services
+docker compose logs -f --tail=50
+
+# Shell into the most recently started container
+docker exec -it $(docker ps -lq) bash
+
+# Tail logs and grep
+docker logs -f <c> 2>&1 | grep ERROR
+```
+
+# Quick Mental Model
+| You want to… | Command |
+|--------------|---------|
+| See what's running | docker ps |
+| Start something | docker run … |
+| Get inside it | docker exec -it … bash |
+| See its output | docker logs -f … |
+| Stop it | docker stop … |
+| Delete it | docker rm … |
+| Reclaim disk | docker system prune |
+
+
+# Tip
+| Tip | Description |
+|-----|-------------|
+| Always name your containers | (--name) — random names are painful to manage |
+| Use --rm for throwaway containers | so they clean up automatically |
+| Prefer Compose | over long docker run commands once you have 2+ services |
+| Use volumes, not bind mounts | for data you want Docker to manage |
+| Tag images explicitly | (myapp:1.0, not latest) — latest is a lie in production |
+| docker logs before docker exec | logs usually tell you what's wrong faster |
+| Run docker system df | when disk fills up — build cache is often the culprit |
