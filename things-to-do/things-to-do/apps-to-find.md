@@ -27,3 +27,4 @@
 | Look for a sandbox launcher | ❌ |
 | Look for a firmware updater for things like the BIOS and hardware | ❌ |
 | Look for an emoji picker | ❌ |
+| Look for an app to view the date and time | ❌ |
