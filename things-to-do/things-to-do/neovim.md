@@ -26,5 +26,6 @@
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
 | Look at Neovim ALE | ❌ |
+| Look at codediff.nvim | ❌ |
 
 Update the Nvim-Treesitter plugin. Add syntax highlighting for Dart and JavaScript and C (I have already added it to the main repo. I still need to test it and configure it)
