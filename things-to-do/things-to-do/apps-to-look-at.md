@@ -19,6 +19,7 @@
 | Look at ExifTool | ❌ |
 | Look at GPick | ❌ |
 | Look at rmlint | ❌ |
+| Look at using grim and slurp to take screenshots | ❌ |
 | Look at isd [https://github.com/kainctl/isd](https://github.com/kainctl/isd) | ❌ |
 | Look at revdiff [https://github.com/umputun/revdiff](https://github.com/umputun/revdiff) | ❌ |
 | Look at shload [https://github.com/kndndrj/shload](https://github.com/kndndrj/shload) | ❌ |
