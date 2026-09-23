@@ -177,17 +177,29 @@ _ => {}
 }
 }
 
-fn parse_temp(&mut self) {
-let temp_path = "/sys/class/thermal/thermal_zone0/temp";
-if let Ok(content) = fs::read_to_string(temp_path) {
-if let Ok(milli) = content.trim().parse::<f32>() {
-self.cpu_temp_c = milli / 1000.0;
-}
-} else {
-self.cpu_temp_c = -1.0;
-}
-}
+// Note: This formatted code gets the motherboard temp
+//fn parse_temp(&mut self) {
+//let temp_path = "/sys/class/thermal/thermal_zone0/temp";
+//if let Ok(content) = fs::read_to_string(temp_path) {
+//if let Ok(milli) = content.trim().parse::<f32>() {
+//self.cpu_temp_c = milli / 1000.0;
+//}
+//} else {
+//self.cpu_temp_c = -1.0;
+//}
+//}
 
+fn parse_temp(&mut self) {
+    let temp_path = "/sys/class/thermal/thermal_zone2/temp";
+    if let Ok(content) = fs::read_to_string(temp_path) {
+        if let Ok(milli) = content.trim().parse::<f32>() {
+            self.cpu_temp_c = milli / 1000.0;
+        }
+    } else {
+        self.cpu_temp_c = -1.0;
+    }
+}
+  
 fn parse_processes(&mut self, filter: Option<&str>, sort_by: &str) {
 let mut procs = Vec::new();
 if let Ok(entries) = fs::read_dir("/proc") {
