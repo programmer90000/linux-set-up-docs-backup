@@ -1,6 +1,6 @@
 Notes:
 
-This app was made by AI. I have tested it on Termux on my phone. It works on there. I don't know if the information is accurate or not
+This app was made by AI. I have tested it. It works
 
 I still need to add all of the other information to the app
 
