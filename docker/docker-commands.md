@@ -4,31 +4,31 @@
 | docker version | client + daemon versions |
 | docker info | system-wide info (containers, images, storage) |
 | sudo docker ps | running containers |
-| docker ps -a | ALL containers (incl. stopped) |
-| docker images | local images |
-| docker image ls | same as above |
-| docker volume ls | list volumes |
-| docker network ls | list networks |
-| docker stats | live CPU/mem/net usage per container |
-| docker inspect <container\|image> | full JSON details |
-| docker logs <container> | stdout/stderr logs |
-| docker logs -f <container> | follow logs live |
-| docker logs --tail 100 <c> | last 100 lines |
-| docker port <container> | show port mappings |
-| docker top <container> | processes inside a container |
+| sudo docker ps -a | ALL containers (incl. stopped) |
+| sudo docker images | local images |
+| sudo docker image ls | same as above |
+| sudo docker volume ls | list volumes |
+| sudo docker network ls | list networks |
+| sudo docker stats | live CPU/mem/net usage per container |
+| sudo docker inspect <container\|image> | full JSON details |
+| sudo docker logs <container> | stdout/stderr logs |
+| sudo docker logs -f <container> | follow logs live |
+| sudo docker logs --tail 100 <c> | last 100 lines |
+| sudo docker port <container> | show port mappings |
+| sudo docker top <container> | processes inside a container |
 
 # Running containers
 | Command | Description |
 |---------|-------------|
-| docker run nginx | Basic run |
-| docker run -d --name web -p 8080:80 nginx | Detached (background) + name + port mapping |
-| docker run -it --rm ubuntu bash | Interactive shell (great for debugging images) |
-| docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql | With an environment variable |
-| docker run -d -v mydata:/var/lib/mysql mysql | With a persistent volume |
-| docker run -d -v $(pwd)/html:/usr/share/nginx/html nginx | Bind-mount a host directory |
-| docker run -d --restart unless-stopped nginx | Auto-restart on crash/reboot |
-| docker run -d --network mynet --name api myapp | Attach to a network |
-| docker run -d --cpus="1.5" --memory="512m" nginx | Limit resources |
+| sudo docker run nginx | Basic run |
+| sudo docker run -d --name web -p 8080:80 nginx | Detached (background) + name + port mapping |
+| sudo docker run -it --rm ubuntu bash | Interactive shell (great for debugging images) |
+| sudo docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql | With an environment variable |
+| sudo docker run -d -v mydata:/var/lib/mysql mysql | With a persistent volume |
+| sudo docker run -d -v $(pwd)/html:/usr/share/nginx/html nginx | Bind-mount a host directory |
+| sudo docker run -d --restart unless-stopped nginx | Auto-restart on crash/reboot |
+| sudo docker run -d --network mynet --name api myapp | Attach to a network |
+| sudo docker run -d --cpus="1.5" --memory="512m" nginx | Limit resources |
 
 
 | Flag | Meaning |
@@ -47,90 +47,90 @@
 # Managing Containers
 | Command | Description |
 |---------|-------------|
-| docker stop <container> | graceful stop |
-| docker start <container> | start a stopped container |
-| docker restart <container> | stop + start |
-| docker kill <container> | force kill |
-| docker rm <container> | delete a stopped container |
-| docker rm -f <container> | force delete (even running) |
-| docker rename old new | rename |
-| docker stop $(docker ps -q) | Stop ALL containers |
-| docker rm $(docker ps -aq) | Remove ALL containers |
+| sudo docker stop <container> | graceful stop |
+| sudo docker start <container> | start a stopped container |
+| sudo docker restart <container> | stop + start |
+| sudo docker kill <container> | force kill |
+| sudo docker rm <container> | delete a stopped container |
+| sudo docker rm -f <container> | force delete (even running) |
+| sudo docker rename old new | rename |
+| sudo docker stop $(docker ps -q) | Stop ALL containers |
+| sudo docker rm $(docker ps -aq) | Remove ALL containers |
 
 # Interacting with running containers
 | Command | Description |
 |---------|-------------|
-| docker exec -it <container> bash | shell in |
-| docker exec -it <container> sh | if bash isn't installed |
-| docker exec <container> ls /app | run a one-off command |
-| docker exec -u root -it <c> bash | as a specific user |
-| docker cp file.txt <container>:/app/ | copy host → container |
-| docker cp <container>:/app/log.txt . | copy container → host |
-| docker attach <container> | attach to main process (Ctrl-P Ctrl-Q to detach) |
+| sudo docker exec -it <container> bash | shell in |
+| sudo docker exec -it <container> sh | if bash isn't installed |
+| sudo docker exec <container> ls /app | run a one-off command |
+| sudo docker exec -u root -it <c> bash | as a specific user |
+| sudo docker cp file.txt <container>:/app/ | copy host → container |
+| sudo docker cp <container>:/app/log.txt . | copy container → host |
+| sudo docker attach <container> | attach to main process (Ctrl-P Ctrl-Q to detach) |
 
 # Images
 
 | Command | Description |
 |---------|-------------|
-| docker pull nginx:1.27 | download specific tag |
-| docker pull nginx | latest |
-| docker push myrepo/myapp:1.0 | upload to registry |
-| docker build -t myapp:1.0 . | build from Dockerfile in cwd |
-| docker build -t myapp:1.0 -f other.Dockerfile . | build with alternate Dockerfile |
-| docker tag myapp:1.0 myrepo/myapp:1.0 | tag an image |
-| docker rmi <image> | delete image |
-| docker rmi -f <image> | force delete |
-| docker history <image> | layer breakdown |
-| docker save -o myapp.tar myapp:1.0 | export image to file |
-| docker load -i myapp.tar | import image from file |
+| sudo docker pull nginx:1.27 | download specific tag |
+| sudo docker pull nginx | latest |
+| sudo docker push myrepo/myapp:1.0 | upload to registry |
+| sudo docker build -t myapp:1.0 . | build from Dockerfile in cwd |
+| sudo docker build -t myapp:1.0 -f other.Dockerfile . | build with alternate Dockerfile |
+| sudo docker tag myapp:1.0 myrepo/myapp:1.0 | tag an image |
+| sudo docker rmi <image> | delete image |
+| sudo docker rmi -f <image> | force delete |
+| sudo docker history <image> | layer breakdown |
+| sudo docker save -o myapp.tar myapp:1.0 | export image to file |
+| sudo docker load -i myapp.tar | import image from file |
 
 # Volumes (Presistent data)
 | Command | Description |
 |---------|-------------|
-| docker volume create mydata | create a volume |
-| docker volume ls | list volumes |
-| docker volume inspect mydata | inspect a volume |
-| docker volume rm mydata | remove a volume |
-| docker volume prune | remove unused volumes |
+| sudo docker volume create mydata | create a volume |
+| sudo docker volume ls | list volumes |
+| sudo docker volume inspect mydata | inspect a volume |
+| sudo docker volume rm mydata | remove a volume |
+| sudo docker volume prune | remove unused volumes |
 
 # Networks
 | Command | Description |
 |---------|-------------|
-| docker network create mynet | create a network |
-| docker network ls | list networks |
-| docker network inspect mynet | inspect a network |
-| docker network connect mynet <container> | connect container to network |
-| docker network disconnect mynet <container> | disconnect container |
-| docker network rm mynet | remove a network |
-| docker network prune | remove unused networks |
+| sudo docker network create mynet | create a network |
+| sudo docker network ls | list networks |
+| sudo docker network inspect mynet | inspect a network |
+| sudo docker network connect mynet <container> | connect container to network |
+| sudo docker network disconnect mynet <container> | disconnect container |
+| sudo docker network rm mynet | remove a network |
+| sudo docker network prune | remove unused networks |
 
 # Docker Compose (Multi-Container Apps)
 | Command | Description |
 |---------|-------------|
-| docker compose up -d | start all services in background |
-| docker compose up --build | rebuild images first |
-| docker compose down | stop + remove containers/networks |
-| docker compose down -v | also remove volumes |
-| docker compose ps | status |
-| docker compose logs -f | follow logs |
-| docker compose logs -f web | one service |
-| docker compose exec web bash | shell into a service |
-| docker compose restart web | restart a service |
-| docker compose pull | update images |
-| docker compose config | validate/print config |
+| sudo docker compose up -d | start all services in background |
+| sudo docker compose up --build | rebuild images first |
+| sudo docker compose down | stop + remove containers/networks |
+| sudo docker compose down -v | also remove volumes |
+| sudo docker compose ps | status |
+| sudo docker compose logs -f | follow logs |
+| sudo docker compose logs -f web | one service |
+| sudo docker compose exec web bash | shell into a service |
+| sudo docker compose restart web | restart a service |
+| sudo docker compose pull | update images |
+| sudo docker compose config | validate/print config |
 
 # Cleanup
 | Command | Description |
 |---------|-------------|
-| docker system df | disk usage summary |
-| docker system prune | remove stopped containers, dangling images, unused networks |
-| docker system prune -a | also remove ALL unused images (aggressive) |
-| docker system prune -a --volumes | ALSO remove volumes ⚠️ data loss |
-| docker container prune | stopped containers only |
-| docker image prune | dangling images |
-| docker image prune -a | all unused images |
-| docker volume prune | unused volumes |
-| docker builder prune | build cache |
+| sudo docker system df | disk usage summary |
+| sudo docker system prune | remove stopped containers, dangling images, unused networks |
+| sudo docker system prune -a | also remove ALL unused images (aggressive) |
+| sudo docker system prune -a --volumes | ALSO remove volumes ⚠️ data loss |
+| sudo docker container prune | stopped containers only |
+| sudo docker image prune | dangling images |
+| sudo docker image prune -a | all unused images |
+| sudo docker volume prune | unused volumes |
+| sudo docker builder prune | build cache |
 
 # Daemon / Service Management (systemd)
 | Command | Description |
@@ -145,25 +145,25 @@
 # Handy One-Liners
 ```
 # Kill all running containers
-docker kill $(docker ps -q)
+sudo docker kill $(docker ps -q)
 
 # Remove all stopped containers
-docker rm $(docker ps -aq)
+sudo docker rm $(docker ps -aq)
 
 # Remove all images
-docker rmi $(docker images -q)
+sudo docker rmi $(docker images -q)
 
 # Get a container's IP
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <c>
+sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <c>
 
 # Follow logs for all compose services
-docker compose logs -f --tail=50
+sudo docker compose logs -f --tail=50
 
 # Shell into the most recently started container
-docker exec -it $(docker ps -lq) bash
+sudo docker exec -it $(docker ps -lq) bash
 
 # Tail logs and grep
-docker logs -f <c> 2>&1 | grep ERROR
+sudo docker logs -f <c> 2>&1 | grep ERROR
 ```
 
 # Quick Mental Model
