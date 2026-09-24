@@ -3,7 +3,7 @@
 |---------|-------------|
 | docker version | client + daemon versions |
 | docker info | system-wide info (containers, images, storage) |
-| docker ps | running containers |
+| sudo docker ps | running containers |
 | docker ps -a | ALL containers (incl. stopped) |
 | docker images | local images |
 | docker image ls | same as above |
