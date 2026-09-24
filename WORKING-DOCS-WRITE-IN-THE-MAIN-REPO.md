@@ -9,7 +9,8 @@ ps aux | grep "COMMAND I RAN"
 
 Find the PID of the command I ran
 
-Note: If the command contains no spaces, I don't need the speech marks. If I typed a long command, ps might truncate or wrap it. In that case, a long grep pattern won't match. Use a shorter, distinctive substring instead
+> Note: If the command contains no spaces, I don't need the speech marks.
+> If I typed a long command, ps might truncate or wrap it. In that case, a long grep pattern won't match. Use a shorter, distinctive substring instead
 
 Run:
 ```
