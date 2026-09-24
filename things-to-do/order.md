@@ -9,15 +9,14 @@
 8. [terminal.md](things-to-do/terminal.md)
 9. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
 10. [plymouth-theme.md](things-to-do/plymouth-theme.md)
-11. [bash-scripts.md](things-to-do/bash-scripts.md)
-12. [things-to-look-at.md](things-to-do/things-to-look-at.md)
-13. [apps-to-install.md](things-to-do/apps-to-install.md)
-14. [docker.md](things-to-do/docker.md)
-15. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
-16. [apps-to-find.md](things-to-do/apps-to-find.md)
-17. [features-to-add.md](things-to-do/features-to-add.md)
-18. [refactor.md](things-to-do/refactor.md)
-19. [systemd.md](things-to-do/systemd.md)
+11. [bash-scripts.md](things-to-do/bash-scripts.md)
+12. [apps-to-install.md](things-to-do/apps-to-install.md)
+13. [docker.md](things-to-do/docker.md)
+14. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
+15. [apps-to-find.md](things-to-do/apps-to-find.md)
+16. [features-to-add.md](things-to-do/features-to-add.md)
+17. [refactor.md](things-to-do/refactor.md)
+18. [systemd.md](things-to-do/systemd.md)
 
 After this, go through the Rust book
 
