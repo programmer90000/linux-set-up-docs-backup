@@ -1,4 +1,5 @@
 10. [bash-scripts.md](things-to-do/bash-scripts.md)
+0. [git.md](things-to-do/git.md)
 1. [apps-to-setup.md](things-to-do/apps-to-setup.md)
 2. [neovim.md](things-to-do/neovim.md)
 3. [tmux.md](things-to-do/tmux.md)
