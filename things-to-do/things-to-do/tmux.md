@@ -1,6 +1,6 @@
 | Feature | Supported |
 |---------|-----------|
-| Scroll bar in each pane |
+| Scroll bar in each pane | ❌ |
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
 | File path | ❌ |
 | Status Bar | ❌ |
