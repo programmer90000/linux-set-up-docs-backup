@@ -1,0 +1,1 @@
+To copy text from Tmux, highlight it. It will be copied automatically. To paste text into Tmux, press `Ctrl+Shift+V`
