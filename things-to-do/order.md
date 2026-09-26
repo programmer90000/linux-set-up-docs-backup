@@ -1,3 +1,4 @@
+0. Add all of the app icons that are missing
 1. [labwc.md](things-to-do/labwc.md)
 2. [git.md](things-to-do/git.md)
 3. [features-to-add.md](things-to-do/features-to-add.md)
