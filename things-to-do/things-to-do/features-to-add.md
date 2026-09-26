@@ -1,4 +1,4 @@
 | Feature | Supported |
 |---------|-----------|
-| Auto scroll behaviour Look at [Wayland-Wheeltani](https://github.com/docloulou/Wayland-Wheeltani) | ❌ |
+| Auto scroll behaviour | ❌ |
 | Find my mouse | ❌ |
