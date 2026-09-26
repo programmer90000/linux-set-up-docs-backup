@@ -34,6 +34,13 @@ Add the following code to rc.xml:
     <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command>
   </action>
 </keybind>
+
+<!-- Toggle Mute with Super + M -->
+<keybind key="W-m">
+  <action name="Execute">
+    <command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command>
+  </action>
+</keybind>
 ```
 
 Adjust the keyboard shortcuts
