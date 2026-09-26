@@ -28,3 +28,4 @@
 | Look for a firmware updater for things like the BIOS and hardware | ❌ |
 | Look for an emoji picker | ❌ |
 | Look for an app to view the date and time | ❌ |
+| Look for a terminal app to view log files with the ability to highlight and filter logs | ❌ |
