@@ -1,4 +1,4 @@
-Clone this repo: https://github.com/dandavison/delta
+Run: `sudo apt install git-delta`
 
 Add this to .gitconfig:
 ```
