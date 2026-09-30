@@ -1,4 +1,3 @@
-1. [labwc.md](things-to-do/labwc.md)
 2. [git.md](things-to-do/git.md)
 3. [neovim.md](things-to-do/neovim.md)
 4. [tmux.md](things-to-do/tmux.md)
