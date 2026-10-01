@@ -1,6 +1,5 @@
 Keys to look at:
 ```
-core.editor
 credential.helper
 diff.tool
 merge.tool
@@ -83,8 +82,6 @@ init.defaultBranch
 log.graphColors
 core.whitespace
 core.pager
-core.editor
-core.autocrlf
 blame.blankBoundary
 blame.date
 blame.showEmail
@@ -121,6 +118,11 @@ core.safecrlf
 
 Keys to set:
 ```
+`core.editor`: Set it to nvim
+`core.autocrlf`: Set it to `input`
+`core.eol`: Set it to `lf`
+`core.safecrlf`: Set it to `warn`
+`core.quotePath`: Set it to `false`
 `user.useConfigOnly`: Set it to true
 `status.relativePaths`: Set it to false
 `status.short`: Set it to false
