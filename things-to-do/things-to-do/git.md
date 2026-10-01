@@ -5,7 +5,6 @@ diff.tool
 merge.tool
 pager.<cmd>
 pretty.<name>
-man.viewer
 merge.conflictStyle
 merge.renormalize
 merge.defaultToUpstream
