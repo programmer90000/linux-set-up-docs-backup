@@ -11,7 +11,6 @@ stash.showPatch
 stash.showStat
 pager.<cmd>
 pretty.<name>
-pull.ff
 pull.rebase
 push.default
 push.followTags
@@ -148,6 +147,8 @@ Keys to set:
 `log.date`: Set it to `default`
 
 `tag.sort`: Set it to `version:refname`
+
+`​pull.ff`: Set it to `only`
 
 ```
 [branch]
