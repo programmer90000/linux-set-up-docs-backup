@@ -4,8 +4,6 @@ credential.helper
 diff.tool
 merge.tool
 column.ui
-log.date
-tag.sort
 enames
 enameLimit
 status.branch
