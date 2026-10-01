@@ -11,9 +11,6 @@ stash.showPatch
 stash.showStat
 pager.<cmd>
 pretty.<name>
-push.default
-push.followTags
-push.gpgSign
 man.viewer
 merge.conflictStyle
 merge.renormalize
