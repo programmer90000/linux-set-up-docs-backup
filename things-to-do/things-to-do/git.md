@@ -160,6 +160,8 @@ Keys to set:
 
 `stash.showStat`: Set it to `true`
 
+`core.pager`: Set it to `less`
+
 ```
 [branch]
 	sort = refname
