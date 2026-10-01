@@ -24,6 +24,35 @@ showBranch.default
 stash.showIncludeUntracked
 stash.showPatch
 stash.showStat
+pager.<cmd>
+pretty.<name>
+pull.ff
+pull.rebase
+push.default
+push.followTags
+push.gpgSign
+man.viewer
+merge.conflictStyle
+merge.renormalize
+merge.defaultToUpstream
+merge.ff
+merge.autoStash
+merge.verifySignatures
+merge.log
+merge.branchdesc
+merge.suppressDest
+merge.renames
+merge.renameLimit
+merge.directoryRenames
+merge.stat
+merge.verbosity
+merge.tool
+mergetool.<vimdiff variant>.layout
+mergetool.keepBackup
+mergetool.keepTemporaries
+mergetool.writeToTemp
+mergetool.hideResolved
+mergetool.prompt
 ```
 
 Keys to set:
