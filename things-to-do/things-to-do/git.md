@@ -151,6 +151,12 @@ Keys to set:
 
 `pull.rebase`: Set it to `interactive`
 
+`push.default`: Set it to `​simple`
+
+`push.followTags`: Set it to `​true`
+
+`push.gpgSign`: Set it to `false`
+
 ```
 [branch]
 	sort = refname
