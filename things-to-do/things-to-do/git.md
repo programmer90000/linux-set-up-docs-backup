@@ -75,8 +75,6 @@ grep.fallbackToNoIndex
 help.format
 log.graphColors
 core.pager
-blame.blankBoundary
-blame.date
 color.advice.hint
 color.blame.highlightRecent
 color.blame.repeatedLines
@@ -146,6 +144,10 @@ Keys to set:
 `sequence.editor`: Set it to `nvim`
 
 `blame.showEmail`: Set it to true
+
+`blame.blankBoundary`: Set it to false
+
+`blame.date`: Set it to `default`
 
 ```
 [branch]
