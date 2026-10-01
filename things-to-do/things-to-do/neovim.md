@@ -17,6 +17,8 @@ Give it the following structure:
         └── plugin3 dir/
 ```
 
+Look at using this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
+
 | Feature | Supported |
 |---------|-----------|
 | Debugger | ❌ |
