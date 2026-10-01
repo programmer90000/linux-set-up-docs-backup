@@ -1,5 +1,6 @@
 Keys to look at:
 ```
+credential.helper
 diff.tool
 merge.tool
 column.ui
