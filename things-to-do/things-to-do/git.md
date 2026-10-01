@@ -11,7 +11,6 @@ stash.showPatch
 stash.showStat
 pager.<cmd>
 pretty.<name>
-pull.rebase
 push.default
 push.followTags
 push.gpgSign
@@ -149,6 +148,8 @@ Keys to set:
 `tag.sort`: Set it to `version:refname`
 
 `​pull.ff`: Set it to `only`
+
+`pull.rebase`: Set it to `interactive`
 
 ```
 [branch]
