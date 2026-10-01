@@ -16,7 +16,7 @@ column.ui
 color.ui
 log.date
 ```
-
+```
 `user.useConfigOnly`: Set it to true
 `status.relativePaths`: Set it to false
 `status.short`: Set it to false
@@ -24,3 +24,4 @@ log.date
 `status.displayCommentPrefix`: Set it to false
 `status.showStash`: Set it to true
 `status.showUntrackedFiles`: Set it to normal
+```
