@@ -57,7 +57,6 @@ grep.threads
 grep.fullName
 grep.fallbackToNoIndex
 log.graphColors
-core.pager
 color.advice.hint
 color.blame.highlightRecent
 color.blame.repeatedLines
