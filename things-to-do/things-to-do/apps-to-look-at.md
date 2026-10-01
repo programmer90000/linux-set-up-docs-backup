@@ -1,5 +1,6 @@
 | Feature | Supported |
 |---------|-----------|
+| Look at uget download manager |
 | Look at Open PDF Studio | ❌ |
 | Look at qalculate-gtk | ❌ |
 | Look at font-manager (sudo apt install font-manager) | ❌ |
