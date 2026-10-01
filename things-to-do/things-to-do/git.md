@@ -4,8 +4,6 @@ credential.helper
 diff.tool
 merge.tool
 column.ui
-enames
-enameLimit
 status.branch
 showBranch.default
 stash.showIncludeUntracked
