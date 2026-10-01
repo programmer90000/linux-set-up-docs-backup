@@ -3,7 +3,6 @@ Keys to look at:
 credential.helper
 diff.tool
 merge.tool
-column.ui
 showBranch.default
 stash.showIncludeUntracked
 stash.showPatch
@@ -154,6 +153,8 @@ Keys to set:
 `push.gpgSign`: Set it to `false`
 
 `status.branch`: Set it to `true`
+
+`column.ui`: Set it to `auto dense`
 
 ```
 [branch]
