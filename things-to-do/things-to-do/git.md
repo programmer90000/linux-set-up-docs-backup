@@ -166,3 +166,95 @@ Keys to set:
 	sort = version:refname
 	sort = -committerdate
 ```
+
+.config/git/config:
+NOTE: I MIGHT STILL NEED TO ADD THE CURRENT VALUES IN THE FILE TO THIS FILE
+```
+[core]
+    pager = delta
+    editor = nvim
+    autocrlf = input
+    eol = lf
+    safecrlf = warn
+    quotePath = false
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab,tab-in-indent,cr-at-eol
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+
+[merge]
+    conflictStyle = zdiff3
+
+[rerere]
+    enabled = true
+
+[help]
+    autoCorrect = 0
+    format = man
+
+[user]
+    useConfigOnly = true
+
+[status]
+    relativePaths = false
+    short = false
+    aheadBehind = true
+    displayCommentPrefix = false
+    showStash = true
+    showUntrackedFiles = normal
+    branch = true
+
+[i18n]
+    commitEncoding = UTF-8
+    logOutputEncoding = UTF-8
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+    advice = always
+
+[column]
+    ui = auto dense
+
+[sequence]
+    editor = nvim
+
+[blame]
+    showEmail = true
+    blankBoundary = false
+    date = default
+
+[log]
+    date = default
+
+[tag]
+    sort = version:refname
+
+[branch]
+    sort = refname
+    sort = version:refname
+    sort = -committerdate
+
+[pull]
+    ff = only
+    rebase = interactive
+
+[push]
+    default = simple
+    followTags = true
+    gpgSign = false
+
+[commit]
+    status = true
+
+[stash]
+    showIncludeUntracked = true
+    showPatch = false
+    showStat = true
+```
