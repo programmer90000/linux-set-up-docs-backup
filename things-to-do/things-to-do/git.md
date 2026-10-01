@@ -106,23 +106,43 @@ commit.status
 
 Keys to set:
 `core.editor`: Set it to nvim
+
 `core.autocrlf`: Set it to `input`
+
 `core.eol`: Set it to `lf`
+
 `core.safecrlf`: Set it to `warn`
+
 `core.quotePath`: Set it to `false`
+
 `core.whitespace`: Set it to `trailing-space, space-before-tab, indent-with-non-tab, tab-in-indent, cr-at-eol`
+
 `help.autoCorrect`: Set it to `0`
+
 `user.useConfigOnly`: Set it to true
+
 `elativePaths`: Set it to false
+
 `status.short`: Set it to false
+
 `status.aheadBehind`: Set it to true
+
 `status.displayCommentPrefix`: Set it to false
+
 `status.showStash`: Set it to true
+
 `status.showUntrackedFiles`: Set it to normal
+
 `i18n.commitEncoding`: Set it to `UTF-8`
+
 `i18n.logOutputEncoding`: Set it to `UTF-8`
+
 `init.defaultBranch`: Set it to `main`
+
 `color.ui`: Set it to `auto`
+
 `column.ui`: Set it to `auto column dense`
+
 `color.advice`: Set it to `always`
+
 `sequence.editor`: Set it to `nvim`
