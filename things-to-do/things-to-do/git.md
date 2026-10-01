@@ -61,7 +61,6 @@ grep.extendedRegexp
 grep.threads
 grep.fullName
 grep.fallbackToNoIndex
-help.format
 log.graphColors
 core.pager
 color.advice.hint
@@ -156,6 +155,8 @@ Keys to set:
 `column.ui`: Set it to `auto dense`
 
 `commit.status`: Set it to `true`
+
+`help.format`: Set it to `man`
 
 ```
 [branch]
