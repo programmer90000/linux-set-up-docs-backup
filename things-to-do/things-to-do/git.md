@@ -77,7 +77,6 @@ log.graphColors
 core.pager
 blame.blankBoundary
 blame.date
-blame.showEmail
 color.advice.hint
 color.blame.highlightRecent
 color.blame.repeatedLines
@@ -145,6 +144,8 @@ Keys to set:
 `color.advice`: Set it to `always`
 
 `sequence.editor`: Set it to `nvim`
+
+`blame.showEmail`: Set it to true
 
 ```
 [branch]
