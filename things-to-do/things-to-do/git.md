@@ -3,9 +3,6 @@ Keys to look at:
 credential.helper
 diff.tool
 merge.tool
-stash.showIncludeUntracked
-stash.showPatch
-stash.showStat
 pager.<cmd>
 pretty.<name>
 man.viewer
