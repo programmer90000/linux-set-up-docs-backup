@@ -1,11 +1,3 @@
-To see every variable Git can possibly accept, run this in your terminal:
-
-```bash
-git help --config
-```
-
-This outputs the full, canonical list of all configuration keys .
-
 Keys to look at:
 ```
 core.editor
