@@ -149,6 +149,8 @@ Keys to set:
 
 `blame.date`: Set it to `default`
 
+`log.date`: Set it to `default`
+
 ```
 [branch]
 	sort = refname
