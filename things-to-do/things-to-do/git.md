@@ -4,7 +4,6 @@ credential.helper
 diff.tool
 merge.tool
 column.ui
-status.branch
 showBranch.default
 stash.showIncludeUntracked
 stash.showPatch
