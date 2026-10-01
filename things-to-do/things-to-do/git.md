@@ -19,6 +19,11 @@ tag.sort
 status.renames
 status.renameLimit
 status.branch
+sequence.editor
+showBranch.default
+stash.showIncludeUntracked
+stash.showPatch
+stash.showStat
 ```
 
 Keys to set:
