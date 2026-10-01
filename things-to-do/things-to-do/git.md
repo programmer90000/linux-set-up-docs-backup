@@ -3,7 +3,6 @@ Keys to look at:
 credential.helper
 diff.tool
 merge.tool
-showBranch.default
 stash.showIncludeUntracked
 stash.showPatch
 stash.showStat
