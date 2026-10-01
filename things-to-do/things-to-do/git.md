@@ -78,7 +78,6 @@ core.pager
 blame.blankBoundary
 blame.date
 blame.showEmail
-branch.sort
 color.advice.hint
 color.blame.highlightRecent
 color.blame.repeatedLines
