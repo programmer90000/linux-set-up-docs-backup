@@ -1,6 +1,5 @@
 Keys to look at:
 ```
-credential.helper
 diff.tool
 merge.tool
 column.ui
@@ -146,3 +145,10 @@ Keys to set:
 `color.advice`: Set it to `always`
 
 `sequence.editor`: Set it to `nvim`
+
+```
+[branch]
+	sort = refname
+	sort = version:refname
+	sort = -committerdate
+```
