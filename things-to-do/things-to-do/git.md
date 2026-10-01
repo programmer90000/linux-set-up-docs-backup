@@ -86,7 +86,6 @@ color.status
 color.status.<slot>
 color.transport
 color.transport.rejected
-commit.status
 ```
 
 Keys to set:
@@ -155,6 +154,8 @@ Keys to set:
 `status.branch`: Set it to `true`
 
 `column.ui`: Set it to `auto dense`
+
+`commit.status`: Set it to `true`
 
 ```
 [branch]
