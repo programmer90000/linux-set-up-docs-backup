@@ -6,7 +6,7 @@ git help --config
 
 This outputs the full, canonical list of all configuration keys .
 
-Some of the keys to look at:
+Keys to look at:
 ```
 core.editor
 credential.helper
@@ -15,7 +15,13 @@ merge.tool
 column.ui
 color.ui
 log.date
+tag.sort
+status.renames
+status.renameLimit
+status.branch
 ```
+
+Keys to set:
 ```
 `user.useConfigOnly`: Set it to true
 `status.relativePaths`: Set it to false
