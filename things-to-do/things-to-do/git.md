@@ -89,6 +89,42 @@ i18n.commitEncoding
 i18n.logOutputEncoding
 init.defaultBranch
 log.graphColors
+core.whitespace
+core.pager
+core.editor
+core.autocrlf
+blame.blankBoundary
+blame.date
+blame.showEmail
+   branch.sort
+       color.advice
+       color.advice.hint
+       color.blame.highlightRecent
+       color.blame.repeatedLines
+       color.branch
+       color.branch.<slot>
+       color.diff
+       color.diff.<slot>
+       color.decorate.<slot>
+       color.grep
+       color.grep.<slot>
+       color.interactive
+       color.interactive.<slot>
+       color.pager
+       color.push
+       color.push.error
+       color.remote
+       color.remote.<slot>
+       color.showBranch
+       color.status
+       color.status.<slot>
+       color.transport
+       color.transport.rejected
+       color.ui
+       commit.status
+       core.quotePath
+       core.eol
+       core.safecrlf
 ```
 
 Keys to set:
