@@ -27,7 +27,6 @@ Look at using this plugin to view MD files in Neovim: [https://github.com/Meande
 | Colour Scheme for everything | ✅ |
 | Menu Bar | ✅ |
 | Status Bar (At bottom of screen) | ✅ |
-| Neovim package manager | ❌ |
 | Tree file manager | ✅ |
 | Display file icons in file manager | ✅ |
 | Update a bracket/symbol and its corresponding bracket/symbol automatically | ✅ |
