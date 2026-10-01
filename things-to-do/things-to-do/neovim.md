@@ -19,6 +19,8 @@ Give it the following structure:
 
 Look at using this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
 
+Look at using this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
 | Feature | Supported |
 |---------|-----------|
 | Debugger | ❌ |
