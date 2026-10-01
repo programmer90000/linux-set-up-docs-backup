@@ -7,8 +7,8 @@ column.ui
 color.ui
 log.date
 tag.sort
-status.renames
-status.renameLimit
+enames
+enameLimit
 status.branch
 sequence.editor
 showBranch.default
@@ -111,9 +111,6 @@ color.transport
 color.transport.rejected
 color.ui
 commit.status
-core.quotePath
-core.eol
-core.safecrlf
 ```
 
 Keys to set:
@@ -124,7 +121,7 @@ Keys to set:
 `core.safecrlf`: Set it to `warn`
 `core.quotePath`: Set it to `false`
 `user.useConfigOnly`: Set it to true
-`status.relativePaths`: Set it to false
+`elativePaths`: Set it to false
 `status.short`: Set it to false
 `status.aheadBehind`: Set it to true
 `status.displayCommentPrefix`: Set it to false
