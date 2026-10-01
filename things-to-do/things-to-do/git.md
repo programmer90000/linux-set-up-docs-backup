@@ -4,13 +4,11 @@ credential.helper
 diff.tool
 merge.tool
 column.ui
-color.ui
 log.date
 tag.sort
 enames
 enameLimit
 status.branch
-sequence.editor
 showBranch.default
 stash.showIncludeUntracked
 stash.showPatch
@@ -75,18 +73,12 @@ grep.threads
 grep.fullName
 grep.fallbackToNoIndex
 help.format
-help.autoCorrect
-i18n.commitEncoding
-i18n.logOutputEncoding
-init.defaultBranch
 log.graphColors
-core.whitespace
 core.pager
 blame.blankBoundary
 blame.date
 blame.showEmail
 branch.sort
-color.advice
 color.advice.hint
 color.blame.highlightRecent
 color.blame.repeatedLines
@@ -109,7 +101,6 @@ color.status
 color.status.<slot>
 color.transport
 color.transport.rejected
-color.ui
 commit.status
 ```
 
