@@ -1,7 +1,5 @@
 | Feature | Supported |
 |---------|-----------|
-| Look at LocalSend | ❌ |
-| Look at SyncThing | ❌ |
 | Look at Open PDF Studio | ❌ |
 | Look at qalculate-gtk | ❌ |
 | Look at font-manager (sudo apt install font-manager) | ❌ |
@@ -10,18 +8,12 @@
 | Look at evsieve | ❌ |
 | Look at jdupes | ❌ |
 | Look at ufw | ❌ |
-| Look at VeraCrypt | ❌ |
-| Look at Posting | ❌ |
 | Look at fwupd | ❌ |
 | Look at CUPS | ❌ |
 | Look at aria2 | ❌ |
 | Look at bubblewrap and bubblejail | ❌ |
-| Look at Draw.io | ❌ |
 | Look at ExifTool | ❌ |
-| Look at GPick | ❌ |
 | Look at rmlint | ❌ |
-| Look at using grim and slurp to take screenshots | ❌ |
 | Look at isd [https://github.com/kainctl/isd](https://github.com/kainctl/isd) | ❌ |
-| Look at revdiff [https://github.com/umputun/revdiff](https://github.com/umputun/revdiff) | ❌ |
 | Look at shload [https://github.com/kndndrj/shload](https://github.com/kndndrj/shload) | ❌ |
 | Look at rucat [https://github.com/brianredbeard/rucat](https://github.com/brianredbeard/rucat) | ❌ |
