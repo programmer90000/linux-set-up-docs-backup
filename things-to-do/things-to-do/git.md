@@ -120,6 +120,7 @@ Keys to set:
 `core.eol`: Set it to `lf`
 `core.safecrlf`: Set it to `warn`
 `core.quotePath`: Set it to `false`
+`core.whitespace`: Set it to `trailing-space, space-before-tab, indent-with-non-tab, tab-in-indent, cr-at-eol`
 `user.useConfigOnly`: Set it to true
 `elativePaths`: Set it to false
 `status.short`: Set it to false
