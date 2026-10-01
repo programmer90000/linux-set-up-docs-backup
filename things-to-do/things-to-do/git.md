@@ -16,3 +16,5 @@ column.ui
 color.ui
 log.date
 ```
+
+`user.useConfigOnly`: Set it to true
