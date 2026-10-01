@@ -157,6 +157,12 @@ Keys to set:
 
 `help.format`: Set it to `man`
 
+`stash.showIncludeUntracked`: Set it to `true`
+
+`stash.showPatch`: Set it to `false`
+
+`stash.showStat`: Set it to `true`
+
 ```
 [branch]
 	sort = refname
