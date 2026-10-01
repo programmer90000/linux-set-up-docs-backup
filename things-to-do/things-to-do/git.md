@@ -154,6 +154,8 @@ Keys to set:
 
 `push.gpgSign`: Set it to `false`
 
+`status.branch`: Set it to `true`
+
 ```
 [branch]
 	sort = refname
