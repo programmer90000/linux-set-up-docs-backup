@@ -44,7 +44,6 @@ Look at using this plugin to view MD files in Neovim: [https://github.com/Meande
 | Show trailing whitespace and whitespace more than 1 character | ❌ |
 | Highlight corresponding bracket | ✅ |
 | Ensure I can copy paste text in Neovim when using it from within Tmux | ❌ |
-| I may want to add a startup screen | ❌ |
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
 | Look at Neovim ALE | ❌ |
