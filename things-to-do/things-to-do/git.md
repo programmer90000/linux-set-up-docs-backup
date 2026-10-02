@@ -177,7 +177,7 @@ NOTE: I MIGHT STILL NEED TO ADD THE CURRENT VALUES IN THE FILE TO THIS FILE
     eol = lf
     safecrlf = warn
     quotePath = false
-    whitespace = trailing-space,space-before-tab,indent-with-non-tab,tab-in-indent,cr-at-eol
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
 
 [interactive]
     diffFilter = delta --color-only
