@@ -1,5 +1,7 @@
 ~/.config/nvim/
 ├── init.lua
+├── colors/
+│   └── colour-scheme.lua
 └── config/
     ├── autopairs.lua
     ├── comment.lua
