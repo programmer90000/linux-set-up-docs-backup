@@ -48,7 +48,6 @@ Look at using this plugin to view MD files in Neovim: [https://github.com/Meande
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
 | Look at Neovim ALE | ❌ |
-| Look at codediff.nvim | ❌ |
 
 Once I can view git output in Neovim, remove the unset PAGER line from the installing apps file. Set the pager to Neovim on my actual computer
 
