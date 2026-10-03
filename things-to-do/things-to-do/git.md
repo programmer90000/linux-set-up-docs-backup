@@ -3,8 +3,6 @@ Keys to look at:
 credential.helper
 diff.tool
 merge.tool
-pager.<cmd>
-pretty.<name>
 merge.conflictStyle
 merge.renormalize
 merge.defaultToUpstream
