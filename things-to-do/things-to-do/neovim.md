@@ -31,6 +31,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
 ```
 
+Install Atone.nvim for the undo/ redo tree:
+https://github.com/XXiaoA/atone.nvim
+
 | Feature | Supported |
 |---------|-----------|
 | Debugger | ❌ |
