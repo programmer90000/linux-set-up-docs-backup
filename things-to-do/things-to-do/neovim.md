@@ -6,6 +6,31 @@ Look at using this plugin to view output of commands in Neovim: [https://github.
 
 3. Look for a way to copy the terminal output displayed in Neovim to the terminal
 
+Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua:
+```
+-- 1. Enable list mode and show trailing spaces as dots (or red highlights)
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '» ',
+  trail = '•',      -- Character to display for trailing whitespace
+  nbsp = '␣',
+}
+
+-- 2. Highlight consecutive spaces (2 or more spaces in a row) and trailing whitespace
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = "*",
+  callback = function()
+    -- Highlight 2 or more spaces in a row
+    vim.fn.matchadd("ExtraWhitespace", " \\{2,}")
+    -- Highlight trailing whitespace
+    vim.fn.matchadd("ExtraWhitespace", "\\s\\+$")
+  end,
+})
+
+-- 3. Define a distinct background/foreground color for the highlight
+vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
+```
+
 | Feature | Supported |
 |---------|-----------|
 | Debugger | ❌ |
