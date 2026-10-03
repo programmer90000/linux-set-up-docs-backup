@@ -1,25 +1,10 @@
-Before adding anything else, seperate the init.lua into seperate files
-
-Give it the following structure:
-```
-~/.config/nvim/
-├── init.lua
-├── settings.lua - All of the settings native to Neovim, without plugins
-└── plugins/
-    ├── plugin1/
-    │   ├── plugin1.lua
-    │   └── plugin1 dir/
-    ├── plugin2/
-    │   ├── plugin2.lua
-    │   └── plugin2 dir/
-    └── plugin3/
-        ├── plugin3.lua
-        └── plugin3 dir/
-```
-
 Look at using this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
 
-Look at using this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+1. Install this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
+2. Look for a plugin to view terminal output in Neovim
+
+3. Look for a way to copy the terminal output displayed in Neovim to the terminal
 
 | Feature | Supported |
 |---------|-----------|
