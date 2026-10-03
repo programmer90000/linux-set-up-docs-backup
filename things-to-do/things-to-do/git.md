@@ -1,3 +1,8 @@
+Install LazyGit:
+sudo apt install lazygit
+
+I can use LazyGit for things like merge conflicts, the same as VSCode
+
 Keys to look at:
 ```
 credential.helper
@@ -77,10 +82,4 @@ color.status
 color.status.<slot>
 color.transport
 color.transport.rejected
-```
-
-Keys to set:
-.config/git/config:
-```
-
 ```
