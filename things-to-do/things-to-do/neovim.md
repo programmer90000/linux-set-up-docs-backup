@@ -31,7 +31,7 @@ vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
 4. WORKING: Install Atone.nvim for the undo/ redo tree:
 https://github.com/XXiaoA/atone.nvim
 
-5. Enable Collapse/Expand snippets of code inside the Treesitter plugin. Add this to init.lua:
+5. WORKING: Enable Collapse/Expand snippets of code inside the Treesitter plugin. Add this to init.lua:
 ```
 -- Set default fold behavior
 vim.opt.foldlevel = 99
