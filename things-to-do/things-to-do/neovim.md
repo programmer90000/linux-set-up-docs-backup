@@ -78,6 +78,7 @@ Press `zc` to collapse a snippet and `zo` to open it
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
 | Look at Neovim ALE | ❌ |
+| Look for a difftool for Neovim | ❌ |
 
 Once I can view git output in Neovim, remove the unset PAGER line from the installing apps file. Set the pager to Neovim on my actual computer
 
