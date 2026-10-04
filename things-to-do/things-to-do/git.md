@@ -5,7 +5,5 @@ I can use LazyGit for things like merge conflicts, the same as VSCode
 
 Keys to look at:
 ```
-credential.helper
-diff.dirstat
 log.graphColors
 ```
