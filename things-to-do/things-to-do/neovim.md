@@ -1,12 +1,9 @@
-Look at using this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
+1. Install this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
 
 1. Install this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
-2. Look for a plugin to view terminal output in Neovim
 
-3. Look for a way to copy the terminal output displayed in Neovim to the terminal
-
-Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua:
+Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua. Note that before adding this, I need to ensure it doesn't highlight space before a line (indentation):
 ```
 -- 1. Enable list mode and show trailing spaces as dots (or red highlights)
 vim.opt.list = true
