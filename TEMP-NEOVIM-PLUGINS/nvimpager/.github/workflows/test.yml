@@ -1,0 +1,125 @@
+name: Run tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 1 * *" # every month
+
+jobs:
+  ubuntu-ppa:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ppa:
+          - false
+          - true
+    steps:
+      - uses: actions/checkout@v6
+      - name: activate the PPA for latest neovim
+        run: sudo add-apt-repository -y ppa:neovim-ppa/unstable
+        if: matrix.ppa
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yqq --no-install-recommends neovim scdoc lua-busted
+      - name: Run the test suite
+        run: make test BUSTED='busted --exclude-tags=ppa,v10'
+        env:
+          TERM: dumb
+
+  appimage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        x:
+          - version: v0.9.0
+            file: nvim
+            hash: 0e1e6d53c6c8055de23bdb33f60bb64af0baf11390669c1b40ecbbf2c7a34547
+            tags: [appimage]
+          - version: v0.10.0
+            file: nvim
+            hash: 6a021e9465fe3d3375e28c3e94c1c2c4f7d1a5a67e4a78cf52d18d77b1471390
+            tags: [appimage, v10]
+          - version: v0.11.0
+            file: nvim-linux-x86_64
+            hash: ca44cd43fe8d55418414496e8ec7bac83f611705ece167f4ccb93cbf46fec6c0
+            tags: [appimage, v10]
+          - version: v0.12.0
+            file: nvim-linux-x86_64
+            hash: 7876b67462af08abdc884818b398b3e82907d6a4c89edfe7c6b1ff168eb7c4d6
+            tags: [appimage, v10]
+          - version: nightly
+            file: nvim-linux-x86_64
+            tags: [appimage, v10]
+    steps:
+      - uses: actions/checkout@v6
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yqq --no-install-recommends scdoc lua-busted
+      - name: Download official neovim appimage
+        run: |
+          wget --no-verbose https://github.com/neovim/neovim/releases/download/${{ matrix.x.version }}/${{ matrix.x.file }}.appimage
+          if [ -n '${{ matrix.x.hash }}' ]; then
+            echo ${{ matrix.x.hash }} ${{ matrix.x.file }}.appimage | sha256sum -c -
+          fi
+          chmod +x ${{ matrix.x.file }}.appimage
+          ./${{ matrix.x.file }}.appimage --appimage-extract
+      - name: Run the test suite
+        run: make test "BUSTED=busted --exclude-tags=${{ join(matrix.x.tags, ',') }}"
+        env:
+          TERM: dumb
+          NVIMPAGER_NVIM: squashfs-root/usr/bin/nvim
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: install dependencies
+        run: |
+          brew update
+          brew install neovim scdoc luarocks
+          luarocks --local install busted
+      - name: Run the test suite
+        run: make test BUSTED="$HOME/.luarocks/bin/busted --exclude-tags=mac,v10"
+        env:
+          TERM: dumb
+
+  macos-nix:
+    runs-on: macos-latest
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - uses: cachix/cachix-action@v17
+        with:
+          name: nix-community
+      - uses: actions/checkout@v6
+      - name: Run the test suite via nix
+        run: nix build --print-build-logs
+
+  nix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - default
+          - nightly
+        update:
+          - false
+          - true
+        exclude:
+          - package: nightly
+            update: false
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - uses: cachix/cachix-action@v17
+        with:
+          name: nix-community
+      - uses: actions/checkout@v6
+      - name: Update the fake inputs
+        run: nix flake update
+        if: matrix.update
+      - name: Run the test suite with ${{ matrix.package }} neovim
+        run: nix build --print-build-logs '.#${{ matrix.package }}'
