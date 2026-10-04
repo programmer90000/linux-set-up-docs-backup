@@ -32,7 +32,7 @@ vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
 4. Install Atone.nvim for the undo/ redo tree:
 https://github.com/XXiaoA/atone.nvim
 
-Enable Collapse/Expand snippets of code inside the Treesitter plugin
+5. Enable Collapse/Expand snippets of code inside the Treesitter plugin
 
 | Feature | Supported |
 |---------|-----------|
