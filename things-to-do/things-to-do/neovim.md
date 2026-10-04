@@ -1,9 +1,7 @@
 1. Install this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
 
-1. Install this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
-
-
-Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua. Note that before adding this, I need to ensure it doesn't highlight space before a line (indentation):
+2. Install this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+3. Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua. Note that before adding this, I need to ensure it doesn't highlight space before a line (indentation):
 ```
 -- 1. Enable list mode and show trailing spaces as dots (or red highlights)
 vim.opt.list = true
@@ -27,8 +25,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 -- 3. Define a distinct background/foreground color for the highlight
 vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
 ```
-
-Install Atone.nvim for the undo/ redo tree:
+4. Install Atone.nvim for the undo/ redo tree:
 https://github.com/XXiaoA/atone.nvim
 
 Enable Collapse/Expand snippets of code inside the Treesitter plugin
