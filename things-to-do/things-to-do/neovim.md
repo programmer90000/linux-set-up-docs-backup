@@ -11,14 +11,18 @@ vim.opt.listchars = {
   nbsp = '␣',
 }
 
--- 2. Highlight consecutive spaces (2 or more spaces in a row) and trailing whitespace
+-- 2. Highlight consecutive spaces (2 or more inside code) and trailing whitespace
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   pattern = "*",
   callback = function()
-    -- Highlight 2 or more spaces in a row
-    vim.fn.matchadd("ExtraWhitespace", " \\{2,}")
-    -- Highlight trailing whitespace
-    vim.fn.matchadd("ExtraWhitespace", "\\s\\+$")
+    -- Clear previous matches in the current window to prevent duplicates
+    vim.fn.clearmatches()
+
+    -- Highlight 2 or more consecutive spaces ONLY after non-whitespace text
+    vim.fn.matchadd("ExtraWhitespace", "\\S\\zs \\{2,}")
+
+    -- Highlight trailing whitespace ONLY on lines that contain actual text
+    vim.fn.matchadd("ExtraWhitespace", "\\S.*\\s\\+$")
   end,
 })
 
