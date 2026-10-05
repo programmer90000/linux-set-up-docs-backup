@@ -26,6 +26,4 @@
 | Look at Neovim ALE | ❌ |
 | Look for a difftool for Neovim | ❌ |
 
-Once I can view git output in Neovim, remove the unset PAGER line from the installing apps file. Set the pager to Neovim on my actual computer
-
 Update the Nvim-Treesitter plugin. Add syntax highlighting for Dart and JavaScript and C (I have already added it to the main repo. I still need to test it and configure it)
