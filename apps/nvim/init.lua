@@ -1,35 +1,9 @@
-vim.autoindent = true
-vim.autoread = true
-vim.autowrite = false
-vim.autowriteall = false
-vim.backspace = "indent,eol,start"
-vim.backup = false
-vim.breakindent = true
-vim.o.confirm = true
-vim.o.copyindent = true
-vim.o.equalalways = false
-vim.o.errorbells = true
-vim.opt.expandtab = true
-vim.o.fileignorecase = true
-vim.o.hlsearch = true
-vim.o.infercase = false
-vim.o.laststatus = 2
-vim.o.mouse = "a"
-vim.o.mousefocus = false
-vim.o.mousehide = true
-vim.o.mousemodel = "popup_setpos"
-vim.opt.number = true
-vim.o.preserveindent = true
-vim.opt.relativenumber = false
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-vim.opt.tabstop = 4
-vim.cmd('colorscheme colour-scheme')
-vim.cmd('luafile ~/.config/nvim/menu/menu.lua')
-vim.opt.runtimepath:append("~/.config/nvim/mason")
-require("mason").setup()
-require("lualine").setup()
-require("mason").setup()
+
+
+
+
+
+
 require('nvim-treesitter.config').setup({
   ensure_installed = { "lua", "python", "c" },
   highlight = { enable = true },
