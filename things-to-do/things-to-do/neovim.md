@@ -1,57 +1,3 @@
-1. WORKING: Install this plugin to view output of commands in Neovim: [https://github.com/lucc/nvimpager](https://github.com/lucc/nvimpager)
-2. WORKING: Install this plugin to view MD files in Neovim: [https://github.com/MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
-3. WORKING: Display trailing whitespace and whitespace larger than 1 character. To do this, Add this to init.lua.
-```
--- 1. Enable list mode and show trailing spaces as dots (or red highlights)
-vim.opt.list = true
-vim.opt.listchars = {
-  tab = '» ',
-  trail = '•',      -- Character to display for trailing whitespace
-  nbsp = '␣',
-}
-
--- 2. Highlight consecutive spaces (2 or more inside code) and trailing whitespace
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
-  pattern = "*",
-  callback = function()
-    -- Clear previous matches in the current window to prevent duplicates
-    vim.fn.clearmatches()
-
-    -- Highlight 2 or more consecutive spaces ONLY after non-whitespace text
-    vim.fn.matchadd("ExtraWhitespace", "\\S\\zs \\{2,}")
-
-    -- Highlight trailing whitespace ONLY on lines that contain actual text
-    vim.fn.matchadd("ExtraWhitespace", "\\S.*\\s\\+$")
-  end,
-})
-
--- 3. Define a distinct background/foreground color for the highlight
-vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#e06c75", fg = "#ffffff" })
-```
-4. WORKING: Install Atone.nvim for the undo/ redo tree:
-https://github.com/XXiaoA/atone.nvim
-
-5. WORKING: Enable Collapse/Expand snippets of code inside the Treesitter plugin. Add this to init.lua:
-```
--- Set default fold behavior
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldenable = true
-vim.opt.foldminlines = 0
-
--- Automatically start Treesitter and set fold expression per buffer
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-  group = vim.api.nvim_create_augroup("TreesitterFolding", { clear = true }),
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-    vim.wo.foldmethod = "expr"
-    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-  end,
-})
-```
-
-Press `zc` to collapse a snippet and `zo` to open it
-
 | Feature | Supported |
 |---------|-----------|
 | Debugger | ❌ |
@@ -64,15 +10,15 @@ Press `zc` to collapse a snippet and `zo` to open it
 | Syntax Highlighting | ✅ |
 | Format code on save | ❌ |
 | Linting | ❌ |
-| Collapse/Expand snippets of code | ❌ |
+| Collapse/Expand snippets of code | ✅ |
 | Go to line | ✅ |
-| Undo/Redo tree | ❌ |
+| Undo/Redo tree | ✅ |
 | Vertical lines to show indent levels | ✅ |
 | Minimap | ✅ |
-| Markdown preview | ❌ |
+| Markdown preview | ✅ |
 | Automated indentation | ✅ |
 | Comment toggler | ✅ |
-| Show trailing whitespace and whitespace more than 1 character | ❌ |
+| Show trailing whitespace and whitespace more than 1 character | ✅ |
 | Highlight corresponding bracket | ✅ |
 | Ensure I can copy paste text in Neovim when using it from within Tmux | ❌ |
 | No need for search and replace. Use grep and fzf | ❌ |
