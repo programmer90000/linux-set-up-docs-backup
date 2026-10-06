@@ -3,7 +3,6 @@
 This document provides detailed documentation for various Git commands, including their flags and usage examples.
 
 ## Table of Contents
-1. [git commit --amend](#git-commit---amend)
 2. [git merge](#git-merge)
 3. [git diff](#git-diff)
 4. [git log](#git-log)
@@ -18,67 +17,6 @@ This document provides detailed documentation for various Git commands, includin
 13. [git grep](#git-grep)
 14. [git clean](#git-clean)
 15. [git add --patch](#git-add---patch)
-
----
-
-git commit --amend
-
-Modify the most recent commit.
-
-Flags
-
--m, --message
-
-Replace the commit message.
-
-Examples:
-
-```bash
-# Change commit message
-git commit --amend -m "New commit message"
-
-# Add multiple paragraphs
-git commit --amend -m "Title" -m "Description"
-
-# Fix typo in last commit message
-git commit --amend -m "Fix: Correct spelling error"
-```
-
---no-edit
-
-Amend without changing the commit message.
-
-Examples:
-
-```bash
-# Add forgotten file to last commit
-git add forgotten-file.txt
-git commit --amend --no-edit
-
-# Fix whitespace issues
-git add -u
-git commit --amend --no-edit
-
-# Add changes without editing message
-git commit --amend --no-edit
-```
-
---author
-
-Change the author of the commit.
-
-Examples:
-
-```bash
-# Set new author
-git commit --amend --author="John Doe <john@example.com>"
-
-# Reset to current user
-git commit --amend --reset-author
-
-# Change author but keep commit date
-git commit --amend --author="Jane Smith <jane@example.com>" --no-edit
-```
 
 ---
 
