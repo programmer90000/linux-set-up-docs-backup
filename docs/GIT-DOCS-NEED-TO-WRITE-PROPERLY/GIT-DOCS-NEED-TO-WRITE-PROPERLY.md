@@ -4,7 +4,6 @@ This document provides detailed documentation for various Git commands, includin
 
 ## Table of Contents
 6. [git reflog](#git-reflog)
-7. [git pull --rebase](#git-pull---rebase)
 8. [git bisect](#git-bisect)
 10. [git worktree](#git-worktree)
 13. [git grep](#git-grep)
@@ -70,64 +69,6 @@ git reflog --since="1 week"
 
 ---
 
-git pull --rebase
-
-Fetch and rebase instead of merge.
-
-Flags
-
---rebase
-
-Rebase current branch onto upstream.
-
-Examples:
-
-```bash
-# Pull with rebase
-git pull --rebase origin main
-
-# Pull with rebase and autostash
-git pull --rebase --autostash
-
-# Pull with rebase and verify
-git pull --rebase --verify
-```
-
---autostash
-
-Automatically stash before rebasing.
-
-Examples:
-
-```bash
-# Pull with automatic stashing
-git pull --rebase --autostash
-
-# Pull with stash and rebase
-git pull --rebase --autostash origin develop
-
-# Pull with stash, rebase, and pop
-git pull --rebase --autostash origin main
-```
-
---no-rebase
-
-Override configuration to merge instead.
-
-Examples:
-
-```bash
-# Pull with merge despite config
-git pull --no-rebase origin main
-
-# Pull with merge and squash
-git pull --no-rebase --squash
-
-# Pull with merge and commit
-git pull --no-rebase --no-ff
-```
-
----
 
 git bisect
 
