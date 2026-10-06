@@ -1,7 +1,6 @@
 Add the icon for the window switcher
 1. [neovim.md](things-to-do/neovim.md)
 2. [tmux.md](things-to-do/tmux.md)
-3. [zsh.md](things-to-do/zsh.md)
 4. [dash.md](things-to-do/dash.md)
 5. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
 6. [features-to-add.md](things-to-do/features-to-add.md)
