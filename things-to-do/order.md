@@ -1,3 +1,4 @@
+Add the icon for the window switcher
 1. [neovim.md](things-to-do/neovim.md)
 2. [tmux.md](things-to-do/tmux.md)
 3. [zsh.md](things-to-do/zsh.md)
