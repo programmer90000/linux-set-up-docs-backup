@@ -28,6 +28,6 @@
 | Highlight corresponding bracket | ✅ |
 | Ensure I can copy paste text in Neovim when using it from within Tmux | ✅ |
 | Write docs for how to use Neovim | ❌ |
-| Look for a difftool for Neovim | ❌ |
+| Setup the default diffview | ❌ |
 
 Update the Nvim-Treesitter plugin. Add syntax highlighting for Dart and JavaScript and C (I have already added it to the main repo. I still need to test it and configure it)
