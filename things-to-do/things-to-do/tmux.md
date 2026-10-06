@@ -17,7 +17,7 @@
 | Notification when long running command completes | ❌ |
 | A fuzzy finder within Tmux | ✅ |
 | Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ❌ |
-| Show a warning before closing a pane with a running process | ❌ |
+| Show a warning before closing a pane with a running process | ✅ |
 | List all pane processes (what's running inside each pane) (Look at creating a custom FZF app to display all Tmux panes, windows, sessions and all running apps) | ❌ |
 | Write docs for how to use Tmux | ❌ |
 | Look at tmux-logging | ❌ |
