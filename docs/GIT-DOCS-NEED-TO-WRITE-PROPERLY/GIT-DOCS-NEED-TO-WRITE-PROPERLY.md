@@ -7,7 +7,6 @@ This document provides detailed documentation for various Git commands, includin
 6. [git reflog](#git-reflog)
 7. [git pull --rebase](#git-pull---rebase)
 8. [git bisect](#git-bisect)
-9. [git revert](#git-revert)
 10. [git worktree](#git-worktree)
 11. [git rebase](#git-rebase)
 12. [git cherry-pick](#git-cherry-pick)
