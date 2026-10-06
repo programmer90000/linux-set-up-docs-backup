@@ -8,7 +8,6 @@ This document provides detailed documentation for various Git commands, includin
 7. [git pull --rebase](#git-pull---rebase)
 8. [git bisect](#git-bisect)
 10. [git worktree](#git-worktree)
-11. [git rebase](#git-rebase)
 13. [git grep](#git-grep)
 ---
 
