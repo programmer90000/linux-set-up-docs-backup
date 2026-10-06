@@ -1,22 +1,5 @@
 # Install trash-cli
 
-Run:
-```
-sudo apt update
-sudo apt install trash-cli
-```
-
-# Complete Documentation for trash-cli
-
-## Table of Contents
-1. [Introduction](#introduction)
-3. [Understanding the Trash System](#understanding-the-trash-system)
-4. [Command Reference](#command-reference)
-5. [Advanced Usage](#advanced-usage)
-6. [Troubleshooting](#troubleshooting)
-
----
-
 ## Introduction
 
 **trash-cli** is a command-line interface to the FreeDesktop.org Trash specification, providing a safer alternative to the traditional `rm` command. Instead of permanently deleting files immediately, it moves them to a trash directory where they can be recovered if needed.
