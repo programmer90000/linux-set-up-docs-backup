@@ -1,8 +1,8 @@
+1. Setup diffview. Note: Don't install a seperate diffview. Use the default one
 1. Add a treesitter for Rust
 2. Add linting for all languages
 3. Set the code to lint, format and update on save
 4. Setup debuggers for all languages
-5. Setup diffview
 
 | Feature | Supported |
 |---------|-----------|
