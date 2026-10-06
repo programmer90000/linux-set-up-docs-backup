@@ -4,7 +4,6 @@ This document provides detailed documentation for various Git commands, includin
 
 ## Table of Contents
 2. [git merge](#git-merge)
-5. [git reset](#git-reset)
 6. [git reflog](#git-reflog)
 7. [git pull --rebase](#git-pull---rebase)
 8. [git bisect](#git-bisect)
@@ -74,65 +73,6 @@ git merge --abort && git clean -fd
 
 # Abort and reset to specific commit
 git merge --abort && git reset --hard HEAD
-```
-
----
-
-git reset
-
-Reset current HEAD to a specified state.
-
-Flags
-
---soft
-
-Move HEAD but keep changes staged.
-
-Examples:
-
-```bash
-# Undo last commit but keep changes staged
-git reset --soft HEAD~1
-
-# Uncommit multiple commits
-git reset --soft HEAD~3
-
-# Reset to specific commit
-git reset --soft abc123
-```
-
---mixed (default)
-
-Move HEAD and unstaged changes.
-
-Examples:
-
-```bash
-# Unstage all files
-git reset --mixed
-
-# Unstage specific file
-git reset --mixed file.txt
-
-# Reset to previous commit with unstaged changes
-git reset --mixed HEAD~2
-```
-
---hard
-
-Discard all changes and match target commit exactly.
-
-Examples:
-
-```bash
-# Discard all local changes
-git reset --hard HEAD
-
-# Revert to previous commit
-git reset --hard HEAD~1
-
-# Reset to specific commit
-git reset --hard abc123
 ```
 
 ---
