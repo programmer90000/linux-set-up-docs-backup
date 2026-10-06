@@ -4,7 +4,6 @@ This document provides detailed documentation for various Git commands, includin
 
 ## Table of Contents
 2. [git merge](#git-merge)
-4. [git log](#git-log)
 5. [git reset](#git-reset)
 6. [git reflog](#git-reflog)
 7. [git pull --rebase](#git-pull---rebase)
@@ -75,65 +74,6 @@ git merge --abort && git clean -fd
 
 # Abort and reset to specific commit
 git merge --abort && git reset --hard HEAD
-```
-
----
-
-git log
-
-Show commit history.
-
-Flags
-
---oneline
-
-Show each commit on a single line.
-
-Examples:
-
-```bash
-# Simple one-line log
-git log --oneline
-
-# Show last 5 commits in one line
-git log -5 --oneline
-
-# One-line log with graph
-git log --oneline --graph
-```
-
---graph
-
-Show ASCII graph of branch structure.
-
-Examples:
-
-```bash
-# View branch history with graph
-git log --graph
-
-# Detailed graph with dates
-git log --graph --pretty=format:"%h %ar %s"
-
-# Graph with all branches
-git log --graph --all
-```
-
---author
-
-Filter commits by author.
-
-Examples:
-
-```bash
-# Commits by specific author
-git log --author="John"
-
-# Case-insensitive author search
-git log --author="john" -i
-
-# Commits by multiple authors
-git log --author="John\|Jane"
 ```
 
 ---
