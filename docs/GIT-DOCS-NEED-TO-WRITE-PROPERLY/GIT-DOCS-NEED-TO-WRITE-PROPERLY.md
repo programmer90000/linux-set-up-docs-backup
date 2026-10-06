@@ -12,7 +12,6 @@ This document provides detailed documentation for various Git commands, includin
 12. [git cherry-pick](#git-cherry-pick)
 13. [git grep](#git-grep)
 14. [git clean](#git-clean)
-15. [git add --patch](#git-add---patch)
 
 ---
 
@@ -544,68 +543,4 @@ git clean -nd
 
 # Remove directories and files
 git clean -fd -x
-```
-
----
-
-git add --patch
-
-Interactively stage hunks of changes.
-
-Flags
-
--p, --patch
-
-Choose hunks to stage.
-
-Examples:
-
-```bash
-# Interactive staging
-git add -p
-
-# Interactive for specific file
-git add -p src/main.js
-
-# Interactive with diff options
-git add -p --ignore-whitespace
-```
-
-Interactive Commands
-
-While in patch mode:
-
-```bash
-# Stage current hunk
-git add -p
-# Press 'y' when prompted
-
-# Skip current hunk
-git add -p
-# Press 'n' when prompted
-
-# Split hunk into smaller parts
-git add -p
-# Press 's' when prompted
-
-# Edit hunk manually
-git add -p
-# Press 'e' when prompted
-```
-
---ignore-whitespace
-
-Ignore whitespace changes.
-
-Examples:
-
-```bash
-# Stage ignoring whitespace
-git add -p --ignore-whitespace
-
-# Ignore whitespace in specific file
-git add -p src/main.js --ignore-whitespace
-
-# Quiet mode with whitespace ignore
-git add -p -q --ignore-whitespace
 ```
