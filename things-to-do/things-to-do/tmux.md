@@ -15,7 +15,7 @@
 | Use mouse to resize panes | ✅ |
 | Use mouse to scroll through output | ✅ |
 | Notification when long running command completes | ❌ |
-| A fuzzy finder within Tmux | ❌ |
+| A fuzzy finder within Tmux | ✅ |
 | Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ❌ |
 | Recover accidentally closed panes (trash bin for panes/windows) | ❌ |
 | Show a warning before closing a pane with a running process | ❌ |
