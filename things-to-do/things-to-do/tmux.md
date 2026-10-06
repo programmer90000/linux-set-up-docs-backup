@@ -7,7 +7,7 @@
 | Currently active session, windows, pane in status bar | ❌ |
 | Ability to copy and paste text | ✅ |
 | Tree view of all sessions, windows, panes (Look at creating a custom FZF app to display all Tmux panes, windows, sessions and all running apps) | ❌ |
-| Search | ❌ |
+| Search | ✅ |
 | Ability to save output to a file | ❌ |
 | Move panes across windows | ❌ |
 | Pin a pane to keep it visible while moving through windows | ❌ |
