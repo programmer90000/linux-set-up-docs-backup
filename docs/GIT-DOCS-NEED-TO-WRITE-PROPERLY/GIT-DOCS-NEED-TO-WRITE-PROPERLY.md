@@ -4,7 +4,6 @@ This document provides detailed documentation for various Git commands, includin
 
 ## Table of Contents
 2. [git merge](#git-merge)
-3. [git diff](#git-diff)
 4. [git log](#git-log)
 5. [git reset](#git-reset)
 6. [git reflog](#git-reflog)
@@ -76,65 +75,6 @@ git merge --abort && git clean -fd
 
 # Abort and reset to specific commit
 git merge --abort && git reset --hard HEAD
-```
-
----
-
-git diff
-
-Show changes between commits, branches, files, etc.
-
-Flags
-
---staged, --cached
-
-Show changes staged for commit.
-
-Examples:
-
-```bash
-# View staged changes
-git diff --staged
-
-# View staged changes for specific file
-git diff --staged src/main.js
-
-# View staged changes with color
-git diff --staged --color
-```
-
---word-diff
-
-Show word-level changes instead of line-level.
-
-Examples:
-
-```bash
-# View word differences
-git diff --word-diff
-
-# View word differences with color
-git diff --word-diff=color
-
-# View plain word differences
-git diff --word-diff=plain
-```
-
---stat
-
-Show summary of changes with statistics.
-
-Examples:
-
-```bash
-# Show diff statistics
-git diff --stat
-
-# Show statistics for specific branch
-git diff main feature --stat
-
-# Show statistics with patch
-git diff --stat --patch
 ```
 
 ---
