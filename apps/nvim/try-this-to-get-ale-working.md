@@ -3,7 +3,7 @@
 Run:
 ```
 sudo apt update
-sudo apt install nodejs npm eslint prettier
+sudo apt install nodejs npm eslint
 git clone https://github.com/dense-analysis/ale.git ~/.config/nvim/plugins/ale
 ```
 
