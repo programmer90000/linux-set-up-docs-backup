@@ -1,5 +1,5 @@
 PROMPT:
-```
+
 I am using Debian 13 without a DE. I have installed Neovim using ```sudo apt install neovim```. I have made the following config directory:
 ```
 .config/
@@ -136,4 +136,3 @@ console.log(message);
 * Place your cursor on line 2 and press <Leader>b (space + b or your designated leader key) to set a breakpoint.
 * Press <F5> to start debugging. Select Launch Current File (pwa-node).
 * Execution will pause at your breakpoint, allowing you to step through with <F10> / <F11>.
-```
