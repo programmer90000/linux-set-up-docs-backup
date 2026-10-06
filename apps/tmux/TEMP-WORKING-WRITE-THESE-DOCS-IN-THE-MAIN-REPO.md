@@ -1,4 +1,5 @@
 Save tmux pane to a file:
+
 1.Open Command Mode: Press `Ctrl + b`, then type `:` to enter the Tmux command prompt.
 
 Capture entire history (scrollback):
