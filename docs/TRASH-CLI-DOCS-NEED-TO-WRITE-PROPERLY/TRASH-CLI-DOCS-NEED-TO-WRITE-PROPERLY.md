@@ -1,21 +1,5 @@
 # Install trash-cli
 
-## Introduction
-
-**trash-cli** is a command-line interface to the FreeDesktop.org Trash specification, providing a safer alternative to the traditional `rm` command. Instead of permanently deleting files immediately, it moves them to a trash directory where they can be recovered if needed.
-
-### Key Features
-- Cross-desktop environment compatibility
-- Supports multiple trash locations (home directory and mounted volumes)
-- Restore files to their original locations
-- Empty trash with age-based filtering
-- List and selectively delete trashed files
-- Preserves original file paths, permissions, and timestamps
-
----
-
----
-
 ## Understanding the Trash System
 
 ### Trash Locations
