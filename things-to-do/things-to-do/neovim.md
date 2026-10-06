@@ -26,7 +26,7 @@
 | Comment toggler | ✅ |
 | Show trailing whitespace and whitespace more than 1 character | ✅ |
 | Highlight corresponding bracket | ✅ |
-| Ensure I can copy paste text in Neovim when using it from within Tmux | ❌ |
+| Ensure I can copy paste text in Neovim when using it from within Tmux | ✅ |
 | No need for search and replace. Use grep and fzf | ❌ |
 | Write docs for how to use Neovim | ❌ |
 | Look for a difftool for Neovim | ❌ |
