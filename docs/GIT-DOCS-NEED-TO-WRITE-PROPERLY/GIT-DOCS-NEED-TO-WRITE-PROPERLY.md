@@ -3,7 +3,6 @@
 This document provides detailed documentation for various Git commands, including their flags and usage examples.
 
 ## Table of Contents
-2. [git merge](#git-merge)
 6. [git reflog](#git-reflog)
 7. [git pull --rebase](#git-pull---rebase)
 8. [git bisect](#git-bisect)
@@ -11,65 +10,6 @@ This document provides detailed documentation for various Git commands, includin
 13. [git grep](#git-grep)
 ---
 
-git merge
-
-Combine branches together.
-
-Flags
-
---no-ff
-
-Create a merge commit even when fast-forward is possible.
-
-Examples:
-
-```bash
-# Merge feature branch with explicit merge commit
-git merge --no-ff feature-branch
-
-# Merge and customize commit message
-git merge --no-ff -m "Merge feature branch" feature-branch
-
-# Merge and verify with diff
-git merge --no-ff --stat feature-branch
-```
-
---squash
-
-Combine all commits from the merged branch into one.
-
-Examples:
-
-```bash
-# Squash feature branch commits
-git merge --squash feature-branch
-git commit -m "Add new feature"
-
-# Squash without auto-commit
-git merge --squash --no-commit feature-branch
-
-# Squash and stage changes
-git merge --squash -m "Squashed feature" feature-branch
-```
-
---abort
-
-Cancel an ongoing merge.
-
-Examples:
-
-```bash
-# Abort merge with conflicts
-git merge --abort
-
-# Abort and clean up
-git merge --abort && git clean -fd
-
-# Abort and reset to specific commit
-git merge --abort && git reset --hard HEAD
-```
-
----
 
 git reflog
 
