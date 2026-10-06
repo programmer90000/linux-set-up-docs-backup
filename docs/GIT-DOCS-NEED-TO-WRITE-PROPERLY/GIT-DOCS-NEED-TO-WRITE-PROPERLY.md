@@ -11,8 +11,6 @@ This document provides detailed documentation for various Git commands, includin
 11. [git rebase](#git-rebase)
 12. [git cherry-pick](#git-cherry-pick)
 13. [git grep](#git-grep)
-14. [git clean](#git-clean)
-
 ---
 
 git merge
@@ -484,63 +482,4 @@ git grep -c "TODO" v1.0.0
 
 # Count with file patterns
 git grep -c "function" -- '*.js'
-```
-
----
-
-git clean
-
-Remove untracked files.
-
-Flags
-
--n, --dry-run
-
-Show what would be removed.
-
-Examples:
-
-```bash
-# Preview clean operation
-git clean -n
-
-# Preview with directories
-git clean -n -d
-
-# Preview specific files
-git clean -n *.tmp
-```
-
--f, --force
-
-Actually remove files.
-
-Examples:
-
-```bash
-# Force remove untracked files
-git clean -f
-
-# Force remove with directories
-git clean -fd
-
-# Force remove specific patterns
-git clean -f *.log
-```
-
--d
-
-Remove untracked directories.
-
-Examples:
-
-```bash
-# Remove untracked directories
-git clean -fd
-
-# Remove directories dry run
-git clean -nd
-
-# Remove directories and files
-git clean -fd -x
 ```
