@@ -2,7 +2,7 @@
 2. Add linting for all languages
 3. Set the code to lint, format and update on save
 4. Setup debuggers for all languages
-5. Look for a difftool
+5. Setup diffview
 
 | Feature | Supported |
 |---------|-----------|
