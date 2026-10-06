@@ -94,11 +94,6 @@ trash-truncate
 trash-truncate --force
 ```
 
----
-
-### Is trash-cli a replacement for rm?
-**A**: No, it's a complementary tool. Use `trash-put` for interactive deletion where recovery might be needed. Use `rm` for scripts and when you're certain you won't need the files back.
-
 ### How do I recover files without trash-restore?
 **A**: You can manually copy from `~/.local/share/Trash/files/` but you'll need to check `~/.local/share/Trash/info/` for original paths.
 
