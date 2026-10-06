@@ -2,7 +2,7 @@
 |---------|-----------|
 | Scroll bar in each pane | ❌ |
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
-| File path | ❌ |
+| File path | ✅ |
 | Status Bar | ❌ |
 | Currently active session, windows, pane in status bar | ❌ |
 | Ability to copy and paste text | ✅ |
