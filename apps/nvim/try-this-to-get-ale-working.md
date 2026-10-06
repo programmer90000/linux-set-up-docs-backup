@@ -1,142 +1,139 @@
-# Run all of this inside a VM
-
-Run:
+PROMPT:
 ```
+I am using Debian 13 without a DE. I have installed Neovim using ```sudo apt install neovim```. I have made the following config directory:
+```
+.config/
+---- nvim/
+-------- init.lua
+------------ plugins/
+---------------- lualine/
+------------ config/
+---------------- lualine.lua
+```
+
+.config/nvim/config/lualine.lua:
+```
+vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/plugins/lualine/"))
+require("lualine").setup {}
+```
+
+init.lua:
+```
+local config_path = vim.fn.stdpath("config") .. "/config/"
+dofile(config_path .. "lualine.lua")
+```
+
+Using the same file structure and types of files, how can I clone and install nvim-dap and any required packages for debugging Node.js apps.
+
+Give me a complete guide from start to finish. Assume I am installing this on a new Debian 13 computer with no configuration made yet
+```
+
+ANSWER:
+```
+To set up nvim-dap alongside js-debug-adapter (the official Microsoft debugger for Node.js) on a fresh Debian 13 installation using your exact file and directory structure, follow this guide.
+1. System & Node.js Dependencies
+First, install Git, Neovim, Node.js, and npm on Debian:
 sudo apt update
-sudo apt install nodejs npm eslint
-git clone https://github.com/dense-analysis/ale.git ~/.config/nvim/plugins/ale
-```
+sudo apt install -y git neovim nodejs npm
 
-Create ~/.config/nvim/config/ale.lua:
-```
--- Add ALE to Neovim's runtime path
-vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/plugins/ale/"))
+2. Clone the Neovim Plugins
+In addition to nvim-dap, debugging Node.js requires:
+* nvim-dap: The core Debug Adapter Protocol client for Neovim.
+* vscode-js-debug: Microsoft's VS Code debug adapter for Node.js/JavaScript.
+* nvim-dap-vscode-js: A Neovim extension that bridges nvim-dap with vscode-js-debug.
+Run these commands to clone the plugins directly into your plugins/ directory:
+# Navigate to your custom plugins directory
+mkdir -p ~/.config/nvim/plugins
+cd ~/.config/nvim/plugins
 
--- Specify ESLint (or Biome/standard) as the JavaScript linter
-vim.g.ale_linters = {
-javascript = { "eslint" },
-}
+# Clone nvim-dap
+git clone https://github.com/mfussenegger/nvim-dap.git dap
 
--- Optional: Auto-fix JavaScript files on save using ESLint/Prettier
-vim.g.ale_fixers = {
-javascript = { "eslint", "prettier" },
-}
+# Clone the JavaScript DAP helper
+git clone https://github.com/mxsdev/nvim-dap-vscode-js.git dap-vscode-js
 
--- Optional settings
-vim.g.ale_fix_on_save = 1 -- Automatically fix files on save
-vim.g.ale_lint_on_text_changed = "never" -- Only lint on open/save to save CPU
-vim.g.ale_lint_on_insert_leave = 1
-```
+# Clone Microsoft's js-debug adapter (we clone tag v1.76.1 for a reliable build)
+git clone --depth 1 --branch v1.76.1 https://github.com/microsoft/vscode-js-debug.git vscode-js-debug
 
-Add this to init.lua:
-```
-dofile(config_path .. "ale.lua")
-```
+3. Build the Node.js Debug Adapter
+vscode-js-debug needs to be compiled using npm so Neovim can interact with its entry point (js-debug/src/dapDebugServer.js):
+cd ~/.config/nvim/plugins/vscode-js-debug
+npm install --legacy-peer-deps
+npx gulp vsDebugServerBundle
+mv dist build
 
-Inside the JS root dir:
-```
-npm init
-npm install --save-dev eslint
-```
+4. Neovim Configuration Files
+Set up the configuration files following your existing project structure.
+File Structure Overview
+.config/
+└── nvim/
+    ├── init.lua
+    ├── plugins/
+    │   ├── lualine/
+    │   ├── dap/
+    │   ├── dap-vscode-js/
+    │   └── vscode-js-debug/
+    └── config/
+        ├── lualine.lua
+        └── dap.lua
 
-eslint.config.js:
-```
-import js from '@eslint/js';
-import globals from 'globals';
+Create ~/.config/nvim/config/dap.lua
+Create this file and add the runtime path additions, debugger adapter configuration, and language bindings:
+-- 1. Prepend custom plugin paths to runtimepath
+local plugins_path = vim.fn.expand("~/.config/nvim/plugins/")
+vim.opt.rtp:prepend(plugins_path .. "dap")
+vim.opt.rtp:prepend(plugins_path .. "dap-vscode-js")
 
-export default [
-  js.configs.recommended,
-  {
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-        ...globals.es2021,
-      },
+-- 2. Configure nvim-dap-vscode-js
+require("dap-vscode-js").setup({
+  node_path = "node",
+  debugger_path = plugins_path .. "vscode-js-debug",
+  adapters = { 'pwa-node', 'pwa-chrome', 'node-terminal' },
+})
+
+-- 3. Configure DAP configurations for JavaScript & TypeScript
+local dap = require("dap")
+
+for _, language in ipairs({ "javascript", "typescript" }) do
+  dap.configurations[language] = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch Current File (pwa-node)",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
     },
-    rules: {
-      'no-unused-vars': 'error',
-      'no-undef': 'error',
-      'no-console': 'warn',
-      'eqeqeq': ['error', 'always'],
-      'curly': ['error', 'all'],
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
-      'indent': ['error', 2],
-      'no-var': 'error',
-      'prefer-const': 'error',
-      'no-multiple-empty-lines': ['error', { 'max': 2 }],
-      'space-before-function-paren': ['error', 'never'],
-      'object-curly-spacing': ['error', 'always'],
-      'comma-dangle': ['error', 'always-multiline'],
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach to Process ID",
+      processId = require('dap.utils').pick_process,
+      cwd = "${workspaceFolder}",
     },
-  },
-];
-```
+  }
+end
 
-index.js:
-```
-// ERROR: 'unusedVariable' is assigned a value but never used (no-unused-vars)
-var unusedVariable = 42;
+-- 4. Keymaps for Debugging
+vim.keymap.set("n", "<F5>", function() require("dap").continue() end, { desc = "DAP Continue" })
+vim.keymap.set("n", "<F10>", function() require("dap").step_over() end, { desc = "DAP Step Over" })
+vim.keymap.set("n", "<F11>", function() require("dap").step_into() end, { desc = "DAP Step Into" })
+vim.keymap.set("n", "<F12>", function() require("dap").step_out() end, { desc = "DAP Step Out" })
+vim.keymap.set("n", "<Leader>b", function() require("dap").toggle_breakpoint() end, { desc = "DAP Toggle Breakpoint" })
+vim.keymap.set("n", "<Leader>B", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, { desc = "DAP Set Conditional Breakpoint" })
 
-// ERROR: Unexpected var, use let or const instead (no-var)
-// ERROR: 'x' is never reassigned. Use 'const' instead (prefer-const)
-var x = 10;
+Update ~/.config/nvim/init.lua
+Update init.lua to load your new dap.lua config file alongside lualine.lua:
+local config_path = vim.fn.stdpath("config") .. "/config/"
 
-// ERROR: Strings must use singlequote (quotes)
-const name = "John";
+dofile(config_path .. "lualine.lua")
+dofile(config_path .. "dap.lua")
 
-// ERROR: Missing semicolon (semi)
-const age = 30
+5. Verification & Usage Test
+* Open a JavaScript file in Neovim (e.g., app.js):
+   const message = "Hello from Debugger";
+console.log(message);
 
-// ERROR: Expected '===' and instead saw '==' (eqeqeq)
-if (x == 10) {
-  // ERROR: Unexpected console statement (no-console)
-  console.log('x is 10');
-}
-
-// ERROR: Expected { after 'if' condition (curly)
-if (x > 5)
-  console.log('big');
-
-// ERROR: 'undefinedThing' is not defined (no-undef)
-console.log(undefinedThing);
-
-// ERROR: space-before-function-paren - Unexpected space before function parentheses
-function greet (person) {
-  // ERROR: object-curly-spacing - A space is required after '{' and before '}'
-  return {message: 'hi', name: person};
-}
-
-// ERROR: comma-dangle - Missing trailing comma
-const arr = [
-  1,
-  2,
-  3
-];
-
-// ERROR: indent - Expected indentation of 2 spaces but found 4
-function indentedWrong() {
-    return true;
-}
-
-// Multiple unused variables
-let a = 1;
-let b = 2;
-
-// ERROR: Unexpected constant condition (no-constant-condition)
-if (true) {
-  // ERROR: prefer-const - 'result' is never reassigned
-  let result = 0;
-}
-
-// ERROR: no-multiple-empty-lines - More than 2 blank lines not allowed
-
-
-
-const tooManyBlanks = true;
-
-export { greet, arr, indentedWrong, tooManyBlanks, name, age };
+* Place your cursor on line 2 and press <Leader>b (space + b or your designated leader key) to set a breakpoint.
+* Press <F5> to start debugging. Select Launch Current File (pwa-node).
+* Execution will pause at your breakpoint, allowing you to step through with <F10> / <F11>.
 ```
