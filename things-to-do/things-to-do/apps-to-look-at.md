@@ -16,6 +16,7 @@
 | Look at ExifTool | ❌ |
 | Look at rmlint | ❌ |
 | Look at yt-dlp | ❌ |
+| Look at Bleachbit | ❌ |
 | Look at isd [https://github.com/kainctl/isd](https://github.com/kainctl/isd) | ❌ |
 | Look at shload [https://github.com/kndndrj/shload](https://github.com/kndndrj/shload) | ❌ |
 | Look at rucat [https://github.com/brianredbeard/rucat](https://github.com/brianredbeard/rucat) | ❌ |
