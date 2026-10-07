@@ -1,5 +1,5 @@
 1. I have installed Nvim-dap. It works. I now need to install debuggers for specific languages. To do this, make a Node js file about 15 lines long containing a logic error in the middle. Paste it into AI and ask it how I can debug it using Nvim-dap. I should then create a custom tabbed UI, not download one. Use Nuicomponents to make the tabbed UI
-2. Setup diffview. Note: Don't install a seperate diffview. Use the default one
+2. Setup diffview. Install: https://github.com/barrettruth/diffs.nvim This allows the diffs to contain Treesitter syntax highlighting
 3. Add linting for all languages
 4. Set the code to lint, format and update on save
 
