@@ -1,8 +1,7 @@
 1. Setup diffview. Note: Don't install a seperate diffview. Use the default one
 2. Add linting for all languages
 3. Set the code to lint, format and update on save
-
-Note: I have installed Nvim-dap. It works. I should create a custom tabbed UI
+4 I have installed Nvim-dap. It works. I should create a custom tabbed UI. I then need to install debuggers for specific languages. I should create a custom tabbed UI, not download one
 
 | Feature | Supported |
 |---------|-----------|
