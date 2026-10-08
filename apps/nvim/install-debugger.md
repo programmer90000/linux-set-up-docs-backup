@@ -1,4 +1,8 @@
-# Install it using Lazyv.nim
+# How to install
+
+Using Lazy.nvim, get the debuggers for every language. Commit them all to the backup repo. Inside the backup repo, add them all to the plugins directory. Make a new file inside the config repo titled `debuggers.lua`. Set it all up in the backup repo. After this, I can commit it to the main repo
+
+# Install it using Lazy.nvim
 Run:
 ```
 mkdir -p ~/.config/nvim/lua/plugins/
