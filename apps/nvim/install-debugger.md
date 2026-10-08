@@ -1,3 +1,4 @@
+# Install it using Lazyv.nim
 Run:
 ```
 mkdir -p ~/.config/nvim/lua/plugins/
@@ -103,3 +104,26 @@ Sync plugins: Open Neovim (nvim) and run :Lazy sync to download and install all 
 Install adapter: Run :Mason to verify that js-debug-adapter is installed successfully.
 
 Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, and start debugging with :DapContinue. Run :DapContinue to continue debugging
+
+
+# Install it manually
+
+Copy:
+```
+~/.config/nvim/init.lua
+~/.config/nvim/lua/plugins/dap.lua (though you can merge this directly into init.lua since you aren't using lazy)
+```
+
+Copy the installed plugins:
+```
+~/.local/share/nvim/lazy/
+(You will need: nvim-dap, nvim-dap-ui, nvim-nio, mason.nvim, and mason-nvim-dap.nvim)
+```
+
+
+Copy the mason binaries (The Debugger):
+```
+~/.local/share/nvim/mason/
+```
+
+Crucial: This folder contains the actual Node.js debugger (js-debug-adapter) that Mason downloaded, so you don't have to download it again.
