@@ -1,6 +1,7 @@
 1. Using Lazy.nvim, install debuggers for C, JavaScript, Rust and Dart. Copy the directories to my own repo. Install them. Use Nvim-dap-ui.
 
 I should then create a custom tabbed UI, not download one. Use Nuicomponents to make the tabbed UI
+
 2. Setup diffview. Install: https://github.com/barrettruth/diffs.nvim This allows the diffs to contain Treesitter syntax highlighting
 3. Add linting for all languages
 4. Set the code to lint, format and update on save
