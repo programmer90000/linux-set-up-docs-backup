@@ -102,4 +102,4 @@ Sync plugins: Open Neovim (nvim) and run :Lazy sync to download and install all 
 
 Install adapter: Run :Mason to verify that js-debug-adapter is installed successfully.
 
-Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, and start debugging with :DapContinue.
+Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, and start debugging with :DapContinue. Run :DapContinue to continue debugging
