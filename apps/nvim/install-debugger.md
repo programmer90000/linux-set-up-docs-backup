@@ -112,24 +112,17 @@ Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, a
 
 # Install it manually
 
-Copy:
+From inside the install-debugger dir, run:
 ```
-~/.config/nvim/init.lua
-~/.config/nvim/lua/plugins/dap.lua (though you can merge this directly into init.lua since you aren't using lazy)
-```
-
-Copy the installed plugins:
-```
-~/.local/share/nvim/lazy/
-(You will need: nvim-dap, nvim-dap-ui, nvim-nio, mason.nvim, and mason-nvim-dap.nvim)
-```
-
-
-Copy the Debugger:
-```
-cp vscode-js-debug .config/nvim/plugins/
-cd .config/nvim/plugins/vscode-js-debug/
+cp mason-nvim-dap.nvim ~/.config/nvim/plugins/
+cp mason.nvim ~/.config/nvim/plugins/
+cp nvim-dap-ui ~/.config/nvim/plugins/
+cp nvim-dap ~/.config/nvim/plugins/
+cp nvim-nio ~/.config/nvim/plugins/
+cd vscode-js-debug/
 npm install --legacy-peer-deps
 npx gulp vsDebugServerBundle
 mv dist out
+cd ../
+cp vscode-js-debug ~/.config/nvim/plugins/
 ```
