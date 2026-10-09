@@ -125,9 +125,11 @@ Copy the installed plugins:
 ```
 
 
-Copy the mason binaries (The Debugger):
+Copy the Debugger:
 ```
-~/.local/share/nvim/mason/
+cp vscode-js-debug .config/nvim/plugins/
+cd .config/nvim/plugins/vscode-js-debug/
+npm install --legacy-peer-deps
+npx gulp vsDebugServerBundle
+mv dist out
 ```
-
-Crucial: This folder contains the actual Node.js debugger (js-debug-adapter) that Mason downloaded, so you don't have to download it again.
