@@ -115,6 +115,8 @@ Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, a
 From inside the install-debugger dir, run:
 ```
 rm -rf ~/.config/nvim/
+mkdir -p ~/.config/nvim/plugins/
+mkdir -p ~/.config/nvim/config/
 cp mason-nvim-dap.nvim ~/.config/nvim/plugins/
 cp mason.nvim ~/.config/nvim/plugins/
 cp nvim-dap-ui ~/.config/nvim/plugins/
