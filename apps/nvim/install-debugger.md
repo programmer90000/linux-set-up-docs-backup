@@ -114,6 +114,7 @@ Test workflow: Create a test file, set a breakpoint with :DapToggleBreakpoint, a
 
 From inside the install-debugger dir, run:
 ```
+rm -rf ~/.config/nvim/
 cp mason-nvim-dap.nvim ~/.config/nvim/plugins/
 cp mason.nvim ~/.config/nvim/plugins/
 cp nvim-dap-ui ~/.config/nvim/plugins/
@@ -125,4 +126,6 @@ npx gulp vsDebugServerBundle
 mv dist out
 cd ../
 cp vscode-js-debug ~/.config/nvim/plugins/
+nvim ~/.config/nvim/config/dap.lua:
+nvim ~/.config/nvim/init.lua
 ```
