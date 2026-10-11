@@ -1,4 +1,3 @@
--- Prepend plugin paths to runtimepath
 vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/plugins/nvim-dap"))
 vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/plugins/nvim-dap-ui"))
 vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/plugins/nvim-nio"))
@@ -8,7 +7,7 @@ local dapui = require("dapui")
 
 dapui.setup()
 
--- Updated path pointing to vscode-js-debug/dist/src/vsDebugServer.js
+-- Update path pointing to vscode-js-debug/dist/src/vsDebugServer.js
 local js_debug_path = vim.fn.expand("~/.config/nvim/plugins/vscode-js-debug/dist/src/vsDebugServer.js")
 
 dap.adapters["pwa-node"] = {
