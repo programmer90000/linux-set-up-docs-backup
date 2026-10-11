@@ -14,7 +14,7 @@ cd ../
 cp -r vscode-js-debug ~/.config/nvim/plugins/
 ```
 
-Add this to init.lua:
+Add this to config/dap.lua:
 ```
 -- Add your manual plugin directories to runtimepath
 vim.opt.rtp:append(vim.fn.stdpath("config") .. "/plugins/nvim-dap")
@@ -59,4 +59,11 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+```
+
+Add this to init.lua:
+```
+local config_path = vim.fn.stdpath("config") .. "/config/"
+
+dofile(config_path .. "dap.lua")
 ```
