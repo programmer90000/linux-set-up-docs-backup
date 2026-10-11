@@ -11,26 +11,26 @@ dapui.setup()
 local js_debug_path = vim.fn.expand("~/.config/nvim/plugins/vscode-js-debug/dist/src/vsDebugServer.js")
 
 dap.adapters["pwa-node"] = {
-  type = "server",
-  host = "localhost",
-  port = "${port}",
-  executable = {
-    command = "node",
-    args = {
-      js_debug_path,
-      "${port}",
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+        command = "node",
+        args = {
+            js_debug_path,
+            "${port}",
+        },
     },
-  },
 }
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
+    dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
+    dapui.close()
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
+    dapui.close()
 end
 
 dap.configurations.javascript = {
