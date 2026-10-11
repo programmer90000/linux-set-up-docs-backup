@@ -34,14 +34,14 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 dap.configurations.javascript = {
-  {
-    type = "pwa-node",
-    request = "launch",
-    name = "Launch Current File",
-    program = "${file}",
-    cwd = "${workspaceFolder}",
-    sourceMaps = true,
-  },
+    {
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch Current File",
+        program = "${file}",
+        cwd = "${workspaceFolder}",
+        sourceMaps = true,
+    },
 }
 
 dap.configurations.typescript = dap.configurations.javascript
