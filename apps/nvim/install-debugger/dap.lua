@@ -8,8 +8,8 @@ local dapui = require("dapui")
 
 dapui.setup()
 
--- Path to js-debug inside your custom plugins directory
-local js_debug_path = vim.fn.expand("~/.config/nvim/plugins/js-debug/src/vsDebugServer.js")
+-- Updated path pointing to vscode-js-debug/dist/src/vsDebugServer.js
+local js_debug_path = vim.fn.expand("~/.config/nvim/plugins/vscode-js-debug/dist/src/vsDebugServer.js")
 
 dap.adapters["pwa-node"] = {
   type = "server",
