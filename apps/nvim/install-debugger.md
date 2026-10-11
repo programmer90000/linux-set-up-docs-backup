@@ -130,5 +130,4 @@ cd ../
 cp -r vscode-js-debug ~/.config/nvim/plugins/
 cp dap.lua ~/.config/nvim/config/dap.lua
 cp init.lua ~/.config/nvim/init.lua
-nvim ~/.config/nvim/init.lua
 ```
