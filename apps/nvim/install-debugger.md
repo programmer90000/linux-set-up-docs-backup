@@ -117,17 +117,17 @@ From inside the install-debugger dir, run:
 rm -rf ~/.config/nvim/
 mkdir -p ~/.config/nvim/plugins/
 mkdir -p ~/.config/nvim/config/
-cp mason-nvim-dap.nvim ~/.config/nvim/plugins/
-cp mason.nvim ~/.config/nvim/plugins/
-cp nvim-dap-ui ~/.config/nvim/plugins/
-cp nvim-dap ~/.config/nvim/plugins/
-cp nvim-nio ~/.config/nvim/plugins/
+cp -r mason-nvim-dap.nvim ~/.config/nvim/plugins/
+cp -r mason.nvim ~/.config/nvim/plugins/
+cp -r nvim-dap-ui ~/.config/nvim/plugins/
+cp -r nvim-dap ~/.config/nvim/plugins/
+cp -r nvim-nio ~/.config/nvim/plugins/
 cd vscode-js-debug/
 npm install --legacy-peer-deps
 npx gulp vsDebugServerBundle
 mv dist out
 cd ../
-cp vscode-js-debug ~/.config/nvim/plugins/
+cp -r vscode-js-debug ~/.config/nvim/plugins/
 nvim ~/.config/nvim/config/dap.lua:
 nvim ~/.config/nvim/init.lua
 ```
