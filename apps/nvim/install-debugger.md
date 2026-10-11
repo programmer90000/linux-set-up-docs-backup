@@ -124,7 +124,7 @@ cp -r nvim-dap ~/.config/nvim/plugins/
 cp -r nvim-nio ~/.config/nvim/plugins/
 cd vscode-js-debug/
 npm install --legacy-peer-deps
-npx gulp vsDebugServerBundle
+npx gulp dapDebugServer
 mv dist out
 cd ../
 cp -r vscode-js-debug ~/.config/nvim/plugins/
