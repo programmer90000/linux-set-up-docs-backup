@@ -68,4 +68,4 @@ local config_path = vim.fn.stdpath("config") .. "/config/"
 dofile(config_path .. "dap.lua")
 ```
 
-I have checked nvim-dap. It is ready to commit to the main repo
+I have checked nvim-dap and nvim-dap-ui. They are ready to commit to the main repo
