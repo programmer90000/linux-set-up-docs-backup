@@ -87,6 +87,11 @@ gulp.task('clean-assertions', () => del(['src/test/**/*.txt.actual']));
 gulp.task('clean', () => del(['dist/**', 'src/*/package.nls.*.json', 'packages/**', '*.vsix']));
 
 async function fixNightlyReadme() {
+  const readmePath = `${buildDir}/README.md`;
+  const readmeText = await readFile(readmePath);
+  const readmeNightlyText = await readFile(`README.nightly.md`);
+
+  await writeFile(readmePath, readmeNightlyText + '\n' + readmeText);
 }
 
 const getVersionNumber = () => {
@@ -166,10 +171,12 @@ gulp.task('compile:static', () =>
       [
         'LICENSE',
         'resources/**/*',
+        'README.md',
         'package.nls.json',
         'src/**/*.sh',
         'src/ui/basic-wat.tmLanguage.json',
         'src/ui/basic-wat.configuration.json',
+        '.vscodeignore',
       ],
       {
         base: '.',
@@ -400,6 +407,10 @@ gulp.task(
       await fs.promises.rm(path.join(__dirname, file), { force: true, recursive: true });
       await fs.promises.rename(path.join(buildDir, file), path.join(__dirname, file));
     }
+    await fs.promises.appendFile(
+      path.join(__dirname, '.vscodeignore'),
+      [...ignoredFiles].join('\n'),
+    );
   }),
 );
 
