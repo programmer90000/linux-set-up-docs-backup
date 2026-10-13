@@ -2,6 +2,8 @@
 |---------|-----------|
 | Write docs for how to connect to the internet from the CLI | ❌ |
 | Write docs on how to enable apt repositories | ❌ |
+| Write docs on how to use Neovim | ❌ |
+| Write docs on how to use Tmux | ❌ |
 | Write docs for apt | ❌ |
 | Write docs for dpkg | ❌ |
 | Write docs for ip | ❌ |
