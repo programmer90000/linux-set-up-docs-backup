@@ -10,9 +10,6 @@ mkdir -p ~/.tmux/plugins/
 mkdir -p ~/.tmux/resurrect/
 cp -r tmux-resurrect/ ~/.tmux/plugins/tmux-resurrect
 
-# ! Tmux-Continuum
-git clone https://github.com/tmux-plugins/tmux-continuum.git ~/.tmux/plugins/tmux-continuum
-
 # Create tmux config with resurrect manually loaded
 # THIS IS A TEMP FILE I HAVE NOT CHECKED
 cat > ~/.tmux.conf << 'EOF'
