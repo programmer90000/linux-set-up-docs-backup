@@ -5,23 +5,6 @@ echo "Ensure you are running this file from the root of the linux-set-up-docs re
 sudo apt update
 sudo apt install -y tmux git
 
-# ! Tmux-Yank
-sudo apt update
-sudo apt install -y copyq wl-clipboard
-copyq &
-git clone https://github.com/tmux-plugins/tmux-yank ~/.config/tmux/plugins/tmux-yank
-echo "run-shell ~/.config/tmux/plugins/tmux-yank/yank.tmux" >> ~/.tmux.conf
-tmux
-tmux source-file ~/.tmux.conf
-# Reload tmux config
-tmux source ~/.tmux.conf
-
-echo "To copy text to the clipboard, run: printf "test123" | wl-copy"
-echo "To paste the text, run: wl-paste"
-echo "To open the CopyQ GUI, run: copyq show"
-echo "Exit Tmux: exit"
-echo "Open the CopyQ GUI in the normal terminal to check if it's still copied: copyq show"
-
 # ! Tmux-Zoom
 mkdir ~/bin/
 wget -q --show-progress -O ~/bin/tmux-zoom.sh https://raw.githubusercontent.com/jipumarino/tmux-zoom/master/tmux-zoom.sh

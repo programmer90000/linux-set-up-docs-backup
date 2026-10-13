@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Ensure you are running this file from the root of the linux-set-up-docs repository"
-
 sudo apt update
 sudo apt install -y tmux git
 
@@ -39,16 +37,6 @@ set -g window-status-current-format "#[bg=white,fg=black] #I:#W "
 
 # RIGHT SIDE - Show git info if in a repo, otherwise nothing
 set -g status-right "#[bg=green,fg=black]#(~/.tmux-git-status.sh) %H:%M "
-
-# =============================================
-# PLUGINS (to be added later)
-# =============================================
-
-# Tmux-Resurrect
-run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
-set -g @resurrect-capture-pane-contents 'on'
-set -g @resurrect-strategy-nvim 'session'
-
 EOF
 
 # ! Create a git status script that only shows output when in a git repo
@@ -85,28 +73,3 @@ chmod +x ~/.tmux-git-status.sh
 
 # Kill any existing tmux servers to start fresh
 tmux kill-server 2>/dev/null
-
-echo ""
-echo "=========================================="
-echo "TMUX INSTALLATION COMPLETE"
-echo "=========================================="
-echo ""
-echo "NEXT STEPS:"
-echo "-----------"
-echo "1. Start a new tmux session:"
-echo "   tmux new -s test"
-echo ""
-echo "2. You should see a GREEN status bar at the bottom with:"
-echo "   - Left side: 'SESSION:test'"
-echo "   - Center: your windows (0:bash)"
-echo "   - Right side: Git branch name (if in a git repo) and time"
-echo ""
-echo "3. Git branch colors:"
-echo "   - Green: Clean working directory"
-echo "   - Yellow: Staged files only"
-echo "   - Red: Modified/untracked/deleted files"
-echo ""
-echo "4. Test it out:"
-echo "   cd into any git repository and watch the status bar update!"
-echo ""
-echo "Current tmux version: $(tmux -V)"
