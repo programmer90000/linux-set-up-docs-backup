@@ -11,7 +11,7 @@
 | Ability to save output to a file (tmux-logging) | ✅ |
 | Move panes across windows | ❌ |
 | Pin a pane to keep it visible while moving through windows | ❌ |
-| Highlight pane when output appears after some idle time | ❌ |
+| Highlight pane when output appears after some idle time | ✅ |
 | Use mouse to resize panes | ✅ |
 | Use mouse to scroll through output | ✅ |
 | Notification when long running command completes | ❌ |
