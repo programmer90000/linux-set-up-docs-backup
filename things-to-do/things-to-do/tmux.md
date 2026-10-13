@@ -6,7 +6,7 @@
 | Status Bar | ❌ |
 | Currently active session, windows, pane in status bar | ❌ |
 | Ability to copy and paste text | ✅ |
-| Tree view of all sessions, windows, panes (Look at creating a custom FZF app to display all Tmux panes, windows, sessions and all running apps) | ✅ |
+| Tree view of all sessions, windows, panes | ✅ |
 | Search | ✅ |
 | Ability to save output to a file (tmux-logging) | ✅ |
 | Move panes across windows | ❌ |
@@ -18,5 +18,5 @@
 | A fuzzy finder within Tmux | ✅ |
 | Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ❌ |
 | Show a warning before closing a pane with a running process | ✅ |
-| List all pane processes (what's running inside each pane) (Look at creating a custom FZF app to display all Tmux panes, windows, sessions and all running apps) | ❌ |
+| List all pane processes (what's running inside each pane) | ✅ |
 | Write docs for how to use Tmux | ❌ |
