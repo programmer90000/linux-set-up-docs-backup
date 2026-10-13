@@ -5,28 +5,6 @@ echo "Ensure you are running this file from the root of the linux-set-up-docs re
 sudo apt update
 sudo apt install -y tmux git
 
-# ! Tmux-Resurrect
-mkdir -p ~/.tmux/plugins/
-mkdir -p ~/.tmux/resurrect/
-cp -r tmux-resurrect/ ~/.tmux/plugins/tmux-resurrect
-
-# Create tmux config with resurrect manually loaded
-# THIS IS A TEMP FILE I HAVE NOT CHECKED
-cat > ~/.tmux.conf << 'EOF'
-# Mouse support
-set -g mouse on
-
-# Better colors
-set -g default-terminal "screen-256color"
-
-# Manual loading of tmux-resurrect
-run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
-
-# Resurrect settings
-set -g @resurrect-capture-pane-contents 'on'
-set -g @resurrect-strategy-nvim 'session'
-EOF
-
 # ! Tmux-Yank
 sudo apt update
 sudo apt install -y copyq wl-clipboard
