@@ -40,44 +40,4 @@ echo "3. Navigate to a pane: Prefix + arrow keys"
 echo "4. Zoom (meaning make it full screen): Prefix + z"
 echo "5. Unzoom: Prefix + z again"
 
-# ! Tmux Built-in Choose-Tree
-echo "" >> ~/.tmux.conf
-echo "# Built-in tmux choose-tree (session/window/pane tree)" >> ~/.tmux.conf
-echo "# Show session tree (all sessions, windows, panes)" >> ~/.tmux.conf
-echo "bind Tab choose-tree" >> ~/.tmux.conf
-echo "# Show only window tree" >> ~/.tmux.conf
-echo "bind C-t choose-tree -w" >> ~/.tmux.conf
-echo "# Show only session tree" >> ~/.tmux.conf
-echo "bind C-s choose-tree -s" >> ~/.tmux.conf
-echo "# Show only pane tree" >> ~/.tmux.conf
-echo "bind C-p choose-tree -p" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# Choose-tree appearance settings" >> ~/.tmux.conf
-echo "set -g @choose-tree-expand 'on'  # Start with all items expanded" >> ~/.tmux.conf
-echo "set -g @choose-tree-show-session-names 'on'  # Show session names" >> ~/.tmux.conf
-echo "Prefix + Tab - Show full tree (sessions/windows/panes)"
-echo "Prefix + Ctrl-s  - Show only sessions"
-echo "Prefix + Ctrl-w  - Show only windows"
-echo "Prefix + Ctrl-p  - Show only panes"
-echo "Navigation (when in choose-tree mode):"
-echo "Arrow keys       - Move up/down/left/right"
-echo "Enter            - Select and switch to item"
-echo "Space            - Expand/collapse tree items"
-echo "s                - Change sort order"
-echo "t                - Toggle tree/plain view"
-echo "v                - Toggle preview"
-echo "q or Escape      - Exit choose-tree"
-echo "What you can do with choose-tree:"
-echo "Switch between sessions/windows/panes"
-echo "Kill sessions/windows/panes (press 'x')"
-echo "Rename sessions/windows (press 'r')"
-echo "Create new windows (press 'n')"
-echo "Preview pane contents (press 'v')"
-echo "Example workflow:"
-echo "Press 'Prefix + Tab' to open the tree"
-echo "Navigate to any session/window/pane"
-echo "Press Enter to switch to it"
-echo "Or press 'x' to kill it"
-echo "Or press 'r' to rename it"
-
 tmux source-file ~/.tmux.conf
