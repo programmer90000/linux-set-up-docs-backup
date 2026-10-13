@@ -9,7 +9,7 @@
 | Update a bracket/symbol and its corresponding bracket/symbol automatically | ✅ |
 | Syntax Highlighting | ✅ |
 | Format code on save (conform.nvim) | ✅ |
-| Linting (nvim-lint) | ❌ |
+| Linting (nvim-lint) | ✅ |
 | Collapse/Expand snippets of code | ✅ |
 | Go to line | ✅ |
 | Undo/Redo tree | ✅ |
