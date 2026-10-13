@@ -2,26 +2,8 @@ To copy text from Tmux, highlight it. It will be copied automatically. To paste 
 
 ---
 
-Save tmux pane to a file:
+To move panes across windows:
 
-1.Open Command Mode: Press `Ctrl + b`, then type `:` to enter the Tmux command prompt.
+To move a pane into a new window, select the pane you want to move, press `Ctrl + B`. Press `!`
 
-Capture entire history (scrollback):
-```
-capture-pane -S -
-```
-
-Capture only current visible screen:
-```
-capture-pane
-```
-
-Capture last N lines (e.g., last 3000 lines):
-```
-capture-pane -S -3000
-```
-
-Press `Ctrl + b`, type `:`, then run:
-```
-save-buffer ~/pane_output.txt
-```
+To move a pane into an existing window, select the pane you want to move, press `Ctrl + B`. Press `m`. Go to the window you want to place it in. Press `:`. Type `join-pane`
