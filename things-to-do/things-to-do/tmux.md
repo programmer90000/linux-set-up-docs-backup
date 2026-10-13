@@ -8,7 +8,7 @@
 | Ability to copy and paste text | ✅ |
 | Tree view of all sessions, windows, panes (Look at creating a custom FZF app to display all Tmux panes, windows, sessions and all running apps) | ❌ |
 | Search | ✅ |
-| Ability to save output to a file (tmux-logging) | ❌ |
+| Ability to save output to a file (tmux-logging) | ✅ |
 | Move panes across windows | ❌ |
 | Pin a pane to keep it visible while moving through windows | ❌ |
 | Highlight pane when output appears after some idle time | ❌ |
