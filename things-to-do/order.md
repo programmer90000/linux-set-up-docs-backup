@@ -1,4 +1,5 @@
-Add the icon for the window switcher
+Setup Neovim and its plugins. I have completed installing them. I need to set them up
+Setup Tmux and its plugins. I have almost completed installing them. I need to set them up
 1. [tmux.md](things-to-do/tmux.md)
 2. [dash.md](things-to-do/dash.md)
 3. [window-switcher.ms](things-to-do/window-switcher.md)
