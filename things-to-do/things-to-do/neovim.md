@@ -1,6 +1,6 @@
 | Feature | Supported |
 |---------|-----------|
-| Debugger | ❌ |
+| Debugger | ✅ |
 | Colour Scheme for everything | ✅ |
 | Menu Bar | ✅ |
 | Status Bar (At bottom of screen) | ✅ |
@@ -21,5 +21,6 @@
 | Show trailing whitespace and whitespace more than 1 character | ✅ |
 | Highlight corresponding bracket | ✅ |
 | Ensure I can copy paste text in Neovim when using it from within Tmux | ✅ |
+| Diffview | ✅ |
+| Setup Neovim and all of it's plugins | ❌ |
 | Write docs for how to use Neovim | ❌ |
-| Setup the default diffview | ❌ |
