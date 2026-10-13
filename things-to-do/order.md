@@ -17,6 +17,6 @@ Setup Tmux and its plugins. I have almost completed installing them. I need to s
 
 After this, go through the Rust book
 
-After this make the System Monitor app
+After this make the System Monitor app. Use the btop source code and other apps code to make my own system monitor app. Don't ask AI how to read the info. Find out which files to read the information from using existing tools source code
 
 After this, make the Fitness Logger app
