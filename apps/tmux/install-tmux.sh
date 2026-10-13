@@ -40,25 +40,6 @@ echo "3. Navigate to a pane: Prefix + arrow keys"
 echo "4. Zoom (meaning make it full screen): Prefix + z"
 echo "5. Unzoom: Prefix + z again"
 
-# ! Tmux-Better-Mouse-Mode
-git clone https://github.com/nhdaly/tmux-better-mouse-mode.git ~/.config/tmux/plugins/tmux-better-mouse-mode
-echo "" >> ~/.tmux.conf
-echo "# tmux-better-mouse-mode plugin" >> ~/.tmux.conf
-echo "run-shell ~/.config/tmux/plugins/tmux-better-mouse-mode/scroll_copy_mode.tmux" >> ~/.tmux.conf
-# Add recommended settings
-echo "" >> ~/.tmux.conf
-echo "# tmux-better-mouse-mode settings" >> ~/.tmux.conf
-echo "set -g @scroll-speed-num-lines-per-scroll \"5\"" >> ~/.tmux.conf
-echo "set -g @emulate-scroll-for-no-mouse-alternate-buffer \"on\"" >> ~/.tmux.conf
-echo "set -g @scroll-down-exit-copy-mode \"on\"" >> ~/.tmux.conf
-tmux source-file ~/.tmux.conf
-echo "Use your mouse wheel to scroll up/down"
-echo "You should be able to scroll smoothly through the buffer"
-echo "Scroll all the way to the bottom - you should automatically exit copy mode"
-echo "Enter copy mode: Ctrl-b ["
-echo "Scrolling should continue after reaching the bottom"
-echo "Press Esc to exit copy mode"
-
 # ! Tmux Built-in Choose-Tree
 echo "" >> ~/.tmux.conf
 echo "# Built-in tmux choose-tree (session/window/pane tree)" >> ~/.tmux.conf
