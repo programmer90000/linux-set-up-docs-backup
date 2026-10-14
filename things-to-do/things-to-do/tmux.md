@@ -23,6 +23,10 @@ Try this to get the Tmux pane number in the status bar
 | Stop highliting text from automatically copying it | ✅ |
 | Install https://github.com/jaclu/tmux-power-zoom | ❌ |
 
+Use Zsh precmd to send a message to Tmux with the exit code of the command. If it isn't 0, Tmux should highlight it.
+
+precmd is executed after a command finishes, before the new prompt is written
+
 Look at installing these Tmux plugins:
 
 
