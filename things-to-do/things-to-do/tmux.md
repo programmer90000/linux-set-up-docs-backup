@@ -4,7 +4,7 @@
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
 | File path | ✅ |
 | Status Bar | ✅ |
-| Currently active session, windows, pane in status bar | ❌ |
+| Currently active session, windows, pane in status bar | ✅ |
 | Ability to copy and paste text | ✅ |
 | Tree view of all sessions, windows, panes | ✅ |
 | Search | ✅ |
