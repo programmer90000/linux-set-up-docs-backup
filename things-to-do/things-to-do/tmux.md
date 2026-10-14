@@ -18,7 +18,7 @@
 | Show a warning before closing a pane with a running process | ✅ |
 | List all pane processes (what's running inside each pane) | ✅ |
 | Stop highliting text from automatically copying it | ✅ |
-| Install https://github.com/jaclu/tmux-power-zoom | | ❌ |
+| Install https://github.com/jaclu/tmux-power-zoom | ❌ |
 
 Look at installing these Tmux plugins:
 
