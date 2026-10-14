@@ -9,7 +9,7 @@ Add per-app volume
 
 Add a sperate slider for the input
 
-Add different icons for different volume levels
+Add different icons for different volume devices such as speakers and headphones
 
 Add a right click context menu to open the volume app
 
