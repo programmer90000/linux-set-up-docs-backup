@@ -1,6 +1,5 @@
 | Feature | Supported |
 |---------|-----------|
-| Write docs on how to quickly scroll within a pane | ❌ |
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
 | File path | ✅ |
 | Status Bar | ✅ |
