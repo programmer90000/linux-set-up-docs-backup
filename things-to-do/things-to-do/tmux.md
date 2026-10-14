@@ -1,3 +1,6 @@
+Try this to get the Tmux pane number in the status bar
+`run-shell 'tmux set-option -g status-right "#[fg=colour236]#S • $USER@$(hostname -s) • Pane:#{pane_index} (#{pane_current_command})"'`
+
 | Feature | Supported |
 |---------|-----------|
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
