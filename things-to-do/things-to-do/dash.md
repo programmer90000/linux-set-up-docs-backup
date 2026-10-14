@@ -1,8 +1,6 @@
 | Feature | Supported |
 |---------|-----------|
-| Add the date and time to the dash | ❌ |
-| Find out how desktop environments update the time on the dash without polling | ❌ |
-| Display a calender when clicking on the date and time on the dash | ❌ |
+| Add the date and time to the dash | ✅ |
 | Add an item to the dash for the caps lock key status | ❌ |
 | Add an item to the dash for the virtual desktops | ❌ |
 | Add an item to the dash for notifications | ❌ |
