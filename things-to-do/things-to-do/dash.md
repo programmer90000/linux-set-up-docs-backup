@@ -5,7 +5,7 @@
 | Add an item to the dash for the virtual desktops | ❌ |
 | Add an item to the dash for notifications | ❌ |
 | Add an item to the dash for the clipboard | ❌ |
-| Add an item to the dash for the volume | ❌ |
+| Add an item to the dash for the volume | ✅ |
 | Add an item to the dash for the WiFi | ❌ |
 | Add an item to the dash for power options | ❌ |
 | Add an item to the dash for Bluetooth | ❌ |
