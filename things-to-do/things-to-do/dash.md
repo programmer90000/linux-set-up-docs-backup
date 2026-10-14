@@ -14,3 +14,5 @@
 | Add an item to the dash displaying the current keyboard layout | ❌ |
 | Make the app icons scrollable if there are too many | ❌ |
 | Make the dash scrollable if there are too many icons | ❌ |
+| Align the date and time | ❌ |
+| Open the calendar app when clicking the date/ time | ❌ |
