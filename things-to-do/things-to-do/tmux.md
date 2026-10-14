@@ -21,7 +21,6 @@
 | Stop highliting text from automatically copying it | ✅ |
 
 Look at installing these Tmux plugins:
-https://github.com/noscript/tmux-mighty-scroll
 
 https://github.com/jaclu/tmux-power-zoom
 
