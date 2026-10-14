@@ -18,7 +18,7 @@
 | Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ❌ |
 | Show a warning before closing a pane with a running process | ✅ |
 | List all pane processes (what's running inside each pane) | ✅ |
-| Stop highliting text from automatically copying it | ❌ |
+| Stop highliting text from automatically copying it | ✅ |
 
 Look at installing these Tmux plugins:
 https://github.com/noscript/tmux-mighty-scroll
