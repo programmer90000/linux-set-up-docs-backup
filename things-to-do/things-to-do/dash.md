@@ -16,3 +16,4 @@
 | Make the dash scrollable if there are too many icons | ❌ |
 | Align the date and time | ❌ |
 | Open the calendar app when clicking the date/ time | ❌ |
+| Improve the look of the window that opens when clicking the volume icon. Note that I install zenity on my computer but not in the installing-apps.sh file. I need to decide if I want to keep it | ❌ |
