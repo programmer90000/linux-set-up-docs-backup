@@ -28,3 +28,4 @@ note: I have downloaded some of these apps to a previous commit before I removed
 | repgrep | ❌ |
 | riff | ❌ |
 | pkgtop | ❌ |
+| swpui https://github.com/beeb/swpui/tree/main | ❌ |
