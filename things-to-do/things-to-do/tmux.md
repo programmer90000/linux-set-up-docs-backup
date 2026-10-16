@@ -17,17 +17,12 @@ Try this to get the Tmux pane number in the status bar
 | Use mouse to scroll through output | ✅ |
 | Notification when long running command completes | ✅ |
 | A fuzzy finder within Tmux | ✅ |
-| Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ❌ |
+| Dynamic status bar colors based on session state (e.g., red when a pane has an error) | ✅ |
 | Show a warning before closing a pane with a running process | ✅ |
 | List all pane processes (what's running inside each pane) | ✅ |
 | Stop highliting text from automatically copying it | ✅ |
 | Install https://github.com/jaclu/tmux-power-zoom | ❌ |
 
-Use Zsh precmd to send a message to Tmux with the exit code of the command. If it isn't 0, Tmux should highlight it.
-
-precmd is executed after a command finishes, before the new prompt is written
-
 Look at installing these Tmux plugins:
-
 
 https://github.com/spywhere/tmux-named-snapshot
