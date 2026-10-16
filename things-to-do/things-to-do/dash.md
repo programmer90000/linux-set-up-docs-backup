@@ -1,7 +1,3 @@
-remove zenity using sudo apt remove. Install Yad using sudo apt install yad
-
-Update the volume-popup
-
 | Feature | Supported |
 |---------|-----------|
 | Add the date and time to the dash | ✅ |
