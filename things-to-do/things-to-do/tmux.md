@@ -1,6 +1,3 @@
-Try this to get the Tmux pane number in the status bar
-`run-shell 'tmux set-option -g status-right "#[fg=colour236]#S • $USER@$(hostname -s) • Pane:#{pane_index} (#{pane_current_command})"'`
-
 | Feature | Supported |
 |---------|-----------|
 | Save Tmux sessions so they can be accessed after boot (tmux-ressurect) | ✅ |
@@ -22,7 +19,4 @@ Try this to get the Tmux pane number in the status bar
 | List all pane processes (what's running inside each pane) | ✅ |
 | Stop highliting text from automatically copying it | ✅ |
 | Install https://github.com/jaclu/tmux-power-zoom | ✅ |
-
-Look at installing these Tmux plugins:
-
-https://github.com/spywhere/tmux-named-snapshot
+| Install https://github.com/spywhere/tmux-named-snapshot | ✅ |
