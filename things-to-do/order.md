@@ -1,5 +1,6 @@
 Setup Neovim and its plugins. I have completed installing them. I need to set them up
-Setup Tmux and its plugins. I have almost completed installing them. I need to set them up
+
+Setup Tmux and its plugins. I have completed installing them. I need to set them up
 
 Add a mute button to the volume widget
 
