@@ -1,8 +1,6 @@
 Setup Neovim and its plugins. I have completed installing them. I need to set them up
 Setup Tmux and its plugins. I have almost completed installing them. I need to set them up
 
-Add a drop-down menu inside the volume widget to select the currently active sound device
-
 Add a mute button to the volume widget
 
 Add per-app volume
