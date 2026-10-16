@@ -1,3 +1,4 @@
+Test if the options in the power menu work
 | Feature | Supported |
 |---------|-----------|
 | Add the date and time to the dash | ✅ |
@@ -7,7 +8,7 @@
 | Add an item to the dash for the clipboard | ✅ |
 | Add an item to the dash for the volume | ✅ |
 | Add an item to the dash for the WiFi | ❌ |
-| Add an item to the dash for power options | ❌ |
+| Add an item to the dash for power options | ✅ |
 | Add an item to the dash for Bluetooth | ❌ |
 | Add an item to the dash for MPD | ❌ |
 | Add an item to the dash for pipewire | ❌ |
