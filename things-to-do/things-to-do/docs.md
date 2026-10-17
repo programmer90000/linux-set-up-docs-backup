@@ -8,6 +8,7 @@
 | Write docs for apt | ❌ |
 | Write docs for dpkg | ❌ |
 | Write docs for ip | ❌ |
+| Write docs for tr | ❌ |
 | Write docs for openssh | ❌ |
 | Write docs for chmod | ❌ |
 | Write docs for chown | ❌ |
