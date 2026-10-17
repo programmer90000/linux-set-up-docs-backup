@@ -19,3 +19,4 @@
 | Write docs for tar | ❌ |
 | Write docs for user management | ❌ |
 | Write docs for git | ❌ |
+| Write docs on redirecting terminal output | ❌ |
