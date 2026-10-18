@@ -2,6 +2,8 @@ Setup Neovim and its plugins. I have completed installing them. I need to set th
 
 Setup Tmux and its plugins. I have completed installing them. I need to set them up
 
+[do-these.md](things-to-do/do-these.md)
+
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.ms](things-to-do/window-switcher.md)
 3. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
