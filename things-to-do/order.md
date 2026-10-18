@@ -12,9 +12,8 @@ Setup Tmux and its plugins. I have completed installing them. I need to set them
 8. [apps-to-install.md](things-to-do/apps-to-install.md)
 9. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
 10. [apps-to-find.md](things-to-do/apps-to-find.md)
-11. [refactor.md](things-to-do/refactor.md)
-12. [systemd.md](things-to-do/systemd.md)
-13. [docs.md](things-to-do/docs.md)
+11. [refactor.md](things-to-do/refactor.md)
+12. [docs.md](things-to-do/docs.md)
 
 After this, go through the Rust book
 
