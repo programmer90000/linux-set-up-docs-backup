@@ -20,3 +20,4 @@
 | Write docs for user management | ❌ |
 | Write docs for git | ❌ |
 | Write docs on redirecting terminal output | ❌ |
+| Write docs for what systemd is and how to use it | ❌ |
