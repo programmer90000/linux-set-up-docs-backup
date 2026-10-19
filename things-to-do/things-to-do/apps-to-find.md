@@ -11,6 +11,7 @@
 | Look for a download manager | ❌ |
 | Look for a file recovery tool | ❌ |
 | Look for a PDF viewer and editor | ❌ |
+| Look for a MD viewer | ❌ |
 | Look for a video viewer | ❌ |
 | Look for an image viewer | ❌ |
 | Look for an archive manager | ❌ |
