@@ -1,8 +1,5 @@
 Remove the assets/ directory in the root directory. Update any references to it
 
-Move apps/config.yaml into the config dir. Update any references to it
-
-Remove the firefox directory from the apps/config/ directory
 
 Copy the apps/nvim/.stylua.toml file
 
