@@ -1,6 +1,3 @@
-Remove the assets/ directory in the root directory. Update any references to it
-
-
 Copy the apps/nvim/.stylua.toml file
 
 Copy the apps/config/nvim/plugins/conform directory
