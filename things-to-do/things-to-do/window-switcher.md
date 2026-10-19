@@ -15,8 +15,7 @@ Features to set via the config file
 | opacity | ✅ |
 | text colour | ✅ |
 | text size | ✅ |
-| Enable/ Disable search bar | ❌ |
-| Search bar size | ❌ |
+| Enable/ Disable search bar | ✅ |
 | Keyboard shortcuts | ❌ |
 | Mouse behaviour (single/ double click to select) | ❌ |
 | Show windows from current workspace or all workspaces | ❌ |
