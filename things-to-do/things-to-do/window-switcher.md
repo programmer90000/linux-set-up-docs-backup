@@ -1,5 +1,3 @@
-There should be a search box at the top of the screen. On the right edge of the search box, inside the white area, add buttons for filter and sort
-
 Add the ability to change the name of windows
 
 Features to set via the config file
