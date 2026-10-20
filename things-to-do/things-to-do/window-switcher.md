@@ -1,6 +1,8 @@
-Add the ability to change the name of windows
-
 Add the ability to sort windows into different groups
+
+Make it scrollable horizontally and vertically
+
+Add keyboard shortcuts: Enter to select, arrow keys to move, tab to rename
 
 Features to set via the config file
 
@@ -14,7 +16,6 @@ Features to set via the config file
 | text colour | ✅ |
 | text size | ✅ |
 | Enable/ Disable search bar | ✅ |
-| Keyboard shortcuts | ❌ |
 | Mouse behaviour (single/ double click to select) | ❌ |
 | Group windows by app or not | ❌ |
 | location Note: The location can't be changed by Rust. I will need to update LabWC to set the location | ❌ |
