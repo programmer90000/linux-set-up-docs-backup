@@ -2,8 +2,6 @@ Add the ability to sort windows into different groups
 
 Make it scrollable horizontally and vertically
 
-Add keyboard shortcuts: Enter to select, arrow keys to move, tab to rename
-
 Features to set via the config file
 
 | Feature | Done |
