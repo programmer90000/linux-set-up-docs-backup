@@ -14,7 +14,5 @@ Features to set via the config file
 | text colour | ✅ |
 | text size | ✅ |
 | Enable/ Disable search bar | ✅ |
-| Mouse behaviour (single/ double click to select) | ❌ |
-| Group windows by app or not | ❌ |
 | location Note: The location can't be changed by Rust. I will need to update LabWC to set the location | ❌ |
 
