@@ -1,5 +1,7 @@
 Add the ability to sort windows into different groups
 
+Add a button to preview windows. Add a keyboard shortcut
+
 Features to set via the config file
 
 | Feature | Done |
