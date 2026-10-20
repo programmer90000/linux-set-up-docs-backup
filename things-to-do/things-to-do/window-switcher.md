@@ -1,7 +1,5 @@
 Add the ability to sort windows into different groups
 
-Make it scrollable horizontally and vertically
-
 Features to set via the config file
 
 | Feature | Done |
