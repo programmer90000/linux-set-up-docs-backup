@@ -1,4 +1,4 @@
-treenote: I have downloaded some of these apps to a previous commit before I removed all of the code
+note: I have downloaded some of these apps to a previous commit before I removed all of the code
 
 | App | Installed |
 |---------|-----------|
