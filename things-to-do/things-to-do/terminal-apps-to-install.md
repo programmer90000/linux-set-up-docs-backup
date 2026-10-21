@@ -12,10 +12,10 @@ treenote: I have downloaded some of these apps to a previous commit before I rem
 | bat | ✅ |
 | tree | ✅ |
 | fzf | ✅ |
-| ripgrep | ❌ |
+| ripgrep | ✅ |
 | Gemini CLI | ❌ |
 | Rust | ❌ |
-| Curl | ❌ |
+| Curl | ✅ |
 | ftdv | ❌ |
 | Midnight Commander | ❌ |
 | superfile | ❌ |
