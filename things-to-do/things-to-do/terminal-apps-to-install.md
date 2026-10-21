@@ -14,7 +14,7 @@ treenote: I have downloaded some of these apps to a previous commit before I rem
 | fzf | ✅ |
 | ripgrep | ✅ |
 | Gemini CLI | ❌ |
-| Rust | ❌ |
+| Rust | ✅ |
 | Curl | ✅ |
 | ftdv | ❌ |
 | Midnight Commander | ❌ |
