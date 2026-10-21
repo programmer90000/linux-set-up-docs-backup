@@ -25,7 +25,7 @@ note: I have downloaded some of these apps to a previous commit before I removed
 | igrep | ❌ |
 | pik | ❌ |
 | toolong | ❌ |
-| repgrep | ❌ |
+| repgrep - Clone and install it. This is the interactive grep | ❌ |
 | riff | ❌ |
 | pkgtop | ❌ |
 | swpui https://github.com/beeb/swpui/tree/main | ❌ |
