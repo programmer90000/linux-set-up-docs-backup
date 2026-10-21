@@ -24,7 +24,7 @@ note: I have downloaded some of these apps to a previous commit before I removed
 | serpl | ❌ |
 | igrep | ❌ |
 | pik | ❌ |
-| toolong | ❌ |
+| lnav | ❌ |
 | repgrep - Clone and install it. This is the interactive grep | ❌ |
 | riff | ❌ |
 | pkgtop | ❌ |
