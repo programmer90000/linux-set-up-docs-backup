@@ -17,7 +17,7 @@ note: I have downloaded some of these apps to a previous commit before I removed
 | Rust | ✅ |
 | Curl | ✅ |
 | ftdv | ❌ |
-| Midnight Commander | ❌ |
+| nnn | ❌ |
 | superfile | ❌ |
 | tig | ❌ |
 | ast-grep | ❌ |
