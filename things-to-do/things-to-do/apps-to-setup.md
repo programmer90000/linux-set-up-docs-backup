@@ -1,3 +1,7 @@
+Setup Neovim and its plugins. I have completed installing them. I need to set them up
+
+Setup Tmux and its plugins. I have completed installing them. I need to set them up
+
 | Feature | Supported |
 |---------|-----------|
 | KeePassXc | ✅ |
