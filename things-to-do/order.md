@@ -1,4 +1,10 @@
-After reinstalling Debian, setup the boot theme on a VM first. Then fix the window switcher not appearing. Then fix the Find My Mouse feature not working. Then setup the login screen. Then add the auto scroll
+After reinstalling Debian, setup the boot theme on a VM first.
+
+Then fix the window switcher not appearing.
+
+Then fix the Find My Mouse feature not working.
+
+Then setup the login screen. Then add the auto scroll
 
 Setup Neovim and its plugins. I have completed installing them. I need to set them up
 
