@@ -6,10 +6,6 @@ Then fix the Find My Mouse feature not working.
 
 Then setup the login screen. Then add the auto scroll
 
-Setup Neovim and its plugins. I have completed installing them. I need to set them up
-
-Setup Tmux and its plugins. I have completed installing them. I need to set them up
-
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.ms](things-to-do/window-switcher.md)
 3. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
