@@ -1,5 +1,7 @@
 Use this repo to make the boot theme: https://github.com/mrtxee/arch-plymouth-themes
 
+If it doesn't work, try a different plymouth theme online.
+
 Use the Debian section of the README file to install it
 
 | Feature | Done |
