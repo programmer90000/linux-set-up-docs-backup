@@ -52,7 +52,7 @@ Step 3: Navigate to the Theme Directory
 Move into the specific theme folder:
 ```
 cd arch-plymouth-themes/arch-boot-dots
-``|
+```
 
 Step 4: Replace/Add the Debian Logo (Optional Customization)
 
