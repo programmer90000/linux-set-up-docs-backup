@@ -1,3 +1,5 @@
+While installing Debian 13, go through each line in the config files and ensure they are run from the correct directory and do the correct things
+
 Fix the Find My Mouse feature not working - IMPORTANT - DO THIS FIRST
 
 Then fix the window switcher not appearing.
