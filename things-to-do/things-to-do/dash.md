@@ -13,6 +13,7 @@ Test if the options in the power menu work
 | Add an item to the dash for MPD | ❌ |
 | Add an item to the dash for pipewire | ❌ |
 | Add an item to the dash displaying the current keyboard layout | ❌ |
+| Look at adding an item to the dash when autoscroll is running | ❌ |
 | Make the app icons scrollable if there are too many | ❌ |
 | Make the dash scrollable if there are too many icons | ❌ |
 
