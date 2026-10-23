@@ -2,7 +2,9 @@ Fix the window switcher not appearing.
 
 Then fix the Find My Mouse feature not working.
 
-Then setup the login screen. Then add the auto scroll
+Then setup the login screen. At the same time, add the auto scroll. While auto-scroll is active, display an item in the dash
+
+After this, setup the rest of the dash.
 
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.ms](things-to-do/window-switcher.md)
