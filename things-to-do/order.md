@@ -1,6 +1,4 @@
-After reinstalling Debian, setup the boot theme on a VM first.
-
-Then fix the window switcher not appearing.
+Fix the window switcher not appearing.
 
 Then fix the Find My Mouse feature not working.
 
@@ -12,12 +10,11 @@ Then setup the login screen. Then add the auto scroll
 4. [features-to-add.md](things-to-do/features-to-add.md)
 5. [apps-to-setup.md](things-to-do/apps-to-setup.md)
 6. [login-screen.md](things-to-do/login-screen.md)
-7. [plymouth-theme.md](things-to-do/plymouth-theme.md)
-8. [apps-to-install.md](things-to-do/apps-to-install.md)
-9. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
-10. [apps-to-find.md](things-to-do/apps-to-find.md)
-11. [refactor.md](things-to-do/refactor.md)
-12. [docs.md](things-to-do/docs.md)
+7. [apps-to-install.md](things-to-do/apps-to-install.md)
+8. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
+9. [apps-to-find.md](things-to-do/apps-to-find.md)
+10. [refactor.md](things-to-do/refactor.md)
+11. [docs.md](things-to-do/docs.md)
 
 After this, go through the Rust book
 
