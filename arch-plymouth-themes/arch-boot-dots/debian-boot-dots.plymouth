@@ -1,0 +1,13 @@
+# Copyright (C) 2026 Mr Txee (mrtxee)
+# SPDX-License-Identifier: GPL-2.0-only
+# Distributed under the GNU GPL v2; see LICENSE in the project root for the full text.
+
+[Plymouth Theme]
+Name=Debian Boot Theme
+Description=Debian boot splash with glowing dots
+Comment=Created by Mr Txee (mrtxee), GPL-2.0-only
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/debian-boot-dots
+ScriptFile=/usr/share/plymouth/themes/debian-boot-dots/debian-boot-dots.script
