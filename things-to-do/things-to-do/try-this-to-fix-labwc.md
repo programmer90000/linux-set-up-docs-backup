@@ -1,4 +1,4 @@
-Inside `rc.xml`, I have the following code. I think this is causing LabWC to freeze. Remove the code inside `windowRules`:
+Inside `rc.xml`, I have the following code. I think this is causing LabWC to freeze. I have removed the code inside `windowRules` and committed it to the main repo:
 ```
     <windowRules>
         <windowRule identifier="*">
