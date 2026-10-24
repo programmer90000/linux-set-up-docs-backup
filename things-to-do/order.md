@@ -2,7 +2,7 @@
 
 The `.config/labwc/rc.xml` file is wrong. That's what causes the mouse cursor to freeze. Fix this
 
-Fix the Find My Mouse feature not working
+Fix the Find My Mouse feature not working. In a previous commit, I made the find cursor app in `apps/wl-find-cursor`. I should copy this directory and install it in the labwc directory. I should use the directory in the main repo, not the backup repo
 
 Then fix the window switcher not appearing.
 
