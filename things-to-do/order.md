@@ -1,6 +1,6 @@
-While installing Debian 13, go through each line in the config files and ensure they are run from the correct directory and do the correct things
+The `.config/labwc/rc.xml` file is wrong. That's what causes the mouse cursor to freeze. Fix this
 
-Fix the Find My Mouse feature not working - IMPORTANT - DO THIS FIRST
+Fix the Find My Mouse feature not working
 
 Then fix the window switcher not appearing.
 
