@@ -1,4 +1,4 @@
-[things-to-do/try-this-to-fix-labwc.md](things-to-do/try-this-to-fix-labwc.md)
+[things-to-do/try-this-to-fix-labwc.md](things-to-do/try-this-to-fix-labwc.md) From my phone, I have updated the rc.xml file to fix it. Before reinstalling Debian, test if this update works
 
 The `.config/labwc/rc.xml` file is wrong. That's what causes the mouse cursor to freeze. Fix this
 
