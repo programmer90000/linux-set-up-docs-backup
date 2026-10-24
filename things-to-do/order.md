@@ -1,3 +1,5 @@
+[things-to-do/try-this-to-fix-labwc.md](things-to-do/try-this-to-fix-labwc.md)
+
 The `.config/labwc/rc.xml` file is wrong. That's what causes the mouse cursor to freeze. Fix this
 
 Fix the Find My Mouse feature not working
