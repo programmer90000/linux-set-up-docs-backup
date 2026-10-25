@@ -1,4 +1,4 @@
-Fix the Find My Mouse feature not working. In a previous commit, I made the find cursor app in `apps/wl-find-cursor`. I should copy this directory and install it in the labwc directory. I should use the directory in the main repo, not the backup repo
+Fix the Find My Mouse feature not working. Move the wl-find-cursor/ into the labwc/ dir and install it.
 
 Then fix the window switcher not appearing.
 
