@@ -1,3 +1,5 @@
+Update the colour of the dots in the boot theme to red
+
 After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
