@@ -21,7 +21,6 @@ After this, setup the rest of the dash.
 3. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
 4. [features-to-add.md](things-to-do/features-to-add.md)
 5. [apps-to-setup.md](things-to-do/apps-to-setup.md)
-6. [login-screen.md](things-to-do/login-screen.md)
 7. [apps-to-install.md](things-to-do/apps-to-install.md)
 8. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
 9. [apps-to-find.md](things-to-do/apps-to-find.md)
