@@ -1,4 +1,4 @@
-Fix the Find My Mouse feature not working. Move the wl-find-cursor/ into the labwc/ dir and install it.
+After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
 
