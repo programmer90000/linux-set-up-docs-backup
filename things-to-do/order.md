@@ -1,10 +1,12 @@
 Update the colour of the dots in the boot theme to red. I will need to update the images themself
 
+Install Wayland-Wheeltani to the main repo
+
 After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
 
-On the dash, the lock button doesn't work, the suspend button logs out. The Restart and Shutdown buttons work. All of the power options on the login screen work. Add an option for logout and sleep
+On the dash, the lock button doesn't work, the suspend button logs out, it doesn't lock. The Restart and Shutdown buttons work. All of the power options on the login screen work. Add an option for logout and sleep to the dash
 
 After this, setup the rest of the dash.
 
