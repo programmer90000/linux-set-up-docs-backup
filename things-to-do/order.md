@@ -6,6 +6,12 @@ Then fix the window switcher not appearing.
 
 Then setup the login screen. At the same time, add the auto scroll. While auto-scroll is active, display an item in the dash
 
+Make the suspend button in the power options on the dash lock the account
+
+Test the power options on the dash
+
+Test the power options on the login screen
+
 After this, setup the rest of the dash.
 
 1. [dash.md](things-to-do/dash.md)
