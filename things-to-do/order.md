@@ -14,14 +14,14 @@ After this, setup the rest of the dash.
 
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.ms](things-to-do/window-switcher.md)
-3. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
-4. [features-to-add.md](things-to-do/features-to-add.md)
+3. [features-to-add.md](things-to-do/features-to-add.md)
+4. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
 5. [apps-to-setup.md](things-to-do/apps-to-setup.md)
-7. [apps-to-install.md](things-to-do/apps-to-install.md)
-8. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
-9. [apps-to-find.md](things-to-do/apps-to-find.md)
-10. [refactor.md](things-to-do/refactor.md)
-11. [docs.md](things-to-do/docs.md)
+6. [apps-to-install.md](things-to-do/apps-to-install.md)
+7. [apps-to-look-at.md](things-to-do/apps-to-look-at.md)
+8. [apps-to-find.md](things-to-do/apps-to-find.md)
+9. [refactor.md](things-to-do/refactor.md)
+10. [docs.md](things-to-do/docs.md)
 
 After this, go through the Rust book
 
