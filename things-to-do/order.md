@@ -6,7 +6,7 @@ Then fix the window switcher not appearing.
 
 Make the suspend button in the power options on the dash lock the account
 
-Test the power options on the dash. The Lock button doesn't work
+Test the power options on the dash. The Lock button doesn't work. The suspend button makes the scree sleep but doesn't lock it. The Restart button works
 
 Test the power options on the login screen
 
