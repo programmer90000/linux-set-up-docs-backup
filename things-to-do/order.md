@@ -4,8 +4,6 @@ After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
 
-Then setup the login screen. At the same time, add the auto scroll. While auto-scroll is active, display an item in the dash
-
 Make the suspend button in the power options on the dash lock the account
 
 Test the power options on the dash
