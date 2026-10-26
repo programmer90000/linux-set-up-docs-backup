@@ -1,4 +1,4 @@
-Update the colour of the dots in the boot theme to red
+Update the colour of the dots in the boot theme to red. I will need to update the images themself
 
 After reinstalling Debian, test the Find My Mouse feature.
 
