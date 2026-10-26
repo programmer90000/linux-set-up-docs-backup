@@ -1,0 +1,33 @@
+# Example systemd --user unit. `wayland-wheeltani --install-service` writes the
+# same unit with your binary and config paths filled in.
+[Unit]
+Description=Progressive middle-button autoscroll daemon for Wayland
+Documentation=https://github.com/docloulou/Wayland-Wheeltani
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/wayland-wheeltani --no-interactive --config %h/.config/wayland-wheeltani/config.toml
+# `systemctl --user reload wayland-wheeltani` re-reads the config file.
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=2
+# The control socket (--status, --toggle, --tune) lives in
+# $XDG_RUNTIME_DIR/wayland-wheeltani, which ProtectSystem=strict would make
+# read-only otherwise.
+RuntimeDirectory=wayland-wheeltani
+RuntimeDirectoryMode=0700
+# kdotool and the KWin helper script share files with KWin through /tmp.
+PrivateTmp=false
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+# The config directory stays writable for `--tune` saves.
+ReadWritePaths=%h/.config/wayland-wheeltani /tmp
+
+[Install]
+# default.target rather than graphical-session.target: the latter is never
+# reached on Hyprland or Sway started without uwsm. The foreground provider
+# keeps looking for the compositor if the service starts first.
+WantedBy=default.target
