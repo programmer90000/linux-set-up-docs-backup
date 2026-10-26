@@ -12,6 +12,8 @@ Test the power options on the dash
 
 Test the power options on the login screen
 
+Change the default size of the window switcher
+
 After this, setup the rest of the dash.
 
 1. [dash.md](things-to-do/dash.md)
