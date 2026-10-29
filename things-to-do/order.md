@@ -1,10 +1,16 @@
+First, setup all of the apps. While doing this, setup the dash.
+
+To setup the dash, try cloning and running it. Try and find the files it downloads in the `.local` directory
+
+Look at installing a different more customisable dash instead of SFWbar. Look at installing a different more customisable window manager instead of LabWC.
+
 Update the colour of the dots in the boot theme to red. I will need to update the images themself
 
 After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
 
-On the dash, the lock button doesn't work. The Restart and Shutdown buttons work. All of the power options on the login screen work. Logout works, it is the suspend action. Add an option for sleep to the dash
+All of the power options on the login screen work. On the dash, the Restart and Shutdown buttons work. Logout works, it is the suspend action. The lock button doesn't work. Add an option for sleep to the dash
 
 After this, setup the rest of the dash.
 
