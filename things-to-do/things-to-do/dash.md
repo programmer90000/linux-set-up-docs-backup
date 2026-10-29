@@ -1,6 +1,5 @@
 Test if the options in the power menu work
 
-I installed swayosd using apt on my computer for the dash. I may want to remove it
 | Feature | Supported |
 |---------|-----------|
 | Add the date and time to the dash | ✅ |
