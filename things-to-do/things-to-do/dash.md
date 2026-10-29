@@ -1,5 +1,7 @@
 Test if the options in the power menu work
 
+Note: I installed evtest using sudo apt install evtest
+
 | Feature | Supported |
 |---------|-----------|
 | Add the date and time to the dash | ✅ |
