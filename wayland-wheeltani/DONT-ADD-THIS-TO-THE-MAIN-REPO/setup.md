@@ -8,13 +8,10 @@ Copy this to ~/.config/wayland-wheeltani/config.toml and adjust to taste.
     name = "Logitech USB Receiver"
     phys = "usb-0000:00:14.0-5/input2"
     port; added by `--setup --pin-port`. Omit it (default) to match on any port.
-#
-#    Several mice: repeat the table as [[device_match]] (double brackets), one per mouse. `wayland-wheeltani --add-device` appends one for you. The daemon drives every match that is plugged in, and picks up mice that are plugged in later.
-#
+For Several mice: repeat the table as [[device_match]] (double brackets), one per mouse. `wayland-wheeltani --add-device` appends one for you. The daemon drives every match that is plugged in, and picks up mice that are plugged in later.
 grab = true
 dry_run = false
 trigger_button = "middle"
-
 # Listen on $XDG_RUNTIME_DIR/wayland-wheeltani/control.sock for --status,
 # --pause, --resume, --toggle, --reload and --tune.
 control_socket = true
@@ -164,3 +161,4 @@ inertia_half_life_ms = 300
 # and `"signal": 8`, then use the same command for every hook:
 # on_enter = ["sh", "-c", "echo $WHEELTANI_STATE > $XDG_RUNTIME_DIR/wheeltani; pkill -RTMIN+8 waybar"]
 # on_exit = ["sh", "-c", "echo $WHEELTANI_STATE > $XDG_RUNTIME_DIR/wheeltani; pkill -RTMIN+8 waybar"]
+```
