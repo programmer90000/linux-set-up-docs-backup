@@ -1,8 +1,8 @@
 First, setup all of the apps. While doing this, setup the dash.
 
-To setup the dash, try cloning and running it. Try and find the files it downloads in the `.local` directory
-
 Look at installing a different more customisable dash instead of SFWbar. Look at waybar. Look at installing a different more customisable window manager instead of LabWC. Look at wayfire
+
+To setup the dash, try cloning and running it. Try and find the files it downloads in the `.local` directory
 
 Update the colour of the dots in the boot theme to red. I will need to update the images themself
 
