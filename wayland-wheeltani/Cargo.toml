@@ -5,22 +5,11 @@ members = [
     "crates/middle-scroll-linux",
 ]
 
-# On non-Linux hosts (e.g. macOS dev machines) `cargo test` / `cargo check`
-# from the workspace root only build the cross-platform core. The Linux
-# backend can still be built explicitly with:
-#
-#     cargo check -p wayland-wheeltani --target x86_64-unknown-linux-gnu
-#
-# or natively from inside an Ubuntu VM with:
-#
-#     cargo build -p wayland-wheeltani
 default-members = ["crates/middle-scroll-core"]
 
 [workspace.package]
 version = "1.4.0"
 edition = "2021"
-# clap 4.6 (used by the Linux daemon) needs Rust 1.85; the portable core
-# crate keeps its own lower MSRV (see crates/middle-scroll-core/Cargo.toml).
 rust-version = "1.85"
 license = "0BSD"
 repository = "https://github.com/docloulou/Wayland-Wheeltani"
@@ -30,8 +19,6 @@ description = "Progressive middle-button autoscroll daemon for Wayland (evdev/ui
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thiserror = "1"
-
-# Linux-only deps (only used by wayland-wheeltani)
 evdev = "0.13"
 clap = { version = "4", features = ["derive"] }
 clap_complete = "4"
