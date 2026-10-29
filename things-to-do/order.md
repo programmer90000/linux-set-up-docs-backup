@@ -6,7 +6,7 @@ After reinstalling Debian, test the Find My Mouse feature.
 
 Then fix the window switcher not appearing.
 
-On the dash, the lock button doesn't work, the suspend button logs out, it doesn't lock. The Restart and Shutdown buttons work. All of the power options on the login screen work. Logout works, it is the suspend action. Add an option for sleep to the dash
+On the dash, the lock button doesn't work. The Restart and Shutdown buttons work. All of the power options on the login screen work. Logout works, it is the suspend action. Add an option for sleep to the dash
 
 After this, setup the rest of the dash.
 
