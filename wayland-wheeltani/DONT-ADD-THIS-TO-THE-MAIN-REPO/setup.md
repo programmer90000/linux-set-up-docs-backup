@@ -1,8 +1,10 @@
-# Copy this to ~/.config/wayland-wheeltani/config.toml and adjust to taste.
-# 1) (RECOMMENDED) Match by USB ids; stable across reboots, USB renumbering, and across USB ports. Generated automatically by `wayland-wheeltani --setup`. Find candidates and their ids with `--list-devices` (look at usb-id: vvvv:pppp`).
-#    [device_match]
-#    vendor_id = "046d"
-#    product_id = "c539"
+Copy this to ~/.config/wayland-wheeltani/config.toml and adjust to taste.
+
+1) (RECOMMENDED) Match by USB ids; stable across reboots, USB renumbering, and across USB ports. Generated automatically by `wayland-wheeltani --setup`. Find candidates and their ids with `--list-devices` (look at usb-id: vvvv:pppp`).
+```
+[device_match]
+    vendor_id = "046d"
+    product_id = "c539"
 #    # name = "Logitech USB Receiver"   # optional, disambiguates duplicates
 #    # phys = "usb-0000:00:14.0-5/input2"  # optional, pin to a specific USB
 #    #                                     # port; added by `--setup --pin-port`.
