@@ -5,10 +5,9 @@ Copy this to ~/.config/wayland-wheeltani/config.toml and adjust to taste.
 [device_match]
     vendor_id = "046d"
     product_id = "c539"
-    name = "Logitech USB Receiver"   # optional, disambiguates duplicates
-    phys = "usb-0000:00:14.0-5/input2"  # optional, pin to a specific USB
-#    #                                     # port; added by `--setup --pin-port`.
-#    #                                     # Omit it (default) to match on any port.
+    name = "Logitech USB Receiver"
+    phys = "usb-0000:00:14.0-5/input2"
+    port; added by `--setup --pin-port`. Omit it (default) to match on any port.
 #
 #    Several mice: repeat the table as [[device_match]] (double brackets), one per mouse. `wayland-wheeltani --add-device` appends one for you. The daemon drives every match that is plugged in, and picks up mice that are plugged in later.
 #
