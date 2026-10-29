@@ -25,4 +25,5 @@ Run:
 ```
 systemctl --user daemon-reload
 systemctl --user enable --now wayland-wheeltani
+sudo adduser your_username input
 ```
