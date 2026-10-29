@@ -1,5 +1,6 @@
 Run:
 ```
+cargo build --release --workspace --bins
 sudo cp target/release/wayland-wheeltani /usr/local/bin/
 echo "uinput" | sudo tee /etc/modules-load.d/uinput.conf
 echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
