@@ -40,40 +40,6 @@ axis_lock = "off"
 inertia = false
 inertia_half_life_ms = 300
 
-# OPTIONAL stepped speed profile. When at least one [[scroll_speed_steps]]
-# entry is present, it REPLACES the smooth progressive curve: distance_units
-# is an absolute evdev distance from the press point (not just beyond the
-# deadzone), the last reached step controls the speed, and direction is still
-# determined by whether you moved down or up from the original press point.
-# Between the deadzone and the first step the smooth curve still applies, so
-# start the first step right after deadzone_units (as below) for a purely
-# stepped profile.
-# Leave all entries commented out (the default) for smooth progressive scroll.
-#
-# Example: with the steps below, moving 40 units away scrolls at 4 detents/s;
-# moving 140 units away scrolls at 18 detents/s. These were the built-in
-# defaults up to version 1.3.1.
-#
-# [[scroll_speed_steps]]
-# distance_units = 11
-# speed_detents_per_second = 1.5
-#
-# [[scroll_speed_steps]]
-# distance_units = 40
-# speed_detents_per_second = 4.0
-#
-# [[scroll_speed_steps]]
-# distance_units = 80
-# speed_detents_per_second = 10.0
-#
-# [[scroll_speed_steps]]
-# distance_units = 140
-# speed_detents_per_second = 18.0
-#
-# [[scroll_speed_steps]]
-# distance_units = 220
-# speed_detents_per_second = 32.0
-
 # ---- foreground application filter (optional) -----------------------------
 #
 # Enable or disable autoscroll depending on the focused application. Disabled
