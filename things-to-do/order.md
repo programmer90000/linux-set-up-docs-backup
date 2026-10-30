@@ -4,7 +4,7 @@ Remove LabWC and SFWBar. In the previous 5 commits, I replaced LabWC with Hyperl
 
 Revert these commits. Add the code inside the `Install Make and Build Essential` commit again.
 
-Replace LabWC with Wayfire. Replace SFWBar with Lambdock
+Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Go through the docs for setting up Wayfire. Install all of the apps it suggests or alternatives
 
 Setup all of the apps. While doing this, setup the dash.
 
