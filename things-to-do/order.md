@@ -1,4 +1,4 @@
-Remove LabWC and SFWBar. Install hyprland and 
+Remove LabWC and SFWBar. Install hyprland and waybar.
 
 Setup all of the apps. While doing this, setup the dash.
 
