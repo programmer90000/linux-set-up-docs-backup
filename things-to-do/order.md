@@ -2,7 +2,7 @@ Run all of the config files in a VM and ensure they work
 
 Remove LabWC and SFWBar. In the previous 5 commits, I replaced LabWC with Hyperland.
 
-Revert these commits. Add the code inside the Install Make and Build Essential commit again.
+Revert these commits. Add the code inside the `Install Make and Build Essential` commit again.
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock
 
