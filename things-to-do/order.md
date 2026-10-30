@@ -1,4 +1,10 @@
-Remove LabWC and SFWBar. Install hyprland and waybar. Before doing this, ensure all of the files I run worn correctly
+Run all of the config files in a VM and ensure they work
+
+Remove LabWC and SFWBar. In the previous 5 commits, I replaced LabWC with Hyperland.
+
+Revert these commits. Add the code inside the Install Make and Build Essential commit again.
+
+Replace LabWC with Wayfire. Replace SFWBar with Lambdock
 
 Setup all of the apps. While doing this, setup the dash.
 
