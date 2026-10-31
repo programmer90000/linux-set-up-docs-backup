@@ -2,7 +2,7 @@ Run all of the config files in a VM and ensure they work
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
-Setup all of the apps. While doing this, setup the dash.
+Setup all of the apps
 
 After reinstalling Debian, test the Find My Mouse feature.
 
