@@ -9,6 +9,7 @@
 | Write docs for dpkg | ❌ |
 | Write docs for ip | ❌ |
 | Write docs for tr | ❌ |
+| Write docs for cut | ❌ |
 | Write docs for openssh | ❌ |
 | Write docs for chmod | ❌ |
 | Write docs for chown | ❌ |
