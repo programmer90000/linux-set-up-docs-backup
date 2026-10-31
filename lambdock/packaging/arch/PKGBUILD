@@ -1,0 +1,51 @@
+# lambdock -- hyper-hackable desktop dock for Wayland
+#
+# SPDX-License-Identifier: MIT
+# Copyright © Josep Bigorra <jjbigorra@gmail.com>
+
+# Maintainer: Josep Bigorra <jjbigorra@gmail.com>
+pkgname=lambdock
+pkgver=0.21.0
+pkgrel=1
+pkgdesc="Wayland-native GTK4 dock customizable in Guile Scheme"
+arch=('x86_64' 'aarch64')
+url="https://github.com/jjba23/lambdock"
+license=('MIT')
+
+depends=(
+  'glib2'
+  'gtk4'
+  'gtk4-layer-shell'
+  'guile'
+  'wayland'
+)
+
+makedepends=(
+  'gettext'
+  'meson'
+  'ninja'
+  'pkgconf'
+  'wayland-protocols'
+)
+
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/${pkgname}"
+
+  arch-meson . build
+  meson compile -C build
+}
+
+check() {
+  cd "$srcdir/${pkgname}"
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  cd "$srcdir/${pkgname}"
+
+  DESTDIR="$pkgdir" meson install -C build
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

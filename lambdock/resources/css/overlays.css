@@ -1,0 +1,459 @@
+/* lambdock -- hyper-hackable desktop dock for Wayland
+ *
+ * SPDX-License-Identifier: MIT
+ * Copyright © Josep Bigorra <jjbigorra@gmail.com>
+ */
+
+/* =========================================================================
+ * LAMBDOCK OVERLAYS - STACKS, LAUNCHPAD & DRAG FEEDBACK
+ * =========================================================================
+ * These widgets live outside the dock capsule (a stack's popover and the
+ * full screen launchpad), so their styling does not belong to any single theme.
+ * The selectors only use lambdock-specific class names and are loaded for the
+ * whole display, whatever theme the dock is using.
+ * ========================================================================= */
+
+/* -------------------------------------------------------------------------
+ * DRAG AND DROP FEEDBACK
+ * ------------------------------------------------------------------------- */
+
+button.flat.dragging {
+  opacity: 0.35;
+}
+
+/* -------------------------------------------------------------------------
+ * STACK POPOVER
+ * ------------------------------------------------------------------------- */
+
+.stack-popover {
+  min-width: 560px;
+}
+
+.stack-popover .title {
+  font-weight: bold;
+}
+
+.stack-scroll {
+  border: none;
+  background: transparent;
+}
+
+.stack-grid button.stack-entry {
+  padding: 12px 10px;
+  border-radius: 14px;
+  min-width: 116px;
+  min-height: 96px;
+}
+
+.stack-grid button.stack-entry:hover {
+  background-color: alpha(currentColor, 0.12);
+}
+
+.stack-grid button.stack-entry label {
+  font-size: 0.9em;
+}
+
+.stack-list button.stack-row {
+  padding: 8px 10px;
+  border-radius: 10px;
+  min-height: 36px;
+}
+
+.stack-list button.stack-row label {
+  font-size: 0.95em;
+}
+
+.stack-list button.stack-row:hover {
+  background-color: alpha(currentColor, 0.10);
+}
+
+.stack-view-active {
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------------------
+ * PREFERENCES
+ * ------------------------------------------------------------------------- */
+
+.lambdock-preferences .pref-section {
+  padding: 18px 20px 20px;
+  border-radius: 16px;
+  background-color: alpha(currentColor, 0.045);
+  border: 1px solid alpha(currentColor, 0.07);
+}
+
+.lambdock-preferences .pref-section .heading {
+  font-size: 1.05em;
+}
+
+.lambdock-preferences .pref-row {
+  min-height: 32px;
+}
+
+/* -------------------------------------------------------------------------
+ * LAUNCHPAD
+ * ------------------------------------------------------------------------- */
+
+window.launchpad {
+  background-color: rgba(18, 18, 24, 0.94);
+  color: #f5f5f7;
+
+  /* The launchpad fades in: lambdock_launchpad_show() adds
+   * `.launchpad-fading-in` before presenting and drops it on the next idle, so
+   * the surface animates from transparent to opaque. With motion reduced (or the
+   * desktop's animations off) the class is never added and it just appears. */
+  opacity: 1;
+  transition: opacity 140ms ease-out;
+}
+
+window.launchpad.launchpad-fading-in {
+  opacity: 0;
+}
+
+/* The surface fills the overlay. In frosted mode the window itself becomes
+ * transparent and this layer carries the tint, so a compositor that blurs
+ * translucent surfaces (KWin does it by default, niri via a layer-rule matching
+ * the "lambdock-launchpad" namespace) shows the desktop through frosted glass
+ * instead of a flat slab. The tint stays dense enough that the labels keep
+ * their contrast with or without such a rule: the glass is meant to be read
+ * through, not looked through. */
+window.launchpad .launchpad-surface {
+  background-color: transparent;
+}
+
+window.launchpad.launchpad-frosted {
+  background-color: transparent;
+}
+
+window.launchpad.launchpad-frosted .launchpad-surface {
+  background-color: rgba(18, 18, 24, 0.82);
+  background-image: linear-gradient(to bottom,
+                                    rgba(255, 255, 255, 0.10),
+                                    rgba(255, 255, 255, 0.01));
+}
+
+.launchpad-top {
+  min-height: 38px;
+}
+
+button.launchpad-close {
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0;
+  border-radius: 19px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+button.launchpad-close:hover {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+button.launchpad-close:active {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+.launchpad-search {
+  border-radius: 22px;
+  padding: 8px 18px;
+  min-height: 32px;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+.launchpad-grid {
+  padding: 8px;
+}
+
+button.launchpad-tile {
+  padding: 14px 12px;
+  border-radius: 16px;
+  min-width: 120px;
+  color: #f5f5f7;
+}
+
+button.launchpad-tile:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+button.launchpad-tile:active {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+button.launchpad-tile label {
+  font-size: 0.92em;
+}
+
+/* The menu of a tile whose application is installed more than once. A popover
+ * is its own surface, so it does not inherit the launchpad's backdrop and needs
+ * the same dark, high contrast palette spelled out. */
+popover.launchpad-copy-menu > contents {
+  padding: 6px;
+  background-color: rgba(24, 24, 30, 0.98);
+  color: #f5f5f7;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.launchpad-copy-menu .menu-title {
+  padding: 8px 10px 4px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.launchpad-copy-menu button.copy-row {
+  min-width: 220px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #f5f5f7;
+}
+
+.launchpad-copy-menu button.copy-row:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.launchpad-copy-menu button.copy-row:active {
+  background-color: rgba(255, 255, 255, 0.20);
+}
+
+.launchpad-copy-menu .copy-source {
+  font-weight: bold;
+}
+
+.launchpad-copy-menu .copy-command {
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------------------------------
+ * CONTEXT MENUS: THE WINDOW HUD AND THE RIGHT-CLICK MENU
+ * -------------------------------------------------------------------------
+ * A menu row is an icon and a label. The *material* of the popover (its
+ * background, its text colour, the padding of a row) belongs to the theme --
+ * every theme styles `popover > contents' and `popover button.flat' -- so
+ * everything here is expressed relative to `currentColor' and says only what a
+ * theme cannot know: which row is the window you are looking at, which one is
+ * minimized, and that the close button is a quiet affordance rather than a row
+ * of red crosses.
+ *
+ * The `window box.popover-menu' prefix is deliberate: it out-specifies the
+ * themes' `popover button.flat' rules (GTK CSS has no `!important'), so a row
+ * keeps its own shape whatever material the dock wears. It anchors on the menu's
+ * own container rather than on the popover element, so the same rules apply
+ * wherever the menu is built.
+ * ------------------------------------------------------------------------- */
+
+window box.popover-menu button.menu-row {
+  padding: 5px 8px;
+  border-radius: 6px;
+  min-height: 20px;
+}
+
+window box.popover-menu button.menu-row .menu-icon {
+  opacity: 0.85;
+}
+
+window box.popover-menu button.menu-row:hover .menu-icon {
+  opacity: 1;
+}
+
+window box.popover-menu button.menu-row .menu-label {
+  font-size: 0.95em;
+}
+
+/* The grid/list switch reads as one small control with a check on the active
+ * side, not as two lines of text. */
+window box.popover-menu button.view-mode {
+  min-width: 84px;
+}
+
+window box.popover-menu button.view-mode.active .menu-label {
+  font-weight: 700;
+}
+
+/* The dot marks the window that holds the focus; it is always in the layout so
+ * the titles line up, and only the current row shows it. */
+window box.popover-menu box.window-row {
+  border-radius: 6px;
+  padding: 1px 0;
+}
+
+window box.popover-menu box.window-row .window-current-marker {
+  opacity: 0;
+}
+
+window box.popover-menu box.window-row.current .window-current-marker {
+  opacity: 0.85;
+}
+
+window box.popover-menu box.window-row.current .window-title label {
+  font-weight: 600;
+}
+
+window box.popover-menu box.window-row.minimized .window-title {
+  opacity: 0.6;
+}
+
+/* The close button stays out of the way until the row is under the pointer (or
+ * the keyboard is on it): a list of window titles should not look like a list
+ * of things to close. */
+window box.popover-menu box.window-row .window-close {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border-radius: 4px;
+  opacity: 0.35;
+}
+
+window box.popover-menu box.window-row:hover .window-close,
+window box.popover-menu box.window-row .window-close:focus-visible {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------
+ * STACKS: THE FOLDER PANEL
+ * -------------------------------------------------------------------------
+ * The panel is a small file browser: a header with the breadcrumb, the count and
+ * its three buttons, then a grid of cards or a list of rows, then a note when the
+ * folder holds more entries than the panel lists.
+ * ------------------------------------------------------------------------- */
+
+window box.stack-popover box.stack-header {
+  padding: 0 2px 2px;
+}
+
+window box.stack-popover box.stack-header .stack-title {
+  font-weight: 700;
+}
+
+window box.stack-popover label.stack-count {
+  font-size: 0.9em;
+  opacity: 0.75;
+}
+
+window box.stack-popover box.stack-header-button {
+  min-width: 26px;
+  min-height: 26px;
+  padding: 0;
+  border-radius: 6px;
+}
+
+window box.stack-popover box.stack-header-button:hover {
+  background-color: alpha(currentColor, 0.12);
+}
+
+window box.stack-popover box.stack-header-button:active {
+  background-color: alpha(currentColor, 0.20);
+}
+
+window box.stack-popover label.stack-note {
+  font-size: 0.88em;
+  opacity: 0.7;
+  padding-top: 2px;
+}
+
+/* Scrolling: leave the scrollbar its own room, and keep the cards off it. */
+window box.stack-popover .stack-scroll {
+  padding-right: 2px;
+}
+
+/* A grid cell is a card: a hover surface, a rounded preview, and a name that
+ * keeps its contrast on every material. */
+window box.stack-popover button.stack-entry {
+  padding: 10px 8px;
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+window box.stack-popover button.stack-entry:hover {
+  background-color: alpha(currentColor, 0.10);
+}
+
+window box.stack-popover button.stack-entry:active {
+  background-color: alpha(currentColor, 0.18);
+}
+
+window box.stack-popover button.stack-entry image {
+  border-radius: 6px;
+}
+
+window box.stack-popover button.stack-entry label {
+  font-size: 0.92em;
+  opacity: 0.92;
+}
+
+/* A list row: a hover surface and a hairline, the way a file manager draws it. */
+window box.stack-popover button.stack-row {
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+window box.stack-popover button.stack-row:hover {
+  background-color: alpha(currentColor, 0.10);
+}
+
+window box.stack-popover button.stack-row:active {
+  background-color: alpha(currentColor, 0.18);
+}
+
+window box.stack-popover box.stack-list button.stack-row {
+  border-bottom: 1px solid alpha(currentColor, 0.08);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+window box.stack-popover box.stack-list button.stack-row:last-child {
+  border-bottom: none;
+}
+
+/* -------------------------------------------------------------------------
+ * KEYBOARD FOCUS
+ * -------------------------------------------------------------------------
+ * Dock icons, launchpad tiles and stack entries are flat buttons, and most
+ * themes draw flat buttons without any focus indicator. The ring is drawn only
+ * for :focus-visible, i.e. for keyboard and screen reader users, so a pointer
+ * click keeps the untouched look.
+ * ------------------------------------------------------------------------- */
+
+button.dock-item:focus-visible,
+button.launchpad-tile:focus-visible,
+button.launchpad-close:focus-visible,
+button.copy-row:focus-visible,
+button.stack-entry:focus-visible,
+button.stack-row:focus-visible {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.9);
+}
+
+/* Inside a popover the themes set `box-shadow: none' on every flat button, so
+ * the ring above would be invisible there without the extra weight. */
+window popover button.menu-row:focus-visible,
+window popover button.window-close:focus-visible,
+window popover button.window-title:focus-visible,
+window popover button.stack-header-button:focus-visible,
+window box.stack-popover button.stack-entry:focus-visible,
+window box.stack-popover button.stack-row:focus-visible {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.9);
+}
+
+.lambdock-preferences button:focus-visible,
+.lambdock-preferences switch:focus-visible,
+.lambdock-preferences scale:focus-visible,
+.lambdock-preferences spinbutton:focus-visible,
+.lambdock-preferences dropdown:focus-visible {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.75);
+}
+
+/* -------------------------------------------------------------------------
+ * MINIMIZE TO DOCK
+ * -------------------------------------------------------------------------
+ * A minimized window is still running, so the icon keeps its running indicator
+ * and only loses contrast, the way macOS dims a hidden app. The class is added
+ * to the button when every window the item tracks is minimized, and removed the
+ * moment one comes back; see dock_item.c:apply_running_state().
+ * ------------------------------------------------------------------------- */
+
+button.dock-item.window-minimized image {
+  opacity: 0.55;
+}

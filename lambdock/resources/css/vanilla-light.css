@@ -1,0 +1,191 @@
+/* lambdock -- hyper-hackable desktop dock for Wayland
+ *
+ * SPDX-License-Identifier: MIT
+ * Copyright © Josep Bigorra <jjbigorra@gmail.com>
+ */
+
+/* =========================================================================
+ * LAMBDOCK STYLESHEET - LIGHT GLASSMORPHISM
+ * ========================================================================= */
+
+/* -------------------------------------------------------------------------
+ * WINDOW SHELL & CONTAINER
+ * ------------------------------------------------------------------------- */
+
+window {
+  background-color: transparent;
+}
+
+/* Ultra-sleek floating glass capsule (Light Mode) */
+.lambdock-window {
+  border-radius: 22px;
+  padding: 6px 12px;
+  margin: 4px;
+
+  /* Bright translucent glass background */
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(235, 238, 245, 0.68) 100%
+  );
+
+  /* Specular light highlight border */
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  /* Soft ambient drop shadow and light glass edge reflections */
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.60),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------------------------------------------------------------
+ * BUTTONS & INTERACTION
+ * ------------------------------------------------------------------------- */
+
+button.flat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 6px;
+  /* The horizontal gap between items comes from `dock-item-spacing'; the theme
+   * only keeps a vertical margin, so the row is as tight as the setting says. */
+  margin: 2px 0;
+  border-radius: 14px;
+  color: #1c1c1e;
+
+  /* Fluid physics curve for hover/active states */
+  transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 150ms ease,
+              box-shadow 150ms ease;
+}
+
+button.flat:hover {
+  background-color: rgba(0, 0, 0, 0.10);
+  color: #000000;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+button.flat:active {
+  background-color: rgba(0, 0, 0, 0.18);
+  color: #000000;
+  box-shadow: none;
+}
+
+/* Dynamic Item Labels */
+.dynamic-item-label {
+  color: #1c1c1e;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+button.flat:hover .dynamic-item-label {
+  color: #000000;
+}
+
+/* Running-window titles, in taskbar mode: dark on the pale glass. */
+.window-title-label {
+  color: #1c1c1e;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* -------------------------------------------------------------------------
+ * RUNNING APP INDICATOR (Royal Blue Glow Pill)
+ * ------------------------------------------------------------------------- */
+
+button.running-app {
+  background-image: radial-gradient(
+    circle at center,
+    #0055ff 0%,
+    rgba(0, 122, 255, 0.85) 35%,
+    rgba(0, 150, 255, 0.45) 65%,
+    transparent 80%
+  );
+  background-size: 14px 5px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+button.running-app:hover {
+  background-image: radial-gradient(
+    circle at center,
+    #0044ee 0%,
+    rgba(0, 110, 255, 0.95) 40%,
+    rgba(0, 160, 255, 0.65) 70%,
+    transparent 85%
+  );
+  background-size: 18px 6px;
+  background-position: center bottom;
+}
+
+/* The focused app keeps the brightest pill even at rest. */
+button.window-focused,
+button.window-focused:hover {
+  background-image: radial-gradient(
+    circle at center,
+    #0044ee 0%,
+    rgba(0, 110, 255, 0.95) 40%,
+    rgba(0, 160, 255, 0.65) 70%,
+    transparent 85%
+  );
+  background-size: 22px 6px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------
+ * SEPARATOR
+ * ------------------------------------------------------------------------- */
+
+separator {
+  margin: 6px 8px;
+  background-color: rgba(0, 0, 0, 0.18);
+  min-width: 1px;
+}
+
+/* -------------------------------------------------------------------------
+ * FLOATING POPOVER MENU
+ * ------------------------------------------------------------------------- */
+
+popover > contents {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1c1c1e;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  padding: 6px;
+}
+
+label.title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #2c2c2e;                     /* High contrast title color */
+  padding: 4px 8px;
+}
+
+popover button.flat {
+  color: #1c1c1e;
+  border-radius: 10px;
+  padding: 6px 12px;
+  margin: 2px 0;
+  transition: background-color 120ms ease;
+}
+
+popover button.flat:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #000000;
+  transform: none;
+  box-shadow: none;
+}
+
+window.about-dialog {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(235, 238, 245, 0.80) 100%
+  );
+  color: #1c1c1e;
+}

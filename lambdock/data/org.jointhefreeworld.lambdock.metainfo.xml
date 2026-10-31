@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lambdock, a hyper-hackable desktop dock for Wayland
+
+     SPDX-License-Identifier: MIT
+     Copyright © Josep Bigorra <jjbigorra@gmail.com> -->
+<component type="desktop-application">
+  <id>org.jointhefreeworld.lambdock</id>
+
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Lambdock</name>
+  <summary>Customizable Wayland desktop dock</summary>
+
+  <developer id="org.jointhefreeworld">
+    <name>Josep Bigorra</name>
+  </developer>
+
+  <description>
+    <p>
+      Lambdock is a Wayland-native desktop dock for GNU/Linux, in the spirit of
+      Cairo-Dock, Plank and the macOS Dock. It is built with GTK4 and
+      gtk4-layer-shell, and can be themed, extended and reconfigured live with
+      GNU Guile Scheme.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Dynamic window tracking via the Wayland foreign-toplevel protocol</li>
+      <li>Multi-monitor support and multiple dock instances</li>
+      <li>Auto-hide with fluid slide-out animations</li>
+      <li>GTK CSS themes and configurable application launchers</li>
+      <li>Dynamic widgets for CPU, RAM, temperature and more</li>
+      <li>An embedded Guile runtime with hot-reloading and an optional REPL</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">org.jointhefreeworld.lambdock.desktop</launchable>
+
+  <url type="homepage">https://github.com/jjba23/lambdock</url>
+  <url type="bugtracker">https://github.com/jjba23/lambdock/issues</url>
+  <url type="vcs-browser">https://github.com/jjba23/lambdock</url>
+
+  <translation type="gettext">lambdock</translation>
+
+  <content_rating type="oars-1.1"/>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>dock</keyword>
+    <keyword>launcher</keyword>
+    <keyword>panel</keyword>
+    <keyword>wayland</keyword>
+    <keyword>guile</keyword>
+    <keyword>scheme</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/jjba23/lambdock/trunk/resources/img/screens/stacks.png</image>
+      <caption>Lambdock as a floating dock, with a folder stack open</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/jjba23/lambdock/trunk/resources/img/screens/launchpad.png</image>
+      <caption>The launchpad, filtered by its search field</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/jjba23/lambdock/trunk/resources/img/screens/preferences.png</image>
+      <caption>Preferences: every dock setting, applied live</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/jjba23/lambdock/trunk/resources/img/screens/taskbar.png</image>
+      <caption>Taskbar mode with the Windows XP theme and dynamic widgets</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.21.0" date="2026-10-31">
+      <description>
+        <p>The round that finished the list of known rough edges. Nothing about how the dock behaves changed; what changed is where the code keeps its values and who owns them.</p>
+        <p>The meter's geometry and its green/amber/red thresholds are now pure, unit-tested functions, and the drawing code only paints what they describe. The glass shelf's value types moved into the pure core layer, so the core headers no longer include the application header or a widget header -- and the application header no longer includes libguile.h at all, because the only Scheme value it carried is an opaque handle now.</p>
+        <p>Dynamic-item pollers go through the Guile bridge (one opaque handle in, one plain reading out), the desktop-entry cache is a single value with one owner, the icon search paths are built from explicit inputs and tested, and the dock's window model (tracking, running/focused/minimized styling and the app-id lookup) moved out of dock_item.c into its own file.</p>
+      </description>
+    </release>
+    <release version="0.20.0" date="2026-10-31">
+      <description>
+        <p>Two theme families, and whole-dock recipes. macOS Tiger (the flat Aqua strip the icons sit inside) and macOS Tahoe (the 26 Liquid Glass pill, light and dark) join the built-in themes, Snow Leopard's dock now carries its own 3D shelf material, and Windows Vista (Aero Glass) and Windows 7 (the Aero superbar) complete the Windows family, which is now consistent: all five are taskbars, all draw 32px icons, and they differ only where their era did.</p>
+        <p>Twenty look recipes set a whole dock in one line -- "(define dock-look 'osx-mavericks-dark)" brings the theme, the icon size and spacing, the end padding, the dock/taskbar mode, the window titles and every glass-shelf number, plus the fisheye, because the OS X docks magnify and no Windows taskbar did. Anything you define yourself still wins, and "(apply-look! 'osx-tahoe)" restyles a running dock. Every recipe is unit tested for completeness.</p>
+        <p>Polish across all nineteen themes: the focused window now has its own indicator everywhere (the long Windows underline, the wide Windows 11 pill, a brighter glow on the stock themes), every theme colours its window titles, the light macOS docks get dark labels and dark running dots so nothing vanishes into pale glass, and theme scoping no longer loses a selector written across two lines -- which is what used to let one theme's indicator paint under another's icons.</p>
+        <p>The launchpad loses its "Applications" title -- the grid of what is installed is the screen -- and its close button sits on the left by default, with a new dock-launchpad-close-side setting (and Preferences row) to move it to the right. The Preferences window gains a "Dock items" card that appends a trash can, a clock, or a RAM, CPU, temperature or battery meter to the dock, stored with the drag-and-drop layout so it survives a restart.</p>
+      </description>
+    </release>
+    <release version="0.19.5" date="2026-10-29">
+      <description>
+        <p>Measured where a hover frame's time goes: the dock's own magnification arithmetic costs about 30 microseconds per frame (0.2% of a frame), while the process reads zero CPU when idle or hidden and about 7% of one core during an active hover sweep -- so the remaining cost is GTK laying the row out and painting it, which is what magnification is.</p>
+        <p>Edge behaviour audited with a real pointer: nothing is clipped at the ends of the row, the row widens without jumping vertically, and the screen edge does not bounce (12 rapid crossings in and out of the dock give zero hides; 12 jitters along the reveal strip give exactly one reveal).</p>
+      </description>
+    </release>
+    <release version="0.19.4" date="2026-10-29">
+      <description>
+        <p>Auto-hide reveals again. The input region that makes the trigger strip reachable was set but never committed -- Wayland surface state is double buffered and a dock that has finished sliding draws nothing -- so the compositor kept the dock-shaped region and the strip stayed dead. It now asks for the frame that commits it.</p>
+        <p>A pointer that rests on the strip while the dock slides away under it never crosses back into it, so motion on the strip now reveals the dock, not only a crossing. A reveal that arrives while a hide is starting is turned around instead of dropped, and a leave is only ignored while the dock is actually moving. The strip itself is 4 px instead of 2, and LAMBDOCK_DEBUG=1 traces the whole sequence with timestamps.</p>
+      </description>
+    </release>
+    <release version="0.19.3" date="2026-10-29">
+      <description>
+        <p>Packaging fix: the render-budget test skips itself when there is no display server instead of aborting inside gtk_init, so a sandboxed package build's check phase passes. Nothing changed in the dock itself.</p>
+      </description>
+    </release>
+    <release version="0.19.2" date="2026-10-29">
+      <description>
+        <p>Auto-hide works again: while the dock is tucked away or sliding, the whole surface takes input, because the only part of it on screen is the trigger strip -- which the dock-shaped input region had cut away. Once the dock is out, the region is the slab plus the icons again, and it is only re-set when it changes.</p>
+        <p>The hover path is now measured and tested rather than eyeballed: render counters record layout steps, geometry-cache rebuilds, paints and surface resizes, and a test drives the real hover path to assert the budget (no surface resizes, fewer geometry rebuilds than frames, and no work at all for sub-pixel pointer jitter). Item geometry is cached per layout change instead of re-queried every frame.</p>
+      </description>
+    </release>
+    <release version="0.19.1" date="2026-10-29">
+      <description>
+        <p>Hovering the dock no longer resizes it. Growing the icons under the pointer made GTK resize the window, and on Wayland that means a buffer re-allocation and a compositor reconfigure on every pointer frame -- the flicker and torn pixels along the dock's edges. The room the row spreads into is reserved once, before the pointer starts magnifying, so the surface keeps its size for the whole hover.</p>
+        <p>The reserved room (including the headroom the dock always had above its capsule) is now cut out of the surface's input region, so the invisible band around the dock can no longer swallow clicks meant for the windows underneath.</p>
+      </description>
+    </release>
+    <release version="0.19.0" date="2026-10-29">
+      <description>
+        <p>The clock item is an analogue face instead of a time string: a squircle body with a brushed bezel, a paper dial, tick marks, three hands and a sweep of glass, all drawn from geometry so it stays crisp at any dock-icon-size. It keeps its own colours -- a watch face is an object -- and takes one icon cell instead of a string's width, and its hands follow the system clock while the item's poller keeps naming the reading for the tooltip and the screen reader.</p>
+        <p>The face's geometry is a pure function with its own test, and the showcase recording and stills are re-recorded with it.</p>
+      </description>
+    </release>
+    <release version="0.18.2" date="2026-10-29">
+      <description>
+        <p>Dynamic items line up with the icons beside them. A gauge, a separator and the clock used to measure shorter than an icon and hang at the bottom of the row; on a shelf theme the gauges also sat a whole reflection band lower, because a meter dropped the reflection slot that reserves that band. Every item now carries one icon-sized cell, keeps its reflection slot whether or not it has artwork to mirror, and a separator fills its cell.</p>
+        <p>The showcase recording and its stills are re-recorded with the fix.</p>
+      </description>
+    </release>
+    <release version="0.18.1" date="2026-10-29">
+      <description>
+        <p>The showcase recording now shows the two macOS Mavericks materials the way their stylesheet intends: the polished platinum slab with the icons mirrored onto the glass in front of them, which needs the dock's shelf geometry as well as the theme. The montage gives each of them a longer beat, and the REPL helper it teaches applies the theme and the geometry in one expression.</p>
+        <p>The Preferences scene shows the dialog on its own: the demo clears its terminals first, the popover row it clicks targets Close All Windows again, and the dialog opens floating at the size the scene uses, clear of the caption. The taskbar scene is captioned for what it shows instead of promising window titles, which this layout measures away.</p>
+      </description>
+    </release>
+    <release version="0.18.0" date="2026-10-29">
+      <description>
+        <p>The showcase recording is now framed and captioned like a product video, and every scene in it was re-filmed and checked against its caption: auto-hide at the screen edge, fish-eye magnification, launching with running indicators, the window popover, the dock's own menu and the Preferences window, a folder stack, the launchpad filtered from the REPL, a live Guile REPL session changing the icon size and the themes, and the Windows XP taskbar mode. The recording now contains exactly one cursor -- the compositor's own -- instead of one drawn in post.</p>
+        <p>Also in this release: the launchpad search field takes the keyboard as soon as the launchpad opens, launching minimizes and restores the focused window on compositors that support it, larger launchpad tiles, a rebuilt Windows XP theme, and a quality pass over running the dock across compositors without wlr-layer-shell or wlr-foreign-toplevel.</p>
+      </description>
+    </release>
+    <release version="0.15.0" date="2026-10-28">
+      <description>
+        <p>Lambdock is now licensed under the MIT License, and every source file says so. Stacks no longer offer the fan view: the icon grid and the list remain, and a settings file that still asks for the fan reads back as the grid. Under the hood the C side was rebuilt around explicit models -- the launchpad, the preferences window and the set of active docks -- with their arithmetic and filtering moved into pure functions that are tested without a display.</p>
+      </description>
+    </release>
+    <release version="0.13.3" date="2026-10-27">
+      <description>
+        <p>The launchpad shows one tile per application again: desktop files that describe the same program, such as the distro package and the Flatpak export of it, are collapsed. A tile whose application is installed more than once offers which copy to start from its context menu, with where each copy comes from and the command it runs. The backdrop is denser, so the labels read over a busy desktop.</p>
+      </description>
+    </release>
+    <release version="0.13.2" date="2026-10-26">
+      <description>
+        <p>The right-click menu of a dock item now carries actions that fit the application: browsers get New Window and New Private Window, and a running music player gets playback controls over MPRIS.</p>
+      </description>
+    </release>
+    <release version="0.13.1" date="2026-10-26">
+      <description>
+        <p>The container image builds again: the Dockerfile now ships the desktop entry and AppStream metadata the build needs.</p>
+      </description>
+    </release>
+    <release version="0.13.0" date="2026-10-26">
+      <description>
+        <p>Keyboard and screen-reader accessibility with a reduce-motion setting, a rebuilt stack fan that shows live file thumbnails, a configurable launchpad, and a roomier preferences window.</p>
+      </description>
+    </release>
+    <release version="0.7.4" date="2026-09-07">
+      <description>
+        <p>Expanded test coverage and packaging improvements.</p>
+      </description>
+    </release>
+    <release version="0.7.3" date="2026-09-06">
+      <description>
+        <p>Improved RPM packaging and stability fixes.</p>
+      </description>
+    </release>
+    <release version="0.7.2" date="2026-08-31">
+      <description>
+        <p>Packaging and build refinements.</p>
+      </description>
+    </release>
+    <release version="0.6.3" date="2026-08-22">
+      <description>
+        <p>Added Podman/Docker builds and improved APT and RPM packaging.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,190 @@
+/* lambdock -- hyper-hackable desktop dock for Wayland
+ *
+ * SPDX-License-Identifier: MIT
+ * Copyright © Josep Bigorra <jjbigorra@gmail.com>
+ */
+
+/* =========================================================================
+ * LAMBDOCK STYLESHEET - UBUNTU UNITY AUBERGINE
+ * ========================================================================= */
+
+/* -------------------------------------------------------------------------
+ * WINDOW SHELL & CONTAINER
+ * ------------------------------------------------------------------------- */
+
+window {
+  background-color: transparent;
+}
+
+/* Unity Classic Aubergine Glass Capsule */
+.lambdock-window {
+  border-radius: 16px;
+  padding: 6px 12px;
+  margin: 4px;
+
+  /* Classic Ubuntu Aubergine to Deep Purple gradient */
+  background-image: linear-gradient(
+    135deg,
+    rgba(59, 23, 49, 0.80) 0%,
+    rgba(38, 14, 31, 0.84) 50%,
+    rgba(22, 8, 18, 0.87) 100%
+  );
+
+  /* Subtle highlight border with a warm orange light hint */
+  border: 1px solid rgba(233, 84, 32, 0.40);
+
+  /* Clean backdrop shadow with soft warm ambient tint */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(233, 84, 32, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.20);
+}
+
+/* -------------------------------------------------------------------------
+ * BUTTONS & INTERACTION
+ * ------------------------------------------------------------------------- */
+
+button.flat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 6px;
+  margin: 2px 3px;
+  border-radius: 12px;
+  color: #f5f5f7;
+
+  /* Smooth Yaru response curve */
+  transition: transform 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 150ms ease,
+              box-shadow 150ms ease;
+}
+
+button.flat:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+button.flat:active {
+  background-color: rgba(233, 84, 32, 0.35);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* Dynamic Item Labels */
+.dynamic-item-label {
+  color: #f5f5f7;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+button.flat:hover .dynamic-item-label {
+  color: #ffffff;
+}
+
+/* Running-window titles, in taskbar mode: light on the aubergine glass. */
+.window-title-label {
+  color: #f5f5f7;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* -------------------------------------------------------------------------
+ * RUNNING APP INDICATOR (Ubuntu Orange Glow Pip)
+ * ------------------------------------------------------------------------- */
+
+button.running-app {
+  background-image: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #e95420 35%,                      /* Ubuntu Orange */
+    rgba(233, 84, 32, 0.60) 65%,
+    transparent 85%
+  );
+  background-size: 14px 5px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+button.running-app:hover {
+  background-image: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #ff6e3b 40%,                      /* Vibrant active orange */
+    rgba(233, 84, 32, 0.85) 70%,
+    transparent 90%
+  );
+  background-size: 18px 6px;
+  background-position: center bottom;
+}
+
+/* The focused app keeps the brightest pip even at rest. */
+button.window-focused,
+button.window-focused:hover {
+  background-image: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #ff6e3b 40%,
+    rgba(233, 84, 32, 0.85) 70%,
+    transparent 90%
+  );
+  background-size: 22px 6px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------
+ * SEPARATOR
+ * ------------------------------------------------------------------------- */
+
+separator {
+  margin: 6px 8px;
+  background-color: rgba(255, 255, 255, 0.22);
+  min-width: 1px;
+}
+
+/* -------------------------------------------------------------------------
+ * FLOATING POPOVER MENU (Aubergine HUD)
+ * ------------------------------------------------------------------------- */
+
+popover > contents {
+  background-color: rgba(26, 8, 20, 0.96);
+  color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(233, 84, 32, 0.40);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  padding: 6px;
+}
+
+label.title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #ff7a50;                     /* Brightened Ubuntu Orange for sharp legibility */
+  padding: 4px 8px;
+}
+
+popover button.flat {
+  color: #f5f5f7;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 2px 0;
+  transition: background-color 120ms ease;
+}
+
+popover button.flat:hover {
+  background-image: linear-gradient(180deg, #e95420 0%, #c73809 100%);
+  color: #ffffff;
+  transform: none;
+  box-shadow: none;
+}
+
+window.about-dialog {
+  background-image: linear-gradient(
+    135deg,
+    rgba(59, 23, 49, 0.92) 0%,
+    rgba(38, 14, 31, 0.95) 50%,
+    rgba(22, 8, 18, 0.98) 100%
+  );
+  color: #ffffff;
+}

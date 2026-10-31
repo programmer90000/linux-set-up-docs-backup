@@ -1,0 +1,268 @@
+/* lambdock -- hyper-hackable desktop dock for Wayland
+ *
+ * SPDX-License-Identifier: MIT
+ * Copyright © Josep Bigorra <jjbigorra@gmail.com>
+ */
+
+/* =========================================================================
+ * LAMBDOCK STYLESHEET - SNOW LEOPARD 3D GLASS EDITION (WHITER)
+ * ========================================================================= */
+
+/* -------------------------------------------------------------------------
+ * WINDOW SHELL & CONTAINER
+ * ------------------------------------------------------------------------- */
+
+window {
+  background-color: transparent;
+}
+
+/* Iconic 3D Frosted Glass Shelf Floor */
+.lambdock-window {
+  border-radius: 6px 6px 16px 16px;
+  padding: 4px 14px 8px 14px;
+  margin: 0px 4px 2px 4px;
+
+  /* Multi-stage reflection gradient - Adjusted for a whiter, frostier look */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.91) 0%,
+    rgba(240, 245, 250, 0.81) 12%,
+    rgba(215, 225, 235, 0.71) 50%,
+    rgba(180, 195, 210, 0.81) 85%,
+    rgba(140, 155, 175, 0.92) 100%
+  );
+
+  /* Snow Leopard signature glossy frosted edges */
+  border-top: 2px solid rgba(255, 255, 255, 1.0);
+  border-left: 1px solid rgba(255, 255, 255, 0.70);
+  border-right: 1px solid rgba(255, 255, 255, 0.70);
+  border-bottom: 2px solid rgba(60, 70, 85, 0.85);
+
+  /* Depth drop shadow and upper reflective sheen */
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.30),
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------------------------------------------------------
+ * THE 3D GLASS SHELF (dock-shelf-* in use)
+ * -------------------------------------------------------------------------
+ * Snow Leopard's dock is the one that made the shelf famous: a trapezoid of
+ * frosted glass the icons hang over, with a bright specular line on the edge
+ * that touches the screen and the mirrors fading over the glass in front of
+ * them. `(define dock-look 'osx-snow-leopard)` sets the geometry; this is the
+ * cold, pale material to go with it. Without these rules the generic shelf.css
+ * slab would be used, which is the same idea in a warmer platinum. */
+
+.lambdock-window.shelf-mode {
+  border-radius: 8px 8px 18px 18px;
+
+  background-image: linear-gradient(
+    0deg,
+    rgba(122, 132, 144, 0.44) 0px,
+    rgba(122, 132, 144, 0.44) 2px,
+    rgba(255, 255, 255, 0.94) 2px,
+    rgba(255, 255, 255, 0.74) 3px,
+    rgba(236, 243, 250, 0.62) 9px,
+    rgba(214, 226, 238, 0.48) 45%,
+    rgba(186, 203, 220, 0.40) 100%
+  );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.34);
+  border-left: 1px solid rgba(176, 190, 206, 0.52);
+  border-right: 1px solid rgba(176, 190, 206, 0.52);
+  border-bottom: 1px solid rgba(138, 152, 168, 0.58);
+
+  box-shadow:
+    0 -10px 24px rgba(20, 34, 54, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+}
+
+.lambdock-window.shelf-mode.shelf-top {
+  border-radius: 18px 18px 8px 8px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(122, 132, 144, 0.44) 0px,
+    rgba(122, 132, 144, 0.44) 2px,
+    rgba(255, 255, 255, 0.94) 2px,
+    rgba(255, 255, 255, 0.74) 3px,
+    rgba(236, 243, 250, 0.62) 9px,
+    rgba(214, 226, 238, 0.48) 45%,
+    rgba(186, 203, 220, 0.40) 100%
+  );
+}
+
+.lambdock-window.shelf-mode.shelf-left {
+  border-radius: 8px 18px 18px 8px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(122, 132, 144, 0.44) 0px,
+    rgba(122, 132, 144, 0.44) 2px,
+    rgba(255, 255, 255, 0.94) 2px,
+    rgba(255, 255, 255, 0.74) 3px,
+    rgba(236, 243, 250, 0.62) 9px,
+    rgba(214, 226, 238, 0.48) 45%,
+    rgba(186, 203, 220, 0.40) 100%
+  );
+}
+
+.lambdock-window.shelf-mode.shelf-right {
+  border-radius: 18px 8px 8px 18px;
+  background-image: linear-gradient(
+    270deg,
+    rgba(122, 132, 144, 0.44) 0px,
+    rgba(122, 132, 144, 0.44) 2px,
+    rgba(255, 255, 255, 0.94) 2px,
+    rgba(255, 255, 255, 0.74) 3px,
+    rgba(236, 243, 250, 0.62) 9px,
+    rgba(214, 226, 238, 0.48) 45%,
+    rgba(186, 203, 220, 0.40) 100%
+  );
+}
+
+/* A full-width taskbar keeps the material and squares off the corners. */
+.lambdock-window.shelf-mode.taskbar {
+  border-radius: 0;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+ * BUTTONS & SPRING MAGNIFICATION
+ * ------------------------------------------------------------------------- */
+
+button.flat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 4px;
+  margin: 2px 4px;
+  border-radius: 8px;
+
+  /* The 10.6 dock is pale glass, so its foreground is dark: this is the colour
+   * a symbolic icon and a label take, and white on this slab would vanish. */
+  color: #232830;
+
+  /* Bouncy spring curve for icon magnification above shelf floor */
+  transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 150ms ease-out;
+}
+
+button.flat:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+}
+
+button.flat:active {
+  background-color: rgba(255, 255, 255, 0.60);
+}
+
+/* Dynamic Item Labels */
+.dynamic-item-label {
+  color: #232830;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 2px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+button.flat:hover .dynamic-item-label {
+  color: #10141a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.80);
+}
+
+/* Running-window titles, in taskbar mode: dark on the pale slab, like the
+ * labels above and like the Mavericks theme does. */
+.window-title-label {
+  color: #232830;
+  font-weight: 600;
+  font-size: 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+/* -------------------------------------------------------------------------
+ * RUNNING APP INDICATOR (Ice-Blue Glowing Light Dot)
+ * ------------------------------------------------------------------------- */
+
+button.running-app {
+  background-image: radial-gradient(
+    circle at center,
+    #2b7fd4 0%,
+    rgba(120, 190, 250, 0.95) 30%,
+    rgba(45, 140, 255, 0.85) 60%,
+    transparent 80%
+  );
+  background-size: 20px 6px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+button.running-app:hover {
+  background-image: radial-gradient(
+    circle at center,
+    #1f6fc4 0%,
+    rgba(140, 205, 255, 1.0) 30%,
+    rgba(70, 175, 255, 0.95) 65%,
+    transparent 85%
+  );
+  background-size: 26px 8px;
+  background-position: center bottom;
+}
+
+/* -------------------------------------------------------------------------
+ * GLASS SEPARATOR GROOVE
+ * ------------------------------------------------------------------------- */
+
+separator {
+  margin: 6px 8px;
+  background-color: rgba(255, 255, 255, 0.80);
+  border-right: 1px solid rgba(100, 110, 125, 0.40);
+  min-width: 1px;
+}
+
+/* -------------------------------------------------------------------------
+ * HUD POPOVER MENUS
+ * ------------------------------------------------------------------------- */
+
+popover > contents {
+  background-color: rgba(45, 52, 62, 0.96); /* Slightly lighter dark mode popover */
+  color: #f4f8fc;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+  padding: 4px;
+}
+
+label.title {
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: #d0e4f7;
+  padding: 4px 8px;
+}
+
+popover button.flat {
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin: 1px 0;
+}
+
+popover button.flat:hover {
+  background-image: linear-gradient(180deg, #5297f6 0%, #1a66d2 100%);
+  color: #ffffff;
+}
+
+window.about-dialog {
+  /* Matched to the whiter main dock gradient */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(240, 245, 250, 0.85) 12%,
+    rgba(215, 225, 235, 0.75) 50%,
+    rgba(180, 195, 210, 0.85) 85%,
+    rgba(140, 155, 175, 0.96) 100%
+  );
+  color: #222222; /* Changed to dark text so it's readable on the whiter background */
+}

@@ -1,0 +1,2 @@
+addFilter("spelling-error .*Wayland")
+addFilter("spelling-error .*wlr")

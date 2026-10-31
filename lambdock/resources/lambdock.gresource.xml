@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lambdock, a hyper-hackable desktop dock for Wayland
+
+     SPDX-License-Identifier: MIT
+     Copyright © Josep Bigorra <jjbigorra@gmail.com> -->
+
+<gresources>
+  <gresource prefix="/org/jointhefreeworld/lambdock">
+    <!-- Dock Themes -->
+    <file>css/vanilla.css</file>
+    <file>css/vanilla-light.css</file>
+    <file>css/snow-leopard.css</file>
+    <file>css/snow-leopard-dark.css</file>
+    <file>css/solarized-light.css</file>
+    <file>css/unity.css</file>
+    <file>css/nature.css</file>
+    <!-- macOS-inspired themes -->
+    <file>css/macos-tiger.css</file>
+    <file>css/macos-big-sur.css</file>
+    <file>css/macos-ventura.css</file>
+    <file>css/macos-tahoe.css</file>
+    <file>css/macos-tahoe-dark.css</file>
+    <file>css/macos-mavericks.css</file>
+    <file>css/macos-mavericks-dark.css</file>
+    <!-- Windows-inspired themes -->
+    <file>css/windows-xp.css</file>
+    <file>css/windows-vista.css</file>
+    <file>css/windows-7.css</file>
+    <file>css/windows-10.css</file>
+    <file>css/windows-11.css</file>
+    <!-- Taskbar / window-title mode modifier (always available) -->
+    <file>css/taskbar.css</file>
+    <!-- Glass shelf modifier (loaded when the shelf parameters are in use) -->
+    <file>css/shelf.css</file>
+    <!-- Theme independent overlays: stack popovers, launchpad, drag feedback -->
+    <file>css/overlays.css</file>
+    <!-- Images -->
+    <file>img/agnus-dei.svg</file>
+    <file>img/agnus-dei.png</file>
+  </gresource>
+</gresources>

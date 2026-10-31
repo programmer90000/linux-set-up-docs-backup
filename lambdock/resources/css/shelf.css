@@ -1,0 +1,184 @@
+/* lambdock -- hyper-hackable desktop dock for Wayland
+ *
+ * SPDX-License-Identifier: MIT
+ * Copyright © Josep Bigorra <jjbigorra@gmail.com>
+ */
+
+/* =========================================================================
+ * GLASS SHELF MODIFIER
+ * =========================================================================
+ * Loaded in addition to the active theme whenever the shelf parameters differ
+ * from the plain capsule (`lambdock_shelf_active()`), so every theme can wear
+ * the shelf. It is scoped under the theme class and only targets the `shelf-*`
+ * classes, which keeps the flat dock pixel-identical.
+ *
+ * This is the generic material: a light, frosted glass slab with
+ *
+ *   - a bright specular line along the outer (screen edge) side,
+ *   - a slightly darker "thickness" band just inside it (`dock-shelf-front`
+ *     worth of glass, so it lands on the front face at any size),
+ *   - a soft, near-white top surface behind the icons,
+ *   - small rounded corners on the inner side, rounder ones on the outer side.
+ *
+ * Themes can override any of it: they are loaded after this modifier at the
+ * same provider priority, so a `.lambdock-window.shelf-mode` rule in a theme
+ * wins (see macos-mavericks.css for a platinum variant).
+ *
+ * The tilt itself is applied in C (src/ui/shelf.c) through a real projective
+ * GskTransform: GTK CSS transforms are affine-only, so a CSS `rotateX()` would
+ * just squash the shelf vertically instead of tapering it.
+ */
+
+/* -------------------------------------------------------------------------
+ * THE SLAB (bottom dock)
+ * ------------------------------------------------------------------------- */
+
+.lambdock-window.shelf-mode {
+  margin: 0;
+  padding: 0;
+  border-radius: 10px 10px 16px 16px;
+
+  /* The glass as a white wash over whatever is behind the dock: a 3px grey lip
+   * on the screen edge, a bright specular line, then a body that is most opaque
+   * where it meets that edge (~0.74) and most transparent at the inner edge
+   * (~0.38). The numbers come from measuring the OS X dock, and they are what
+   * keeps the slab reading as glass instead of as a white bar. 0deg points up,
+   * so the first stops are the outer edge. */
+  background-image: linear-gradient(
+    0deg,
+    rgba(122, 131, 141, 0.46) 0px,
+    rgba(122, 131, 141, 0.46) 3px,
+    rgba(255, 255, 255, 0.96) 3px,
+    rgba(255, 255, 255, 0.78) 4px,
+    rgba(226, 234, 243, 0.66) 9px,
+    rgba(214, 225, 238, 0.52) 45%,
+    rgba(204, 216, 230, 0.38) 100%
+  );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.38);
+  border-left: 1px solid rgba(178, 190, 205, 0.55);
+  border-right: 1px solid rgba(178, 190, 205, 0.55);
+  border-bottom: 1px solid rgba(140, 152, 166, 0.60);
+
+  box-shadow:
+    0 -8px 20px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Top docks: the whole slab is mirrored around the horizontal axis. */
+.lambdock-window.shelf-mode.shelf-top {
+  border-radius: 16px 16px 10px 10px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(122, 131, 141, 0.46) 0px,
+    rgba(122, 131, 141, 0.46) 3px,
+    rgba(255, 255, 255, 0.96) 3px,
+    rgba(255, 255, 255, 0.78) 4px,
+    rgba(226, 234, 243, 0.66) 9px,
+    rgba(214, 225, 238, 0.52) 45%,
+    rgba(204, 216, 230, 0.38) 100%
+  );
+}
+
+/* Side docks: the same slab, rotated 90 degrees. */
+.lambdock-window.shelf-mode.shelf-left {
+  border-radius: 10px 16px 16px 10px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(122, 131, 141, 0.46) 0px,
+    rgba(122, 131, 141, 0.46) 3px,
+    rgba(255, 255, 255, 0.96) 3px,
+    rgba(255, 255, 255, 0.78) 4px,
+    rgba(226, 234, 243, 0.66) 9px,
+    rgba(214, 225, 238, 0.52) 45%,
+    rgba(204, 216, 230, 0.38) 100%
+  );
+}
+
+.lambdock-window.shelf-mode.shelf-right {
+  border-radius: 16px 10px 10px 16px;
+  background-image: linear-gradient(
+    270deg,
+    rgba(122, 131, 141, 0.46) 0px,
+    rgba(122, 131, 141, 0.46) 3px,
+    rgba(255, 255, 255, 0.96) 3px,
+    rgba(255, 255, 255, 0.78) 4px,
+    rgba(226, 234, 243, 0.66) 9px,
+    rgba(214, 225, 238, 0.52) 45%,
+    rgba(204, 216, 230, 0.38) 100%
+  );
+}
+
+/* A full-width taskbar keeps the material but squares off the corners. */
+.lambdock-window.shelf-mode.taskbar {
+  border-radius: 0;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+ * ICONS ON THE GLASS
+ * ------------------------------------------------------------------------- */
+
+/* The glass is the background; the buttons themselves stay transparent. */
+window.shelf-mode button.flat {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 2px 4px;
+  margin: 0px 3px;
+  transition: transform 220ms cubic-bezier(0.32, 1.42, 0.58, 1);
+}
+
+window.shelf-mode button.flat:hover,
+window.shelf-mode button.flat:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Reflections, item wrappers and the tilt frame never paint a background. */
+.shelf-reflection,
+.shelf-item,
+.shelf-frame {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* When the glass shows icon reflections, the running indicator is drawn by the
+ * reflection widget near the outer edge, so the CSS dot must stay quiet. */
+window.shelf-mirror button.running-app {
+  background-image: none;
+}
+
+/* -------------------------------------------------------------------------
+ * MENUS ABOVE THE GLASS
+ * ------------------------------------------------------------------------- */
+
+window.shelf-mode popover > contents {
+  background-color: rgba(30, 35, 45, 0.96);
+  color: #f4f7fb;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  padding: 4px;
+}
+
+window.shelf-mode popover button.flat {
+  color: #f4f7fb;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin: 1px 0;
+}
+
+window.shelf-mode popover button.flat:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgba(96, 158, 235, 0.95) 0%,
+    rgba(40, 96, 178, 0.95) 100%
+  );
+  color: #ffffff;
+}

@@ -1,0 +1,98 @@
+lambdock (0.21.0-1) unstable; urgency=medium
+
+  * New upstream release: the round that finished the refactor list, with no
+    behaviour change. The meter's geometry and colour thresholds are pure, tested
+    values; the shelf's value types moved to core/shelf_params.h so the pure core
+    headers no longer include the application or a widget header; the
+    desktop-entry cache is one value; the icon search paths are built from
+    explicit inputs; main.c and the preferences window use the registry visitor
+    instead of hand-rolled snapshot loops; and the window model (tracking,
+    running/focused/minimized styling, app-id lookup) moved out of dock_item.c
+    into dock_item_windows.c. Dynamic-item pollers now go through the Guile
+    bridge, so no scm_* call lives outside guile_bridge.c and lambdock.h no
+    longer includes libguile.h.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Sat, 31 Oct 2026 18:00:00 +0100
+
+lambdock (0.20.0-1) unstable; urgency=medium
+
+  * New upstream release: two theme families and the dock's first whole-dock
+    recipes. macOS Tiger and Tahoe (light and dark) join Snow Leopard, Mavericks,
+    Big Sur and Ventura, which now carry their own 3D shelf material, and Windows
+    Vista (Aero Glass) and Windows 7 (Aero superbar) join XP, 10 and 11; the five
+    Windows looks are one family -- all taskbars, all 32px icons, all flat -- and
+    differ only where their era did. Twenty look recipes set the theme, the sizes,
+    the shelf geometry, the window titles and the fisheye in one line
+    (`(define dock-look 'osx-mavericks-dark)`), with aliases and an
+    `(apply-look!)` for the REPL. Every theme was audited state by state (focused
+    window, labels, light-slab indicators), and theme scoping no longer loses a
+    selector written across two lines. The launchpad loses its title and puts its
+    close button on the left by default (a setting moves it right), and the
+    Preferences window gains a "Dock items" card that adds a trash can, a clock or
+    a RAM/CPU/temperature/battery meter to the dock.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Sat, 31 Oct 2026 12:00:00 +0100
+
+lambdock (0.15.0-1) unstable; urgency=medium
+
+  * New upstream release: the project is licensed under the MIT License instead
+    of the GPL-3.0-or-later, and every file carries the SPDX header and the
+    copyright line. Stacks drop the fan view: the icon grid and the list remain,
+    and a settings file or layout override that still says 'fan reads back as the
+    grid, so nothing breaks. The C side was reworked around explicit models --
+    the launchpad, the preferences window and the active-dock registry -- with
+    the search filter, the column arithmetic and the configuration limits moved
+    into pure, tested functions. Nothing else changes for users.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Wed, 28 Oct 2026 10:00:00 +0100
+
+lambdock (0.13.3-1) unstable; urgency=medium
+
+  * New upstream release: the launchpad lists one tile per application again,
+    collapsing the desktop files that describe the same program, and a tile
+    whose application is installed more than once offers every copy from its
+    context menu with where each copy comes from and the command it runs. The
+    launchpad backdrop is denser, so its labels read over a busy desktop.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Tue, 27 Oct 2026 15:05:00 +0100
+
+lambdock (0.13.2-1) unstable; urgency=medium
+
+  * New upstream release: the right-click menu of a dock item carries actions
+    that fit the application. Browsers get New Window and New Private Window
+    with the flag their family expects, and a running music player gets
+    Play/Pause, Previous, Next and Stop over MPRIS. The kind is read from the
+    desktop entry's Categories=, falling back to the id, name and command line.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Mon, 26 Oct 2026 20:30:00 +0100
+
+lambdock (0.13.1-1) unstable; urgency=medium
+
+  * New upstream release: ship the desktop entry and AppStream metadata in the
+    container build, which had been failing before it could produce an image.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Mon, 26 Oct 2026 19:20:00 +0100
+
+lambdock (0.13.0-1) unstable; urgency=medium
+
+  * New upstream release: the dock is drivable by keyboard and readable by a
+    screen reader, with a reduce-motion setting; the stack fan is rebuilt and
+    shows live thumbnails in every view; the launchpad tiles and backdrop are
+    configurable; and the preferences window is roomier with exact-value spin
+    buttons.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Mon, 26 Oct 2026 18:50:00 +0100
+
+lambdock (0.8.1-1) unstable; urgency=medium
+
+  * New upstream release: one dock implementation described by plain shelf
+    options (no special modes or presets), ten documented recipes including
+    the OS X Mavericks platinum slab, and mirrored icon reflections.
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Sun, 25 Oct 2026 13:20:00 +0100
+
+lambdock (0.7.3-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1143781)
+
+ -- Josep Bigorra <jjbigorra@gmail.com>  Wed, 12 Aug 2026 10:00:00 +0200
