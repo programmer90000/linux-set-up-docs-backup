@@ -6,8 +6,6 @@ Setup all of the apps
 
 After reinstalling Debian, test the Find My Mouse feature.
 
-Then fix the window switcher not appearing.
-
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.ms](things-to-do/window-switcher.md)
 3. [features-to-add.md](things-to-do/features-to-add.md)
