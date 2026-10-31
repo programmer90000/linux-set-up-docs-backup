@@ -1,6 +1,6 @@
 Run all of the config files in a VM and ensure they work
 
-Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Go through the docs for setting up Wayfire. Install all of the apps it suggests or alternatives
+Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
 Setup all of the apps. While doing this, setup the dash.
 
