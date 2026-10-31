@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<labwc_config>
+    <core>
+        <decoration>server</decoration>
+        <gap>0</gap>
+        <adaptiveSync>yes</adaptiveSync>
+        <allowTearing>no</allowTearing>
+        <autoEnableOutputs>yes</autoEnableOutputs>
+        <reuseOutputMode>no</reuseOutputMode>
+        <xwaylandPersistence>no</xwaylandPersistence>
+        <primarySelection>no</primarySelection>
+    </core>
+    <theme>
+        <name></name>
+        <icon></icon>
+        <fallbackAppIcon>labwc</fallbackAppIcon>
+        <titlebar>
+            <layout>icon:iconify,max,close</layout>
+            <showTitle>yes</showTitle>
+        </titlebar>
+        <cornerRadius>8</cornerRadius>
+        <keepBorder>yes</keepBorder>
+        <dropShadows>no</dropShadows>
+        <font place="ActiveWindow">
+            <name>sans</name>
+            <size>10</size>
+            <slant>normal</slant>
+            <weight>normal</weight>
+        </font>
+        <font place="InactiveWindow">
+            <name>sans</name>
+            <size>10</size>
+            <slant>normal</slant>
+            <weight>normal</weight>
+        </font>
+        <font place="MenuHeader">
+            <name>sans</name>
+            <size>10</size>
+            <slant>normal</slant>
+            <weight>normal</weight>
+        </font>
+        <font place="MenuItem">
+            <name>sans</name>
+            <size>10</size>
+            <slant>normal</slant>
+            <weight>normal</weight>
+        </font>
+        <font place="OnScreenDisplay">
+            <name>sans</name>
+            <size>10</size>
+            <slant>normal</slant>
+            <weight>normal</weight>
+        </font>
+    </theme>
+    <placement>
+        <policy>automatic</policy>
+        <cascadeOffset x="0" y="0" />
+    </placement>
+    <windowSwitcher preview="yes" outlines="yes" unshade="yes" order="focus">
+        <osd show="yes" style="thumbnail" output="cursor" thumbnailLabelFormat="" />
+    </windowSwitcher>
+    <resistance>
+        <screenEdgeStrength>30</screenEdgeStrength>
+        <windowEdgeStrength>30</windowEdgeStrength>
+        <unSnapThreshold>30</unSnapThreshold>
+        <unMaximizeThreshold>30</unMaximizeThreshold>
+    </resistance>
+    <focus>
+        <followMouse>no</followMouse>
+        <followMouseRequiresMovement>no</followMouseRequiresMovement>
+        <raiseOnFocus>yes</raiseOnFocus>
+    </focus>
+    <snapping>
+        <range>0</range>
+        <cornerRange>0</cornerRange>
+        <topMaximize>no</topMaximize>
+        <overlay enabled="no"></overlay>
+        <notifyClient>always</notifyClient>
+    </snapping>
+    <margin top="0" bottom="0" left="0" right="0" />
+    <resize>
+        <popupShow>Always</popupShow>
+        <drawContents>yes</drawContents>
+        <cornerRange>3</cornerRange>
+        <minimumArea>8</minimumArea>
+    </resize>
+    <keyboard>
+        <layoutScope>global</layoutScope>
+        <numlock>off</numlock>
+        <repeatRate>25</repeatRate>
+        <repeatDelay>300</repeatDelay>
+        <default />
+        <keybind key="Print">
+            <action name="Execute" command="~/.config/labwc/scripts/screen-capture-menu.sh" />
+        </keybind>
+        <keybind key="C-S-A-m">
+            <action name="Execute" command="wpctl set-mute @DEFAULT_SINK@ toggle" />
+        </keybind>
+        <keybind key="W-k">
+            <action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 1-" />
+        </keybind>
+        <keybind key="W-j">
+            <action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 1+" />
+        </keybind>
+        <keybind key="W-Return"><action name="None" /></keybind>
+        <keybind key="W-KP_Enter"><action name="None" /></keybind>
+        <keybind key="W-a"><action name="None" /></keybind>
+        <keybind key="W-Left"><action name="None" /></keybind>
+        <keybind key="W-Right"><action name="None" /></keybind>
+        <keybind key="W-Up"><action name="None" /></keybind>
+        <keybind key="W-Down"><action name="None" /></keybind>
+        <keybind key="W-KP_7"><action name="None" /></keybind>
+        <keybind key="W-KP_8"><action name="None" /></keybind>
+        <keybind key="W-KP_9"><action name="None" /></keybind>
+        <keybind key="W-KP_4"><action name="None" /></keybind>
+        <keybind key="W-KP_5"><action name="None" /></keybind>
+        <keybind key="W-KP_6"><action name="None" /></keybind>
+        <keybind key="W-KP_1"><action name="None" /></keybind>
+        <keybind key="W-KP_2"><action name="None" /></keybind>
+        <keybind key="W-KP_3"><action name="None" /></keybind>
+        <keybind key="W-Space"><action name="None" /></keybind>
+        <keybind key="W-BackSpace">
+            <action name="Execute" command="wl-find-cursor" />
+        </keybind>
+        <keybind key="A-Escape"><action name="None" /></keybind>
+        <keybind key="A-Tab"><action name="None" /></keybind>
+        <keybind key="A-F3"><action name="None" /></keybind>
+        <keybind key="A-F4"><action name="None" /></keybind>
+        <keybind key="A-S-Tab"><action name="None" /></keybind>
+        <keybind key="A-Left"><action name="None" /></keybind>
+        <keybind key="A-Right"><action name="None" /></keybind>
+        <keybind key="A-Up"><action name="None" /></keybind>
+        <keybind key="A-Down"><action name="None" /></keybind>
+        <keybind key="A-Space"><action name="None" /></keybind>
+        <keybind key="XF86_AudioLowerVolume"><action name="None" /></keybind>
+        <keybind key="XF86_AudioRaiseVolume"><action name="None" /></keybind>
+        <keybind key="XF86_AudioMute"><action name="None" /></keybind>
+        <keybind key="XF86_MonBrightnessUp"><action name="None" /></keybind>
+        <keybind key="XF86_MonBrightnessDown"><action name="None" /></keybind>
+    </keyboard>
+    <mouse>
+        <doubleClickTime>500</doubleClickTime>
+        <default />
+    </mouse>
+    <libinput>
+        <device category="default">
+            <naturalScroll>no</naturalScroll>
+            <leftHanded>no</leftHanded>
+            <pointerSpeed>0.0</pointerSpeed>
+            <accelProfile>flat</accelProfile>
+            <tap>no</tap>
+            <tapButtonMap>lrm</tapButtonMap>
+            <tapAndDrag>no</tapAndDrag>
+            <dragLock>no</dragLock>
+            <middleEmulation>no</middleEmulation>
+            <disableWhileTyping>yes</disableWhileTyping>
+            <clickMethod>none</clickMethod>
+            <sendEventsMode>yes</sendEventsMode>
+            <calibrationMatrix></calibrationMatrix>
+            <scrollFactor>1.0</scrollFactor>
+        </device>
+    </libinput>
+    <magnifier>
+        <width>400</width>
+        <height>400</height>
+        <initScale>2.0</initScale>
+        <increment>0.2</increment>
+        <useFilter>true</useFilter>
+    </magnifier>
+    <menu>
+        <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
+        <showIcons>no</showIcons>
+    </menu>
+    <desktops>
+        <popupTime>1000</popupTime>
+        <names>
+            <name>Default</name>
+        </names>
+    </desktops>
+    <regions></regions>
+    <windowRules></windowRules>
+</labwc_config>

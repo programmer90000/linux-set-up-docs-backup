@@ -1,0 +1,40 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/middle-scroll-core",
+    "crates/middle-scroll-linux",
+]
+
+default-members = ["crates/middle-scroll-core"]
+
+[workspace.package]
+version = "1.4.0"
+edition = "2021"
+rust-version = "1.85"
+license = "0BSD"
+repository = "https://github.com/docloulou/Wayland-Wheeltani"
+description = "Progressive middle-button autoscroll daemon for Wayland (evdev/uinput)."
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+evdev = "0.13"
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+clap_mangen = "0.2"
+toml = "0.8"
+toml_edit = "0.22"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+signal-hook = "0.3"
+nix = { version = "0.29", features = ["signal", "poll", "time"] }
+directories = "5"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"

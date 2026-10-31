@@ -1,0 +1,10 @@
+[Unit]
+Description=Wayland-Wheeltani Middle-Click Autoscroll Daemon
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/local/bin/wayland-wheeltani
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
