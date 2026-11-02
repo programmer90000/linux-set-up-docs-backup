@@ -1,172 +1,1 @@
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Hit:1 http://deb.debian.org/debian trixie InRelease
-Hit:2 http://deb.debian.org/debian trixie-updates InRelease
-Hit:3 http://security.debian.org/debian-security trixie-security InRelease
-Reading package lists...
-Building dependency tree...
-Reading state information...
-All packages are up to date.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Installing:
-  alacritty
-
-Installing dependencies:
-  fontconfig-config  libfontconfig1      libxcb-xkb1
-  fonts-dejavu-core  libwayland-client0  libxkbcommon-x11-0
-  fonts-dejavu-mono  libwayland-egl1     libxkbcommon0
-
-Summary:
-  Upgrading: 0, Installing: 10, Removing: 0, Not Upgrading: 0
-  Download size: 4,766 kB
-  Space needed: 14.7 MB / 17.4 GB available
-
-Get:1 http://deb.debian.org/debian trixie/main amd64 fonts-dejavu-mono all 2.37-8 [489 kB]
-Get:2 http://deb.debian.org/debian trixie/main amd64 fonts-dejavu-core all 2.37-8 [840 kB]
-Get:3 http://deb.debian.org/debian trixie/main amd64 fontconfig-config amd64 2.15.0-2.3 [318 kB]
-Get:4 http://deb.debian.org/debian trixie/main amd64 libfontconfig1 amd64 2.15.0-2.3 [392 kB]
-Get:5 http://deb.debian.org/debian trixie/main amd64 libwayland-client0 amd64 1.23.1-3 [26.8 kB]
-Get:6 http://deb.debian.org/debian trixie/main amd64 libwayland-egl1 amd64 1.23.1-3 [5,860 B]
-Get:7 http://deb.debian.org/debian trixie/main amd64 libxkbcommon0 amd64 1.7.0-2 [113 kB]
-Get:8 http://deb.debian.org/debian trixie/main amd64 libxcb-xkb1 amd64 1.17.0-2+b1 [130 kB]
-Get:9 http://deb.debian.org/debian trixie/main amd64 libxkbcommon-x11-0 amd64 1.7.0-2 [16.2 kB]
-Get:10 http://deb.debian.org/debian trixie/main amd64 alacritty amd64 0.15.1-3 [2,435 kB]
-Preconfiguring packages ...
-Fetched 4,766 kB in 1s (6,813 kB/s)
-Selecting previously unselected package fonts-dejavu-mono.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36072 files and directories currently installed.)
-Preparing to unpack .../0-fonts-dejavu-mono_2.37-8_all.deb ...
-Unpacking fonts-dejavu-mono (2.37-8) ...
-Selecting previously unselected package fonts-dejavu-core.
-Preparing to unpack .../1-fonts-dejavu-core_2.37-8_all.deb ...
-Unpacking fonts-dejavu-core (2.37-8) ...
-Selecting previously unselected package fontconfig-config.
-Preparing to unpack .../2-fontconfig-config_2.15.0-2.3_amd64.deb ...
-Unpacking fontconfig-config (2.15.0-2.3) ...
-Selecting previously unselected package libfontconfig1:amd64.
-Preparing to unpack .../3-libfontconfig1_2.15.0-2.3_amd64.deb ...
-Unpacking libfontconfig1:amd64 (2.15.0-2.3) ...
-Selecting previously unselected package libwayland-client0:amd64.
-Preparing to unpack .../4-libwayland-client0_1.23.1-3_amd64.deb ...
-Unpacking libwayland-client0:amd64 (1.23.1-3) ...
-Selecting previously unselected package libwayland-egl1:amd64.
-Preparing to unpack .../5-libwayland-egl1_1.23.1-3_amd64.deb ...
-Unpacking libwayland-egl1:amd64 (1.23.1-3) ...
-Selecting previously unselected package libxkbcommon0:amd64.
-Preparing to unpack .../6-libxkbcommon0_1.7.0-2_amd64.deb ...
-Unpacking libxkbcommon0:amd64 (1.7.0-2) ...
-Selecting previously unselected package libxcb-xkb1:amd64.
-Preparing to unpack .../7-libxcb-xkb1_1.17.0-2+b1_amd64.deb ...
-Unpacking libxcb-xkb1:amd64 (1.17.0-2+b1) ...
-Selecting previously unselected package libxkbcommon-x11-0:amd64.
-Preparing to unpack .../8-libxkbcommon-x11-0_1.7.0-2_amd64.deb ...
-Unpacking libxkbcommon-x11-0:amd64 (1.7.0-2) ...
-Selecting previously unselected package alacritty.
-Preparing to unpack .../9-alacritty_0.15.1-3_amd64.deb ...
-Unpacking alacritty (0.15.1-3) ...
-Setting up libxcb-xkb1:amd64 (1.17.0-2+b1) ...
-Setting up fonts-dejavu-mono (2.37-8) ...
-Setting up fonts-dejavu-core (2.37-8) ...
-Setting up libwayland-egl1:amd64 (1.23.1-3) ...
-Setting up libxkbcommon0:amd64 (1.7.0-2) ...
-Setting up libwayland-client0:amd64 (1.23.1-3) ...
-Setting up fontconfig-config (2.15.0-2.3) ...
-Setting up libxkbcommon-x11-0:amd64 (1.7.0-2) ...
-Setting up libfontconfig1:amd64 (2.15.0-2.3) ...
-Setting up alacritty (0.15.1-3) ...
-update-alternatives: using /usr/bin/alacritty to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode
-Processing triggers for man-db (2.13.1-1) ...
-Processing triggers for libc-bin (2.41-12+deb13u4) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Installing:
-  tmux
-
-Installing dependencies:
-  libevent-core-2.1-7t64
-
-Summary:
-  Upgrading: 0, Installing: 2, Removing: 0, Not Upgrading: 0
-  Download size: 623 kB
-  Space needed: 1,551 kB / 17.4 GB available
-
-Get:1 http://deb.debian.org/debian trixie/main amd64 tmux amd64 3.5a-3 [490 kB]
-Get:2 http://security.debian.org/debian-security trixie-security/main amd64 libevent-core-2.1-7t64 amd64 2.1.13-stable-1~deb13u1 [133 kB]
-Fetched 623 kB in 0s (2,862 kB/s)
-Selecting previously unselected package libevent-core-2.1-7t64:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36255 files and directories currently installed.)
-Preparing to unpack .../libevent-core-2.1-7t64_2.1.13-stable-1~deb13u1_amd64.deb ...
-Unpacking libevent-core-2.1-7t64:amd64 (2.1.13-stable-1~deb13u1) ...
-Selecting previously unselected package tmux.
-Preparing to unpack .../archives/tmux_3.5a-3_amd64.deb ...
-Unpacking tmux (3.5a-3) ...
-Setting up libevent-core-2.1-7t64:amd64 (2.1.13-stable-1~deb13u1) ...
-Setting up tmux (3.5a-3) ...
-Processing triggers for man-db (2.13.1-1) ...
-Processing triggers for debianutils (5.23.2) ...
-Processing triggers for libc-bin (2.41-12+deb13u4) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Installing:
-  fonts-hack
-
-Summary:
-  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0
-  Download size: 1,630 kB
-  Space needed: 2,568 kB / 17.4 GB available
-
-Get:1 http://deb.debian.org/debian trixie/main amd64 fonts-hack all 3.003-3 [1,630 kB]
-Fetched 1,630 kB in 0s (4,905 kB/s)
-Selecting previously unselected package fonts-hack.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36274 files and directories currently installed.)
-Preparing to unpack .../fonts-hack_3.003-3_all.deb ...
-Unpacking fonts-hack (3.003-3) ...
-Setting up fonts-hack (3.003-3) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Installing:
-  zsh
-
-Installing dependencies:
-  zsh-common
-
-Suggested packages:
-  zsh-doc
-
-Summary:
-  Upgrading: 0, Installing: 2, Removing: 0, Not Upgrading: 0
-  Download size: 5,060 kB
-  Space needed: 19.4 MB / 17.4 GB available
-
-Get:1 http://deb.debian.org/debian trixie/main amd64 zsh-common all 5.9-8 [4,146 kB]
-Get:2 http://deb.debian.org/debian trixie/main amd64 zsh amd64 5.9-8+b24 [915 kB]
-Fetched 5,060 kB in 1s (7,245 kB/s)
-Selecting previously unselected package zsh-common.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36313 files and directories currently installed.)
-Preparing to unpack .../zsh-common_5.9-8_all.deb ...
-Unpacking zsh-common (5.9-8) ...
-Selecting previously unselected package zsh.
-Preparing to unpack .../zsh_5.9-8+b24_amd64.deb ...
-Unpacking zsh (5.9-8+b24) ...
-Setting up zsh-common (5.9-8) ...
-Setting up zsh (5.9-8+b24) ...
-Processing triggers for debianutils (5.23.2) ...
-Processing triggers for man-db (2.13.1-1) ...
+This command works without errors
