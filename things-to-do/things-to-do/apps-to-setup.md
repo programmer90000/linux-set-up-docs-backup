@@ -9,7 +9,7 @@ Setup Tmux and its plugins. I have completed installing them. I need to set them
 | Brave Browser | ❌ |
 | CopyQ | ❌ |
 | Thunderbird | ❌ |
-| QEMU/KVM | ❌ |
+| QEMU/KVM - I need to share the clipboard and files | ❌ |
 | Vivaldi browser | ❌ |
 | LibreWolf browser | ❌ |
 | trash-cli | ❌ |
