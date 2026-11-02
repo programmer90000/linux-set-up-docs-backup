@@ -1,1 +1,1 @@
-THIS COMMAND DOESN'T CONTAIN ANY ERRORS
+This command works without errors
