@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Thunderbird
+Type=Application
+Exec=thunderbird
+Icon=thunderbird
+Terminal=false
+Categories=Internet;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=Thunderbird

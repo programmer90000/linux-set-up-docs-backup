@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Beekeeper Studio
+Type=Application
+Exec=beekeeper-studio %U
+Icon=beekeeper-studio
+Terminal=false
+Categories=Development;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=beekeeper-studio

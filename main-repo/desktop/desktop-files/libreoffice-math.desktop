@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=LibreOffice Math
+Type=Application
+Exec=libreoffice --math
+Icon=libreoffice-math
+Terminal=false
+Categories=Office;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=libreoffice-math

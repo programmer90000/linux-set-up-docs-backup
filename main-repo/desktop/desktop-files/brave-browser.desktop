@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Brave Browser
+Type=Application
+Exec=brave-browser --password-store=basic
+Icon=brave-browser
+Terminal=false
+Categories=Internet;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=brave-browser

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Valgrind
+Type=Application
+Exec=valgrind
+Icon=system-run
+Terminal=true
+Categories=Development;
+StartupNotify=false
+NoDisplay=false
+StartupWMClass=valgrind

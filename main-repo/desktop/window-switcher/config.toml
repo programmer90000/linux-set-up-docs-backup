@@ -1,0 +1,16 @@
+[window]
+width = 600.0
+height = 500.0
+resizable = true
+decorations = true
+
+[theme]
+background_color = "#FFFFFF"
+background_opacity = 0.8
+
+[text]
+color = "#000000"
+size = 14
+
+[search]
+enabled = true

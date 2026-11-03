@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=QEMU / KVM
+Type=Application
+Exec=qemu-system-x86_64
+Icon=qemu
+Terminal=false
+Categories=Development;
+StartupNotify=false
+NoDisplay=false
+StartupWMClass=qemu

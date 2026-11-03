@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Alacritty
+Type=Application
+Exec=alacritty
+Icon=Alacritty
+Terminal=false
+Categories=Development;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=Alacritty

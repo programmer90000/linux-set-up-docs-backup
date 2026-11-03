@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=VLC Media Player
+Type=Application
+Exec=vlc
+Icon=vlc
+Terminal=false
+Categories=Media;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=vlc
+Path=

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Kooha
+Type=Application
+Exec=kooha
+Icon=io.github.seadve.Kooha
+Terminal=false
+Categories=Media;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=kooha

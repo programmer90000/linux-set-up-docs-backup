@@ -1,0 +1,76 @@
+#pragma once
+#include <iostream>
+#include <optional>
+#include <string>
+#include <string_view>
+#include <vector>
+#include <nlohmann/json.hpp>
+#include "filesystem-compat.h"
+#include "nwg_classes.h"
+
+namespace ns = nlohmann;
+
+std::string_view get_home_dir();
+fs::path get_cache_home();
+fs::path get_config_dir(std::string_view);
+
+/// @brief Get path to application's config file by looking up across all config directories
+/// in the following order:
+/// 1. $XDG_CONFIG_HOME/nwg-launchers/<app>/<file>
+/// 2. $HOME/.config/nwg-launchers/<app>/<file>
+/// 3. DATA_DIR/nwg-launchers/<app>/<file> where DATA_DIR is build option, usually set to /usr or /usr/share
+/// @param app application
+/// @param file configuration file name
+fs::path get_config_file(std::string_view app, std::string_view file);
+
+fs::path get_runtime_dir();
+// returns path to pid file <name>
+fs::path get_pid_file(std::string_view name);
+// parses icon size from `arg`, saturating to [16, 2048] if needed
+int parse_icon_size(std::string_view arg);
+// returns saved instance pid or nullopt if the file does not exist
+// throws std::runtime_error
+std::optional<pid_t> get_instance_pid(const char* pid_file_path);
+void write_instance_pid(const char* path, pid_t pid);
+
+std::string detect_wm(const Glib::RefPtr<Gdk::Display>&, const Glib::RefPtr<Gdk::Screen>&);
+
+std::string get_term(std::string_view);
+std::string get_locale(void);
+
+namespace category {
+
+// TODO: avoid globals, single config file
+std::vector<std::string_view> get_known_categories(std::string_view app);
+std::string_view localize(const ns::json& j, std::string_view category);
+
+} // namespace category
+
+std::string read_file_to_string(const fs::path&);
+void save_string_to_file(std::string_view, const fs::path&);
+std::vector<std::string_view> split_string(std::string_view, std::string_view);
+std::string_view take_last_by(std::string_view, std::string_view);
+
+ns::json::reference json_at(ns::json& j, std::string_view key);
+ns::json::const_reference json_at(const ns::json& j, std::string_view key);
+
+ns::json json_from_file(const fs::path&);
+ns::json string_to_json(std::string_view);
+void save_json(const ns::json&, const fs::path&);
+void decode_color(std::string_view, RGBA& color);
+
+std::string get_output(const std::string&);
+fs::path setup_css_file(std::string_view name, const fs::path& config_dir, const fs::path& custom_css_file);
+Geometry display_geometry(std::string_view, Glib::RefPtr<Gdk::Display>, Glib::RefPtr<Gdk::Window>);
+
+// Glibmm does not provide C++ wrappers over glibmm-unix extensions
+// so, to handle a signal, we define following plain functions
+// taking pointer to Instance as userdata and calling respective methods
+// on the said pointer
+// These functions always return G_SOURCE_CONTINUE
+int instance_on_sigterm(void*);
+int instance_on_sigusr1(void*);
+int instance_on_sighup(void*);
+int instance_on_sigint(void*);
+
+constexpr auto concat = [](auto&& ... xs) { std::string r; ((r += xs), ...); return r; };

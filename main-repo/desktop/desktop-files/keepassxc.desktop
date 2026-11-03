@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KeePassXC
+Type=Application
+Exec=keepassxc %f
+Icon=keepassxc
+Terminal=false
+Categories=Security;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=keepassxc

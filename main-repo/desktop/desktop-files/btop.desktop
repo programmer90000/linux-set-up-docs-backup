@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=btop
+Type=Application
+Exec=btop
+Icon=btop
+Terminal=true
+Categories=System;
+StartupNotify=false
+NoDisplay=false
+StartupWMClass=btop

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=LibreOffice Draw
+Type=Application
+Exec=libreoffice --draw
+Icon=libreoffice-draw
+Terminal=false
+Categories=Office;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=libreoffice-draw

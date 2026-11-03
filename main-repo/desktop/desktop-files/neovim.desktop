@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Neovim
+Type=Application
+Exec=nvim %F
+Icon=nvim
+Terminal=true
+Categories=Development;
+StartupNotify=false
+NoDisplay=false
+StartupWMClass=nvim

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ImageMagick
+Type=Application
+Exec=display %u
+Icon=ImageMagick
+Terminal=false
+Categories=Media;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=ImageMagick

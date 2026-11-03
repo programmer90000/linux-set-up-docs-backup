@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=LibreWolf
+Type=Application
+Exec=librewolf %u
+Icon=librewolf
+Terminal=false
+Categories=Internet;
+StartupNotify=true
+NoDisplay=false
+StartupWMClass=LibreWolf
