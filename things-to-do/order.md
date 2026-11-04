@@ -1,10 +1,12 @@
 Run all of the config files in a VM and ensure they work
 
-Fix the login screen
+Fix the login screen. Set it to open Wayfire
 
 Fix the pager
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
+
+I reverted a few commits in the login screen directory because it wasnt working. Add these features back
 
 Setup all of the apps
 
