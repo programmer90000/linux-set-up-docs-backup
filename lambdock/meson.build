@@ -218,14 +218,14 @@ endif
 # i18n, localization and internationalization
 # ------------------------------------------------------------------------------
 
-i18n = import('i18n')
+# i18n = import('i18n')
 
 # Define and pass the locale directory to the C compiler
-localedir = join_paths(get_option('prefix'), get_option('localedir'))
-add_project_arguments('-DLOCALEDIR="' + localedir + '"', language: 'c')
+# localedir = join_paths(get_option('prefix'), get_option('localedir'))
+# add_project_arguments('-DLOCALEDIR="' + localedir + '"', language: 'c')
 
 # Include the po directory for translations
-subdir('po')
+# subdir('po')
 
 # ------------------------------------------------------------------------------
 # Source Code Definitions & Executable Build
