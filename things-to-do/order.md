@@ -1,5 +1,7 @@
 Run all of the config files in a VM and ensure they work
 
+Fix the pager
+
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
 Setup all of the apps
