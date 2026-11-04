@@ -2,7 +2,7 @@ Run all of the config files in a VM and ensure they work
 
 Fix the login screen. Set it to open Wayfire
 
-Fix the pager
+Fix the pager. Set it to nvimpager
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
