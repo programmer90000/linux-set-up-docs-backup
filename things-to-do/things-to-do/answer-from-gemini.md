@@ -1,5 +1,5 @@
-PROMPT
-```
+PROMPT:
+
 I have installed Debian 13 without a DE. I have installed Wayfire and Greetd using the following script:
 ```
 #!/bin/bash
@@ -49,22 +49,21 @@ user = "greeter"
 When I run the command `wayfire` from the TUI, it correctly opens wayfire with Lambdock. When I login through Gtkgreet, it opens wayfire but doesn't start Lambdock.
 
 Do NOT try to fix the problem. ONLY explain why it happens
-```
 
 ANSWER
-```
+
 This happens due to a difference in how the environment's PATH variable is loaded between your TUI shell and greetd:
 * TUI Shell (Working): When you log in from the TUI, you are using an interactive shell that sources your profile files (.bashrc, .profile, etc.). These files typically include /usr/local/bin in the PATH. Because you installed Lambdock via sudo ninja -C build install (which defaults to installing binaries into /usr/local/bin), the shell easily finds lambdock when Wayfire triggers the autostart.
 * Greetd / Direct Execution (Failing): When greetd reads /etc/greetd/environments and executes wayfire directly, it does not spawn an interactive or login shell (it executes the binary directly via system calls like execvp). Instead, it relies strictly on the default non-interactive system PATH provided by PAM and systemd. If /usr/local/bin is not part of that default execution environment's PATH, Wayfire attempts to run lambdock = lambdock via its [autostart] block, but the system fails to locate the executable file, resulting in Wayfire starting successfully without launching Lambdock.
-```
+
 
 PROMPT:
-```
+
 I don't understand. What is the problem
-```
+
 
 ANSWER:
-```
+
 To make it simple, the problem comes down to how lambdock was installed vs. how greetd launches programs.
 Here is what is happening under the hood:
 1. Where Lambdock Lives
@@ -79,29 +78,29 @@ When Wayfire reaches the [autostart] section:
 * It tries to execute lambdock.
 * It looks through its current PATH folders (/usr/bin, /bin).
 * It cannot find lambdock in those folders, so the command silently fails, and Wayfire finishes loading without it.
-```
+
 
 PROMPT:
-```
+
 Is the problem because of the PATH after I login and the PATH greetd has
-```
+
 
 ANSWER:
-```
+
 Yes, exactly. The core problem is the mismatch between those two PATH environments.
 Here is the breakdown of why that happens:
 * When greetd runs: It launches wayfire under a bare system environment. At this stage, the PATH is minimal (usually just /usr/bin:/bin) and does not include /usr/local/bin.
 * When Wayfire starts via greetd: Wayfire tries to launch lambdock, but because it inherited that minimal PATH from greetd, it cannot find the file in /usr/local/bin.
 * When you log in via the TUI: Your shell reads configuration files (like /etc/profile or ~/.profile) which automatically add /usr/local/bin to your PATH. Running wayfire from there allows it to find lambdock without issue.
-```
+
 
 PROMPT:
-```
+
 How can I check or print the exact PATH environment variable that greetd is using?
-```
+
 
 ANSWER:
-```
+
 To see the exact PATH environment variable that Wayfire inherits when launched through greetd, you have two practical methods:
 Method 1: Log PATH to a File on Launch (Easiest)
 You can temporarily update /etc/greetd/environments to run a shell command that writes the PATH to a text file right before starting wayfire.
@@ -126,16 +125,16 @@ pgrep -u $USER wayfire
 tr '\0' '\n' < /proc/<PID>/environ | grep "^PATH="
 
 Verification: The terminal will output PATH=... showing the exact directories available to Wayfire and its child processes (including lambdock).
-```
+
 
 PROMPT:
-```
+
 /usr/local/bin exists in its PATH
 how can i find the problem
-```
+
 
 ANSWER:
-```
+
 If /usr/local/bin is present in the PATH of the running greetd session, then the failure is not due to a missing directory in the PATH variable.
 To find the actual problem, you need to check why Wayfire or lambdock is failing when launched via greetd. Here are the three best ways to track it down:
 1. Capture Wayfire's Startup Log
@@ -162,15 +161,15 @@ lambdock = sh -c 'lambdock > /tmp/lambdock_debug.log 2>&1'
 3. Verify Wayland Environment Variables
 When Wayfire starts through greetd, it initializes the Wayland display server. However, programs launched via [autostart] need to know which Wayland display to connect to (usually set via the WAYLAND_DISPLAY environment variable).
 If lambdock is trying to start before the Wayland socket is exposed or under the wrong display name, it will fail silently or abort.
-```
+
 
 PROMPT:
-```
+
 Could not connect to directory /run/seatd.sock
-```
+
 
 ANSWER:
-```
+
 The error Could not connect to directory /run/seatd.sock means that lambdock (or another Wayland tool) is trying to manage input devices or seat permissions via the seatd daemon, but the socket file doesn't exist or your user doesn't have permissions to access it.
 When you run Wayfire directly from a TUI, logind or systemd-logind manages your session's input/seat permissions automatically. When starting via greetd or a bare shell, seatd might be expected instead if the software wasn't compiled strictly for systemd logind.
 Here is how to resolve the seat connection issue step-by-step:
@@ -199,15 +198,15 @@ If you use systemd-logind instead of seatd, tell libseat to explicitly use login
 echo "LIBSEAT_BACKEND=logind" | sudo tee -a /etc/environment
 
 Verification: Reboot or re-login, then run echo $LIBSEAT_BACKEND to confirm it prints logind.
-```
+
 
 PROMPT:
-```
+
 What is seatd? Is it causing these problems
-```
+
 
 ANSWER:
-```
+
 What is seatd?
 seatd is a lightweight seat management daemon for Linux. A "seat" consists of your physical hardware—your screen, keyboard, mouse, and graphics card.
 Wayland compositors (like Wayfire or Cage) need direct permission from the kernel to take control of your graphics card (/dev/dri/card0) and input devices without needing root privileges. seatd acts as the middleman that grants these hardware permissions to non-root users.
@@ -241,4 +240,3 @@ sudo systemctl enable --now seatd
 sudo usermod -aG seat greeter
 
 * Log out and log back in.
-```
