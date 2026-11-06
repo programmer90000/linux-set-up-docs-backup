@@ -1,12 +1,3 @@
-#+title: Configuring lambdock
-#+author: Josep Jesus Bigorra Algaba
-#+email: jjbigorra@gmail.com
-#+language: en
-#+options: toc:nil num:nil html-style:nil
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
-
-[[file:../README.org][← lambdock]]
-
 * Configuring lambdock
 :PROPERTIES:
 :CUSTOM_ID: configuring-lambdock
