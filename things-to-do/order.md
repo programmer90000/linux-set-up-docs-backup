@@ -1,9 +1,5 @@
 Run all of the config files in a VM and ensure they work
 
-Look at replacing SDDM with ReGreet or a different display manager
-
-Fix the login screen. Set it to start Wayfire on login
-
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
