@@ -16,40 +16,6 @@ The dock is a pointer-driven surface: every operation below is reachable with
 one pointer, and the keyboard reaches the same operations (see
 [[#accessibility][Keyboard and accessibility]]).
 
-
-** Scrolling a crowded dock
-:PROPERTIES:
-:CUSTOM_ID: scrolling-a-crowded-dock
-:END:
-
-When the launchers, running apps and widgets no longer fit on screen, the items
-are packed into an overflow-visible
-[[https://docs.gtk.org/gtk4/class.ScrolledWindow.html][scrolled viewport]]
-(~GtkScrolledWindow~).  Mouse wheel and touchpad scrolls translate directly into
-movement along the dock's axis, horizontally or vertically.
-
-** Auto-hide
-:PROPERTIES:
-:CUSTOM_ID: auto-hide
-:END:
-
-With ~dock-auto-hide?~ enabled, the dock slides off the screen edge with a
-250 ms cubic ease-out transition and comes back when the pointer reaches a
-two-pixel strip at that edge.  It waits a moment before hiding again (400 ms
-after a popover closes, 600 ms after the pointer leaves) so that a hasty
-mouse movement does not chase the dock away.  The hide/show is driven by
-=gtk_widget_add_tick_callback=, so it stays in step with your display's refresh
-rate, 60 Hz or 120 Hz or whatever your compositor gives it.
-
-Parking the pointer on that edge keeps the dock out, and leaving does not need any
-particular gesture: the strip is the last two pixels of the screen, so a pointer
-resting there is on the dock when it is in and a hair past it when it is out. The
-dock ignores the crossings its own slide produces -- a window that moves under a
-still pointer makes a compositor report the pointer leaving a surface it is still
-on -- and a leave only counts once the pointer has actually moved since it
-arrived. That is what used to make it bounce in and out for as long as the pointer
-stayed put.
-
 ** Stacks: a folder on the dock 📁
 :PROPERTIES:
 :CUSTOM_ID: stacks
