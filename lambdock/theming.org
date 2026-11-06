@@ -1,22 +1,3 @@
-#+title: Theming and the shelf
-#+author: Josep Jesus Bigorra Algaba
-#+email: jjbigorra@gmail.com
-#+language: en
-#+options: toc:nil num:nil html-style:nil
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://jointhefreeworld.org/static/css/jointhefreeworld.css" />
-
-[[file:../README.org][← lambdock]]
-
-* Theming and the shelf
-:PROPERTIES:
-:CUSTOM_ID: theming
-:END:
-
-** Styling & theming
-:PROPERTIES:
-:CUSTOM_ID: styling-and-theming
-:END:
-
 Themes are GTK4 stylesheets compiled into the binary.  Each is a file in
 =resources/css/= that you can read, copy and recompile against; the names are the
 material, not the desktop the material was traced from.
