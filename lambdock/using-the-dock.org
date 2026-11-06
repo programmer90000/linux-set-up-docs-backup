@@ -16,51 +16,6 @@ The dock is a pointer-driven surface: every operation below is reachable with
 one pointer, and the keyboard reaches the same operations (see
 [[#accessibility][Keyboard and accessibility]]).
 
-** The window popover (HUD)
-:PROPERTIES:
-:CUSTOM_ID: the-window-popover
-:END:
-
-When an app has one window, clicking it focuses it -- or minimizes it when it is
-the window you are already looking at (see
-[[#launching-focusing-and-switching][Launching, focusing and switching]]).  When it
-has more than one, ~lambdock~ opens a floating GTK popover built from what the
-compositor told it:
-
-- a *header* with the application's name, then a separator;
-- *one row per open window*, with a dot marking the window that holds the focus,
-  the window title as a button (ellipsized at 30 characters) to focus that
-  instance, and a close button next to it.  A window the compositor reported as
-  minimized is dimmed, and the close button stays quiet until the row is under
-  the pointer or the keyboard is on it, so a list of titles does not look like a
-  list of crosses;
-- *New Instance*, to start another instance of the application, when the item has
-  an exec command;
-- *Close All*, shown only when more than one window is open;
-- *Launch Application*, when an app is in the dock but nothing is running yet.
-
-Every entry carries a symbolic icon -- a window for a new instance, an eye with
-a slash for a private window, a play triangle or a skip arrow for the playback
-controls, a bin for a removal -- so a menu of five kinds of entry can be
-scanned.  The icon-only buttons are named after what they act on, so a screen
-reader says "Close window, editor — main.c" rather than just "button".  The menu
-is a keyboard object in its own right: it opens with the
-focus on its first row, *Up*/*Down* walk the rows, *Home*/*End* jump to the ends,
-and *Escape* closes it.  Right-clicking the dock icon and clicking its menu are
-the same menu.
-
-The protocol behind that list is described in
-[[file:internals.org#toplevel-tracking][Wayland Toplevel Tracking & Popovers]].
-
-** The dock's own menu
-:PROPERTIES:
-:CUSTOM_ID: the-docks-own-menu
-:END:
-
-Right-clicking the dock background opens a small menu with *Preferences…*
-(the GUI settings window, see [[file:configuration.org#preferences-window][the preferences window]]),
-*About lambdock* (the splash dialog with version, licence and a link to the
-source) and *Quit*.
 
 ** Scrolling a crowded dock
 :PROPERTIES:
