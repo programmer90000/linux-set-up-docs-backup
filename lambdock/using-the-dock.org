@@ -16,27 +16,6 @@ The dock is a pointer-driven surface: every operation below is reachable with
 one pointer, and the keyboard reaches the same operations (see
 [[#accessibility][Keyboard and accessibility]]).
 
-** Launching, focusing and switching
-:PROPERTIES:
-:CUSTOM_ID: launching-focusing-and-switching
-:END:
-
-- *Left click a pinned launcher*: the app starts.  If the app is already running,
-  its window is focused and raised instead of a second instance being spawned.
-- *Left click a running app with one window*: the window is focused -- or
-  *minimized*, if it already had the focus.  That is the "minimize to dock"
-  behaviour: clicking the icon of the app you are looking at tucks it away, and
-  clicking again brings it back.  While it is tucked away the icon keeps its
-  running indicator but dims, so you can see at a glance which apps are only
-  minimized.  It uses the compositor's ~wlr-foreign-toplevel~ minimize request, so
-  it works on compositors that have a minimize concept (sway, Hyprland, KWin,
-  ...); on a scrollable tiling compositor such as niri, where windows are always
-  visible, the request is accepted and the window simply stays where it is.
-- *Left click a running app with several windows*: the window popover opens (see
-  below), so you pick which window you meant.
-- *Right click a running app with several windows*: the same popover, useful when
-  you want to close one instance without stealing focus.
-
 ** The window popover (HUD)
 :PROPERTIES:
 :CUSTOM_ID: the-window-popover
