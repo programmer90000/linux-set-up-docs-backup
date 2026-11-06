@@ -1,12 +1,3 @@
-* Using the dock
-:PROPERTIES:
-:CUSTOM_ID: using-the-dock
-:END:
-
-The dock is a pointer-driven surface: every operation below is reachable with
-one pointer, and the keyboard reaches the same operations (see
-[[#accessibility][Keyboard and accessibility]]).
-
 ** Stacks: a folder on the dock 📁
 :PROPERTIES:
 :CUSTOM_ID: stacks
