@@ -52,20 +52,6 @@
     - [Resize](#resize)
     - [WM-Actions](#wm-actions)
 
-## Overview
-
-The Wayfire configuration file uses an [INI] file format, similar to [Git].
-It contains a number of options that affect the Wayland compositor’s behavior.
-
-[Example](https://github.com/WayfireWM/wayfire/blob/master/wayfire.ini)
-
-[INI]: https://en.wikipedia.org/wiki/INI_file
-[Git]: https://git-scm.com
-
-###### Notation
-
-The variables are divided into sections, wherein the fully qualified variable name of the variable itself is the last dot-separated segment and the section name is everything before the last dot.
-
 ### Location
 
 Wayfire searches for a config file in the following locations, in this order:
