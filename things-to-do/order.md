@@ -4,7 +4,7 @@ Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
 
-Setup all of the apps
+Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore file to not compare lines which I don't need
 
 After reinstalling Debian, test the Find My Mouse feature.
 
