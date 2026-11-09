@@ -1,6 +1,6 @@
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
-Fix the problem with Lambdock not starting when I login via [answer-from-gemini.md](things-to-do/answer-from-gemini.md)
+Fix the problem with Lambdock not starting when I login via the login screen [answer-from-gemini.md](things-to-do/answer-from-gemini.md)
 
 While adding the items to Lambdock, add the files to the Desktop. Use the same thing as I used for LabWC. Then add the keybord shortcuts I added to LabWC. After this, write the config file for Wayfire
 
