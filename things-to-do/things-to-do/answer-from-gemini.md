@@ -174,26 +174,37 @@ The error Could not connect to directory /run/seatd.sock means that lambdock (or
 When you run Wayfire directly from a TUI, logind or systemd-logind manages your session's input/seat permissions automatically. When starting via greetd or a bare shell, seatd might be expected instead if the software wasn't compiled strictly for systemd logind.
 Here is how to resolve the seat connection issue step-by-step:
 1. Verify seatd Service Status
-Check if service is active
-Check if the seatd daemon is installed and currently running on your system:
+- Check if service is active
+- Check if the seatd daemon is installed and currently running on your system:
+```
 systemctl status seatd
+```
 
 Verification: The output should display active (running). If it says inactive or not-found, proceed to the next step.
-2. Enable and Start seatd
-Systemd service configuration
-If seatd is installed but not running, enable and start the service:
-sudo systemctl enable --now seatd
 
-Verification: Re-run ls -l /run/seatd.sock to confirm the socket file exists in /run/.
-3. Add Your User to the seat Group
-Permission setup
+2. Enable and Start seatd Systemd service configuration
+
+If seatd is installed but not running, enable and start the service:
+```
+sudo systemctl enable --now seatd
+```
+
+Verification: Re-run `ls -l /run/seatd.sock` to confirm the socket file exists in /run/.
+
+3. Add Your User to the seat Group Permission setup
+
 Ensure your user and the greeter user have permission to access the socket by adding them to the seat group:
+``|
 sudo usermod -aG seat $USER
 sudo usermod -aG seat greeter
+```
 
 Verification: Run groups in your user session to verify seat appears in the list of groups (requires logging out and back in to apply).
+
 4. Set LIBSEAT_BACKEND Variable
+
 Configure seat provider fallback
+
 If you use systemd-logind instead of seatd, tell libseat to explicitly use logind by setting the environment variable in /etc/environment:
 echo "LIBSEAT_BACKEND=logind" | sudo tee -a /etc/environment
 
