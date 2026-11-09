@@ -226,14 +226,23 @@ What is seatd? Is it causing these problems
 # ANSWER:
 
 What is seatd?
+
 seatd is a lightweight seat management daemon for Linux. A "seat" consists of your physical hardware—your screen, keyboard, mouse, and graphics card.
+
 Wayland compositors (like Wayfire or Cage) need direct permission from the kernel to take control of your graphics card (/dev/dri/card0) and input devices without needing root privileges. seatd acts as the middleman that grants these hardware permissions to non-root users.
+
 Is seatd causing the original problem?
+
 Yes, indirectly. It is the exact reason why Lambdock failed to launch when you logged in via greetd.
+
 Here is the breakdown of why the behavior differed:
+
 * Why wayfire worked from the TUI:
+
    When you logged into the standard command-line prompt (TUI), systemd-logind automatically claimed your session seat and opened hardware permissions for your user account. When you launched wayfire, it attached to that active systemd-logind session cleanly.
+
 * Why Lambdock failed when logging in via gtkgreet:
+
    When greetd launches a session, it executes under a restricted environment. Wayfire (and its child processes like Lambdock) used a library called libseat to handle hardware control.
    By default, libseat checks for the running seatd background service (/run/seatd.sock). Because seatd was not installed or running, libseat threw the error:
    Could not connect to directory /run/seatd.sock
