@@ -10,7 +10,7 @@ Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore fil
 
 After reinstalling Debian, test the Find My Mouse feature.
 
-1. [dash.md](things-to-do/dash.md)
+1. [dash.md](things-to-do/dash.md) Try using this file to add the items [how-to-add-items-to-the-dash.md](how-to-add-items-to-the-dash.md)
 2. [window-switcher.md](things-to-do/window-switcher.md)
 3. [features-to-add.md](things-to-do/features-to-add.md)
 4. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
