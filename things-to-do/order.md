@@ -1,5 +1,7 @@
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
 
+Fix the problem with Lambdock not starting when I login via [answer-from-gemini.md](things-to-do/answer-from-gemini.md)
+
 While adding the items to Lambdock, add the files to the Desktop. Use the same thing as I used for LabWC. Then add the keybord shortcuts I added to LabWC. After this, write the config file for Wayfire
 
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
@@ -9,7 +11,7 @@ Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore fil
 After reinstalling Debian, test the Find My Mouse feature.
 
 1. [dash.md](things-to-do/dash.md)
-2. [window-switcher.ms](things-to-do/window-switcher.md)
+2. [window-switcher.md](things-to-do/window-switcher.md)
 3. [features-to-add.md](things-to-do/features-to-add.md)
 4. [terminal-apps-to-install.md](things-to-do/terminal-apps-to-install.md)
 5. [apps-to-setup.md](things-to-do/apps-to-setup.md)
