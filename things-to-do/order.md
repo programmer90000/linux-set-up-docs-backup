@@ -1,4 +1,4 @@
-Replace LabWC with Wayfire. Replace SFWBar with Lambdock.
+Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Use [https://github.com/WayfireWM/wayfire/wiki](https://wayfire.org/2025/08/27/Wayfire-0-10.html)
 
 Fix the problem with Lambdock not starting when I login via the login screen [answer-from-gemini.md](things-to-do/answer-from-gemini.md)
 
