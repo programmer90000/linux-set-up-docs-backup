@@ -206,9 +206,16 @@ Verification: Run groups in your user session to verify seat appears in the list
 Configure seat provider fallback
 
 If you use systemd-logind instead of seatd, tell libseat to explicitly use logind by setting the environment variable in /etc/environment:
+```
 echo "LIBSEAT_BACKEND=logind" | sudo tee -a /etc/environment
+```
 
-Verification: Reboot or re-login, then run echo $LIBSEAT_BACKEND to confirm it prints logind.
+Verification: Reboot or re-login, then run:
+```
+echo $LIBSEAT_BACKEND
+```
+
+to confirm it prints `logind`.
 
 
 # PROMPT:
