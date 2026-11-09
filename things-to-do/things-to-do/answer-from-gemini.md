@@ -194,7 +194,7 @@ Verification: Re-run `ls -l /run/seatd.sock` to confirm the socket file exists i
 3. Add Your User to the seat Group Permission setup
 
 Ensure your user and the greeter user have permission to access the socket by adding them to the seat group:
-``|
+```
 sudo usermod -aG seat $USER
 sudo usermod -aG seat greeter
 ```
