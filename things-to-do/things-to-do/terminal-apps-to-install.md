@@ -8,7 +8,7 @@ note: I have downloaded some of these apps to a previous commit before I removed
 | Android Command Line Tools | ❌ |
 | Look for a command line tool to replace FileZilla. Look at Sftp | ❌ |
 | Look for a terminal app to manage the VMs | ❌ |
-| Docs to connect to GitHub | ❌ |
+| Docs to connect to GitHub | ✅ |
 | bat | ✅ |
 | tree | ✅ |
 | fzf | ✅ |
