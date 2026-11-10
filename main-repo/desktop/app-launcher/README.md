@@ -1,1 +1,0 @@
-Directory cloned from: [](https://github.com/nwg-piotr/nwg-launchers)
