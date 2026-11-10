@@ -1,3 +1,5 @@
+Add the shortcuts in the labwc dir
+
 Find out how to add popup menus to Lambdock without external tools. If I can't, update the source code to allow it
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Use the wayfire dir in this repo
