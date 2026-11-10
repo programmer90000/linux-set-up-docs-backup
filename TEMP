@@ -1,0 +1,29 @@
+(define dock-items
+    (let* ((menu-box (make-gtk-box 'vertical 4))
+           (btn-shutdown (make-gtk-button #:label "Shutdown"))
+           (btn-reboot   (make-gtk-button #:label "Reboot"))
+           (btn-logout   (make-gtk-button #:label "Logout")))
+
+      ;; Bind button actions
+      (connect! btn-shutdown "clicked" (lambda (_) (system "systemctl poweroff")))
+      (connect! btn-reboot   "clicked" (lambda (_) (system "systemctl reboot")))
+      (connect! btn-logout   "clicked" (lambda (_) (system "wayfiremsg exit")))
+
+      ;; Pack buttons into the layout box
+      (gtk-container-add menu-box btn-shutdown)
+      (gtk-container-add menu-box btn-reboot)
+      (gtk-container-add menu-box btn-logout)
+
+      (list
+          (app-item #:name "Application Launcher" #:exec "nwggrid" #:icon "view-grid-symbolic")
+          (app-item #:name "Window Switcher" #:exec "window-switcher" #:icon "window-switcher")
+          (app-item #:name "Brave" #:exec "brave-browser" #:icon "brave-browser")
+          (app-item #:name "Thunderbird" #:exec "thunderbird" #:icon "thunderbird")
+          (app-item #:name "Alacritty" #:exec "alacritty" #:icon "alacritty")
+          (make-popover-launcher
+              #:name "Power"
+              #:icon "system-shutdown"
+              #:popover-content menu-box)
+      )
+    )
+)
