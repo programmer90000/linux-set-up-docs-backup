@@ -28,10 +28,6 @@ if [ ! -d "$SCRIPTS" ]; then
     exit 1
 fi
 
-echo "Installing Labwc"
-sudo apt update
-sudo apt install -y labwc
-
 echo "Installing make and build-essential"
 sudo apt install make build-essential
 
@@ -55,19 +51,3 @@ cp labwc/config/systemd/wayland-wheeltani.service ~/.config/systemd/user/wayland
 systemctl --user daemon-reload
 systemctl --user enable --now wayland-wheeltani
 sudo adduser abdul input
-
-echo "Setting up configuration directory"
-mkdir -p ~/.config/labwc/
-
-echo "Copying environment file"
-cp $ENVIRONMENT ~/.config/labwc/
-
-echo "Copying rc.xml file"
-cp labwc/rc.xml ~/.config/labwc/
-
-echo "Copying autostart file"
-cp $AUTOSTART ~/.config/labwc/
-chmod +x ~/.config/labwc/autostart
-
-echo "Copying scripts directory"
-cp -r $SCRIPTS ~/.config/labwc/
