@@ -4,7 +4,7 @@ Find out how to add popup menus to Lambdock without external tools. If I can't, 
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Use the wayfire dir in this repo
 
-While adding the items to Lambdock, add the files to the Desktop. Use the same thing as I used for LabWC. Then add the keybord shortcuts I added to LabWC. After this, write the config file for Wayfire
+Add the keybord shortcuts I added to LabWC.
 
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
 
