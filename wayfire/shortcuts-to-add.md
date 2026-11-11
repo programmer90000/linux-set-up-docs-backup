@@ -1,16 +1,5 @@
-        <keybind key="Print">
-            <action name="Execute" command="~/.config/labwc/scripts/screen-capture-menu.sh" />
-        </keybind>
-        <keybind key="C-S-A-m">
-            <action name="Execute" command="wpctl set-mute @DEFAULT_SINK@ toggle" />
-        </keybind>
-        <keybind key="W-k">
-            <action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 1-" />
-        </keybind>
-        <keybind key="W-j">
-            <action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 1+" />
-        </keybind>
- 
-        <keybind key="W-BackSpace">
-            <action name="Execute" command="wl-find-cursor" />
-        </keybind>
+Print Screen - screen-capture-menu.sh
+Ctrl+Shift+Alt+m - wpctl set-mute @DEFAULT_SINK@ toggle
+Ctrl+Shift+Alt+k - wpctl set-volume @DEFAULT_SINK@ 1-
+Ctrl+Shift+Alt+j - wpctl set-volume @DEFAULT_SINK@ 1+
+Windows+BackSpace - wl-find-cursor
