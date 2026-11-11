@@ -1,7 +1,3 @@
-
-            
-        
-        
         <keybind key="Print">
             <action name="Execute" command="~/.config/labwc/scripts/screen-capture-menu.sh" />
         </keybind>
