@@ -4,8 +4,6 @@ Find out how to add popup menus to Lambdock without external tools. If I can't, 
 
 Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Use the wayfire dir in this repo
 
-Add the keybord shortcuts I added to LabWC.
-
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
 
 Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore file to not compare lines which I don't need
