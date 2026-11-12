@@ -1,6 +1,6 @@
 Replace the dash with https://github.com/elkowar/eww
 
-Install https://gitlab.com/marcusbritanicus/QtGreet Use the README to install it
+For the login screen, install https://gitlab.com/marcusbritanicus/QtGreet Use the README to install it
 
 Setup Wayfire
 
