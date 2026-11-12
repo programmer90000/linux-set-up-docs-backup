@@ -1,6 +1,6 @@
-Find out how to add popup menus to Lambdock without external tools. If I can't, update the source code to allow it
+Install https://gitlab.com/marcusbritanicus/QtGreet Use the README to install it
 
-Replace LabWC with Wayfire. Replace SFWBar with Lambdock. Use the wayfire dir in this repo
+Setup Wayfire
 
 I reverted a few commits in the login screen directory because it wasnt working. Add these features back
 
