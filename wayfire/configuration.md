@@ -197,30 +197,6 @@ The default is `none`.
 
 See [`criteria`] for details.
 
-#### Fisheye
-
-A plugin which provides fisheye effect.
-
-Defined in:
-
-- [`metadata/fisheye.xml`](https://github.com/WayfireWM/wayfire/blob/master/metadata/fisheye.xml)
-- [`plugins/single_plugins/fisheye.cpp`](https://github.com/WayfireWM/wayfire/blob/master/plugins/single_plugins/fisheye.cpp)
-
-###### `fisheye.radius`
-
-Sets the border radius in pixels.
-The default is **450.0**.
-
-###### `fisheye.toggle`
-
-Toggles fisheye with the specified key.
-
-###### `fisheye.zoom`
-
-Sets the zoom factor.
-The default is **7.0**.
-
-
 ### General
 
 #### Autostart
