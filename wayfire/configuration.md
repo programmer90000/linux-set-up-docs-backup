@@ -1257,21 +1257,6 @@ The default is **1.0**.
 Sets the thumbnail size.
 The default is **1.0**.
 
-#### Resize
-
-A plugin to resize windows by dragging them from any part (not just the edges).
-
-![resize-window](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/resize-window/2020-02-18_17:44:25.gif)
-
-Defined in:
-
-- [`metadata/resize.xml`](https://github.com/WayfireWM/wayfire/blob/master/metadata/resize.xml)
-- [`plugins/single_plugins/resize.cpp`](https://github.com/WayfireWM/wayfire/blob/master/plugins/single_plugins/resize.cpp)
-
-###### `resize.activate`
-
-When the specified button is held down, you can drag windows to resize them.
-
 #### WM-Actions
 
 A plugin providing various window management functions.
