@@ -1217,46 +1217,6 @@ When an output is destroyed, if it is focused then it is remembered as the focus
 
 The default is **10000** (10 seconds).
 
-#### Switcher
-
-A plugin to change active window with an animation.
-
-![switch-between-windows](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/switch-between-windows/2020-02-18_17:24:41.gif)
-
-Defined in:
-
-- [`metadata/switcher.xml`](https://github.com/WayfireWM/wayfire/blob/master/metadata/switcher.xml)
-- [`plugins/single_plugins/switcher.cpp`](https://github.com/WayfireWM/wayfire/blob/master/plugins/single_plugins/switcher.cpp)
-- [`wf-config/src/types.cpp`](https://github.com/WayfireWM/wf-config/blob/master/src/types.cpp)
-
-###### `switcher.gesture_toggle`
-
-Toggles the switcher with the specified gesture.
-The default is `edge-swipe down 3`.
-
-###### `switcher.next_view`
-
-Switches to the next view with the specified key.
-
-###### `switcher.prev_view`
-
-Switches to the previous view with the specified key.
-
-###### `switcher.speed`
-
-Sets the duration of the animation in milliseconds.
-The default is **500**.
-
-###### `switcher.touch_sensitivity`
-
-Sets the touch sensitivity.
-The default is **1.0**.
-
-###### `switcher.view_thumbnail_scale`
-
-Sets the thumbnail size.
-The default is **1.0**.
-
 #### WM-Actions
 
 A plugin providing various window management functions.
