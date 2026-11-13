@@ -1,16 +1,4 @@
 
-## Syntax
-
-The syntax is fairly flexible and permissive; whitespaces are mostly ignored.
-The `#` characters begin comments to the end of line, blank lines are ignored.
-
-The file consists of sections and variables.
-A section begins with the name of the section in square brackets and continues until the next section begins.
-Each variable must belong to some section, which means that there must be a section header before the first setting of a variable.
-
-All the other lines (and the remainder of the line after the section header) are recognized as setting variables, in the form `name = value`. 
-
-If a `value` contains the `#` character it should be escaped using `\`.
 
 ###### `criteria`
 
