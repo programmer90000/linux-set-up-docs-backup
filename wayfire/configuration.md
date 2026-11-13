@@ -1143,48 +1143,6 @@ Possible values are:
 
 The default is `crossfade`.
 
-#### Move
-
-A plugin to move windows around by dragging them from any part (not just the title bar).
-
-![drag-window](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/drag-window/2020-02-18_16:49:54.gif)
-
-Defined in:
-
-- [`metadata/move.xml`](https://github.com/WayfireWM/wayfire/blob/master/metadata/move.xml)
-- [`plugins/single_plugins/move.cpp`](https://github.com/WayfireWM/wayfire/blob/master/plugins/single_plugins/move.cpp)
-- [`plugins/single_plugins/move-snap-helper.hpp`](https://github.com/WayfireWM/wayfire/blob/master/plugins/single_plugins/move-snap-helper.hpp)
-
-###### `move.activate`
-
-When the specified button is held down, you can drag windows to move them.
-
-###### `move.enable_snap`
-
-Enables or disables snapping the window being moved to an edge of the screen.
-The default is **true**. Requires the `grid` plugin to also be enabled.
-
-###### `move.enable_snap_off`
-
-Enables or disables snapping off the window being grabbed from an edge of the screen.
-The default is **true**.
-
-###### `move.join_views`
-
-Disallows independently moving dialogues.
-The default is **false**.
-
-###### `move.snap_off_threshold`
-
-When attempting to move a snapped window, this option requires the user to move at least the specified amount of pixels before the window actually moves.
-This only takes effect with `move.enable_snap_off`.
-The default is **10**.
-
-###### `move.snap_threshold`
-
-Sets the amount of pixels from the edge of the screen for which aero-snap gets triggered.
-The default is **10**.
-
 #### Place
 
 A plugin to position newly opened windows.
