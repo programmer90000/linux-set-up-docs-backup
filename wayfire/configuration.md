@@ -1,4 +1,5 @@
-### Desktop#### Idle
+### Desktop
+#### Idle
 
 A plugin for idle settings, such as the screensaver and [DPMS].
 
