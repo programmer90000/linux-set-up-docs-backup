@@ -1,16 +1,3 @@
-# Configuration file and options
-### Location
-
-Wayfire searches for a config file in the following locations, in this order:
-
-1. $WAYFIRE_CONFIG_FILE
-2. $XDG_CONFIG_HOME/wayfire.ini
-3. ~/.config/wayfire.ini
-
-If unset, $XDG_CONFIG_HOME defaults to ~/.config.
-After wayfire is started, it will write the current configuration path to the environment variable WAYFIRE_CONFIG_FILE.
-
-If you need to customize the configuration path， set the WAYFIRE_CONFIG_FILE variable before wayfire starts.
 
 ## Syntax
 
