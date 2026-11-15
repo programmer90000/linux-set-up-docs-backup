@@ -90,7 +90,6 @@ fn build_ui(app: &Application) {
         .decorated(false)
         .build();
 
-    // Configure Wayland Layer Shell fullscreen surface
     window.init_layer_shell();
     window.set_layer(Layer::Overlay);
     window.set_keyboard_mode(KeyboardMode::Exclusive);
@@ -101,7 +100,6 @@ fn build_ui(app: &Application) {
     window.set_anchor(Edge::Right, true);
     window.set_exclusive_zone(-1);
 
-    // Root background shared across Splash & LoginForm (matches splash_background.png + #80000000)
     let root_overlay = Overlay::new();
 
     let bg_picture = gtk4::Picture::for_filename(format!("{THEME_DIR}/splash_background.png"));
@@ -116,22 +114,18 @@ fn build_ui(app: &Application) {
     dim_box.set_vexpand(true);
     root_overlay.add_overlay(&dim_box);
 
-    // Stack switching between "splash" and "login"
     let main_stack = Stack::new();
     main_stack.set_transition_type(StackTransitionType::Crossfade);
     main_stack.set_transition_duration(150);
     main_stack.set_hexpand(true);
     main_stack.set_vexpand(true);
     root_overlay.add_overlay(&main_stack);
-
-    // =========================================================================
-    // 1. SPLASH SCREEN PAGE (SplashScreen.qml)
-    // =========================================================================
+    
     let splash_overlay = Overlay::new();
     splash_overlay.set_hexpand(true);
     splash_overlay.set_vexpand(true);
     splash_overlay.set_focusable(true);
-
+    
     let splash_clock_box = GtkBox::new(Orientation::Vertical, 10);
     splash_clock_box.set_halign(Align::Center);
     splash_clock_box.set_valign(Align::Start);
@@ -149,14 +143,10 @@ fn build_ui(app: &Application) {
 
     main_stack.add_named(&splash_overlay, Some("splash"));
 
-    // =========================================================================
-    // 2. LOGIN FORM PAGE (Main.qml + LoginForm.qml + UserList.qml + PowerButton.qml)
-    // =========================================================================
     let login_overlay = Overlay::new();
     login_overlay.set_hexpand(true);
     login_overlay.set_vexpand(true);
 
-    // Top-center Clock & Date
     let login_clock_box = GtkBox::new(Orientation::Vertical, 10);
     login_clock_box.set_halign(Align::Center);
     login_clock_box.set_valign(Align::Start);
@@ -172,7 +162,6 @@ fn build_ui(app: &Application) {
     login_clock_box.append(&login_date_label);
     login_overlay.add_overlay(&login_clock_box);
 
-    // Top-left Back / Show Splash Button
     let back_button = Button::new();
     back_button.add_css_class("circle-btn");
     back_button.set_halign(Align::Start);
@@ -185,7 +174,6 @@ fn build_ui(app: &Application) {
     back_button.set_child(Some(&back_icon));
     login_overlay.add_overlay(&back_button);
 
-    // Center Login Column (Avatar, Username, PasswordField)
     let center_box = GtkBox::new(Orientation::Vertical, 15);
     center_box.set_halign(Align::Center);
     center_box.set_valign(Align::Center);
@@ -228,8 +216,7 @@ fn build_ui(app: &Application) {
     center_box.append(&password_entry);
     center_box.append(&error_label);
     login_overlay.add_overlay(&center_box);
-
-    // Bottom-left UserList (width 200, max height 300, margin 20)
+    
     let users = Rc::new(load_system_users());
     let selected_username = Rc::new(RefCell::new(String::new()));
 
@@ -248,8 +235,7 @@ fn build_ui(app: &Application) {
     user_listbox.set_selection_mode(SelectionMode::Single);
     user_scroll.set_child(Some(&user_listbox));
     login_overlay.add_overlay(&user_scroll);
-
-    // Bottom-right PowerButton + Popup Menu
+    
     let power_button = Button::new();
     power_button.add_css_class("circle-btn");
     power_button.set_halign(Align::End);
@@ -304,7 +290,7 @@ fn build_ui(app: &Application) {
     }
     power_popover.set_child(Some(&menu_box));
 
-    // PowerButton keyboard navigation (Up / Down / Enter / Space / Escape) matching PowerButton.qml
+    // PowerButton keyboard navigation PowerButton.qml
     let selected_menu_idx = Rc::new(Cell::new(0usize));
     let menu_buttons_rc = Rc::new(menu_buttons);
 
@@ -374,10 +360,7 @@ fn build_ui(app: &Application) {
     }
 
     main_stack.add_named(&login_overlay, Some("login"));
-
-    // =========================================================================
-    // 3. USER SELECTION & ROW STYLING (UserList.qml + LoginForm.setUsername)
-    // =========================================================================
+    
     struct RowWidgets {
         card: GtkBox,
         avatar_fallback: Label,
@@ -520,10 +503,7 @@ fn build_ui(app: &Application) {
         let refresh = refresh_user_list_styles.clone();
         user_listbox.connect_selected_rows_changed(move |_| refresh());
     }
-
-    // =========================================================================
-    // 4. PASSWORD AUTHENTICATION (LoginForm.onAccepted -> greetd)
-    // =========================================================================
+    
     {
         let sel_user = selected_username.clone();
         let pw_entry = password_entry.clone();
@@ -555,10 +535,7 @@ fn build_ui(app: &Application) {
             }
         });
     }
-
-    // =========================================================================
-    // 5. SPLASH DISMISSAL & BACK BUTTON (SplashScreen.qml + Main.qml)
-    // =========================================================================
+    
     let dismiss_splash = {
         let stack = main_stack.clone();
         let users_clone = users.clone();
@@ -580,8 +557,7 @@ fn build_ui(app: &Application) {
             pw.grab_focus();
         }
     };
-
-    // Any key press on SplashScreen dismisses it
+    
     {
         let dismiss = dismiss_splash.clone();
         let key_ctrl = EventControllerKey::new();
@@ -615,10 +591,7 @@ fn build_ui(app: &Application) {
             splash.grab_focus();
         });
     }
-
-    // =========================================================================
-    // 6. EXACT TAB RING (UserList -> Back -> Password -> Power -> UserList)
-    // =========================================================================
+    
     {
         let lb = user_listbox.clone();
         let back = back_button.clone();
@@ -674,10 +647,6 @@ fn build_ui(app: &Application) {
         });
         login_overlay.add_controller(tab_ctrl);
     }
-
-    // =========================================================================
-    // 7. 1-SECOND CLOCK & DATE TIMER (Clock.qml)
-    // =========================================================================
     glib::timeout_add_local(Duration::from_secs(1), move || {
         let now_clock = format_clock();
         let now_date = format_date();
