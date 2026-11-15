@@ -1,6 +1,6 @@
-Replace the dash with https://github.com/elkowar/eww
+Make the new login screen. I have made it in the backup repo. It works but doesn't login to Wayfire correctly. I haven't tested the shortcuts
 
-For the login screen, install https://gitlab.com/marcusbritanicus/QtGreet Use the README to install it
+Replace the dash with https://github.com/elkowar/eww
 
 Setup Wayfire
 
