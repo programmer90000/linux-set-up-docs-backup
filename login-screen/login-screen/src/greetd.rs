@@ -79,6 +79,6 @@ fn cancel_session(stream: &mut UnixStream) -> Result<(), ()> {
 }
 
 pub fn system_power_action(action: &str) {
-    // Runs loginctl poweroff / reboot / suspend
+    // Runs loginctl poweroff/ reboot/ suspend
     let _ = Command::new("loginctl").arg(action).spawn();
 }
