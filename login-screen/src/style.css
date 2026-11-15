@@ -1,0 +1,214 @@
+window {
+    background-color: transparent;
+}
+
+.dim-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* #80000000 */
+}
+
+.clock-text {
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #000000,
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+}
+
+.date-text {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-shadow:
+        -1px -1px 0 #000000,
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000;
+}
+
+/* Circular 48x48 Back & Power Buttons */
+.circle-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    border-radius: 24px;
+    background-color: #1e1e1e;
+    background-image: none;
+    border: 1px solid #3a3a3a;
+    box-shadow: none;
+}
+
+.circle-btn:hover {
+    background-color: #2a2a2a;
+}
+
+.circle-btn:active {
+    background-color: #3a6ea5;
+}
+
+.circle-btn:focus,
+.circle-btn:focus-visible {
+    background-color: #3a6ea5;
+    border: 2px solid #ffffff;
+    outline: none;
+}
+
+/* Center Login Avatar (80x80) */
+.avatar-large-fallback {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 40px;
+    background-color: #3a6ea5;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.username-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3a6ea5;
+}
+
+.username-label-empty {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999999;
+}
+
+/* Password Entry (300x45) */
+.password-input {
+    min-width: 300px;
+    min-height: 45px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    background-image: none;
+    color: #111111;
+    font-size: 16px;
+    padding: 0 12px;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+}
+
+.password-input:disabled {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+}
+
+.password-input:focus,
+.password-input:focus-visible {
+    border: 2px solid #3a6ea5;
+    outline: none;
+}
+
+.error-label {
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px #000000;
+}
+
+/* Bottom-Left UserList (200px wide, max 300px tall) */
+.user-list {
+    background-color: transparent;
+}
+
+.user-list row {
+    padding: 0;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.user-list row:focus,
+.user-list row:selected {
+    background-color: transparent;
+    outline: none;
+}
+
+.user-card {
+    min-width: 200px;
+    min-height: 45px;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    border: 1px solid #3a3a3a;
+    padding: 0 10px;
+}
+
+.user-card:hover {
+    background-color: #2a2a2a;
+}
+
+.user-card-focused {
+    background-color: #2a3a4a;
+    border: 2px solid #5a8ec5;
+}
+
+.user-card-selected {
+    background-color: #3a6ea5;
+    border: 1px solid #5a8ec5;
+}
+
+.user-card-selected.user-card-focused {
+    border: 2px solid #5a8ec5;
+}
+
+.user-avatar-small-fallback {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 15px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-avatar-small-selected {
+    background-color: #5a8ec5;
+}
+
+.user-row-name {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.user-row-name-selected {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Power Popup Menu (160x160) */
+popover.power-popover > contents {
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.power-menu-item {
+    min-width: 140px;
+    min-height: 40px;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 10px;
+}
+
+.power-menu-item:hover,
+.power-menu-item:focus,
+.power-menu-item:focus-visible,
+.power-menu-item-selected {
+    background-color: #3a6ea5;
+    outline: none;
+}
+
+.power-menu-label {
+    color: #ffffff;
+    font-size: 14px;
+}
