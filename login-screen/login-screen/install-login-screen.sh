@@ -10,22 +10,17 @@ fi
 CURRENT_USER="$(whoami)"
 THEME_DIR="/usr/share/greetd/login-screen"
 
-echo "Installing greetd and GTK4 Layer Shell build dependencies..."
 sudo apt update
-sudo apt install -y \
-    greetd \
-    cargo \
-    rustc \
-    pkg-config \
-    libgtk-4-dev \
-    libgtk4-layer-shell-dev \
-    polkitd
+sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd
+sudo apt remove --purge rustc cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+rustup default stable
 
-echo "Building wayfire-greetd-ui release binary..."
-pushd login-screen > /dev/null
+cd login-screen
 cargo build --release
 sudo install -Dm755 target/release/wayfire-greetd-ui /usr/local/bin/wayfire-greetd-ui
-popd > /dev/null
+cd ../
 
 echo "Installing theme assets to ${THEME_DIR}..."
 sudo mkdir -p "${THEME_DIR}/assets"
@@ -63,10 +58,4 @@ polkit.addRule(function(action, subject) {
 });
 EOF
 
-# Disable SDDM if present and enable greetd
-if systemctl list-unit-files | grep -q '^sddm.service'; then
-    sudo systemctl disable sddm
-fi
 sudo systemctl enable greetd
-
-echo "Done! Reboot or run 'sudo systemctl start greetd' from a TTY to launch the login screen."
