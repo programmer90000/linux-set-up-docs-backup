@@ -1,8 +1,6 @@
 This code is working partly
 
-First, commit it to the main repo as it is, 1 commit at a time
-
-Then, test it and fix it. All of it is working except:
+First, test it and fix it. All of it is working except:
 - Moving away from the password input box using tab
 - I need to test the power buttons and pressing Enter to select a power option
 
