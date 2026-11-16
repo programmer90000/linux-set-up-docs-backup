@@ -73,33 +73,6 @@ command_launcher = alacritty --command sh -c 'nohup launcher-run $(launcher-list
 
 See [Command] for more information.
 
-### Adding a panel and dock
-
-You can use `wf-panel` and `wf-dock`, provided by [wf-shell].
-
-[wf-shell]: https://github.com/WayfireWM/wf-shell
-
-`~/.config/wayfire.ini`
-
-``` ini
-[autostart]
-panel = wf-panel
-dock = wf-dock
-```
-
-You can also use [Waybar] if you prefer it.
-
-[Waybar]: https://github.com/Alexays/Waybar
-
-`~/.config/wayfire.ini`
-
-``` ini
-[autostart]
-bar = waybar
-```
-
-See [Autostart] for more information.
-
 ### Configuring viewport switcher
 
 See [Viewport switcher](https://github.com/WayfireWM/wayfire/wiki/Configuration#viewport-switcher) for more information.
