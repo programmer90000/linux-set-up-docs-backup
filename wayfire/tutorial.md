@@ -73,37 +73,6 @@ command_launcher = alacritty --command sh -c 'nohup launcher-run $(launcher-list
 
 See [Command] for more information.
 
-### Setting the wallpaper
-
-You can use `wf-background`, provided by [wf-shell].
-
-[wf-shell]: https://github.com/WayfireWM/wf-shell
-
-`~/.config/wayfire.ini`
-
-``` ini
-[autostart]
-background = wf-background
-```
-
-See [Autostart] for more information.
-
-If you prefer [swaybg], adapt the command as follows.
-
-**Example** – Simple:
-
-``` sh
-swaybg --image /path/to/wallpaper.webp
-```
-
-**Example** – Random wallpaper:
-
-``` sh
-find -L /path/to/wallpapers -type f | sort -R | head -n 1 | xargs swaybg --image
-```
-
-[swaybg]: https://github.com/swaywm/swaybg
-
 ### Adding a panel and dock
 
 You can use `wf-panel` and `wf-dock`, provided by [wf-shell].
