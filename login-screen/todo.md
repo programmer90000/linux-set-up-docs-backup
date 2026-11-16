@@ -1,4 +1,4 @@
-This code is working partly
+This code is working
 
 I still need to test the power buttons and pressing Enter to select a power option
 
