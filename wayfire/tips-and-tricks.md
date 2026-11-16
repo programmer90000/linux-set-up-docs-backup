@@ -120,29 +120,6 @@ meson -Dbuildtype=release build
 
 Build wayfire with the flag `-Dprint_trace=false`
 
-## Screen sharing
-
-To enable screen sharing in Firefox, Chromium, or any other XDG Desktop Portal client, add the following lines to the configuration file `wayfire.ini`:
-
-```
-[autostart]
-0_0 = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY WAYFIRE_SOCKET XDG_CURRENT_DESKTOP=wayfire
-xdp = sleep 1 && systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
-```
-Without `sleep 1 &&`, screen sharing may fail: [Issue #3053](https://github.com/WayfireWM/wayfire/issues/3053).
-
-Install `xdg-desktop-portal` and `xdg-desktop-portal-wlr`. Edit the configuration file `~/.config/xdg-desktop-portal-wlr/config`:
-
-```
-[screencast]
-max_fps=30
-chooser_cmd=wf-stream-chooser
-chooser_type=simple
-```
-`wf-stream-chooser` is included in `wf-shell`.
-
-To test locally, use the following script: https://gitlab.gnome.org/-/snippets/19. Test online: https://mozilla.github.io/webrtc-landing/gum_test.html (press the _Screen capture_ button).
-
 ## Setting up monitor frequency if wayfire.ini does not work 
 
 If your output = kanshi as default, you may need to create a config file in $HOME/.config/kanshi/config with your desired settings
