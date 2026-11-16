@@ -1,4 +1,4 @@
-Make the new login screen. I have made it in the backup repo [login-screen/todo.md](login-screen/todo.md)
+Make the new login screen. I have made it in the backup repo [../login-screen/todo.md](../login-screen/todo.md)
 
 Replace the dash with https://github.com/elkowar/eww
 
