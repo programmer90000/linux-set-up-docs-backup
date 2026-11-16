@@ -37,44 +37,7 @@
 
 ## Using Wayfire
 
-### Opening terminals and moving around
-
-One very basic operation is opening a new terminal.
-By pressing <kbd>Super</kbd> + <kbd>Enter</kbd>, a new terminal will be opened.
-By default, the key-binding opens [Alacritty].
-
-[Alacritty]: https://github.com/alacritty/alacritty
-
-![open-terminal](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/open-terminal/2020-02-18_17:31:03.gif)
-
 ### Opening other applications
-
-Aside from opening applications from a terminal, you can also use the handy [Wofi] which is opened by pressing <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> by default.
-
-![open-applications](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/open-applications/2020-02-18_17:39:34.gif)
-
-Additionally, if you have applications you open very frequently, you can create a key-binding for starting the application directly.
-See the section [Configuring Wayfire](#configuring-wayfire) for details.
-
-### Closing windows
-
-If an application does not provide a mechanism for closing (most applications provide a menu, the middle mouse button for tabs, the escape key or a shortcut like <kbd>Control</kbd> + <kbd>w</kbd> to close), you can press <kbd>Super</kbd> + <kbd>w</kbd>, <kbd>Super</kbd> and middle mouse button or <kbd>Alt</kbd> + <kbd>F4</kbd> to close a window.
-
-![close-window](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/close-window/2020-02-18_17:41:03.gif)
-
-### Moving windows
-
-By dragging the window’s title bar with your mouse you can move the window around.
-You can also drag windows by holding down <kbd>Super</kbd> and left mouse button.
-
-![drag-window](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/drag-window/2020-02-18_16:49:54.gif)
-
-### Resizing windows
-
-By grabbing the borders and moving them you can resize the window.
-You can also do that by holding down <kbd>Super</kbd> and right mouse button.
-
-![resize-window](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/resize-window/2020-02-18_17:44:25.gif)
 
 ### Switching between windows
 
@@ -82,16 +45,6 @@ By pressing <kbd>Super</kbd> + <kbd>Tab</kbd>, you can preview the windows in th
 To switch without animation, press <kbd>Alt</kbd> + <kbd>Escape</kbd>.
 
 ![switch-between-windows](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/switch-between-windows/2020-02-18_17:24:41.gif)
-
-### Positioning windows
-
-Press <kbd>Super</kbd> and the arrow keys for arranging windows into a grid of 2 cells.
-Press <kbd>Super</kbd> + [<kbd>Home</kbd><kbd>End</kbd>] for arranging windows into a grid of 4 cells; add <kbd>Shift</kbd> for bottom.
-Press <kbd>Super</kbd> + <kbd>f</kbd> to position the window in the center of the screen.
-Press <kbd>Super</kbd> + <kbd>d</kbd> to restore the window to its original size and position.
-You can also use the keypad, which is laid out exactly to match the slots.
-
-![grid](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/grid/2020-02-18_16:21:37.gif)
 
 ### Using workspaces
 
@@ -120,61 +73,6 @@ You can use your mouse to select a workspace.
 
 To move a window to another workspace, simply press <kbd>Super</kbd> + <kbd>Shift</kbd> + [HJKL].
 
-### Changing the opacity
-
-When the modifier key <kbd>Super</kbd> + <kbd>Alt</kbd> is held down, you can scroll down and up to adjust the opacity of the window.
-
-### Reloading the configuration
-
-To reload the configuration, simply save the config file.
-Most of the options are automatically reloaded.
-
-### Exiting Wayfire
-
-Press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>Backspace</kbd>.
-
-**TODO**: Add a configuration option.
-
-## Configuring Wayfire
-
-To change the configuration of Wayfire, copy [`wayfire.ini`] to `~/.config/wayfire.ini` and edit it with a text editor.
-For a complete reference, see the [[Configuration]] document.
-
-[Autostart]: Configuration#autostart
-[Command]: Configuration#command
-[Idle]: Configuration#idle
-[Input]: Configuration#input
-[Output]: Configuration#output
-[Window rules]: Configuration#window-rules
-
-### Setting your keyboard layout
-
-`~/.config/wayfire.ini`
-
-``` ini
-[input]
-xkb_layout = us,fr
-xkb_variant = dvorak,bepo
-```
-
-See [Input] for more information.
-
-### Terminal
-
-Open [Alacritty], [kitty] or another terminal:
-
-`~/.config/wayfire.ini`
-
-``` ini
-[command]
-binding_terminal = <super> KEY_ENTER
-command_terminal = alacritty
-```
-
-[Alacritty]: https://github.com/alacritty/alacritty
-[kitty]: https://sw.kovidgoyal.net/kitty/
-
-See [Command] for more information.
 
 ### Application launcher
 
