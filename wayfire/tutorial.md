@@ -1,13 +1,3 @@
-## Using Wayfire
-
-### Opening other applications
-
-### Switching between windows
-
-By pressing <kbd>Super</kbd> + <kbd>Tab</kbd>, you can preview the windows in the current workspace and select the next window; add <kbd>Shift</kbd> for previous.
-To switch without animation, press <kbd>Alt</kbd> + <kbd>Escape</kbd>.
-
-![switch-between-windows](https://github.com/alexherbo2/wayfire-resources/raw/master/demos/switch-between-windows/2020-02-18_17:24:41.gif)
 
 ### Using workspaces
 
