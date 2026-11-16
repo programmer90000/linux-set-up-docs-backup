@@ -2,9 +2,7 @@ Make the new login screen. I have made it in the backup repo
 
 Replace the dash with https://github.com/elkowar/eww
 
-Setup Wayfire
-
-I reverted a few commits in the login screen directory because it wasnt working. Add these features back
+Setup Wayfire
 
 Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore file to not compare lines which I don't need
 
