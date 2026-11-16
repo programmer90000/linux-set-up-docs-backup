@@ -46,14 +46,6 @@ sudo -E $@
 xhost -SI:localuser:root
 ```
 
-## Screensavers
-The Idle plugin offers a built in screensaver for wayfire. It has options to choose either DPMS or screensaver timeout. If the cube plugin is enabled, the Idle screensaver timeout will rotate the cube based on settings found in the Idle plugin. Otherwise, the screen will just become black on timeout. There is also [swayidle](https://github.com/swaywm/swayidle) which can be used in conjunction with a [special version of xscreensaver](https://github.com/soreau/xscreensaver). It is recommended to install this version of xscreensaver to a nonstandard prefix because it will not work correctly with X. To use it, make two entries in the Autostart plugin like so:
-```
-a2 = /opt/xscreensaver/bin/xscreensaver -nosplash
-a3 = swayidle timeout 60 '/opt/xscreensaver/bin/xscreensaver-command -activate' resume '/opt/xscreensaver/bin/xscreensaver-command -deactivate'
-```
-Change the prefix accordingly. The first will start the daemon and the second will activate the screensaver after 60 seconds of inactivity. You may change this value to your liking.
-
 ## Login with gtkgreet and wayfire
 
 1) Install `greetd` using your package manager.
@@ -136,35 +128,6 @@ Wayfire has a hard coded keybinding Ctrl+Alt+BkSpc to shutdown. It also supports
 
 [wlogout]: https://github.com/ArtsyMacaw/wlogout
 [wayland-logout]: https://github.com/soreau/wayland-logout
-
-## Remote desktop
-
-With virtual pointer support, programs like [wayvnc] are possible.
-
-If you find that your pointer is not following the cursor on the virtual desktop you might need to map the virtual input to the specific output wayvnc is running on. https://github.com/WayfireWM/wayfire/wiki/Configuration#input-device-specific-options
-
-In your wayfire config file add:
-```
-[input-device:wlr_virtual_pointer_v1]
-output = DP-1
-
-[input-device:wlr_virtual_keyboard_v1]
-output = DP-1
-```
-change device and output names accordingly. 
-
-You can get the name of the input device by reviewing the wayfire log when connecting to a wayvnc session. Wayfire should be run with the debug option wayfire -d
-
-
-[wayvnc]: https://github.com/any1/wayvnc
-
-## Native webcam
-
-Use the following command to show /dev/video0 in a native window with gst-launch-1.0 ([gstreamer]).
-```
-gst-launch-1.0 --prog-name="webcam-app-id" v4l2src device=/dev/video0 ! videoconvert ! waylandsink
-```
-[gstreamer]: https://gitlab.freedesktop.org/gstreamer
 
 ## High CPU usage
 
