@@ -601,9 +601,12 @@ fn build_ui(app: &Application) {
 
         let tab_ctrl = EventControllerKey::new();
         tab_ctrl.set_propagation_phase(gtk4::PropagationPhase::Capture);
-        tab_ctrl.connect_key_pressed(move |_, key, _, _| {
+tab_ctrl.connect_key_pressed(move |_, key, _, _| {
+            let pw_focused = pw.has_focus() || pw.focus_child().is_some();
+            let lb_focused = lb.has_focus() || lb.focus_child().is_some();
+
             if key == Key::Tab {
-                if lb.focus_child().is_some() || lb.has_focus() {
+                if lb_focused {
                     back.grab_focus();
                 } else if back.has_focus() {
                     if pw.is_sensitive() {
@@ -611,7 +614,7 @@ fn build_ui(app: &Application) {
                     } else {
                         power.grab_focus();
                     }
-                } else if pw.has_focus() {
+                } else if pw_focused {
                     power.grab_focus();
                 } else if power.has_focus() {
                     if let Some(row) = lb.selected_row().or_else(|| lb.row_at_index(0)) {
@@ -623,7 +626,7 @@ fn build_ui(app: &Application) {
                 refresh();
                 return glib::Propagation::Stop;
             } else if key == Key::ISO_Left_Tab {
-                if lb.focus_child().is_some() || lb.has_focus() {
+                if lb_focused {
                     power.grab_focus();
                 } else if back.has_focus() {
                     if let Some(row) = lb.selected_row().or_else(|| lb.row_at_index(0)) {
@@ -631,7 +634,7 @@ fn build_ui(app: &Application) {
                     } else {
                         power.grab_focus();
                     }
-                } else if pw.has_focus() {
+                } else if pw_focused {
                     back.grab_focus();
                 } else if power.has_focus() {
                     if pw.is_sensitive() {
