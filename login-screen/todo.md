@@ -1,8 +1,6 @@
 This code is working partly
 
-First, test it and fix it. All of it is working except:
-- Moving away from the password input box using tab
-- I need to test the power buttons and pressing Enter to select a power option
+I still need to test the power buttons and pressing Enter to select a power option
 
 Then make it work without needing to install a newer version of Rust
 
