@@ -12,4 +12,6 @@ Commit it 1 feature at a time to the main repo
 
 It doesn't start wayfire correctly. After committing it to the main repo, fix this
 
+Install the lock screen
+
 After this, test the keyboard shortcuts and everything else
