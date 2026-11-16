@@ -1,4 +1,4 @@
-Make the new login screen. I have made it in the backup repo. It works but doesn't login to Wayfire correctly.
+Make the new login screen. I have made it in the backup repo
 
 Replace the dash with https://github.com/elkowar/eww
 
