@@ -403,9 +403,3 @@ You can get the properties of your applications with the following command:
 WAYLAND_DEBUG=1 alacritty 2>&1 | kak
 ```
 See [Window rules] for more information.
-
-### Remote desktop
-
-With virtual pointer support, programs like [wayvnc] are possible. No special wayfire configuration is required.
-
-[wayvnc]: https://github.com/any1/wayvnc
