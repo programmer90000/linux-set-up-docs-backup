@@ -1,30 +1,4 @@
 
-
-
-### Configuring viewport switcher
-
-See [Viewport switcher](https://github.com/WayfireWM/wayfire/wiki/Configuration#viewport-switcher) for more information.
-
-If you want to switch to another workspace by pressing super+num where num is the number of the workspace you want to use.
-
-Follow the example below.
-
-`~/.config/wayfire.ini`
-
-``` ini
-[vswitch]
-binding_0 = <super> KEY_0
-binding_1 = <super> KEY_1
-binding_2 = <super> KEY_2
-binding_3 = <super> KEY_3
-binding_4 = <super> KEY_4
-binding_5 = <super> KEY_5
-binding_6 = <super> KEY_6
-binding_7 = <super> KEY_7
-binding_8 = <super> KEY_8
-binding_9 = <super> KEY_9
-```
-
 ### Configuring your outputs
 
 See [Output](https://github.com/WayfireWM/wayfire/wiki/Configuration#output) for more information, setting mirroring, custom modes, etc.
