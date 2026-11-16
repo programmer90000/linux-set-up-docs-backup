@@ -35,25 +35,6 @@
   - [Automatically maximizing windows](#automatically-maximizing-windows)
   - [Remote desktop](#remote-desktop)
 
-## Default key-bindings
-
-
-  - [<kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd><kbd>Enter</kbd><kbd>Home</kbd><kbd>End</kbd>] ⇒ Switch to the specified workspace; add <kbd>Shift</kbd> for bottom.
-- <kbd>Super</kbd> + <kbd>Enter</kbd> ⇒ Open a terminal ([Alacritty]).
-- <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> ⇒ Open the launcher ([Wofi]).
-- <kbd>Super</kbd> + <kbd>w</kbd> ⇒ Close window.
-- <kbd>Super</kbd> + <kbd>Tab</kbd> ⇒ Preview windows and select the next window; add <kbd>Shift</kbd> for previous.
-- <kbd>Alt</kbd> + <kbd>Escape</kbd> ⇒ Select the next window.
-- <kbd>Super</kbd> + [<kbd>Up</kbd><kbd>Down</kbd><kbd>Left</kbd><kbd>Right</kbd><kbd>Home</kbd><kbd>End</kbd><kbd>f</kbd><kbd>d</kbd>] ⇒ Arrange window into a grid; add <kbd>Shift</kbd> for bottom.
-- <kbd>Super</kbd> + [<kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd>] ⇒ Switch to adjacent workspace; add <kbd>Shift</kbd> to move with the focused window.
-- <kbd>Super</kbd> + <kbd>Control</kbd> + [<kbd>h</kbd><kbd>l</kbd>] ⇒ Switch to the previous or next workspace, by using the cube.
-- <kbd>Super</kbd> + <kbd>o</kbd> ⇒ Move focus to the next output; add <kbd>Shift</kbd> to move with the focused window.
-
-[Alacritty]: https://github.com/alacritty/alacritty
-[Wofi]: https://hg.sr.ht/~scoopta/wofi
-
-**Note** that you probably need to adapt the applications, such as the _terminal_ and _launcher_, in your config file.
-
 ## Using Wayfire
 
 ### Opening terminals and moving around
