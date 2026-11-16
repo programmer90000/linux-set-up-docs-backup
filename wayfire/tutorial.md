@@ -2,7 +2,6 @@
 
 **Table of contents**
 
-- [Default key-bindings](#default-key-bindings)
 - [Using Wayfire](#using-wayfire)
   - [Opening terminals and moving around](#opening-terminals-and-moving-around)
   - [Opening other applications](#opening-other-applications)
@@ -38,11 +37,7 @@
 
 ## Default key-bindings
 
-Here is an overview (non-exhaustive) of the key-bindings you can find in the [`wayfire.ini`] config file. A comprehensive reference of bindings available by default is available [[here|Bindings available by default]].
 
-[`wayfire.ini`]: https://github.com/WayfireWM/wayfire/blob/master/wayfire.ini
-
-- <kbd>Super</kbd> + <kbd>e</kbd> ⇒ Overview all workspaces.
   - [<kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd><kbd>Enter</kbd><kbd>Home</kbd><kbd>End</kbd>] ⇒ Switch to the specified workspace; add <kbd>Shift</kbd> for bottom.
 - <kbd>Super</kbd> + <kbd>Enter</kbd> ⇒ Open a terminal ([Alacritty]).
 - <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> ⇒ Open the launcher ([Wofi]).
