@@ -93,7 +93,7 @@ fn build_ui(app: &Application) {
     window.init_layer_shell();
     window.set_layer(Layer::Overlay);
     window.set_keyboard_mode(KeyboardMode::Exclusive);
-    window.set_namespace(Some("greetd-login-screen"));
+    window.set_namespace("greetd-login-screen");
     window.set_anchor(Edge::Top, true);
     window.set_anchor(Edge::Bottom, true);
     window.set_anchor(Edge::Left, true);
