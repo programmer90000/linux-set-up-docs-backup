@@ -30,6 +30,7 @@ sudo chmod -R 755 "${THEME_DIR}"
 echo "Configuring /etc/greetd for user greetd..."
 sudo mkdir -p /etc/greetd
 sudo cp commit-6/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
+sudo cp commit-1/config/config.toml /etc/greetd/config.toml
 
 echo "Configuring Polkit rules for power options..."
 sudo mkdir -p /etc/polkit-1/rules.d

@@ -27,5 +27,6 @@ sudo chmod -R 755 "${THEME_DIR}"
 
 sudo mkdir -p /etc/greetd
 sudo cp commit-5/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
+sudo cp commit-5/config/config.toml /etc/greetd/config.toml
 
 sudo systemctl enable greetd
