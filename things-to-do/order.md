@@ -7,8 +7,6 @@ wayfire -d &> ~/wayfire.log
 
 It displayed the background and icons but not the dash. I think the issue may be to do with timing
 
-Test the login screen with multiple users
-
 Setup Wayfire
 
 Replace the dash with https://github.com/elkowar/eww
