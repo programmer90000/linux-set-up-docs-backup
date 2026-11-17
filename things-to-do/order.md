@@ -1,4 +1,6 @@
-Make the new login screen. I have made it in the backup repo [../login-screen/todo.md](../login-screen/todo.md)
+Fix Wayfire. Ensure signing in from the login screen opens Wayfire
+
+Install the lock screen
 
 Replace the dash with https://github.com/elkowar/eww
 
