@@ -1,0 +1,97 @@
+window {
+    background-color: transparent;
+}
+
+.dim-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.avatar-large-fallback {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 40px;
+    background-color: #3a6ea5;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.username-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3a6ea5;
+}
+
+.username-label-empty {
+    font-size: 14px;
+    color: #999999;
+}
+
+.password-input {
+    min-width: 300px;
+    min-height: 45px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 16px;
+    padding: 0 12px;
+    border: 1px solid #cccccc;
+}
+
+.error-label {
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.user-list {
+    background-color: transparent;
+}
+
+.user-list row {
+    padding: 0;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.user-card {
+    min-width: 200px;
+    min-height: 45px;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    border: 1px solid #3a3a3a;
+    padding: 0 10px;
+}
+
+.user-card-focused {
+    background-color: #2a3a4a;
+    border: 2px solid #5a8ec5;
+}
+
+.user-card-selected {
+    background-color: #3a6ea5;
+    border: 1px solid #5a8ec5;
+}
+
+.user-avatar-small-fallback {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 15px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.user-avatar-small-selected {
+    background-color: #5a8ec5;
+}
+
+.user-row-name {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.user-row-name-selected {
+    color: #ffffff;
+    font-weight: bold;
+}
