@@ -34,18 +34,6 @@ sudo cp login-screen/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
 
 echo "Configuring Polkit rules for power options..."
 sudo mkdir -p /etc/polkit-1/rules.d
-sudo tee /etc/polkit-1/rules.d/50-greetd-power.rules > /dev/null <<EOF
-polkit.addRule(function(action, subject) {
-    if (subject.user == "${GREETER_USER}" &&
-        (action.id == "org.freedesktop.login1.power-off" ||
-         action.id == "org.freedesktop.login1.power-off-multiple-sessions" ||
-         action.id == "org.freedesktop.login1.reboot" ||
-         action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-         action.id == "org.freedesktop.login1.suspend" ||
-         action.id == "org.freedesktop.login1.suspend-multiple-sessions")) {
-        return polkit.Result.YES;
-    }
-});
-EOF
+sudo cp login-screen/commit-6/rules.d/50-greetd-power.rules /etc/polkit-1/rules.d/50-greetd-power.rules
 
 sudo systemctl enable greetd
