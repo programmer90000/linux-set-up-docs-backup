@@ -13,7 +13,7 @@ THEME_DIR="/usr/share/greetd/login-screen"
 sudo apt update
 sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd wayfire
 
-cd login-screen/commit-6/
+cd commit-6/
 cargo build --release
 sudo install -Dm755 target/release/wayfire-greetd-ui /usr/local/bin/wayfire-greetd-ui
 cd ../
@@ -21,18 +21,18 @@ cd ../
 echo "Installing theme assets to ${THEME_DIR}..."
 sudo mkdir -p "${THEME_DIR}/assets"
 sudo mkdir -p "${THEME_DIR}/${CURRENT_USER}"
-sudo cp -r login-screen/commit-6/assets/* "${THEME_DIR}/assets/"
-sudo cp login-screen/commit-6/splash_background.png "${THEME_DIR}/"
-sudo cp login-screen/commit-6/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
+sudo cp -r commit-6/assets/* "${THEME_DIR}/assets/"
+sudo cp commit-6/splash_background.png "${THEME_DIR}/"
+sudo cp commit-6/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
 
 
 echo "Configuring /etc/greetd for user greetd..."
 sudo mkdir -p /etc/greetd
-sudo cp login-screen/commit-6/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
+sudo cp commit-6/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
 
 echo "Configuring Polkit rules for power options..."
 sudo mkdir -p /etc/polkit-1/rules.d
-sudo cp login-screen/commit-6/rules.d/50-greetd-power.rules /etc/polkit-1/rules.d/50-greetd-power.rules
+sudo cp commit-6/rules.d/50-greetd-power.rules /etc/polkit-1/rules.d/50-greetd-power.rules
 
 sudo systemctl enable greetd
