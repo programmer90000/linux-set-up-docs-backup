@@ -20,7 +20,6 @@ cd ../
 
 sudo mkdir -p "${THEME_DIR}/assets"
 sudo mkdir -p "${THEME_DIR}/${CURRENT_USER}"
-sudo cp -r commit-3/assets/* "${THEME_DIR}/assets/"
 sudo cp commit-3/splash_background.png "${THEME_DIR}/"
 sudo cp commit-3/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
