@@ -1,10 +1,10 @@
 Fix Wayfire. Ensure signing in from the login screen opens Wayfire
 
-Install the lock screen
+Setup Wayfire
 
 Replace the dash with https://github.com/elkowar/eww
 
-Setup Wayfire
+Install the lock screen
 
 Setup all of the apps. To setup Brave, use jq and diff. I can make an ignore file to not compare lines which I don't need
 
