@@ -26,9 +26,8 @@ sudo cp login-screen/commit-6/splash_background.png "${THEME_DIR}/"
 sudo cp login-screen/commit-6/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
 
-GREETER_USER="_greetd"
 
-echo "Configuring /etc/greetd for user ${GREETER_USER}..."
+echo "Configuring /etc/greetd for user greetd..."
 sudo mkdir -p /etc/greetd
 sudo cp login-screen/commit-6/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
 
