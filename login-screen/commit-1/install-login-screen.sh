@@ -13,18 +13,18 @@ THEME_DIR="/usr/share/greetd/login-screen"
 sudo apt update
 sudo apt install -y wayfire greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd
 
-cd login-screen/commit-1/
+cd commit-1/
 cargo build --release
 sudo install -Dm755 target/release/wayfire-greetd-ui /usr/local/bin/wayfire-greetd-ui
 cd ../
 
 sudo mkdir -p "${THEME_DIR}/assets"
 sudo mkdir -p "${THEME_DIR}/${CURRENT_USER}"
-sudo cp -r login-screen/commit-1/assets/* "${THEME_DIR}/assets/"
-sudo cp login-screen/commit-1/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
+sudo cp -r commit-1/assets/* "${THEME_DIR}/assets/"
+sudo cp commit-1/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
 
 sudo mkdir -p /etc/greetd/
-sudo cp login-screen/commit-1/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
+sudo cp commit-1/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
 
 sudo systemctl enable greetd
