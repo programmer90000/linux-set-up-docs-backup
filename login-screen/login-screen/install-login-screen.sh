@@ -11,12 +11,7 @@ CURRENT_USER="$(whoami)"
 THEME_DIR="/usr/share/greetd/login-screen"
 
 sudo apt update
-sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd
-sudo apt remove --purge rustc cargo
-sudo apt install curl
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
-rustup default stable
+sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd wayfire
 
 cd login-screen
 cargo build --release
