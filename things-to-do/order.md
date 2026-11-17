@@ -1,5 +1,7 @@
 Fix Wayfire. Ensure signing in from the login screen opens Wayfire
 
+Test the login screen with multiple users
+
 Setup Wayfire
 
 Replace the dash with https://github.com/elkowar/eww
