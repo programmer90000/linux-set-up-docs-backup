@@ -7,7 +7,7 @@ Setup Tmux and its plugins. I have completed installing them. I need to set them
 | KeePassXc | ✅ |
 | Alacritty | ✅ |
 | Brave Browser | ❌ |
-| CopyQ | ❌ |
+| CopyQ | ✅ |
 | Thunderbird | ❌ |
 | QEMU/KVM - I need to share the clipboard and files | ❌ |
 | Vivaldi browser | ❌ |
