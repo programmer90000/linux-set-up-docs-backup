@@ -1,6 +1,7 @@
 mod greetd;
 
 use gtk4::gdk::Display;
+use gtk4::glib;
 use gtk4::prelude::*;
 use gtk4::{
     Align, Application, ApplicationWindow, Box as GtkBox, ContentFit, CssProvider,
