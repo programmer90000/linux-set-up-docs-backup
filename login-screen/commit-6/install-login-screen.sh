@@ -31,7 +31,6 @@ GREETER_USER="_greetd"
 echo "Configuring /etc/greetd for user ${GREETER_USER}..."
 sudo mkdir -p /etc/greetd
 sudo cp login-screen/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
-sudo sed "s/user = \"_greetd\"/user = \"${GREETER_USER}\"/" login-screen/config/config.toml | sudo tee /etc/greetd/config.toml > /dev/null
 
 echo "Configuring Polkit rules for power options..."
 sudo mkdir -p /etc/polkit-1/rules.d

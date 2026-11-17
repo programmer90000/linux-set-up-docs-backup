@@ -29,6 +29,5 @@ GREETER_USER="_greetd"
 
 sudo mkdir -p /etc/greetd
 sudo cp login-screen/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
-sudo sed "s/user = \"_greetd\"/user = \"${GREETER_USER}\"/" login-screen/config/config.toml | sudo tee /etc/greetd/config.toml > /dev/null
 
 sudo systemctl enable greetd
