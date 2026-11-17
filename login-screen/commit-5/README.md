@@ -1,1 +1,0 @@
-This commit is working. I can commit it. It displays the date and time

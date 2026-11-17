@@ -120,12 +120,12 @@ fn build_ui(app: &Application) {
     main_stack.set_hexpand(true);
     main_stack.set_vexpand(true);
     root_overlay.add_overlay(&main_stack);
-    
+
     let splash_overlay = Overlay::new();
     splash_overlay.set_hexpand(true);
     splash_overlay.set_vexpand(true);
     splash_overlay.set_focusable(true);
-    
+
     let splash_clock_box = GtkBox::new(Orientation::Vertical, 10);
     splash_clock_box.set_halign(Align::Center);
     splash_clock_box.set_valign(Align::Start);
@@ -216,7 +216,7 @@ fn build_ui(app: &Application) {
     center_box.append(&password_entry);
     center_box.append(&error_label);
     login_overlay.add_overlay(&center_box);
-    
+
     let users = Rc::new(load_system_users());
     let selected_username = Rc::new(RefCell::new(String::new()));
 
@@ -235,7 +235,7 @@ fn build_ui(app: &Application) {
     user_listbox.set_selection_mode(SelectionMode::Single);
     user_scroll.set_child(Some(&user_listbox));
     login_overlay.add_overlay(&user_scroll);
-    
+
     let power_button = Button::new();
     power_button.add_css_class("circle-btn");
     power_button.set_halign(Align::End);
@@ -502,7 +502,7 @@ fn build_ui(app: &Application) {
         let refresh = refresh_user_list_styles.clone();
         user_listbox.connect_selected_rows_changed(move |_| refresh());
     }
-    
+
     {
         let sel_user = selected_username.clone();
         let pw_entry = password_entry.clone();
@@ -534,7 +534,7 @@ fn build_ui(app: &Application) {
             }
         });
     }
-    
+
     let dismiss_splash = {
         let stack = main_stack.clone();
         let users_clone = users.clone();
@@ -556,7 +556,7 @@ fn build_ui(app: &Application) {
             pw.grab_focus();
         }
     };
-    
+
     {
         let dismiss = dismiss_splash.clone();
         let key_ctrl = EventControllerKey::new();
