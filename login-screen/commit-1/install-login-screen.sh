@@ -25,9 +25,6 @@ sudo cp login-screen/profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
 
 GREETER_USER="_greetd"
-if ! id -u "${GREETER_USER}" >/dev/null 2>&1; then
-    GREETER_USER="greeter"
-fi
 
 sudo mkdir -p /etc/greetd/
 sudo cp login-screen/config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
