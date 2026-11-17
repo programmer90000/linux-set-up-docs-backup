@@ -333,7 +333,7 @@ jq 'del(
   .safebrowsing.event_timestamps,
   .safebrowsing.metrics_last_log_time,
   .sessions.event_log[0].time,
-  .sessions.event_log[1].time
+  .sessions.event_log[1].time,
   .accessibility.captions.headless_caption_enabled,
 .apps.shortcuts_arch,
 .apps.shortcuts_os_version,
