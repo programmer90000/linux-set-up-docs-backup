@@ -1,1 +1,1 @@
-This commit is working. I can commit it. It displays the background
+This commit is working. I can commit it. It 

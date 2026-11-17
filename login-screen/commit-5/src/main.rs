@@ -2,6 +2,7 @@ mod greetd;
 
 use chrono::Local;
 use gtk4::gdk::Display;
+use gtk4::glib;
 use gtk4::prelude::*;
 use gtk4::{
     Align, Application, ApplicationWindow, Box as GtkBox, Button, ContentFit, CssProvider,
