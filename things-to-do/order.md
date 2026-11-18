@@ -1,11 +1,4 @@
-Fix Wayfire. Ensure signing in from the login screen opens Wayfire
-
-I ran this command:
-```
-wayfire -d &> ~/wayfire.log
-```
-
-It displayed the background and icons but not the dash. I think the issue may be to do with timing
+Fix Wayfire. Update the adduser to groups command at the end of the install-desktop file. It should add the current user
 
 Setup Wayfire
 
