@@ -1,0 +1,44 @@
+/* Global styles */
+* {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* Bottom Bar Styling */
+.main-container {
+  background-color: #11111b;
+  color: #cdd6f4;
+  padding: 0 8px;
+}
+
+.module {
+  background-color: transparent;
+  color: #cdd6f4;
+  border: none;
+  padding: 0 10px;
+  
+  &:hover {
+    background-color: #313244;
+  }
+}
+
+/* Popup Window Styling */
+.popup-box {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  border: 2px solid #89b4fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.popup-close-btn {
+  margin-top: 12px;
+  background-color: #313244;
+  color: #cdd6f4;
+  border-radius: 4px;
+  padding: 6px 12px;
+  
+  &:hover {
+    background-color: #45475a;
+  }
+}
