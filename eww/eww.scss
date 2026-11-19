@@ -4,6 +4,15 @@
   font-size: 14px;
 }
 
+/* Make all base Eww window containers transparent so only inner boxes show */
+window {
+  background-color: transparent;
+}
+
+.popup-backdrop {
+  background-color: transparent;
+}
+
 /* Bottom Bar Styling */
 .main-container {
   background-color: #11111b;
