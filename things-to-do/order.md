@@ -1,6 +1,6 @@
 Setup Wayfire
 
-Replace the dash with https://github.com/elkowar/eww
+Setup the dash with https://github.com/elkowar/eww
 
 Install the lock screen
 
