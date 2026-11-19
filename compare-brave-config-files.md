@@ -15,4 +15,6 @@ Inside the second box, open `brave-orignial-files/BraveSoftware/Brave-Browser`
 
 Select `Compare`
 
+Click the button with 3 lines at the top right, `Preferences`
+
 CertificateRevocation BudgetDatabase Crash?Reports Crowd?Deny
