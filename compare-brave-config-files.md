@@ -1,0 +1,18 @@
+I have installed `meld` using `sudo apt install meld`. However, I haven't added it to the docs. I may want to
+
+In the terminal, run:
+```
+meld
+```
+
+This will open a GUI app.
+
+Select `Folder`
+
+Inside the first box, open `.config/BraveSoftware/Brave-Browser`
+
+Inside the second box, open `brave-orignial-files/BraveSoftware/Brave-Browser`
+
+Select `Compare`
+
+CertificateRevocation BudgetDatabase Crash?Reports Crowd?Deny
