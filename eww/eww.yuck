@@ -1,0 +1,52 @@
+;; 1. Invisible full-screen backdrop to catch clicks outside the popup
+(defwindow popup_closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")
+  :stacking "overlay"
+  :focusable false
+  (eventbox :onclick "eww close right_popup popup_closer"))
+
+;; 2. The actual popup content
+(defwidget popup_content []
+  (box :class "popup-box"
+       :orientation "v"
+       :space-evenly false
+    (label :text "Popup Menu")
+    (button :class "popup-close-btn" :onclick "eww close right_popup popup_closer" "Close")))
+
+;; 3. The popup window positioned directly above the bottom-right button
+(defwindow right_popup
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "48px"
+                      :width "200px"
+                      :height "150px"
+                      :anchor "bottom right")
+  :stacking "overlay"
+  :exclusive false
+  (popup_content))
+
+;; 4. Your bottom bar
+(defwindow bottom_bar
+  :monitor 0
+  :geometry (geometry :x "0px" :y "0px" :width "100%" :height "40px" :anchor "bottom center")
+  :stacking "fg"
+  :exclusive true
+  (box :class "main-container" :orientation "h" :space-evenly true
+      (box :class "left-group" :halign "start" :space-evenly false
+          (button :class "module switcher" :onclick "nwggrid &"
+              (image :icon "view-grid-symbolic" :icon-size "menu"))
+          (button :class "module window-switcher" :onclick "window-switcher &"
+              (image :icon "preferences-system-windows" :icon-size "menu"))
+          (button :class "module brave" :onclick "brave-browser &"
+              (image :icon "brave-browser" :icon-size "menu"))
+          (button :class "module alacritty" :onclick "alacritty &"
+              (image :icon "Alacritty" :icon-size "menu"))
+      )
+      (box :class "center-group")
+      (box :class "right-group" :halign "end" :space-evenly false
+          ;; Opens BOTH the invisible backdrop and the popup at the same time
+          (button :class "module popup-trigger" :onclick "eww open-many --toggle popup_closer right_popup"
+              (image :icon "open-menu-symbolic" :icon-size "menu"))
+      )
+  ))
