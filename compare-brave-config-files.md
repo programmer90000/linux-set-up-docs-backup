@@ -1,6 +1,10 @@
-I have installed `meld` using `sudo apt install meld`. However, I haven't added it to the docs. I may want to
+Run:
+```
+jq '.' ~/brave-original-files/BraveSoftware/Brave-Browser/Default/Preferences > temp.json && mv temp.json ~/brave-original-files/BraveSoftware/Brave-Browser/Default/Preferences
+jq '.' ~/.config/BraveSoftware/Brave-Browser/Default/Preferences > temp.json && mv temp.json ~/.config/BraveSoftware/Brave-Browser/Default/Preferences
+```
 
-In the terminal, run:
+Run:
 ```
  ~/Downloads/CompareCraft_0.1.0_amd64.AppImage
 ```
