@@ -2,7 +2,7 @@
 
 Setup Wayfire - Delete all of the config files in the backup repo except the things-to-do.md file. Copy all of the config files again. Manually read them to set it up
 
-Setup the dash with https://github.com/elkowar/eww - First add all of the widgets and popup boxes. Don't worry about the styling and position of the popup boxes for now. Add the date and time vertically so I can make the dash smaller. Ensure I can scroll on the dash if needed
+Setup the dash with https://github.com/elkowar/eww - First add all of the widgets and popup boxes. Don't worry about the styling and position of the popup boxes for now. Add the date and time vertically so I can make the dash smaller. Ensure I can scroll on the dash if needed. If I can't find a good dash, write a complete prompt to make a custom one using Rust
 
 Install the lock screen
 
