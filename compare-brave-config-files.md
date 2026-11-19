@@ -9,9 +9,15 @@ This will open a GUI app.
 
 Select `Folder Compare`
 
-Inside the first folder input, type `/home/abdul/.config/BraveSoftware/Brave-Browser/`
+Inside the first folder input, type:
+```
+/home/abdul/.config/BraveSoftware/Brave-Browser/
+```
 
-Inside the second box, open `/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/`
+Inside the second box, type:
+```
+/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/`
+```
 
 Add the following line to the filter:
 ```
