@@ -16,7 +16,7 @@ Inside the first folder input, type:
 
 Inside the second box, type:
 ```
-/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/`
+/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/
 ```
 
 Add the following line to the filter:
