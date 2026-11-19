@@ -4,7 +4,7 @@ Setup the dash with https://github.com/elkowar/eww
 
 Install the lock screen
 
-Setup all of the apps. To setup Brave, run the [/compare-brave-config-files.sh](../compare-brave-config-files.sh) file in the root of this repo
+Setup all of the apps. To setup Brave, run the [/compare-brave-config-files.sh](../compare-brave-config-files.sh) file in the root of this repo. First update the file to also copy the Preferences file
 
 1. [dash.md](things-to-do/dash.md)
 2. [window-switcher.md](things-to-do/window-switcher.md)
