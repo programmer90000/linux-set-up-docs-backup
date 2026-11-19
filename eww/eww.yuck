@@ -4,7 +4,7 @@
   :geometry (geometry :width "100%" :height "100%")
   :stacking "overlay"
   :focusable false
-  (eventbox :class "popup-backdrop" :onclick "eww close right_popup popup_closer"))
+  (eventbox :onclick "eww close right_popup popup_closer"))
 
 ;; 2. The actual popup content
 (defwidget popup_content []
