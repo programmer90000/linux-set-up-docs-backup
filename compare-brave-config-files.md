@@ -2,6 +2,8 @@ Run:
 ```
 jq '.' ~/brave-original-files/BraveSoftware/Brave-Browser/Default/Preferences > temp.json && mv temp.json ~/brave-original-files/BraveSoftware/Brave-Browser/Default/Preferences
 jq '.' ~/.config/BraveSoftware/Brave-Browser/Default/Preferences > temp.json && mv temp.json ~/.config/BraveSoftware/Brave-Browser/Default/Preferences
+jq '.' '/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/Local State' > temp.json && mv temp.json '/home/abdul/brave-original-files/BraveSoftware/Brave-Browser/Local State'
+jq '.' '/home/abdul/.config/BraveSoftware/Brave-Browser/Local State' > temp.json && mv temp.json '/home/abdul/.config/BraveSoftware/Brave-Browser/Local State'
 ```
 
 Run:
