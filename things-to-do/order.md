@@ -1,4 +1,4 @@
-Setup Wayfire
+Setup Wayfire - Copy all of the config files again. Manually read them to set it up
 
 Setup the dash with https://github.com/elkowar/eww
 
