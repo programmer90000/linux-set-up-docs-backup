@@ -23,5 +23,7 @@ Make a new filter with the name `Brave`
 
 Add the following line to the filter:
 ```
-CertificateRevocation BudgetDatabase Crash?Reports Crowd?Deny
+CertificateRevocation BudgetDatabase Crash?Reports Crowd?Deny BraveWallet AdBlock?Custom?Resources AutofillStrikeDatabase ClientCertificates
 ```
+
+Note that I can't ignore specific subdirs
