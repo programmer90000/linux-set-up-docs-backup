@@ -1,5 +1,3 @@
-Fix Wayfire. Update the adduser to groups command at the end of the install-desktop file. It should add the current user. Copy the eww config file. This should make it load
-
 Setup Wayfire
 
 Replace the dash with https://github.com/elkowar/eww
