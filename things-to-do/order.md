@@ -1,4 +1,4 @@
-Setup Wayfire - Copy all of the config files again. Manually read them to set it up
+Setup Wayfire - Delete all of the config files in the backup repo. Copy all of the config files again. Manually read them to set it up
 
 Setup the dash with https://github.com/elkowar/eww
 
