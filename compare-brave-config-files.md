@@ -17,4 +17,11 @@ Select `Compare`
 
 Click the button with 3 lines at the top right, `Preferences`
 
+Select `File Filters`
+
+Make a new filter with the name `Brave`
+
+Add the following line to the filter:
+```
 CertificateRevocation BudgetDatabase Crash?Reports Crowd?Deny
+```
