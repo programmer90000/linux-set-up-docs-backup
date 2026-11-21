@@ -1,6 +1,6 @@
 [things-to-do/look-at-replacing-the-dash.md](things-to-do/look-at-replacing-the-dash.md)
 
-Setup the dash. Add the date and time vertically so I can make the dash smaller. Ensure I can scroll on the dash if needed. Remove the scroll bar. I should be able to scroll using the scroll key or by holding the dash and moving the mouse. Setup the dash in the backup repo completely
+Setup the dash. Add the date and time vertically so I can make the dash smaller. Ensure I can scroll on the dash if needed. Remove the scroll bar. I should be able to scroll using the scroll key or by holding the dash and moving the mouse.
 
 Install the lock screen
 
