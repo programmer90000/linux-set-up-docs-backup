@@ -1,0 +1,21 @@
+# ~/.config/dash/config.toml
+# Optional CSS overrides: ~/.config/dash/style.css
+
+[[panel]]
+position = "top"
+size = 36
+spacing = 4
+monitors = ["*"]
+widgets = ["app_list", "date", "clock"]
+
+[widget.app_list]
+items = [
+  { desktop = "brave-browser.desktop" },
+  { label = "Terminal", icon = "utilities-terminal", command = "alacritty" },
+]
+
+[widget.clock]
+format = "%H:%M"
+
+[widget.date]
+format = "%a %e %b"
