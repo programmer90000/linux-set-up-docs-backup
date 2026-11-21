@@ -1,0 +1,73 @@
+# ~/.config/dash/config.toml      (optional CSS overrides: ~/.config/dash/style.css)
+#
+# Widget types: app_list clock date caps_lock workspaces notifications copyq volume wifi
+#               power bluetooth mpd pipewire keyboard_layout wheeltani show_more command
+#
+# Any name in `widgets`/`more` is either a bare type, or a [widget.<name>] table
+# (with `type = "..."` if the name differs from the type, so you can have several instances).
+#
+# `more` widgets live in the "show more" popover and are promoted onto the dash by
+# `show_on_dash`:  never (default) | always | nonempty | class:<css-class> | min_length:<px>
+#   nonempty  -> while the widget's text is non-empty (e.g. notifications count)
+#   class:x   -> while the widget reports css class x (JSON "class" field, or "muted" for volume)
+#   min_length:1920 -> on monitors whose length along the dash is >= 1920 px
+
+[[panel]]
+position = "top"          # top | bottom | left | right
+size = 36                 # thickness in px
+spacing = 4
+monitors = ["*"]          # connector names (check `wayland-info` / `wlr-randr`), or "*"
+widgets = ["app_list", "workspaces", "mpd", "notifications", "copyq", "volume", "wifi",
+           "caps_lock", "date", "clock", "show_more", "power"]
+more    = ["bluetooth", "pipewire", "keyboard_layout", "wheeltani"]
+
+# A second dash on one specific monitor, on the left side
+# [[panel]]
+# position = "left"
+# size = 90
+# monitors = ["HDMI-A-1"]
+# widgets = ["clock", "date", "volume", "power"]
+
+[widget.app_list]
+items = [
+  { desktop = "firefox-esr.desktop" },
+  { label = "Terminal", icon = "utilities-terminal", command = "foot" },
+]
+
+[widget.clock]
+format = "%H:%M"          # strftime; redraws only when the displayed unit changes
+
+[widget.date]
+format = "%a %e %b"
+
+[widget.workspaces]
+format = "{icon} {current}/{total}"   # {total} alone = just the number of desktops
+
+[widget.notifications]    # nothing installed? just provide the command:
+stream = "swaync-client -swb"         # prints JSON {"text","class","tooltip"} on each change
+on_click = "swaync-client -t -sw"
+
+[widget.bluetooth]
+show_on_dash = "class:connected"      # example; bluetooth default prints plain text
+# command = "..."                     # every command-based widget accepts these overrides
+# watch = "..."
+
+[widget.pipewire]
+show_on_dash = "min_length:1920"
+
+[widget.keyboard_layout]              # you must supply the source (see README)
+# stream = "my-layout-listener"
+show_on_dash = "nonempty"
+
+[widget.wheeltani]
+# stream = "..."   or   watch = "..." + command = "..."
+show_on_dash = "never"
+
+[widget.power]
+items = [
+  { label = "Lock",      command = "swaylock" },
+  { label = "Suspend",   command = "systemctl suspend" },
+  { label = "Reboot",    command = "systemctl reboot" },
+  { label = "Power off", command = "systemctl poweroff" },
+  { label = "Log out",   command = "loginctl terminate-session $XDG_SESSION_ID" },
+]
