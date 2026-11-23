@@ -6,7 +6,7 @@ Setup the dash. Add the date and time vertically so I can make the dash smaller.
 
 Install the lock screen
 
-Setup Wayfire - Delete all of the config files in the backup repo except the things-to-do.md file. Copy all of the config files again. Manually read them to set it up
+Setup Wayfire
 
 Setup all of the apps. To setup Brave, run the [/compare-brave-config-files.sh](../compare-brave-config-files.sh) file in the root of this repo. First update the file to also copy the Preferences file
 
