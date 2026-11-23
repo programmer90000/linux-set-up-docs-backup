@@ -2,27 +2,6 @@ Here is a list of projects which are related to Wayfire.
 
 See also the [wlroots wiki](https://gitlab.freedesktop.org/wlroots/wlroots/-/wikis/Projects-which-use-wlroots) and [awesome-wlroots]( https://github.com/solarkraft/awesome-wlroots) for a list of projects which utilize `wlr` protocols, which are also supported in Wayfire.
 
-## Desktop environments
-
-- [Paper](https://gitlab.com/cubocore/paper)
-- [DesQ](https://desq.gitlab.io//)
-- [Genesis](https://github.com/ExpidusOS/genesis)
-- [RDE](https://gitlab.com/eocene/rde)
-- [Aqueous](https://github.com/Seafoam-Labs/Aqueous)
-- [carbonOS](https://gitlab.com/carbonOS/gde) (project archived)
-- [waysmoke](https://github.com/DankBSD/waysmoke) (project archived)
-
-## Linux distributions
-
-- ~~[Garuda Linux Wayfire](https://garudalinux.org/downloads.html)~~ - An Arch based Linux distro with a Wayfire based Desktop Environment (was removed in 2022 [but might come back](https://forum.garudalinux.org/t/why-no-more-wayfire/17284/2))
-- [Peux OS Wayfire](https://peux-os.netlify.app/twms) - An Arch based Linux distro with a Wayfire based Desktop Environment
-
-## Panels
-
-- [Waybar](https://github.com/Alexays/Waybar) - Highly customizable Wayland bar for Wlroots based compositors, written in C++.
-- [Wf-panel](https://github.com/WayfireWM/wf-shell) - A GTK4-based panel for Wayfire, written in C++.
-- [Panorama Panel](https://roundabout-host.com/roundabout/panorama-panel) - Configurable, modular and traditional desktop panel, designed for Wayfire and written in Python.
-
 ## Plugins
 
 ### Plugin collections
