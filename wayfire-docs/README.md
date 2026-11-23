@@ -1,6 +1,6 @@
-The metadata/ dir contains the docs for how to set it up
+The `metadata/` dir contains the docs for how to set it up
 
-Keep the docs/ dir. It contains docs for how to make plugins
+Keep both filss in the `docs/` dir. They contains docs for how to make plugins
 
 ## Configuration
 
