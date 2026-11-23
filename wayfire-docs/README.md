@@ -27,67 +27,6 @@ It aims to create a customizable, extendable and lightweight environment without
 [wlroots]: https://github.com/swaywm/wlroots
 [Compiz]: https://launchpad.net/compiz
 
-## Dependencies
-
-### Wayfire Dependencies
-
-These are the dependencies needed for building Wayfire.
-
-- [Cairo](https://cairographics.org)
-- [Pango](https://pango.gnome.org/) and PangoCairo
-- [FreeType](https://freetype.org)
-- [GLM](https://glm.g-truc.net)
-- [libdrm](https://dri.freedesktop.org/wiki/DRM/)
-- [libevdev](https://freedesktop.org/wiki/Software/libevdev/)
-- [libGL](https://mesa3d.org)
-- [libinput](https://freedesktop.org/wiki/Software/libinput/)
-- [libjpeg](https://libjpeg-turbo.org)
-- [libpng](http://libpng.org/pub/png/libpng.html)
-- [libxkbcommon](https://xkbcommon.org)
-- [libxml2](http://xmlsoft.org/)
-- [Pixman](https://pixman.org)
-- [pkg-config](https://freedesktop.org/wiki/Software/pkg-config/)
-- [Wayland](https://wayland.freedesktop.org)
-- [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols)
-- [wf-config](https://github.com/WayfireWM/wf-config)
-- [wlroots](https://github.com/swaywm/wlroots)
-
-### wlroots Dependencies
-
-These are the dependencies needed for building wlroots, and should be installed before building it.
-They are relevant for cases when the system doesn't have a version of wlroots installed.
-
-#### DRM Backend (required)
-
-- [libdisplay-info-dev](https://gitlab.freedesktop.org/emersion/libdisplay-info)
-- [hwdata-dev](https://github.com/vcrhonek/hwdata)
-
-#### GLES2 renderer (required)
-- [libglvnd](https://gitlab.freedesktop.org/glvnd/libglvnd)
-- [mesa](https://gitlab.freedesktop.org/mesa/mesa) (with libEGL and gbm support)
-
-#### Libinput Backend (required)
-- [libinput](https://gitlab.freedesktop.org/libinput/libinput)
-
-#### Session Provider (required)
-
-- libudev (via [systemd](https://systemd.io/) **or** other providers)
-- [seatd](https://git.sr.ht/~kennylevinsen/seatd)
-
-#### XWayland Support (optional)
-
-- [xcb](https://xcb.freedesktop.org/)
-- [xcb-composite](https://xorg.freedesktop.org/wiki/)
-- [xcb-render](https://xorg.freedesktop.org/wiki/)
-- [xcb-xfixes](https://xorg.freedesktop.org/wiki/)
-
-#### X11 Backend (optional)
-
-- [xcb](https://xcb.freedesktop.org/)
-- [x11-xcb](https://xcb.freedesktop.org/)
-- [xcb-xinput](https://xorg.freedesktop.org/wiki/)
-- [xcb-xfixes](https://xorg.freedesktop.org/wiki/)
-
 ## Configuration
 
 Copy [`wayfire.ini`] to `~/.config/wayfire.ini` or `~/.config/wayfire/wayfire.ini`
