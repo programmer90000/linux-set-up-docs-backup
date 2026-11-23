@@ -1,1 +1,0 @@
-The metadata/ dir contains the docs for how to set it up
