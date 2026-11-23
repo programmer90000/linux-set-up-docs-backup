@@ -1,9 +1,0 @@
-#include <wayfire/debug.hpp>
-
-namespace wf
-{
-namespace version
-{
-std::string git_branch = "@GIT_BRANCH@";
-}
-}
