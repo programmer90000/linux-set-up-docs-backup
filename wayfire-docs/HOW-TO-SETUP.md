@@ -1,0 +1,1 @@
+The metadata contains the docs for how to set it up
