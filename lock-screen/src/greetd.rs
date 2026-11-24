@@ -1,12 +1,37 @@
-use pam_client::{Context, Flag};
-use pam_client::conv_mock::Conversation;
+use pam_client::{Context, Flag, ConversationHandler, Response, MessageStyle};
 use std::process::Command;
 
-pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
-    // Create a mock conversation and add the password as an expected response
-    let mut conv = Conversation::new();
-    conv.add(password); // Feed the password to the mock conversation handler
+// Define a custom conversation handler to pass the user's password to PAM
+struct PasswordConversation {
+    password: String,
+}
 
+impl ConversationHandler for PasswordConversation {
+    fn conversation(&mut self, messages: &[(&MessageStyle, &str)]) -> Result<Vec<Response>, ()> {
+        let mut responses = Vec::new();
+        for (style, _msg) in messages {
+            match *style {
+                MessageStyle::PromptEchoOff | MessageStyle::PromptEchoOn => {
+                    // Respond to PAM's password prompt with our stored password string
+                    responses.push(Response::text(self.password.clone()));
+                }
+                _ => {
+                    // For informational or error messages, just return an empty response
+                    responses.push(Response::default());
+                }
+            }
+        }
+        Ok(responses)
+    }
+}
+
+pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
+    // Initialize the conversation handler with our password
+    let conv = PasswordConversation {
+        password: password.to_string(),
+    };
+
+    // Initialize PAM context using "login" (or your custom service name if configured)
     let mut context = Context::new(
         "login",
         Some(username),
