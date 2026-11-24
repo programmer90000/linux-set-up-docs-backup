@@ -9,6 +9,7 @@ fi
 
 CURRENT_USER="$(whoami)"
 THEME_DIR="/usr/share/greetd/lock-screen"
+mkdir -p /usr/share/greetd/login-screen
 
 sudo apt update
 sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd libpam0g-dev clang libclang-dev
@@ -20,7 +21,7 @@ sudo mkdir -p "${THEME_DIR}/assets"
 sudo mkdir -p "${THEME_DIR}/${CURRENT_USER}"
 sudo cp -r assets/* "${THEME_DIR}/assets/"
 sudo cp splash_background.png "${THEME_DIR}/"
-sudo cp splash_background.png /usr/share/greetd/lock-screen/splash_background.png
+sudo cp splash_background.png /usr/share/greetd/login-screen/splash_background.png
 sudo cp profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
 sudo mkdir -p /etc/greetd/
