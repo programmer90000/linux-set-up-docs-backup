@@ -6,7 +6,7 @@ use gtk4::glib;
 use gtk4::prelude::*;
 use gtk4::{
     Align, Application, ApplicationWindow, Box as GtkBox, Button, ContentFit, CssProvider,
-    EventControllerKey, GestureClick, Image, Label, Overlay,
+    EventControllerKey, GestureClick, Image, Label, Orientation, Overlay,
     PasswordEntry, Popover, PositionType, Stack,
     StackTransitionType,
 };
