@@ -2,7 +2,6 @@ use std::process::{Command, Stdio};
 use std::io::Write;
 
 pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
-    // Spawn standard system authentication check or use a secure subprocess
     let mut child = Command::new("su")
         .args([username, "-c", "exit 0"])
         .stdin(Stdio::piped())
