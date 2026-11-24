@@ -1,5 +1,7 @@
 Install the lock screen
 
+Setup the popups that appear for each item in the dash
+
 Setup Wayfire
 
 Setup all of the apps. To setup Brave, run the [/compare-brave-config-files.sh](../compare-brave-config-files.sh) file in the root of this repo. First update the file to also copy the Preferences file
