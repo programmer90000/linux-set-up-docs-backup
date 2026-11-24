@@ -9,7 +9,7 @@ fi
 
 CURRENT_USER="$(whoami)"
 THEME_DIR="/usr/share/greetd/lock-screen"
-mkdir -p /usr/share/greetd/login-screen
+sudo mkdir -p /usr/share/greetd/login-screen
 
 sudo apt update
 sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd libpam0g-dev clang libclang-dev
