@@ -1,49 +1,27 @@
-use pam_client::{Context, Flag, ConversationHandler, Response, MessageStyle};
-use std::process::Command;
-
-// Define a custom conversation handler to pass the user's password to PAM
-struct PasswordConversation {
-    password: String,
-}
-
-impl ConversationHandler for PasswordConversation {
-    fn conversation(&mut self, messages: &[(&MessageStyle, &str)]) -> Result<Vec<Response>, ()> {
-        let mut responses = Vec::new();
-        for (style, _msg) in messages {
-            match *style {
-                MessageStyle::PromptEchoOff | MessageStyle::PromptEchoOn => {
-                    responses.push(Response::text(self.password.clone()));
-                }
-                _ => {
-                    responses.push(Response::default());
-                }
-            }
-        }
-        Ok(responses)
-    }
-}
+use std::process::{Command, Stdio};
+use std::io::Write;
 
 pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
-    let conv = PasswordConversation {
-        password: password.to_string(),
-    };
+    // Spawn standard system authentication check or use a secure subprocess
+    let mut child = Command::new("su")
+        .args([username, "-c", "exit 0"])
+        .stdin(Stdio::piped())
+        .stdout(Stdio::null())
+        .stderr(Stdio::piped())
+        .spawn()
+        .map_err(|e| format!("Failed to start auth process: {e}"))?;
 
-    let mut context = Context::new(
-        "login",
-        Some(username),
-        conv,
-    )
-    .map_err(|e| format!("Failed to initialize PAM: {e:?}", e = e))?;
+    if let Some(mut stdin) = child.stdin.take() {
+        writeln!(stdin, "{}", password).map_err(|_| "Failed to pass password".to_string())?;
+    }
 
-    context
-        .authenticate(Flag::NONE)
-        .map_err(|_| "Incorrect password".to_string())?;
+    let status = child.wait().map_err(|_| "Authentication process error".to_string())?;
 
-    context
-        .acct_mgmt(Flag::NONE)
-        .map_err(|_| "Account validation failed".to_string())?;
-
-    Ok(())
+    if status.success() {
+        Ok(())
+    } else {
+        Err("Incorrect password".to_string())
+    }
 }
 
 pub fn system_power_action(action: &str) {
