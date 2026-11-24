@@ -1,13 +1,13 @@
 [package]
-name = "wayfire-greetd-ui"
+name = "wayfire-lock-screen"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 gtk4 = { version = "0.9", features = ["v4_12"] }
 glib = "0.20"
-gtk4-layer-shell = "0.4"
-greetd_ipc = { version = "0.10", features = ["sync-codec"] }
+gtk4-session-lock = "0.4"
+pam = { package = "pam-f", version = "0.8" }
 chrono = "0.4"
 
 [profile.release]
