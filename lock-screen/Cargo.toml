@@ -6,9 +6,10 @@ edition = "2021"
 [dependencies]
 gtk4 = { version = "0.9", features = ["v4_12"] }
 glib = "0.20"
-gtk4-session-lock = "0.4"
-pam = { package = "pam-f", version = "0.8" }
+gtk4-session-lock = "0.3"
+pam-client = "0.1"
 chrono = "0.4"
+users = "0.11"
 
 [profile.release]
 opt-level = "z"
