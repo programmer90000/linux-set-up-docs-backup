@@ -6,12 +6,13 @@ use gtk4::glib;
 use gtk4::prelude::*;
 use gtk4::{
     Align, Application, ApplicationWindow, Box as GtkBox, Button, ContentFit, CssProvider,
-    EventControllerKey, GestureClick, Image, Label, ListBox, ListBoxRow, Orientation, Overlay,
-    PasswordEntry, PolicyType, Popover, PositionType, ScrolledWindow, SelectionMode, Stack,
+    EventControllerKey, GestureClick, Image, Label, Overlay,
+    PasswordEntry, Popover, PositionType, Stack,
     StackTransitionType,
 };
 use gtk4_layer_shell::{Edge, KeyboardMode, Layer, LayerShell};
 use std::cell::{Cell, RefCell};
+use std::env;
 use std::fs;
 use std::path::Path;
 use std::rc::Rc;
@@ -25,32 +26,12 @@ struct UserInfo {
     avatar_path: String,
 }
 
-fn load_system_users() -> Vec<UserInfo> {
-    let mut users = Vec::new();
-    if let Ok(content) = fs::read_to_string("/etc/passwd") {
-        for line in content.lines() {
-            if line.starts_with('#') || line.trim().is_empty() {
-                continue;
-            }
-            let parts: Vec<&str> = line.split(':').collect();
-            if parts.len() >= 7 {
-                let username = parts[0];
-                let uid: u32 = parts[2].parse().unwrap_or(0);
-                let shell = parts[6];
-                if uid >= 1000
-                    && username != "nobody"
-                    && !shell.ends_with("/nologin")
-                    && !shell.ends_with("/false")
-                {
-                    users.push(UserInfo {
-                        username: username.to_string(),
-                        avatar_path: format!("{THEME_DIR}/{username}/profile-picture.png"),
-                    });
-                }
-            }
-        }
+fn load_current_user() -> UserInfo {
+    let username = env::var("USER").unwrap_or_else(|_| "user".to_string());
+    UserInfo {
+        username: username.clone(),
+        avatar_path: format!("{THEME_DIR}/{username}/profile-picture.png"),
     }
-    users
 }
 
 fn format_clock() -> String {
@@ -75,7 +56,7 @@ fn load_css() {
 
 fn main() {
     let app = Application::builder()
-        .application_id("org.wayfire.greetd.login")
+        .application_id("org.wayfire.greetd.lockscreen")
         .build();
 
     app.connect_activate(build_ui);
@@ -93,7 +74,7 @@ fn build_ui(app: &Application) {
     window.init_layer_shell();
     window.set_layer(Layer::Overlay);
     window.set_keyboard_mode(KeyboardMode::Exclusive);
-    window.set_namespace("greetd-login-screen");
+    window.set_namespace("greetd-lock-screen");
     window.set_anchor(Edge::Top, true);
     window.set_anchor(Edge::Bottom, true);
     window.set_anchor(Edge::Left, true);
@@ -194,8 +175,8 @@ fn build_ui(app: &Application) {
     avatar_stack.add_named(&avatar_fallback, Some("fallback"));
     avatar_stack.set_visible_child_name("fallback");
 
-    let username_label = Label::new(Some("Select a user"));
-    username_label.add_css_class("username-label-empty");
+    let username_label = Label::new(None);
+    username_label.add_css_class("username-label");
     username_label.set_halign(Align::Center);
     username_label.set_margin_top(5);
 
@@ -203,7 +184,6 @@ fn build_ui(app: &Application) {
     password_entry.add_css_class("password-input");
     password_entry.set_placeholder_text(Some("Password"));
     password_entry.set_show_peek_icon(false);
-    password_entry.set_sensitive(false);
     password_entry.set_margin_top(10);
 
     let error_label = Label::new(None);
@@ -217,24 +197,26 @@ fn build_ui(app: &Application) {
     center_box.append(&error_label);
     login_overlay.add_overlay(&center_box);
 
-    let users = Rc::new(load_system_users());
-    let selected_username = Rc::new(RefCell::new(String::new()));
+    let current_user = load_current_user();
+    let selected_username = Rc::new(RefCell::new(current_user.username.clone()));
 
-    let user_scroll = ScrolledWindow::new();
-    user_scroll.set_halign(Align::Start);
-    user_scroll.set_valign(Align::End);
-    user_scroll.set_margin_start(20);
-    user_scroll.set_margin_bottom(20);
-    user_scroll.set_min_content_width(200);
-    user_scroll.set_max_content_height(300);
-    user_scroll.set_propagate_natural_height(true);
-    user_scroll.set_policy(PolicyType::Never, PolicyType::Automatic);
+    {
+        let initial = current_user
+            .username
+            .chars()
+            .next()
+            .map(|c| c.to_uppercase().to_string())
+            .unwrap_or_else(|| "?".to_string());
+        avatar_fallback.set_text(&initial);
 
-    let user_listbox = ListBox::new();
-    user_listbox.add_css_class("user-list");
-    user_listbox.set_selection_mode(SelectionMode::Single);
-    user_scroll.set_child(Some(&user_listbox));
-    login_overlay.add_overlay(&user_scroll);
+        if Path::new(&current_user.avatar_path).exists() {
+            avatar_image.set_from_file(Some(&current_user.avatar_path));
+            avatar_stack.set_visible_child_name("image");
+        } else {
+            avatar_stack.set_visible_child_name("fallback");
+        }
+        username_label.set_text(&current_user.username);
+    }
 
     let power_button = Button::new();
     power_button.add_css_class("circle-btn");
@@ -359,149 +341,6 @@ fn build_ui(app: &Application) {
     }
 
     main_stack.add_named(&login_overlay, Some("login"));
-    
-    struct RowWidgets {
-        card: GtkBox,
-        avatar_fallback: Label,
-        name_label: Label,
-        user: UserInfo,
-    }
-
-    let row_widgets: Rc<RefCell<Vec<RowWidgets>>> = Rc::new(RefCell::new(Vec::new()));
-
-    let refresh_user_list_styles = {
-        let rows = row_widgets.clone();
-        let sel_user = selected_username.clone();
-        let lb = user_listbox.clone();
-        move || {
-            let current_sel = sel_user.borrow();
-            let list_has_focus = lb.has_focus() || lb.focus_child().is_some();
-            for (idx, rw) in rows.borrow().iter().enumerate() {
-                let is_sel = *current_sel == rw.user.username;
-                let is_kbd = list_has_focus
-                    && lb.selected_row().map(|r| r.index() as usize) == Some(idx);
-
-                if is_sel {
-                    rw.card.add_css_class("user-card-selected");
-                    rw.avatar_fallback.add_css_class("user-avatar-small-selected");
-                    rw.name_label.add_css_class("user-row-name-selected");
-                } else {
-                    rw.card.remove_css_class("user-card-selected");
-                    rw.avatar_fallback.remove_css_class("user-avatar-small-selected");
-                    rw.name_label.remove_css_class("user-row-name-selected");
-                }
-
-                if is_kbd {
-                    rw.card.add_css_class("user-card-focused");
-                } else {
-                    rw.card.remove_css_class("user-card-focused");
-                }
-            }
-        }
-    };
-
-    let select_user = {
-        let sel_user = selected_username.clone();
-        let avatar_stack = avatar_stack.clone();
-        let avatar_image = avatar_image.clone();
-        let avatar_fallback = avatar_fallback.clone();
-        let username_label = username_label.clone();
-        let password_entry = password_entry.clone();
-        let error_label = error_label.clone();
-        let refresh = refresh_user_list_styles.clone();
-
-        move |user: &UserInfo| {
-            *sel_user.borrow_mut() = user.username.clone();
-
-            let initial = user
-                .username
-                .chars()
-                .next()
-                .map(|c| c.to_uppercase().to_string())
-                .unwrap_or_else(|| "?".to_string());
-            avatar_fallback.set_text(&initial);
-
-            if Path::new(&user.avatar_path).exists() {
-                avatar_image.set_from_file(Some(&user.avatar_path));
-                avatar_stack.set_visible_child_name("image");
-            } else {
-                avatar_stack.set_visible_child_name("fallback");
-            }
-
-            username_label.set_text(&user.username);
-            username_label.remove_css_class("username-label-empty");
-            username_label.add_css_class("username-label");
-
-            password_entry.set_text("");
-            password_entry.set_sensitive(true);
-            error_label.set_visible(false);
-            refresh();
-            password_entry.grab_focus();
-        }
-    };
-
-    for user in users.iter() {
-        let row = ListBoxRow::new();
-        let card = GtkBox::new(Orientation::Horizontal, 10);
-        card.add_css_class("user-card");
-
-        let small_stack = Stack::new();
-        small_stack.set_size_request(30, 30);
-        small_stack.set_valign(Align::Center);
-
-        let initial = user
-            .username
-            .chars()
-            .next()
-            .map(|c| c.to_uppercase().to_string())
-            .unwrap_or_else(|| "?".to_string());
-
-        let small_fallback = Label::new(Some(&initial));
-        small_fallback.add_css_class("user-avatar-small-fallback");
-        small_stack.add_named(&small_fallback, Some("fallback"));
-
-        if Path::new(&user.avatar_path).exists() {
-            let small_img = Image::from_file(&user.avatar_path);
-            small_img.set_pixel_size(30);
-            small_stack.add_named(&small_img, Some("image"));
-            small_stack.set_visible_child_name("image");
-        } else {
-            small_stack.set_visible_child_name("fallback");
-        }
-
-        let name_lbl = Label::new(Some(&user.username));
-        name_lbl.add_css_class("user-row-name");
-        name_lbl.set_valign(Align::Center);
-        name_lbl.set_ellipsize(gtk4::pango::EllipsizeMode::End);
-
-        card.append(&small_stack);
-        card.append(&name_lbl);
-        row.set_child(Some(&card));
-        user_listbox.append(&row);
-
-        row_widgets.borrow_mut().push(RowWidgets {
-            card,
-            avatar_fallback: small_fallback,
-            name_label: name_lbl,
-            user: user.clone(),
-        });
-    }
-
-    {
-        let users_clone = users.clone();
-        let select_fn = select_user.clone();
-        user_listbox.connect_row_activated(move |_, row| {
-            let idx = row.index() as usize;
-            if let Some(u) = users_clone.get(idx) {
-                select_fn(u);
-            }
-        });
-    }
-
-    {
-        let refresh = refresh_user_list_styles.clone();
-        user_listbox.connect_selected_rows_changed(move |_| refresh());
-    }
 
     {
         let sel_user = selected_username.clone();
@@ -519,8 +358,7 @@ fn build_ui(app: &Application) {
             pw_entry.set_sensitive(false);
             err_lbl.set_visible(false);
 
-            let session_cmd = vec!["wayfire".to_string()];
-            match greetd::authenticate_and_start(&username, &password, &session_cmd) {
+            match greetd::verify_lock_password(&username, &password) {
                 Ok(()) => {
                     app_clone.quit();
                 }
@@ -537,9 +375,6 @@ fn build_ui(app: &Application) {
 
     let dismiss_splash = {
         let stack = main_stack.clone();
-        let users_clone = users.clone();
-        let lb = user_listbox.clone();
-        let select_fn = select_user.clone();
         let pw = password_entry.clone();
 
         move || {
@@ -547,12 +382,6 @@ fn build_ui(app: &Application) {
                 return;
             }
             stack.set_visible_child_name("login");
-            if let Some(first_user) = users_clone.first() {
-                if let Some(first_row) = lb.row_at_index(0) {
-                    lb.select_row(Some(&first_row));
-                }
-                select_fn(first_user);
-            }
             pw.grab_focus();
         }
     };
@@ -587,65 +416,6 @@ fn build_ui(app: &Application) {
             stack.set_visible_child_name("splash");
             splash.grab_focus();
         });
-    }
-    
-    {
-        let lb = user_listbox.clone();
-        let back = back_button.clone();
-        let pw = password_entry.clone();
-        let power = power_button.clone();
-        let refresh = refresh_user_list_styles.clone();
-
-        let tab_ctrl = EventControllerKey::new();
-        tab_ctrl.set_propagation_phase(gtk4::PropagationPhase::Capture);
-        tab_ctrl.connect_key_pressed(move |_, key, _, _| {
-            let pw_focused = pw.has_focus() || pw.focus_child().is_some();
-            let lb_focused = lb.has_focus() || lb.focus_child().is_some();
-
-            if key == Key::Tab {
-                if lb_focused {
-                    back.grab_focus();
-                } else if back.has_focus() {
-                    if pw.is_sensitive() {
-                        pw.grab_focus();
-                    } else {
-                        power.grab_focus();
-                    }
-                } else if pw_focused {
-                    power.grab_focus();
-                } else if power.has_focus() {
-                    if let Some(row) = lb.selected_row().or_else(|| lb.row_at_index(0)) {
-                        row.grab_focus();
-                    } else {
-                        back.grab_focus();
-                    }
-                }
-                refresh();
-                return glib::Propagation::Stop;
-            } else if key == Key::ISO_Left_Tab {
-                if lb_focused {
-                    power.grab_focus();
-                } else if back.has_focus() {
-                    if let Some(row) = lb.selected_row().or_else(|| lb.row_at_index(0)) {
-                        row.grab_focus();
-                    } else {
-                        power.grab_focus();
-                    }
-                } else if pw_focused {
-                    back.grab_focus();
-                } else if power.has_focus() {
-                    if pw.is_sensitive() {
-                        pw.grab_focus();
-                    } else {
-                        back.grab_focus();
-                    }
-                }
-                refresh();
-                return glib::Propagation::Stop;
-            }
-            glib::Propagation::Proceed
-        });
-        login_overlay.add_controller(tab_ctrl);
     }
 
     glib::timeout_add_local(Duration::from_secs(1), move || {

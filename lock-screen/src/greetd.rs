@@ -4,7 +4,7 @@ use std::env;
 use std::os::unix::net::UnixStream;
 use std::process::Command;
 
-pub fn authenticate_and_start(username: &str, password: &str, session_cmd: &[String]) -> Result<(), String> {
+pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
     let sock_path = env::var("GREETD_SOCK")
         .map_err(|_| "GREETD_SOCK environment variable is not set".to_string())?;
     
@@ -42,19 +42,8 @@ pub fn authenticate_and_start(username: &str, password: &str, session_cmd: &[Str
                 }
             }
             Response::Success => {
-                Request::StartSession {
-                    cmd: session_cmd.to_vec(),
-                    env: vec![],
-                }
-                .write_to(&mut stream)
-                .map_err(|e| format!("Failed to send StartSession: {e}"))?;
-                
-                match Response::read_from(&mut stream) {
-                    Ok(Response::Success) => return Ok(()),
-                    Ok(Response::Error { description, .. }) => return Err(description),
-                    Ok(_) => return Err("Unexpected response starting session".to_string()),
-                    Err(e) => return Err(format!("Socket error starting session: {e}")),
-                }
+                let _ = cancel_session(&mut stream);
+                return Ok(());
             }
             Response::Error {
                 error_type,
@@ -62,7 +51,7 @@ pub fn authenticate_and_start(username: &str, password: &str, session_cmd: &[Str
             } => {
                 let _ = cancel_session(&mut stream);
                 return match error_type {
-                    ErrorType::AuthError => Err("Authentication failed".to_string()),
+                    ErrorType::AuthError => Err("Incorrect password".to_string()),
                     ErrorType::Error => Err(description),
                 };
             }
