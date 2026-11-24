@@ -1,8 +1,8 @@
-use pam_client::{Context, Conversation, Flag};
+use pam_client::{Context, Flag};
+use pam_client::conv_mock::Conversation;
 use std::process::Command;
 
 pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
-    // Initialize PAM context for the local system login service
     let mut context = Context::new(
         "login",
         Some(username),
@@ -14,14 +14,12 @@ pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String
             Ok(responses)
         }),
     )
-    .map_err(|e| format!("Failed to initialize PAM: {e:?}"))?;
+    .map_err(|e| format!("Failed to initialize pam: {e:?}"))?;
 
-    // Authenticate the user
     context
         .authenticate(Flag::NONE)
         .map_err(|_| "Incorrect password".to_string())?;
 
-    // Validate account status (not expired/locked)
     context
         .acct_mgmt(Flag::NONE)
         .map_err(|_| "Account validation failed".to_string())?;
