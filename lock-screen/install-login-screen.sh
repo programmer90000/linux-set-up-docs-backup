@@ -11,7 +11,7 @@ CURRENT_USER="$(whoami)"
 THEME_DIR="/usr/share/greetd/lock-screen"
 
 sudo apt update
-sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd
+sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd libpam0g-dev
 
 cargo build --release
 sudo install -Dm755 target/release/wayfire-greetd-ui /usr/local/bin/wayfire-greetd-ui

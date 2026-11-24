@@ -7,8 +7,8 @@ edition = "2021"
 gtk4 = { version = "0.9", features = ["v4_12"] }
 glib = "0.20"
 gtk4-layer-shell = "0.4"
-greetd_ipc = { version = "0.10", features = ["sync-codec"] }
 chrono = "0.4"
+pam-client = "0.5"
 
 [profile.release]
 opt-level = "z"

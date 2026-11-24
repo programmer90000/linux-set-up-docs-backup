@@ -1,67 +1,31 @@
-use greetd_ipc::codec::SyncCodec;
-use greetd_ipc::{AuthMessageType, ErrorType, Request, Response};
-use std::env;
-use std::os::unix::net::UnixStream;
+use pam_client::{Context, Conversation, Flag};
 use std::process::Command;
 
 pub fn verify_lock_password(username: &str, password: &str) -> Result<(), String> {
-    let sock_path = env::var("GREETD_SOCK")
-        .map_err(|_| "GREETD_SOCK environment variable is not set".to_string())?;
-    
-    let mut stream = UnixStream::connect(&sock_path)
-        .map_err(|e| format!("Failed to connect to greetd socket: {e}"))?;
-    
-    Request::CreateSession {
-        username: username.to_string(),
-    }
-    .write_to(&mut stream)
-    .map_err(|e| format!("Failed to send CreateSession: {e}"))?;
-    
-    loop {
-        let response = Response::read_from(&mut stream)
-            .map_err(|e| format!("Failed to read greetd response: {e}"))?;
-        
-        match response {
-            Response::AuthMessage {
-                auth_message_type,
-                auth_message,
-            } => {
-                let answer = match auth_message_type {
-                    AuthMessageType::Secret => Some(password.to_string()),
-                    AuthMessageType::Visible => Some(username.to_string()),
-                    AuthMessageType::Info | AuthMessageType::Error => None,
-                };
-                
-                Request::PostAuthMessageResponse { response: answer }
-                    .write_to(&mut stream)
-                    .map_err(|e| format!("Failed to send auth response: {e}"))?;
+    // Initialize PAM context for the local system login service
+    let mut context = Context::new(
+        "login",
+        Some(username),
+        Conversation::new(move |messages| {
+            let mut responses = Vec::new();
+            for _ in messages {
+                responses.push(Some(password.as_bytes().to_vec()));
+            }
+            Ok(responses)
+        }),
+    )
+    .map_err(|e| format!("Failed to initialize PAM: {e:?}"))?;
 
-                if matches!(auth_message_type, AuthMessageType::Error) {
-                    let _ = cancel_session(&mut stream);
-                    return Err(auth_message);
-                }
-            }
-            Response::Success => {
-                let _ = cancel_session(&mut stream);
-                return Ok(());
-            }
-            Response::Error {
-                error_type,
-                description,
-            } => {
-                let _ = cancel_session(&mut stream);
-                return match error_type {
-                    ErrorType::AuthError => Err("Incorrect password".to_string()),
-                    ErrorType::Error => Err(description),
-                };
-            }
-        }
-    }
-}
+    // Authenticate the user
+    context
+        .authenticate(Flag::NONE)
+        .map_err(|_| "Incorrect password".to_string())?;
 
-fn cancel_session(stream: &mut UnixStream) -> Result<(), ()> {
-    Request::CancelSession.write_to(stream).map_err(|_| ())?;
-    let _ = Response::read_from(stream);
+    // Validate account status (not expired/locked)
+    context
+        .acct_mgmt(Flag::NONE)
+        .map_err(|_| "Account validation failed".to_string())?;
+
     Ok(())
 }
 
