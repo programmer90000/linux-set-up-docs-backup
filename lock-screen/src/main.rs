@@ -2,17 +2,16 @@ mod pam_auth;
 
 use chrono::Local;
 use gtk4::gdk::Display;
-use gtk4::glib;
 use gtk4::prelude::*;
 use gtk4::{
-    Align, Application, ApplicationWindow, Box as GtkBox, Button, ContentFit, CssProvider,
-    EventControllerKey, Image, Label, Overlay, PasswordEntry, Stack,
+    Align, Application, ApplicationWindow, Box as GtkBox, ContentFit, CssProvider,
+    Image, Label, Orientation, Overlay, PasswordEntry, Stack,
 };
-use gtk4_session_lock::{SessionLock, SessionLockSurface};
+use gtk4_session_lock::prelude::*;
+use gtk4_session_lock::{LockToplevel, SessionLock};
 use std::fs;
 use std::path::Path;
 use std::rc::Rc;
-use std::time::Duration;
 
 const THEME_DIR: &str = "/usr/share/wayfire-lock-screen";
 
@@ -62,10 +61,9 @@ fn main() {
 fn build_ui(app: &Application) {
     load_css();
 
-    // Initialize the Wayland ext-session-lock-v1 protocol
     let lock = match SessionLock::new() {
         Ok(l) => l,
-        íduos => {
+        Err(_) => {
             eprintln!("Failed to acquire session lock. Is the compositor running ext-session-lock-v1?");
             std::process::exit(1);
         }
@@ -83,7 +81,7 @@ fn build_ui(app: &Application) {
 fn create_lock_surface(
     app: &Application,
     lock: &SessionLock,
-    lock_surface: &SessionLockSurface,
+    lock_surface: &LockToplevel,
     user: Rc<CurrentUser>,
 ) {
     let window = ApplicationWindow::builder()
@@ -100,7 +98,7 @@ fn create_lock_surface(
     let bg_picture = if Path::new(&bg_path).exists() {
         gtk4::Picture::for_filename(&bg_path)
     } else {
-        gtk4::Picture::for_paintable(&gtk4::Paintable::default())
+        gtk4::Picture::new()
     };
     bg_picture.set_hexpand(true);
     bg_picture.set_vexpand(true);
@@ -176,7 +174,6 @@ fn create_lock_surface(
 
             match pam_auth::authenticate_user(&uname, &password) {
                 Ok(()) => {
-                    // Successful unlock destroys the session lock surface
                     lock_clone.unlock();
                 }
                 Err(msg) => {

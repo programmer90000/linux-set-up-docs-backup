@@ -5,9 +5,8 @@ struct SimpleConversation {
 }
 
 impl Conversation for SimpleConversation {
-    fn prompt_echo_off(&pam_client: &str) -> PamResult<String> {
-        // PAM calls this to request the password securely
-        Ok(password)
+    fn prompt_echo_off(_msg: &str) -> PamResult<String> {
+        Ok("".to_string())
     }
 
     fn prompt_echo_on(_msg: &str) -> PamResult<String> {
@@ -22,8 +21,6 @@ pub fn authenticate_user(username: &str, password: &str) -> Result<(), String> {
     let mut ctx = Context::new("system-auth", username)
         .map_err(|e| format!("Failed to create PAM context: {e}"))?;
     
-    // Provide conversation handler with the password
-    // (In production, use a custom conversation struct holding the password string)
     let mut conv = SimpleConversation {
         password: password.to_string(),
     };
