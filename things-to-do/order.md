@@ -1,4 +1,4 @@
-Install the lock screen
+Install the lock screen. It is working in the backup repo except for the images. Use the Gemini chat `USE THIS CONVERSATION TO MAKE THE COMMITS FOR THE LOCK SCREEN`
 
 Setup the popups that appear for each item in the dash
 
