@@ -1,7 +1,3 @@
-First, add the show more button to the dash. Then seperate the dash into left and right sections. Then I can add the rest of the widgets
-
-[things-to-do/look-at-replacing-the-dash.md](things-to-do/look-at-replacing-the-dash.md)
-
 Setup the dash. Add the date and time vertically so I can make the dash smaller. Ensure I can scroll on the dash if needed. Remove the scroll bar. I should be able to scroll using the scroll key or by holding the dash and moving the mouse.
 
 Install the lock screen
