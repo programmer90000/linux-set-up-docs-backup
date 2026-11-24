@@ -7,9 +7,7 @@ use gtk4::{
     Align, Application, ApplicationWindow, Box as GtkBox, ContentFit, CssProvider,
     Image, Label, Orientation, Overlay, PasswordEntry, Stack,
 };
-use gtk4_session_lock::prelude::*;
-use gtk4_session_lock::{LockToplevel, SessionLock};
-use std::fs;
+use gtk4_session_lock::{SessionLock, SessionLockSurface};
 use std::path::Path;
 use std::rc::Rc;
 
@@ -81,7 +79,7 @@ fn build_ui(app: &Application) {
 fn create_lock_surface(
     app: &Application,
     lock: &SessionLock,
-    lock_surface: &LockToplevel,
+    lock_surface: &SessionLockSurface,
     user: Rc<CurrentUser>,
 ) {
     let window = ApplicationWindow::builder()

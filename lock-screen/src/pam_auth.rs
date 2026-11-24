@@ -1,4 +1,4 @@
-use pam_client::{Context, Conversation, PamResult};
+use pam_client::{Context, Flag, conv_mock::Conversation};
 
 struct SimpleConversation {
     password: String,
@@ -18,20 +18,14 @@ impl Conversation for SimpleConversation {
 }
 
 pub fn authenticate_user(username: &str, password: &str) -> Result<(), String> {
-    let mut ctx = Context::new("system-auth", username)
+    let mut ctx = Context::new(Some(username), Conversation::new(password))
         .map_err(|e| format!("Failed to create PAM context: {e}"))?;
-    
-    let mut conv = SimpleConversation {
-        password: password.to_string(),
-    };
 
-    let result = ctx.authenticate(&mut conv);
-    match result {
-        Ok(()) => {
-            ctx.acct_mgmt()
-                .map_err(|e| format!("Account management check failed: {e}"))?;
-            Ok(())
-        }
-        Err(e) => Err(format!("Authentication failed: {e}")),
-    }
+    ctx.authenticate(Flag::NONE)
+        .map_err(|e| format!("Authentication failed: {e}"))?;
+
+    ctx.acct_mgmt(Flag::NONE)
+        .map_err(|e| format!("Account validation failed: {e}"))?;
+
+    Ok(())
 }
