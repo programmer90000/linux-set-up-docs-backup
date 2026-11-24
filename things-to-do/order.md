@@ -1,5 +1,3 @@
-Setup the dash. Ensure I can scroll on the dash if needed. Remove the scroll bar. I should be able to scroll using the scroll key or by holding the dash and moving the mouse.
-
 Install the lock screen
 
 Setup Wayfire
