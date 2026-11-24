@@ -20,9 +20,9 @@ sudo mkdir -p "${THEME_DIR}/assets"
 sudo mkdir -p "${THEME_DIR}/${CURRENT_USER}"
 sudo cp -r assets/* "${THEME_DIR}/assets/"
 sudo cp splash_background.png "${THEME_DIR}/"
+sudo cp splash_background.png /usr/share/greetd/lock-screen/splash_background.png
 sudo cp profile-picture.png "${THEME_DIR}/${CURRENT_USER}/"
 sudo chmod -R 755 "${THEME_DIR}"
-
 sudo mkdir -p /etc/greetd/
 sudo cp config/wayfire-greeter.ini /etc/greetd/wayfire-greeter.ini
 sudo cp config/config.toml /etc/greetd/config.toml
