@@ -13,7 +13,7 @@ THEME_DIR="/usr/share/greetd/login-screen"
 sudo apt update
 sudo apt install -y greetd cargo rustc pkg-config libgtk-4-dev libgtk4-layer-shell-dev polkitd
 
-cd login-screen/
+cd lock-screen/
 cargo build --release
 sudo install -Dm755 target/release/wayfire-greetd-ui /usr/local/bin/wayfire-greetd-ui
 cd ../
