@@ -5,6 +5,7 @@ Note: I installed evtest using sudo apt install evtest
 | Feature | Supported |
 |---------|-----------|
 | Add an option to pin items | ❌ |
+| Add the ability to view images | ❌ |
 
 | Feature | Supported |
 |---------|-----------|
