@@ -1,0 +1,1 @@
+I installed wcm and setup Wayfire. However, I should still go throgh each key before committing it
