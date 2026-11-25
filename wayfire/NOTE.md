@@ -1,1 +1,1 @@
-I installed wcm and setup Wayfire. However, I should still go throgh each key before committing it
+I installed wcm and setup Wayfire. I haven't set it up properly. I should still go throgh each key before committing it
