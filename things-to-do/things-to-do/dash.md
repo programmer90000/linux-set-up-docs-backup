@@ -7,7 +7,6 @@ Note: I installed evtest using sudo apt install evtest
 # CopyQ
 | Feature | Supported |
 |---------|-----------|
-| Add an option to pin items | ❌ |
 | Add the ability to view images | ❌ |
 
 The CopyQ button should then be completely setup
