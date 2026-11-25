@@ -1,5 +1,3 @@
-Install the lock screen. It is working in the backup repo except for the images. Use the Gemini chat `USE THIS CONVERSATION TO MAKE THE COMMITS FOR THE LOCK SCREEN`
-
 Move the `login-screen/` and `lock-screen/` dirs into a single parent dir
 
 Setup the popups that appear for each item in the dash. Test that all of the buttons work. If a button in the other widgets panel needs to, it should automatically be added to the dash
