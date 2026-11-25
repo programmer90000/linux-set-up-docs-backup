@@ -1,5 +1,3 @@
-Move the `login-screen/` and `lock-screen/` dirs into a single parent dir
-
 Setup the popups that appear for each item in the dash. Test that all of the buttons work. If a button in the other widgets panel needs to, it should automatically be added to the dash
 
 Setup Wayfire
