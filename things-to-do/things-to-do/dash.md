@@ -7,6 +7,8 @@ Note: I installed evtest using sudo apt install evtest
 | Add an option to pin items | ❌ |
 | Add the ability to view images | ❌ |
 
+The CopyQ button should then be completely setup
+
 | Feature | Supported |
 |---------|-----------|
 | Open the calendar app when clicking the date/ time | ❌ |
