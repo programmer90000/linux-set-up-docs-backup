@@ -1,7 +1,10 @@
 Test if the options in the power menu work
 
+Update the order of items and where they appear
+
 Note: I installed evtest using sudo apt install evtest
 
+# CopyQ
 | Feature | Supported |
 |---------|-----------|
 | Add an option to pin items | ❌ |
