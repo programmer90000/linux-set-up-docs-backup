@@ -12,9 +12,7 @@ Add a right click context menu to open the volume app
 
 Move the bluetooth widget inside the show_more widget. It should appear on the dash when bluetooth is connected
 
-Move the caps_lock widget inside the show_more widget. It should appear on the dash when Caps Lock is enabled
-
-Move the keyboard widget inside the show_more widget. It should appear on the dash when the keyboard layout is changed
+Remove the keyboard widget. It should appear on the dash when the keyboard layout is changed
 
 Move the MPD widget inside the show_more widget. It should appear on the dash when MPD is running
 
