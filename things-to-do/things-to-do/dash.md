@@ -1,6 +1,6 @@
 Setup the popups that appear for each item in the dash. Test that all of the buttons work. If a button in the other widgets panel needs to, it should automatically be added to the dash
 
-Use [../../dash/](../../dash/)
+Use [../../dash/HOW-TO-MAKE-WIDGETS-ONLY-APPEAR-WHEN-NEEDED.md](../../dash/HOW-TO-MAKE-WIDGETS-ONLY-APPEAR-WHEN-NEEDED.md)
 
 Test if the options in the power menu work
 
