@@ -16,9 +16,10 @@ pub fn build(ctx: &Ctx) -> gtk::Widget {
     let report_for_async = ctx.report.clone();
     let report_for_click = ctx.report.clone();
 
+    // Query active layout from setxkbmap first, fallback to localectl
     let rx = source::watch_query(
         "while :; do sleep 3; done",
-        r##"localectl status 2>/dev/null | awk '/X11 Layout/{print $3}' | grep . || echo 'n/a'"##
+        r##"setxkbmap -query 2>/dev/null | awk '/layout/{print $2}' || localectl status 2>/dev/null | awk '/X11 Layout/{print $3}' | grep . || echo 'n/a'"##
     );
     
     let label_clone = label.clone();
@@ -121,10 +122,10 @@ fn open_keyboard_layouts_window(
             if let Ok(lbl) = child.downcast::<gtk::Label>() {
                 let layout = lbl.text().to_string();
                 
-                // 1. Set system-wide via localectl (triggers authentication)
+                // 1. Set system-wide via localectl (for persistence)
                 source::spawn(&format!("localectl set-x11-keymap {}", layout));
                 
-                // 2. Apply instantly to the active session
+                // 2. Apply directly to the active session immediately
                 source::spawn(&format!("setxkbmap {}", layout));
 
                 // 3. Update the panel text instantly
