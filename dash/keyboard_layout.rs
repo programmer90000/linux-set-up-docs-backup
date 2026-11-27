@@ -13,7 +13,9 @@ pub fn build(ctx: &Ctx) -> gtk::Widget {
     btn.set_child(Some(&label));
     tag(&btn, "keyboard_layout");
 
-    let report = ctx.report.clone();
+    let report_for_async = ctx.report.clone();
+    let report_for_click = ctx.report.clone();
+
     let rx = source::watch_query(
         "while :; do sleep 3; done",
         r##"localectl status 2>/dev/null | awk '/X11 Layout/{print $3}' | grep . || echo 'n/a'"##
@@ -26,18 +28,17 @@ pub fn build(ctx: &Ctx) -> gtk::Widget {
         while let Ok(line) = rx.recv().await {
             let text = format_clone.replace("{icon}", &icon_clone).replace("{text}", line.trim());
             label_clone.set_text(&text);
-            report(line.trim(), "");
+            report_for_async(line.trim(), "");
         }
     });
 
-    let label_for_click = label.clone();
+    let label_for_click_win = label.clone();
     let format_for_click = format.clone();
     let icon_for_click = icon.clone();
-    let report_for_click = report.clone();
 
     btn.connect_clicked(move |_| {
         open_keyboard_layouts_window(
-            label_for_click.clone(),
+            label_for_click_win.clone(),
             format_for_click.clone(),
             icon_for_click.clone(),
             report_for_click.clone(),
