@@ -30,8 +30,18 @@ pub fn build(ctx: &Ctx) -> gtk::Widget {
         }
     });
 
+    let label_for_click = label.clone();
+    let format_for_click = format.clone();
+    let icon_for_click = icon.clone();
+    let report_for_click = report.clone();
+
     btn.connect_clicked(move |_| {
-        open_keyboard_layouts_window();
+        open_keyboard_layouts_window(
+            label_for_click.clone(),
+            format_for_click.clone(),
+            icon_for_click.clone(),
+            report_for_click.clone(),
+        );
     });
 
     btn.upcast()
@@ -54,7 +64,12 @@ fn fetch_layouts() -> Vec<String> {
     }
 }
 
-fn open_keyboard_layouts_window() {
+fn open_keyboard_layouts_window(
+    label: gtk::Label,
+    format: String,
+    icon: String,
+    report: std::rc::Rc<dyn Fn(&str, &str)>,
+) {
     let win = gtk::Window::builder()
         .title("Keyboard Layouts")
         .default_width(320)
@@ -104,7 +119,18 @@ fn open_keyboard_layouts_window() {
         if let Some(child) = row.child() {
             if let Ok(lbl) = child.downcast::<gtk::Label>() {
                 let layout = lbl.text().to_string();
+                
+                // 1. Set system-wide via localectl (triggers authentication)
                 source::spawn(&format!("localectl set-x11-keymap {}", layout));
+                
+                // 2. Apply instantly to the active session
+                source::spawn(&format!("setxkbmap {}", layout));
+
+                // 3. Update the panel text instantly
+                let text = format.replace("{icon}", &icon).replace("{text}", &layout);
+                label.set_text(&text);
+                report(&layout, "");
+
                 win_clone.close();
             }
         }
