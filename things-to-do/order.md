@@ -1,4 +1,5 @@
 [problems-to-fix.md](things-to-do/problems-to-fix.md)
+
 Setup Wayfire
 
 Setup all of the apps. To setup Brave, run the [/compare-brave-config-files.sh](../compare-brave-config-files.sh) file in the root of this repo. First update the file to also copy the Preferences file
