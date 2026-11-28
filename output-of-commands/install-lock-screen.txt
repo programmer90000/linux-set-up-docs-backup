@@ -1,0 +1,207 @@
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://deb.debian.org/debian trixie InRelease
+Hit:2 http://security.debian.org/debian-security trixie-security InRelease
+Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+Ign:4 https://repo.vivaldi.com/archive/deb stable InRelease
+Hit:5 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Get:6 https://repo.librewolf.net librewolf InRelease [5,649 B]
+Ign:7 https://repo.vivaldi.com/stable/deb stable InRelease
+Hit:8 https://deb.beekeeperstudio.io stable InRelease
+Hit:9 https://repo.vivaldi.com/archive/deb stable Release
+Hit:11 https://repo.vivaldi.com/stable/deb stable Release
+Fetched 5,649 B in 0s (13.4 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+All packages are up to date.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+greetd is already the newest version (0.10.3-4).
+cargo is already the newest version (1.85.1+dfsg1-1+deb13u1).
+rustc is already the newest version (1.85.1+dfsg1-1+deb13u1).
+pkg-config is already the newest version (1.8.1-4).
+libgtk-4-dev is already the newest version (4.18.6+ds-2).
+libgtk4-layer-shell-dev is already the newest version (1.0.4-2).
+polkitd is already the newest version (126-2).
+The following package was automatically installed and is no longer required:
+  linux-image-6.12.107+deb13-amd64
+Use 'sudo apt autoremove' to remove it.
+
+Installing:
+  clang  libclang-dev  libpam0g-dev
+
+Installing dependencies:
+  libclang-19-dev  libpam-doc
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 0
+  Download size: 29.1 MB
+  Space needed: 314 MB / 5,678 MB available
+
+Get:1 http://deb.debian.org/debian trixie/main amd64 clang amd64 1:19.0-63 [6,244 B]
+Get:2 http://deb.debian.org/debian trixie/main amd64 libclang-19-dev amd64 1:19.1.7-3+b1 [28.3 MB]
+Get:3 http://deb.debian.org/debian trixie/main amd64 libclang-dev amd64 1:19.0-63 [5,828 B]
+Get:4 http://deb.debian.org/debian trixie/main amd64 libpam-doc all 1.7.0-5 [642 kB]
+Get:5 http://deb.debian.org/debian trixie/main amd64 libpam0g-dev amd64 1.7.0-5 [69.5 kB]
+Fetched 29.1 MB in 3s (8,732 kB/s)
+Selecting previously unselected package clang.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 160663 files and directories currently installed.)
+Preparing to unpack .../clang_1%3a19.0-63_amd64.deb ...
+Unpacking clang (1:19.0-63) ...
+Selecting previously unselected package libclang-19-dev.
+Preparing to unpack .../libclang-19-dev_1%3a19.1.7-3+b1_amd64.deb ...
+Unpacking libclang-19-dev (1:19.1.7-3+b1) ...
+Selecting previously unselected package libclang-dev.
+Preparing to unpack .../libclang-dev_1%3a19.0-63_amd64.deb ...
+Unpacking libclang-dev (1:19.0-63) ...
+Selecting previously unselected package libpam-doc.
+Preparing to unpack .../libpam-doc_1.7.0-5_all.deb ...
+Unpacking libpam-doc (1.7.0-5) ...
+Selecting previously unselected package libpam0g-dev:amd64.
+Preparing to unpack .../libpam0g-dev_1.7.0-5_amd64.deb ...
+Unpacking libpam0g-dev:amd64 (1.7.0-5) ...
+Setting up libpam0g-dev:amd64 (1.7.0-5) ...
+Setting up libpam-doc (1.7.0-5) ...
+Setting up clang (1:19.0-63) ...
+Setting up libclang-19-dev (1:19.1.7-3+b1) ...
+Setting up libclang-dev (1:19.0-63) ...
+Processing triggers for man-db (2.13.1-1) ...
+    Updating crates.io index
+     Locking 132 packages to latest compatible versions
+      Adding glib v0.20.12 (available: v0.21.5)
+      Adding gtk4 v0.9.7 (available: v0.10.3)
+      Adding gtk4-layer-shell v0.4.0 (available: v0.8.1)
+      Adding target-lexicon v0.13.5 (available: v0.13.6)
+ Downloading crates ...
+  Downloaded lazy_static v1.5.1
+  Downloaded glob v0.3.4
+  Downloaded cexpr v0.6.0
+  Downloaded rpassword v6.0.1
+  Downloaded lazycell v1.3.0
+  Downloaded enum-repr v0.2.6
+  Downloaded pam-sys v1.0.0-alpha5
+  Downloaded shlex v1.3.0
+  Downloaded rustversion v1.0.23
+  Downloaded clang-sys v1.9.1
+  Downloaded pam-client v0.5.0
+  Downloaded minimal-lexical v0.2.1
+  Downloaded nom v7.1.3
+  Downloaded aho-corasick v1.1.5
+  Downloaded itertools v0.12.1
+  Downloaded regex v1.13.2
+  Downloaded bindgen v0.69.5
+  Downloaded syn v1.0.109
+  Downloaded regex-syntax v0.8.12
+  Downloaded regex-automata v0.4.19
+   Compiling winnow v1.0.5
+   Compiling toml_parser v1.1.7+spec-1.1.0
+   Compiling toml_datetime v1.1.3+spec-1.1.0
+   Compiling target-lexicon v0.13.5
+   Compiling smallvec v1.16.6
+   Compiling heck v0.5.0
+   Compiling serde_spanned v1.1.3
+   Compiling toml v1.2.3+spec-1.1.0
+   Compiling cfg-expr v0.20.11
+   Compiling version-compare v0.2.1
+   Compiling pkg-config v0.3.34
+   Compiling system-deps v7.0.8
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling libc v0.2.191
+   Compiling glib-sys v0.20.10
+   Compiling gobject-sys v0.20.10
+   Compiling syn v3.0.10
+   Compiling syn v2.0.119
+   Compiling gio-sys v0.20.10
+   Compiling hashbrown v0.17.2
+   Compiling equivalent v1.0.3
+   Compiling indexmap v2.14.2
+   Compiling toml_edit v0.25.21+spec-1.1.0
+   Compiling futures-core v0.3.34
+   Compiling memchr v2.8.3
+   Compiling proc-macro-crate v3.5.0
+   Compiling futures-macro v0.3.34
+   Compiling futures-task v0.3.34
+   Compiling pin-project-lite v0.2.18
+   Compiling slab v0.4.12
+   Compiling futures-util v0.3.34
+   Compiling gdk-pixbuf-sys v0.20.10
+   Compiling pango-sys v0.20.10
+   Compiling cairo-sys-rs v0.20.10
+   Compiling futures-executor v0.3.34
+   Compiling glib-macros v0.20.12
+   Compiling futures-channel v0.3.34
+   Compiling autocfg v1.5.1
+   Compiling bitflags v2.13.2
+   Compiling glib v0.20.12
+   Compiling graphene-sys v0.20.10
+   Compiling gdk4-sys v0.9.6
+   Compiling glob v0.3.4
+   Compiling clang-sys v1.9.1
+   Compiling gio v0.20.12
+   Compiling gsk4-sys v0.9.6
+   Compiling minimal-lexical v0.2.1
+   Compiling regex-syntax v0.8.12
+   Compiling futures-io v0.3.34
+   Compiling regex-automata v0.4.19
+   Compiling nom v7.1.3
+   Compiling gtk4-sys v0.9.6
+   Compiling either v1.19.0
+   Compiling semver v1.0.28
+   Compiling bindgen v0.69.5
+   Compiling serde_core v1.0.229
+   Compiling rustc_version v0.4.1
+   Compiling itertools v0.12.1
+   Compiling cexpr v0.6.0
+   Compiling regex v1.13.2
+   Compiling memoffset v0.9.1
+   Compiling shlex v1.3.0
+   Compiling lazycell v1.3.0
+   Compiling zmij v1.0.23
+   Compiling lazy_static v1.5.1
+   Compiling rustc-hash v1.1.0
+   Compiling field-offset v0.3.6
+   Compiling gdk-pixbuf v0.20.10
+   Compiling pango v0.20.12
+   Compiling cairo-rs v0.20.12
+   Compiling syn v1.0.109
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.154
+   Compiling gdk4 v0.9.6
+   Compiling pam-sys v1.0.0-alpha5
+   Compiling graphene-rs v0.20.10
+   Compiling num-traits v0.2.19
+   Compiling serde_derive v1.0.229
+   Compiling gtk4-layer-shell-sys v0.3.0
+   Compiling itoa v1.0.19
+   Compiling rustversion v1.0.23
+   Compiling gsk4 v0.9.6
+   Compiling gtk4-macros v0.9.5
+   Compiling gtk4 v0.9.7
+   Compiling enum-repr v0.2.6
+   Compiling rpassword v6.0.1
+   Compiling bitflags v1.3.2
+   Compiling iana-time-zone v0.1.65
+   Compiling chrono v0.4.45
+   Compiling pam-client v0.5.0
+   Compiling gtk4-layer-shell v0.4.0
+   Compiling wayfire-greetd-ui v0.1.0 (/home/password-is-admin/linux-set-up-docs/display-manager/lock-screen)
+warning: use of deprecated method `gtk4::CssProvider::load_from_data`: Since 4.12
+  --> src/main.rs:66:14
+   |
+66 |     provider.load_from_data(include_str!("style.css"));
+   |              ^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+warning: `wayfire-greetd-ui` (bin "wayfire-greetd-ui") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 3m 00s
+Synchronizing state of greetd.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable greetd
