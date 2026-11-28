@@ -1,6 +1,5 @@
 | Feature | Supported |
 |---------|-----------|
-| Look for a way to recieve notifications | ❌ |
 | Look for a printing software | ❌ |
 | Look for a print queue manager | ❌ |
 | Look for a screenshot tool | ❌ |
